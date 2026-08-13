@@ -2,5 +2,5 @@ local b={108,111,99,97,108,32,76,95,49,95,32,61,32,123,125,13,10,76,95,49,95,91,
 local t={}
 for i=1,#b do t[i]=string.char(b[i]) end
 local r=table.concat(t)
-local f=loadstring(r)
-if f then return f() else warn('Failed to load payload') end
+local f, err = loadstring(r)
+if f then return f() else warn('Failed to load payload: ' .. tostring(err)) end
