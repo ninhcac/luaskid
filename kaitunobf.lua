@@ -1,3 +1,5874 @@
---// This file was created by XHider v1.2 [https://discord.gg/ynvq7ED4Sp]
+--// ================= BLOX FRUITS COMPATIBILITY SHIM =================
+do
+    local RS = game:GetService("ReplicatedStorage")
+    if not RS:FindFirstChild("Library") then
+        local fakeLibrary = Instance.new("Folder")
+        fakeLibrary.Name = "Library"
+        fakeLibrary.Parent = RS
+    end
+    if not RS:FindFirstChild("Package") then
+        local fakePackage = Instance.new("Folder")
+        fakePackage.Name = "Package"
+        fakePackage.Parent = RS
+    end
+end
 
-return(function(...)do local M,l,D,t,c=math,table,tonumber,setmetatable,string local U,X,v,E,S,Q=M.floor,M.max,c.unpack,l.concat,c.char,c.sub local B="iiihhhiiiiihssss","\136%\250\025N\201pwzg\019(A_Y&l\r\200N\181\000\181\226\r\001O\134\212\001\a\202\154;\000\000\001\000\000\001\a\000\000\000__index\006\000\000\000__call\005\000\000\000__sub\005\000\000\000__mul"local P=784480+((483843-(-350614+1219860))+-399076)local function h()if P+(-243871-(-243874))<=#B then local M,l,D,t=B:byte(P,P+(-417252+417255))P=P+(-67590-(-67594))return((M+l*(591706+(-846939+((-962439+1088076)+(-826388-(-55703+-900537))))))+D*(-998660+(132231+931965)))+t*(189317+(17353810-765911))end return 808035-(1439637-631602)end local function z()if P+(-69208-(-858457-(-789248)))<=#B then local M,l=B:byte(P,P+(192465-192464))P=P+(-704592-(-704594))return M+l*(707820-707564)end return 174396+-174396 end local function d()local M=626494+(-50680-575814)for l=P,#B,120775+-120774 do if B:byte(l)==757357+-757357 then M=l-P break end end if M>-287511-(-113103+-174408)then local l=B:sub(P,(P+M)-(-147684-(-913907-(-766222))))P=(P+M)+((336115+-1258668)+922554)return l end return""end local Y=h()local e=h()local F=h()local u=z()local R=z()local n=z()local N=h()local O=h()local o=h()local m=h()local j=h()local T=z()local g=d()local w=d()local L=d()local p=d()local V,f,y,b,Z,W,G,x,k,J=-370732+370733,(-140139-(-180959))+-40819,(-267075-(-755092))+(899196+-1387212),-246905-(-263712),788119-739848,2148136490-652843,415581+2147068066,-842980+2148326627,2147974119-(-335666+826138),((737983+(350796+-878361))+97310)+-307728 local function H()y,V,f=(W*y)%k,(b*V)%G,(Z*f)%x return U((((((V+N)+f)+O)+y)+o)/j)%T end local function r(M)local l={}for t=260195+-260194,#M,-92628+92630 do local c=Q(M,t,t+(-940911+940912))if c and#c==342596-342594 then local M=D(c,646692-646676)if M then l[#l+(42110+-42109)]=S(((M-H())+T)%T)end end end return l end _G.S3pKU=xhider end local D={"D]iJ1FCAZp/0JG2DI[6oCh[d\"";":gnBd0e`";"Df0<4Eb/c(6Z6IQ@3Bq?:1\\!I";"6$79f+AuW^A0<HH6?RQfDJ((]","B5\\p","9gMlg5u^fL6VCcS<Dl+^8P`)g";";fm/\"";"88iHdBl7Q+;e9umATBgS";"6ul^KDf-[s@;Kk\"",";0?GkF<F(fG%G[";";JBWS;f?O",";flGn8T%I<@5:i#FD5P^@<Q3M";"0/YF;.0";"<-MnbDGt+eG%kGt";";f?ep+AucZE+O&4;fH/hDImh",";IsT]Bl3";"6$79f+AuW^A0<HH8TS]VDIaj";"<+0Zd@;/5?D/!m#";"+=L-!D..-rBl7QE+9";"F),K#BQ[ckF_L","F*1p",";0?GkF?1N";"+FG;\'DBMbrDeF*%F)q";"9PJZ]<,$2\\","6XabA+Am8mF*&NpBm+\'.+>E";"88308F`(]2Bl@k","AnbgmA9.","<CokuF*()aH#IhI";"7qHdADfT?$","5t\"F=:1$su:J=F","7qHd0F`7","7Vm?aDJ()6D]ho\"ATMr9:/F;=";"Ea`irDf#";"Ch7d$C]";"<+0i`6Z6jaEc5c1AT@";"6XakMDf,";"<GlSiDg-(A7WNWcF8";"6$79f+B)i]Df0).;e9A[/Ke#$","6\"48?A8c?_F_,W9";"<HD_EAU+";":gnBd2#";"Dfp(CF*1u&ATMo9","7Wi3V+B8";";e9A[<,uDjAS`K:+B2ogAT2R.","7VQaSF(f,q";"7rMpOF_tQ)","6tKqK+@^9iATMr9;0?GkF<F(f";"D(,","6$79f+@C\'`Ch7*u+@L6gE$._o","-sL!","=`8F*6#pNZ9Q+uo+T";":i\'QM@<,m8";"ASc(&AH";"<+TlWE,Tc=+@]dRCh7,";"8p+uiBl7P";"Ddd0j";";eTTWA75","7<WB]",":h=\'QF`\\a\'F_,W9+@g-hAT@","8T\\N\\8Rq";"6=G1YDeib";"9jqaR","<Cp,2Ec5`)";"BP\'n5<)HgY6V\'dG<(fVY1dlRU";"+T";"9keDr+9";"GA(E,","Bl<","<,$,^+Am8mF*&NpBm+\'.+>N","@VfI_CNF!+AS#`";";dj-HEZe5%ATMr9Hlu<uCh[B%","87c4?ATDh","87c4GFD(","B4Z0uDf9C";"6tKtA@<?4$B-9`RF`);4A0=6J";",qU`!";"?6sYC","E,ol6E-+m!ATDTqGl";"A79`","<H;PWD?","6$79f+AuWXAKY#/+>\"^\'Des6$";":/F;#87?XYFCeu[F_,W91*CIQ";":1\\M",":gnBd1B";";fHGg";"9Q+ELCfG=p@;JkUDfg%","88iGi;e9umATAnF+AHc`+@p\'P";"7;Q[[AKXNdDKKH1+FG;\"AS,L^";"6Z6IQ@3AW[EcPl4EW",":i\'QM@<,m6";"6Z6j`FCB\'/Er","6Z6dZE^jk`DfP",";IO9MF&$[a";"7U^\"IARk";"9ef\"RD.7D","88i<T7!3NYFD5Z2",";g2qt@q]RoB-;;7+@op`DKKH#";"ARk";"6YLCJDerj(AKX<JEZd\\WFED>1","ART[pDJ(\'";"ATD:!DKKH-F=q\'AD(fd@DJ3Ng";";e9idF_(",";e:&MARTE";"8muT","7;c[WB6bUeDfTC";"?XI>T@Wc;","6$%*YD.7=,9PJBU@<,C[Ci<ft";"7VQpW+B2c`C]";"Bl8!\'Ec_";"6tLFNEcb0$ATMq";"<,unrBR)?";"6ul^KDf-[bCghM","B-7";"7VlLMAH","E+*Hu";",q(\'M.k`2Z.jZV";"+>4ip0JE","<HMqkCj?","@;p1%Bk(RnBl@lBC3+<2",";IsrmEc,T/B-;;7+EV:.+E)(,","+@fjMBON=";"9LVuR<\'aJP?W9Tk70";";eTT[CMdKt+A6-`@<?&","EZd+";"8830TDg2","7<iNg";"G^+HbG^+IXG^+IXG^+IX","8RteGE+K",":harYFCcRkDfTqB;0?GkF<F(f",";fH/hDGk%YBl@l_Ddd0fEW";"<GlMm";"+AH9cFCfK<+@^9i+9";"6tKeKBN\'\"aDu";"=(-2^EZe\"dGp\"a_9PIsV@<-W9",":harYFCe?YBk.";";ep)X89JB7@;0h+DH07","+@KdQART[pDJ((aATD@!Gl","igQP`;bK\\M+@oL!+A5!l<)lZ";"7<icLARo@`D#";"<+U;r=@$b;B5VQtDKG","6#pOF0i<()F*%","Eb0&u@<6\"$05P\'=ATMrHA8c[0";"7;Q[[AOCBYDKG","6YKnK@:OCjEcV","9jr99DfT?!","6ZmEjARloOF^])/94;pNDIE";";K$hhC`lYrF^\\e","<-<5\'Ch4_TA9MO%FEMV8+Am8m";":harYFCb";"9jr*bATAnlCO%$gA9MO%FEMV8";"/S\"",";epYUF_,W9",";f-GgAH",".0";"6Z6gN@<=kTDKKo;Ci![\'","6VgEC5u_2h786QW7:0\"b;FNl>","6$79f+@9LWFD5Q0+Am8mF*&NV";"F)Q)@","D?";"7WMpMD.RU,F!*q\\Ec#N.B-;RE","Ea`irDf&EpEbTE(","6XabA+Am8mASq";"7VQpWD..<);IO9MAT@","<-<5\'Ch5nCG%GQ5F`M%jF_,W9","@Wc3lBOL";"<-N%o+@pEhCNB";"7;Q[[AKYMpAn>CmARmhE","89n`d@3ANfGA\\O#F_,W9+@g-h","A7]glEbTK7Bl@k","@r#Xd/c";"7;QOFFE2)*6Yp1T";"ATi!4/hSa";"FE1r;";";fHbkDJ&","+@Z","7W3<WAPurNA,","6Z6gNDa\\/GDfor-AH",":i\'QcATAnbDJ!e";"n=P`E+Am8mF*\'Gc","88iGiAoD]4A8c?.F*D&1";"<,$,^+Am8mF*&NpBm+\'.+>W","=(-2^Eb8`rC]","89n`d@3A6T@:Wqi","<affeAH","6$6f";"DfQtADfok=B6@p1@<)",";fuP)6t\'eBEc5H\'","6ZmEiASu!lATI","6$79f88iH8ASbe#";"6YL1Q9P&BYC]";";K$hhC`lYpCh.6kEW";"7WNWcF<G19Df$UqFDl2.B4V";"6$79f+AuW^A0<HH;flGgFD5W*","7Vm!eATAm","n=Pl(+9";";ep)`Ci]","+=JK",";Is9Q6XaJ<AH","+EVNEF)YQ3DD!Oo";"?XIbjG5";"@WH$gCB","DIn\"","@ruF&B-9Z[Dg,c5+9";"6uQgY;0?GkF8";"6#:%EASl.&F8",":h=\'QF`^K\'ATMq";"6>p:S+@BRYFDPL";"6Z6j[ARfgrDf0U","9PJ-QFD5W*";";f?\\u:NBuWEW","D..Y","6ZmEiASuT`AThX$","<+0TY<,uPnDfP";"6>p^M";"7rMocF!*tq@<,l",";eTla+@KdNCM7-oA,",";0?GkFB!1!@q]Fp";";0?GkF8",";eTla+B*AnG@>N&",";IsH\\ATMN^F_,W9:i^I","6YL%@CK#=tD?","6i",";dj-HEZdeqE+O\'3";"6t(+O6>U(@AQCP";"6<-r[";";dj-HEZe5%ATMr9Hlu=$@qZu`",";0?GkFAQd^FCfL","6>Udb7:p.C@rq",";flquAO^]_Blj";"<,uDjAS_";"6?R?p",",r$qs1&","6>pmTATC^`H=]oeG\\([";"8Rl<S6\"FhHEa`b";"BQS?8F#ks-A8-*pDfTA@@rH3;",":j%)1Ch4`:+B<JsDJ((kDfT?$";"6tKhGF`(]#";"<,ZkeC`l/_@;p:!A0=icD.PaN";"<,ZeeBE","/H";"?XI;]DI[*s";"F)Yi6Blj","A79Rg","6$79f+B)i]Df0).;e9A[/KdGm","9PIsV@<-W994`A",";e:&MAU&:";";IsH\\ATMO!DJ((gCghU#EZdbY";"DfY",":hXcYH$)MnDfP";"F`)/,@qu","Ch\\\',DJ&";"F(eumDg)";";fH/cCM[R\'";"<,ZD^Ch61UFCfK)@:Nj";"+Q@pG+9","6XabA+Ad)mDI[6#HltgqF_>A1";"6$79f88iG","Df-\\>@;Kk\"/c";";fuPdATDEpA0=`lATMr97qm-X","1,Ma%5t\"F=:&","<b6;nBk(Rf6#:7JDJ`s&F8";";f?ep+AucZE+O%","FD5Z2";";fus",";dj-HEZe5%ATMr9Hlu:/ATMr9";"9Q+f]D.*";"<+TlWE,Tc=;e9umBk(]",";fHGg/Q6V&D?","?XI5PA,","9P&BYCf4ha";"7<3EeE`?apCh3","+9";":gnBd1]";"9lFJ`9P%XCAT@";"6$HaQASq";"6?R<iF@0_Q@qu";";e9TYASuTJ","6>URb+@^BoBlj";"<+0TYARn2?FCes(Bm+%","8S;pZEb/0kDfTDYEcl)<Er";"6$.3W@r\"GMDKKo;Ci![\'";";K$YcFD5Z2","6$.3W@r\"JHF*(i.@q>";"FDl20BE","6tp^]CghS","9lFn","G%GQ0D#","8T&6a@;KY(Bl7Q+;e\'i^E-*]b";"6tKqK7W3<YF*\'upCgh3l1&";":i\'QM@<,m9","F`Lr\"D?";":gnBd2u";"87c4QASu=0+@Kp\\ASuR\'Df,";"FEm";";JBcWFA-UsATC(WD#";";IsBMASh";";g2Yf";"6ul^KDf-[r@ps1b";"8Rq";"87?XYFCeu*6Xb%XCh4_dF_,W9",";fuP)6XaqU@;0UR@<H8";";flGiEr",";K$#\\Dg4cpB`";";IsKTDf,";"7s/NVAPI)RF_kU","<,uDbF)YQ.ASu\"\'";"8TS]VDIaj";"<+0i`0`","87?R,BPDD","6YpIHCID`UARfh#EW";"6Z6gNDc1.fATUmcD.N";"@rH7,Ec5a","6ul^KDf-[bEb0G;6#pIKAT@","CK3Z<";":gmmFBl7P","6tKj";"7qHd/Cggjc8830e","6XabA+Ad)mDI[5";"9jqaR<+0i`/S\"";"6$.3W@r\"eW@WM",";f6Mt9lG/lFCAm$;0?GkF8","B)";";IsKTF*(u6883/";"7!3NYFD5Z2";"Bl@k";";e^Ph";"6$79f+AuWXAKY#/+>\"^-A8Gst","<+U;r6Z6dZE\\d","<b6/eD*i/b";";e:%n88i?V+AcujDKG";":/F<!";";e9umATC1IFC>";"6=jSJFD5?0C`lPgEaa\'$";"?XI;OChs";"@<ZEr/TYEBBlJ0801Kc#ASuTC";"7Vm!eAT@","9Q+ELFD5Z2Er","7:UFXE,8s(D#";";fHGdAH","6?R?f","7VQaNBl7Q+:/F;#AoD]4";"6ZmEiASuTaASbph6t(1G";";IsA]94`A";"<+0f[ATTsU;epY$6=FbBBlj";";IO9M6Z6jaEc5c1AT@",";flqu@:s-";"6ul^KDf.p_ATq!oATMq";"B45i","6XabA+@gQ_Eb#",";Iso\\FAHdQE+*s.";"A7]1eA9)5";"7<3EeE^k(XD.N";"6tp(=Ci9";"<-<7qBlmb","9P&BYC`l2UEc#N.B-;RE9Q+?M";"+@KdQART[pDJ((L0R+^=G@>A3","9jr-TEbSru+@]d[D/!m#+FG;!","6tp^PDf0H(@rt.[Ec5u>";">=<1H@rH7&ARfgnA6g<DF`_OE","88i<i+B39\"@qY",";Is`VATC^kAT2U\"A,";":I7uK;H?(_8P`(";"6#L1GDfSZmBl8\"","AU%^$F_#&QF_kka@;TRs4`k^e";"BIk8";"7S-*@<&@\'B<Cp-","8jcZQ";";IsofF`Lu\'+@]d[D/!m#+FG:u","9kA-PAH","DBL>MF)Q2;+D5h2FCB24.0";"F*)G:DJ&",";IO\'H<\\a";"<HD_^;IsZY@f","F`);8C`m\\2Eaa\'$+ECn)A0>r8","9jr-TEbSru+@]d[D/!m#+FG;%","?WV/dCh-=^BkM-t","9Q+?MARloTDBJ";"@V\'+g+EML?FED))+CT5.Ec5Ar";"E,ol=ARfg]@:F%a";"6$79f+AuW^A0<HH<Gll\"DfTQ0","A7]@a@<;";":gnBd3<","A,",";e9A[;f?J_Bk;;",";fuqdBlnH2DJ()4ARlp!AU,D?";"9PJQiASu(\"Er","BQ[`mF^\\ro";"9jr\'VDIl[fATMrK";"<CoPrDKKo;Ci![\'";":iC/]";"7U^@[6$.3W@qu","G^+IXG^+IX/U2MbGV(asG^(fc","0`";">9H:YDIdcrC`m!";"9P%gX<H)ngE^=__",";flGiF`TlXA7oH";"igQP`94;OVF`&<jDJ*[$AKX9K";"6Z6mYBk8DSEa`R%AT@","7ri$]ATMs3DImk";"9jq[O@4b2^B5M&";"6Z7!V7s/M","<,#lS+A69WE+O%";"E,Tf/F)to\'","6ul^KDf.pY@<V",";fm%gG=Z.a9jqaRAH","@/";"6Z6jWF`M&(+@C\'WDd`";":i\'QM@<,m5";"D..NrBE";"@;[38+@p\'[E+s3&+EqOABHTZb","2Z","Ea`J","<H;m","8nE$SD0Z";"=^c/U+Am8mF*&OP+Ad2sCh[d\"",":i\'QcATC1IFC>";"+B)i[Ch7-\"94;pNDIG.M/c";";IsijBl[d%ASuU2";"Eb/]uEc(","7VQ[T6tp[Q@ruF\'D?","7WiTYFD5Z2F%B_WA8Ggt","6>pC[:iCDhFD5Z2";"G%G[",";eU)fF@9\\LDfor-AH","6?6dXB0oD";";eU)fFD5W*","EbTK\"Bl7I%@/","87?XYFCeu*6Xb%XCh3";"9jr;";"-$(R";"<)Q:a9LV66<Du<","6Z6j[ARfgrDf/!aEc5s";"8T\\N\\;Isf`Bk(RnBl@lfATDs.";"8TS]VDI`";"6$%*YD.7=,6#L=XCgh?bASc9p";"7U^=SBl7Q+D..L-ATE&=AoD]4","6Z6LH+Auc]ASlC.Bl@l3HluNH","FD5W*+EVNE;e9HWDIakgARP",";IsH\\ATMN^F_,W9","06:]FG%G]802Qe#Ch[BDF)Q)@";"DBO%0F)*fZ",";e\'iZASt\"\\B`";"+=SFAAoqU)+D#e/@s)m-Df-\\F","95/3YARn_YEbTE(";"A7]UrDJ<S","n=PlJ+=$","6UXQi;fm.lCB","6Z6mYBk7",";e9A[<,uDjAS`K:+@g?\\BQ\\0#","9jr\'VDIl[fATMq","0/>CB0E",";e]`W9jqo","Bl7Q+;0?GkF<Et[FC?dS/c",":hal[Er";">?#]M-$(Oa-\"JJS-$(O","6>pC[7sT,n","F)Q2=A,";";Is?VDJj#qFD5W*/hSa";";IOc:Df0W<@;^1.",";0?GkFA61]@:s.l","7W3NF@;Tr";"F*)50+AHc`F!,(5EZd\\eDImk","9jr96Df&s%";",;:f@7Ple";"6tLIO@ruF\'D?";"Ble*!DI`";"n=Q>I+@\\Xp9hA)M+@/@o8QJ7";"7W<E8Df9]=";"7VQmS;e]cR;0?GkF8";"89JcXDJs6\"";"8T\\N\\Er";"9P&BYC`l2UEc#N.B-;RE7Vm!]",";djQS/Q6(qA,","EHPi6F=o0u";"9P%gX6YpIHCJn_\\DffO";"6XaJ<AP?fZFCf?$EW";"6>U(@AH";";e9TYASuTH";"7U^=SBl7Q+ARfh#E,8s(D0$h3","D(f==F(KGH5A=Xk3B&WP0f1mI";"<Gl5SCh4`2D]ie5Bl5&+@;TQ","6Z6jaEc5c1ATDh";"6tKhMB2!#WAH","?;4jBDH(%cCF+$O3[Jhs","<,$GjAO^]KD.N";";b9p";"9jr9BG%G]-ARTZ";":h=0KF*(i,","9jqu";"@;op6G@b5sDf9E40/57>1Gq*J";"CM@m4B45XkDJ&";"6#^i","@rH6p@<;";"=&MUh7:/GO9L2e";"E+j0$DJ==","9jq[O@8V/YF*%",":i\'Qc@UWb^;flGiAH","6ul^KDf/KqDfT[";"<b6)c@qg%1";";fuPK@<62","6tKtADKB@";"6?RP";";e9iW8830e<,Y]HEcu#7","7<ic_Ec`FO+@^\'_@;I&Q@<?U-","F*(i&An#1jFDPL","+@g-hATAnJ";"6Z6ja@;0UjEW","-n$JiFX\\Ug5:J!b?7dd8.k)nm";"6Z6gY70";"6>paQEr";";fH;XBjkgEDf]u2F&ZRhCB","6Z6dZF)to8D,GFeF*%";"?XIqnD#";"87?=N";"6t(+O/OX#fCB","6YL%@CB","9lFo\\Gu/Nq@q>","9M\\AQ7n6\'>7n6&l;b%rb",";e9BRARnGBFCB&q",":gnBd2Z";"-$T";"+=SE?;fuOlFCB6+3Zn","Ch[d\"+EVNE;e9A[","7WMpMEr","7VQ[T6Zm>";"?XIYmC]",":i\'QMAP$D";"<,Z\\k","6=FbBBlkIpF_,W9+@g-hAT@","6?RQAEa`U!DH(%\\Df,","DBMY^FCfK,@;L!-HluC/@<Q3u","EZd(","88iN_H>d\\C@;J5GBkM=#ASuS","87?R+F`VI";"@sJ";";IO\'HEr";"7<*HaE)^aoC]";"7W3<WAQ3SJF(J9oDfT@";"6$79f+Am8mF*&Nj@ruF.AH",";fHGdAU.6qBk1dmF8","9lFQbCh7Y";";IO\'H+BC9@/Kdf\"ARlo<+@^Bo";"AoD^,@<;";"9kA-PATL4WDKKo;Ci![\'","FD5o0+Q@pG+B)i[+9","9jq[O@3A<ZDJES","<W","87c4?";"7qcg^F8";":i\'QMAQ!)UBk%";";aiuO;GTt[8PVb",";epY$6=FbBBlj";"DJsE(","6Z6dZF)to8D\'2\\uATMr97qm-X";">>8O?DBMVkDf?gfEcQ)=>p\'";"<+0f[ATTsU7rMocF!*tq@<,l","@r-\'nCB";"igQ,#\\;qa";"?XI>XFo";"8p,#aCh6IdATMq","8T$n6D.6pq";"EZd.","ARQ]0>&SO4/hSa";";0?GkFDu&)FCfM\\@:Nt^";"6tKhMB)";"G@Y--";"6YURNCh61ZCgh3l";"D/!k";";e9TYASuTE","";";Is<UEc*!uCLq<nFDl$";"6=FA>E+*6l";"87cUR+@Kp\\ASuR\'Df,";"AT@","<,ZkeCeo4cEbK#mF8","ATMp,Df,","<H)JWFCb";"9jr*bATE%";"6UXQi;0?GkF<E4Z=(,fbBl7Q+",";dj-HEZe5%ATMr9Hlu?r@V\'R&",";IO\'H+BC9@/Ke&2F*)>@Bl7Q+","87?CHCh3",";IsH\\ATMO!DJ((gCghU#EZdqq","@Wc^/","+FG;0ARo@`D/!m#/hSa";"+@]1+";"<Co]$Bk0nGH#IhI",";e:%","=(,fbBl7Q+AoD]4";";0?GkFAusrCh3","91;u^";"9keWgDfQsiEa`I\"@;G";"7WMpSAH",";Is]`FCfL",";IO\'H<,uDbF(T?2D.R5";";e^)kCghF\"Df/H]A8-1-","8T\\N\\",":2b5gAnba`FD5Z26XaeI6=FA>",";g2eaF<Eqa@;KXfAH","6?RQDDe*O(D..;","6=FA>B6%p5DIc+QCi=>M";";IsKTF*(u6";"7!3QmGp$\"\'F(G";"?Y+%bD.RU,Er","8SrEXCf,=dF*%","$3",":18!N";"7rNK_@;P","<+TKT","7U^=SBl7Q+<GlnmC`l/aDfo]+","6$79f;IO9M";"7<WTI@:Nj","<,$GjAH";";eTla+Am8mF*&NpBm+\'.+>N";"9lFQRC]",";flquD\'3;(F_(","6YL1Q7WMpMEr",";f?ep+@gQgFCB24FCB6++>P&m","<+0f[ATTsU";";e9TYASuTI";"F)q";"<,$,^+Am8mF*&NpBm+\'.+>E","6?QgLGp$%0DfT@","FD5T\'A0>f5F8","9PJBU@<)";"Ecl5.Ch3","6>U(@AM$5b@:Wp","7V-$";"?Zp.)Bjtmi","2?","FCAWpAH","<,unrBPD%!";"6\">\"NG%C";"9jr\'XATVm-@:NkIATDs.@q>","@ps7mDfd+3BOPdkAKYK$DKBo.","?XIV\\D?";"+>l2&883/gD/Wl+";"6ul^KDf-[bEb0G;=(-,iBlA\"";"6ul^KDf-[bEb0G;;0?GkF<F(f";"6uR3WCh6IdATMq","BPD?s","<+pC",":MrO9Bk;1(7<W6[F8","6$79f7WiN`GthjdAS#o",":et\"h","D]j.8AKZ&(Bk;0lFD5f</c";"+>4ip";"B6%F(BlnV";"Ao)C(EW";"@<--QEa`TtASuU2","7VQpWD..<ZF_,W9","DKTc3";";IsKTF*(u66$.3W@qu";"88iHKBOu\'QA8Gf";"6ZmEiASuT]DId=\'","1&";"6Z6mZA8c[0";"<+U;r<,uDbF)YQ.ASu\"\'";"6\"48?A8c@\"DJ()/Ble-\"FCSu,";";fuqoDf0-,";"<,uDjASabTATMp5Df]=","D/X<6BE","9jqaR<+U;r9OVCAC]","+@^BoBlkJ>D]h>dDg,a";";e9cV@rq";";JBcWF@]hXA,";"9kAE[De*n";"Anc\'m";"6XabA+Am8mASrV[Bl7G";":MaQ<Df]W7Bl@k";"/c",":i^JeEb0<5";";dj-HEZe5%ATMr9HluC,Earc*";"F<G16F`(^";"BlkIG7U^=SBl7Q+6=jtI+D,P4";"0-i;(0JG130JG10";"7qHd5@<uKZDf,";"7VQmS+Am8mF*&NpBm+\'.","Ci=K.+E[";";djQVF_P`)6#q&","?;kuU<+0i`-$(Os-$(O";"8T&T`@rta,";"Eb\'4","9jr\'VDIldfAS\"GSCgh3l","8T&W]Eb8`iAH","D09]4Gl","7Sm\"";"F)to7F\"[","6YL1Q6=jtI",";flqs";";Is9QCj@.4Cgggh","6tKtA@<?4$B-7";"igQ,#\\;qb\"Df&rlF8","6Zm>";"6YKnGB4YT";"<,ZD^Ch6U<";"95/9V";"Bl7Q+FDi9hASuU$EW";"Df-\\F+@g!bFD5W*+A$H_DfT]\'";":/=S[;FO,B6V@",".Wb","Er",">9H7N@q01d+@pWa+C-)",":i^JOF_,W9:i^JeEb0<5";"<+oudA0=f^@3ABhH?sC=+>\"^(","GQ","6?QgLGuJp*Eb#",";fuP)<Gl;_AP6``@<-J";"@;KLqF8","9gMlg5u^fL6VCcS<Dl+^8P`(";"+>l2&6$.3W@qu";"87?XYFCeu*6Xb%XCh4aKJ>+/Q","6Z6jaASuTA<-`Fo","7oDW>","6Z6dZF)to8D,>A$H>I-";"<HMqkCjAToASlKS@ruF.Blmd*",":iC&cFE7","7W3EeFCAm$;0?GkF8";"D..ZcCghU#EcV","89n`d@8q/hDGbOfF*%","7V-\"MF`M&7","6YUXVH=^tkF_,W9";"BOQ%$FCet","<+0i`","-$(O^@ONZ","De*O(D..<)Hlr","Ao`$.FCT6,@qBV$Er";"7<3EeE_U+dF(&]m";":i\'QcATC^ZEbTK7Er";"8TR1@@;0Od@VfT";":i^8e@<-Wi@<-G";"6$HaQASu\'i+A$\'S+@0OTBl[Wu";"+BqB53Zn";"7VlLMAM$Af@;TQ";":2b5gAnba`FD5Z2";"6?RQBCh7*uEbT#NCghM";"88iHdBl7Q+AoD]4Ap%p++Dl%8","<+U;r;e^Ph";";fuP):M+3Q@qf@f:2b&[Bk7";"6ZmEiASuTdEc5T2ATModAThX$",":harYFCfL",";IO9M;fuqoDf,",";flGgF8","6\">\"NG%#K(A,";"6>URYD+/&KARff","<+ouUCMm^)Er";"=^c/U","CM@m3F`(a","9PJBU";"2)#";"6$HaQASu(\"";":.IlN70";"7VQpWD..<)6XaqU@;0T","6Z7!V","@:X+t7W^q/1N[h>1en",";g!%jEbKT4@;Z";"Eb0<5Bl@k";"7qHd0F`MM6DKJ`uATMq";"9jqaR7WMpSAH","6\"=D9E-,f3B-:&oATMr9>6";"+@L-^DJ((gFaA@MAH","F)Yi(AT@";"A9)*kDf,";"?Uk";"2u","6ZmEjARk";"1GJ";"=)W+pF)YPtAH";"FE_;-DBO%>";"6Z6jSBkMR/@<?4%D?";";djb","$46";"6$79f+AuW^A0<HH7;d3YEbTE(";"+>4i";"7:C7ODJ)miH#.$";";Is]`FCdmaASuS","AH",";f6Mt+@0O]ASuU4Eb07","1]","?XIAa";"9jr&","@<?U\"@qu","6YL1Q=(PfZDf,","7VlLGEr";"6$.3W@qu","6$79f88iGi<,$2\\EZe>%BkM\'i";"<+0TYARn_XD?";"ASlK2/Kb","Hlu7%@:O\"hB-:W)+A?]`@<?4%";"F!L";";Isf`Bk(RnARn_]DfT9!AH";"9P&BYC]";"FD,5.Ea`Zm+EqOABE","<HD_@Ecl)<9ec";"6Z6gY7UH",";FN6:AS5^uFCfJYFECr$CB","9Q+ELCf\"qVH\"D\"eARTCsBE",";IO9M;fuqoDf.<","6?RBlDf0U";">p\'";"7VQpWD..<T@<,duAH";";FN6;BQ%g27s/]<G%GQ5","7WNWcF8","<bZSrF^])XDK\'`?9jqpJB4Z)";"7U^@[9lFQR6?RBlDf,";"6ul^KDf-[s@;Kk\"+Ad3$@q]:l";";flGiF%:7bA,","7;QOFFE2:";"7VQmS";"6$79f88iGi6tL1CGl",";dji\\";"-!^","6Z6jTEaa\'4CghF\"Df0V=Df-\\C";";djQS","+@UNo+@:!bF*&Nj@ruF.@<?\'k",";IO\'H+BC9@/KdMkEc#N.B-9NP","+FG:","0fUi","G@>3-","6Z7*gBl3","H=_,8";"<,ZeuDZ";"6XakCGp#I_DIjqfF_,W9+@g-h",":iCDhFD5Z26YL%@CLqM","/p(W<Ah<";"<+oi5Eb/[$6\"=I","7U^+CDf,","8Rl<S;e]cR+Am8mF*&NpBm+\'.",":h=0KF*(i,1B","9Q+ELCf=haBlJ.","<-MnbDGtLcARk";"@rH1%EW";"9jq[O@3A?dAH","DD,D";"FD5iB+EML1GA[";";eU)fF@LCj@ruF\'D?";"DKI\"E@;L\'t+T";"87?=NDg,,iH$!_2";";dj-HEZe5%ATMr9Hlu.%@N\\?U";"D0$j","6tp^a@;]Rd";"?XI\\^GA1r*AU\"","@q>";";e9TYASuTM";"+AuW^A,";"6>ppd6?R!YA,","7W3<[Dfg)4DGbOfF*%";";IsKTF*(u6:2b5gApI\'aF*(u2AT@";"6=FnVBl%]bF_,W9:i^JeEb0<5";"6tL=ZBMW50Bk;*k7:p.C@rq";"AoD^$@:Ns",";KZkUATDs.@q>";";f?ep+@gQgFCB24FCB6++>Ful",";e^=";"F_Pq?Ao_g,+@fjMBOL";"7VQmS+B)ubAKXimATMr97qm-X";"86&&EF`__DDF.cP","=(-2^EZdhcB4uBuEW","6XaqU@;0U%7;QOSBOPe#";"8oJ01A,","6t(+O@V&tgA,","FC>";"6?6dMCI<#VDfP";"?XIb\\Eb0-1";"Ci<`m05Y-3DD#aJ@/";";IO\'H+BC9@/Kdr0Ci!g\'B-9Za","<,uDWAR](XCNB";":/=YP1-n<&8PT";"F)Q2;7s/Nf@<+\\WGl";"6=jtI";"6tp1.CghEsEr","=o","6Z7!_ATC[WA8-1-";"+@U*TE-#T$+B3&lANCq","9keKZ<+0i`",";fH;XBjkgVBQ%g2Er";"9jr9;ARTCsBE","9PIsV@<-W]Df9X";":i^8[AH","Cgh0l+@BgVDu","AKXimATMrG/hR";"9jr9GDfTi?AH";"@Vfb)H=:i)";"9jr*bATE&oAT;j,Eb0*!DKKq","88iG",";fuPdATDEpA5RJ\\F*\'/","<,uDjASc\'uB-;;7+B3#gEb$:k";"-$(U[-$(1TA0<1/";";e9A";"8RuXKA,";"AKY])+>GPmD/!l2","9lFJ`BOtUgFD)e>DI[?gDJ*Nk";"7rMocF!*h`@;KXfAH";"F(96/Cht57ART(jEr";";eU)fF@g@L@<-!lF8";"Bk.";"6XakCGsc\"XAPmS]F*%","7qHd3Ecl)<";"87?XYFCeu[F_,W91&","@:Wqi+FG;\"AS,L^FD5W*+@:!f","6#LCR@<?4%DFn@","3A:",":iCDhFD5Z2";":Ma`gBl7J";"An>CmBl7Q+8Rl<S6\"FhHEa`b";"6XabA;e\'NQDKKT6F8",";f6Mt;0?GkF8";"D..9uDffX";"?Y=Lq","9QbT&Ed8coDdd`16tKeCAT@",";flGiAH","7qHd?@;07\\@VfUFEcl)<";":i\'QcATDh";"3Zn","Ao)U$DKILIF^Y",";f?ep7s/Nf@<)";"?XIMd@;0b\'";"6Z6g\\Ch7^\"A,",":N0l_6uR!a";"7s/Nf@<,1eH?sC=:i^JeEb0<5","95/3YARnABAO:<VEr",":i\'QM@<,m7";"<bZVh@VfT";"+CSl(ATAo)G\\(B-FD5Z2$;FrC",":gnBdBk(sjEr","6ZmEiASuTeF_,W9Er","H[P","H\"CE)","<,uDWAR](XCK5=a@<?($","9kA-PATI";"6XakU@;]UeEW";";flquARk",";fH;XBjkg#9ke*XDe!HpDu",";g2Yf6tKtA@<?\'k";":2b:","7WMpMD.RU,Er","95/3YARn_Q@;]k%";":iCDs7:p.C@rq";";flGgFD5W*+B2cjCND*\\/c";"6ul^KDf0W<DfT[";":N0l_+@L-dEW";"D(f==F(KGH5A=Xk0kG0DFE2M4",":gmjL@:s-","-$\'","<,Z\\kEr","8Rl=!@<6O,AH","6$79f+@]d[D\'2YqDeF*%F)u&6","EZb","8T&Tk@;]Rd";";e9HWDIc[W@8M)mH>I-";"<+U;r9OVCAC]";";flSiE+NP";"6=FbBBlm3pATMrJ","=9","F`);8C`l)RCLnVcF_,-%+C]81","F*&NpBm+\'.";"ChY\"?,Q";"iiS:b9Qi$2",":i^8kDf0-,;0?GkF8","ARQ^\'D]iY#Ebuq1@ruX.CghC%","7s/\\",";fHGdAM$i\"Bkq8",":Ng;iBOtUo";"<,uDWAR](XCB";":gnBd1&";":i\'QMBl7Q+FDl20BOu6;/hR","87c4GFD+$TARfK",";e9TYASuTG","=(Pn";"Eb0*+G%C";";f<dpDf021DImj!Er";"6N","0/W","<+0QVDJ((_@<HI0ARloN@<6O,";"7qHd0F`MM6DKJ6^@;0RUF_,W9";"BQS?8F#ks-Eaa/EB5)I$F^fK7";"7W33eAT@";"@<?U\"@q]^jDKKq","9jr\'X6$#D3D/a<&FCet","?XIGU";"6$R*^Eb,","EHP]*AH","7<W6[FE7";"AS,L^FD5W*+ED18?YOCgEa\\",";fm.lCB";"9lG2dF(KF","<,unrBR)B","3[c:b.OdC";"7TE,U+@T1+:Js4r",">#BERF*(6!DeF*%F)q";";e:&mBl7R)";"9P&BYC`l2UEc#N.B-;RE:i^Je","FE1f\"AR](XCB";"+@^BoBlj","8Rl<","E,8s.Bl7P";"6ZmEiASuTeF_,W98Rq";"@rc-hFD5Z2","<,Z\\k<,$:";"<H)ngE`?stF)M",";0?GkFE7";"7VQpWD..<);0?GkF<F(fG%G[","9jq[PBlnK.AH","94;:P@q]9","G%#30AH";":2b/i@;G";":N0l_;Is`YDejI","6=FqH:gnBd","6YLCW/OO2iDu";";KZGXATBA#F^efkEW";"9P%gX87?CH";"9PJ-QF=g1#B4uA";":harYFCcR\\A9MO%FEMV8EW",";Z";"9Q+?M8T\\N\\",";epY$6\"G.MDKL#AAT@","6XabA;0?GkF><","6>ppdATLgZF)(",";JBcWF8";":hY,qBk(Rf9lG2dF(KF","7WNEgF<FG\'ATMr97qm-XEW";"6Y1.WAT@","<+0QR+Dl%;AKZ).@;[2D0QS@Y";"6\"FM&DeX*2";"7<iciF*2M76Z6g\\ASuQtFD5Z2",";IO\'H6$HaQASu4\"B)";"6t(+O+@^B[B5M3tF8";";e9TYASuTK",";fuP)7V-U#3B7",";g2YeDu";"<-`Fo","+=So";"6ulj[F)l2?@8V/YF*(6!DeF*%",":NBuWE]l^0@jZ#+D/\")T0eb:.";";e9TYASuTE0E";"9jr-TEbSru+>\"]";"9lFrf<+U;rF`M%bA,",":N0l_ARk","94`A";":LeJ","<I/S*BE";"<Co]$@:X(`DKG";"FD5W*+9";">?#0MAT2R.F<F\"mEc5u(+9","9P%gX","6tKqK7W3<YF*\'upCgh3l";"<,$,^;0?GkF><","6#LCR@<?4%D?";"8T&\'MGQ";"6?6dXB2W/UB4V";"/ou,QEa`Tl?Zf]",":i\'QM@<,m:",",qq)b3[HI8A0:","BQA/H";":gnBd2?","9lFK=AS5^qDK>";"<bZSrF^])dF(K@";";IsA]CLqb";"87c4?+@9LPAT@",";IO\'H9P&BYC]","6?RQPBOPpsD..<T@<,duAH","6#pOF1/W1*F*%";"FD5o0+Q@pG+B)i[+>E","6uR3\\BHTr^DJ&";";e9TYASuTF","7U^+CDf.-r@;KFlD?","9jr\'VDIjqfF_,W9+@g-hAT@";"+<VdL+Dl(2D\'2#)+?VF";"+AuW^A0=]eA0<9";"+>l2&G@>3-Bl7Q+F`);8C`m;,",";fHbkDJ(P\"E,oZ1B)";"EW";";f6;gAT@","7;cOCCh7,","DZ","6ZmEiASuTWBPDD";"<,$,^;0?GkF>E";"=(uJ]6t(+IEr","7U^\"IF`M%\\Dfor>","/hSb!-m3)<E--@JCh[s4+=SE",";K$&\\ATTM%De!QoF8";";eU)fFE:8iE`?IfB4Z/";"6$.3W@r#drB-7";"?XIks@K";"<b6/eD\'2/`G5","6tL4RDJ<T\';f?ep";"8muFMAT@";"7VQpWD..<)94;jLFCb";"7qHd>F_,W9E,8s)ATI";"6$79f+@]d[D\'2/`F)rHU+@KdQ";"+E27?Bln\'-DBL>M,6","6=FnTBk;<:6=FnTBk;;";"8Rl<`8Rl<","6Yp[`A9f;1Eb0L",";flGgFA[0lF*%",">BkF!",":iC&cF@0taDIm=\"Bl@k";"6?6XGCLL[gAH","6ZmEiASuTbE+8";"EbTK\"Bl7I%@3ANiF_)[bDfT[";"6YLCW",";0?;`BlnV";":1[jS@X0)8CiT","<,unrBR)H","+>\"^6ATVs<Bl7Q+88iH\"/hR","<,uDjASbOgFT";"<b5c_DfRW","7:C:9ASl@-AH";"6tLIO@ruF.AH","Df0--+=I";"+=I","-!(","Ao`$.F8","7qHd0Ci=B+F*\'igASl\\";";e9TYASuTL",":iCDdF)to\'+AHuqD0Z";";K$#\\Dg5*!Df\'H87s/M","Anc-n",":gnBcCh7l7B6%QpD?","?XIVk";"8Rl=!Eb/Zr8TS]VDIcUeATMq","+=SF&DfQs";"6:\"@8=AV[e8Q5","6Z6dZEW","FD5W*+EVNE<+oudA0=f^@/";"7;QOFFE2)*+@BsRG5";"6Z6LH+Auc]ASlC.Bl@l3Hlr","6ulj[F)l2?@/",">l";"6Xak\"Des6(A7Y","7;Q[[AOpr]FCfI";"-\"JM";";fuPdATDEpA5RJ\\F*\'2";"E,ol=ARfgPCi<ckCi]","7;dBn?YORg:i^I";"Cij>5<Gl;[@;]^hA0<9C";"9Q+QBATDs.@q>";"6$79f+@]d[D/!m#+FG;.Ec5T2","6$79f6YpIHCIN,L@VfUd";"+@BRYFDPM2;0?GkF=o0u","6YL1Q";"Chk.mD]hGZFCes(Bm+%","6Yp[NCK,\"bAH","<,uPnDfP";"EHPi6F<G(3D/a<&FCet","89Arm;e9umBk(]","9gM]W78d7";"Df0--3Zn";"BlnV";"Eb065ATMr^DKKo-DI[5","7;c[RBk;>";"7<3EeEXE-";"6tLOUCdrGfBlj";"8830TDg4riD.7P";"DKTf*AT@";"6$79f+B3K)BPDQs","=(Q8cDe!R)Ddd/";"3Bd";"4?tVW1GCXA0f(U?0JtdJ3B8iK";"6ZmEjARloOF^])/94;pNDIFY>";";eTla+@U0\\Bl7KnEW";"7WiTYFD5Z2";"87c4?AT@",";flGgF<C";"6>p:S;0?GkF8","H\"D)3";"8Rl<S6ZQaHD\'2\\uATMr97qm-X","7rKM:@:O\'q<,WmXARfXrA0=f^","igQP`6\">\"NDf.TY";">;0=","9PJZaDJ((qDf&rtAH";"6>U(?CM[^+FCeu[F_,W98Rul","05Y-3DD,j8E%YsL@/","7WiN`+AHcmDBLST;b$","6\"=V>F_t#jAo)#";"=(,fbBl7Q+F`);8C`mD\"G%De.","BQS?83\\N.1GBYZ[DdmO$GV3KE";"9Q+?M7WNWcF8",";dj-HEZe5%ATMr9Hlu@%@r!2]";"6tLFNEc`EiA9MO%FEMV8EW";"8TR@8Eb.[\\F(K6!AOg0PAH",";eTT[CMdKt94;jLFCb";"<CoPrEc,H/";"F(oL","9OVBQ:j%)1Ch3","6Ul*)D.N","7qHd0F`MM6DKJcbBk0eVCgh3l","6Y\'t\"@:Nt^";":2b#]";"?XIYgA7Y";",=Y-]3&!#";"7;c[RGuAR!FAQCdF8",";,onW<(U%l";":i^K!Bl.R+Gu/O\"D/aR";"8TRI@Blmd\"BmO?$";"Bl[c-ATMp(DI[6#AoD]4A9)*k","6$.3W@r#drB-:,gGp#F^DIdI\'";"7U^\"IARlp*D]iJ1FCAZp","6$.3W@r#drB-:,gGp#h\"@WM";"?XIMbA7]u",";cQ.>7mTj<;Gp:W:K1[i=AU^","<-<7qBlmc[Ec5T2ATMn";";f$/cB6.a)F8","<,unrBR)E","<HD_^6Zm>",":i\'QcATC:`B`";"7rNK_@;S_MA8-1\'","7Vm!eATAnL","9kABe@:s.;Eb/Y";"7W3<[Dfg)4DBMf!ATMr97qm-X";"<+06PATR","9P&BYCcW[","7WN2";"7qHc","Du";"1,CdC0f(XE2`EHN06M1f9k8?^";"=T";"E(Nc(G;E?=6s3r1AQWeLF[C7k";"8T&6a";"<,ZD^Ch5nABl%L*Bk;>";"9P%gX9Q,,dE^=__",";JBcWFB*:!ATC(WD#",";IsH\\ATMM","FD5T\'";"<-;a","6YLCJDerj(APmS]F*\',",";0?GkF@]hdAH";"6YLCJDerj(AKXimATMr97qm-X";"6?QpRGu8]qF*\',";"9keEXFCB38+9","+>l2&@rH4\'Ch7^&DJ()2Cggg^";"<,uDjASc0sDJ()5ARQ\\";"6=FA>E+*6l1&";";epMlC`l5jBlmd(";":gnBd0`","<,uD]C]";";FN6:AS5^uFCfJ`Blj","ASkmfA9.";"7rN<V","7<3EeEZdb]FCAm\"Er",";epYUF_,W91&";";IsT]Bl7X&B-:`-AKZ)5+DGA&","E,Tc=@;G";">?#$PCEQ&dEc5t@Bl5$","7VQmS+@U?mASu!h","<+oudA5d&J:j%)1Ch3","B6%F(ATMs3DIl7[ASuS","8T%F7Bk.";"95/KhF`(bB95/KhF`(a";"?XIb\\Bl\\7";"@<-I$A,";">&SN";"<+0i`1&","F!,OC@<ZU#A,";"8TR7;D/a<&FCet","6Z6jaASuS","FD5i5AH";"E,ol=ARfgOF`(]2Bl@k",";cQ1P","6uPJ-D.RU+Bl@k","8T&6a@;KY(ARk";"6XabA+Am8mF*&NpBm+\'.+>N";"7<3EeE_pdpD/aR";"/hSa","8TR=<FD5iB6#:7YAH";"95/3YARn,9DIdI\'Er","6$.3W@r#drB-9]_A1)F@7s/6\\","6t(+O6>U(@AQCS";"6\"G.MDKL#AAT@",":N0l_9PIsV@<-V",">=<\"->=E+/>=N41>=E+/><u\\\'";"@rH7+FCB\'/+DtV)AKZ2*F!,UH";"70";"ARlomAS,k$AK_","89JcXDJs6\";K$Jq:gnBd";"DIIBn";"6tp^]CghTbEb&a%","Ap&!$FD5Z2";"8T\\N\\6Z6jSBkI","AoDg0A0>AmCERn2D.+PC";",;qG60LeM";"?XIYgA,","@Wc^/+>N";"+>GQp+FG;$@<-4!DJ(RS/c","6tKqK7W3<YF*\'upCgh3l1B",":hY,qBk(Rf";"9lFJ`87c4GFD)dqFEM)/",";fuPK@<639A,","D..\'pBlnK.AH",";IsH\\ATMN_@;07OH#R<";"A1Si";"ASlK@/hR","9OW!aATMrkAS,soF(eK`DK0f1";"6XabA:i^8f@qASX@<ZU#EW","7<3EeE_U+dF(&]m6YKnGB4YT";":NC/^Bl7?q:18!N","6Z6jSBkMR/@<?4%DF%`GCh\\!*","7qHdC@;KXg@<?F.1&","6tKeEA9)5";"87?=NDg*<mF)to1@q>","Ao_g,;Fa%";"@ruF&B-9Z[Dg,c5+>W","8TRI@Bln&tCh\\3,A,","<+TlWE,Tc=+EVNEF(Jj\"DIal2";";g2eaF@0_MCh[Bj:2j\\";";IO\'H+BC9@/Kdu7@Voh$FD5W*","A79Rk","EHPi6FD#<2AT@","9mLf%Bk&8REc5o5ATR","9P&BYC`l2UEc#N.B-;RE","89JcXDJs6\";flGiAQ3qoAH","Ch7O(@<,l";"6=FYDDJ((jFCAcn","95/3YARnMR@K";":gnBUDKG","7W3EeFCAm$+Am8mF*&NpBm+\'.";"87?XYFCeu[F_,W90`","6Z6gN@<=tT@:sW","=(-2^EZe\"dGl";"8p+q";"6UXREF_,W9";";f-GgAM$htDein";"8p,\"","7W3<YF*&O$Bl[X(AH","6?RBlDf,",";flGgFB!9p@;G",";FO&@6W?iZ7787m:IJ2V5uJgo","6$.3W@r\"GMDers&GA[";";futU@<lo_AnGUaF8";"<+0i`1B","1K7*","?XIV\\","9jr\'VDIjqiEb/f);0?GkF<F(f";"7W3*RAT@","6$.3W@r\"nW@<lF)Er";"7qcg^F=g!rDf^\"";"2D?7C:f@";"BQS?8F#ks-B5)I$F^ct5Df%.<";"6t(+O6t\'_@AT@";"6>pC[";"6Y1(M;e^Ph","7VQmS+@U?mASu!h+B<JoA,";"?XIY]FCB9\"@VfT";"6ul^KDf/N_Ci=1","FCf9\"E,Tc=";"6Vg*=;bTbN70","7rNK_@;S>LCh*";"<+0f[ATTsU;epY$9lFK^";"8p,#aCh3",":i\'QM@<,m;",";eTT[CI)HDDfP","+=J?","9P&BYCdqiRD#";"D(He",";KZDT89JAp6>URb?Uf\'YBll!o";"6>U(?CJ8;P";"6tLF]Ec65&DfT?$","9jq[O@3AEiATMr97qm-XEW",":amN7+9",":i\'Q^ATJuA+B39%@q]RoB-7";"A7]4mB)",":L\\BVEctl5Bl@k","@rH7,ASuS";"6YL1MA3ja:ARk",":N0l_ARn2IDfP";"6>U(?CLUj`Eb&\'ZG@>N&","A8cU\'BE";"9P&BYC`l2UEc#N.B-8TXGT]FW";"9jq[K@q\'S%";"6=FA>B6%p5DIc^e@;^.*@<,ps","<+TlWE,Tc=8T&6a7U^\"IARk";"n=Po\'+AHcbANCq","6tLFLASu$eDKJ0TA7]9";"4D&MLF<G(3Ci=>W+o","6>ppd";";fuPdATDEpA5RJ\\F*\',";"/n8g:06T\'\'B45XgF\"[",";epX",";eTla+AZT]Bk(^p";"6uQrc;g2Yf";">q7?";"7!2pS+@^0]DKK]5@qu",";g2Yf+Accm@<?&";":M31#8N:g/6WR`-10?n1E)\'bc";"<,$,^;0?GkF>3";"BQS?8F#ks-B45XgF\"VKO@Vft-";"<-<5\'Ch3";"ATLghB4l$l";"8T&Tk@;]RdEr","88iE^Er";"1B";"<GlSiDg-(";";aj&O79!V[6qp6J";";dj-HEW",";flGg@rGmhBOu)","9jqaR<+0i`",":j$SjBl7Q+Ao`$.F<G16EZfIE",";K$&\\ATR","<-MnbDF8>[FE2;9Ch7V";"9lFK8";":]";"6YKnK@:OCjE^=5HARk",";eTla+Am8mF*&NpBm+\'.+>E";"<affYA79RuE\\[";"=(PfZDf,";"7qHd=Ea`j$ARk","-$(R^","7s/NEATDs.@q>","?XInnF*)G:DJ&";"6Z7*bF8","6XabA;0?GkF>3";",!G";"+=R","7W30d",":.85`;GTt[","F*&NjFECr$CB";"=(-,iBlA#787cUSATR","4>1;bDKJ\'\'+9","6Y1(M:gmmFBl7P";"7<ic<Df9]=";"8TR7;A7]g[@;\\k`F8";"6XaeI";"+>4iq";"<,unrBR)<",":1\\Zl9P&BYCf4haF_Pl-D.RU,","@kVY@@<63uA1qt7AofV=ART+j","Ci=N/EW";"F=hNEGQ";"7U^=SBl7Q+9lFK^+EqOABHTcQ";";g3/#A,";"<,uD]DImC#";";fuP):2b&[9jr*bATBL\\1B","6ZmEjARn2O@;JSFFCB&q",":/F;OBle@";";flqu@:s.EAU+";"B4Z1!DJ!e";"Ci=K.","B6/3)";"@<H[*DfP","F)YQ3D?","6Z6dWARfgMEc5o<";"7qHd0Df&s%";"<+oue+Dk\\3@<>peCh4`\'F!,:;","88iN_H>d\\C@;G";"B5M(!@qY","8T&]iCLpFUEcu#7";"8S;pZEb.a]@:B",";eTla;0?GkF>3";":i\'Q^ATI","882UFASrV`AU+";":/=;\\:eXYV;u";";K$YXASc9pBlnV";"3W";"6?6dXB0o)","/MR","6>p^M/OFAm@K";"6>UdhG^0",":i^,jBlA-8+@p\'aDZ";"6t(1G","?sm@";"BQ&$6","9P&BYCi]","EHPi6F8";"6XaeI@UWb^";"<HD_HDfT]\'CdW#Q@qu","6=FnVBl%]bF_,W9","9PIsV@<-V","A79a7+9";"8Rl=1Bk1dPF_,W9","6\"4nRCisi2;e^Ph";"6tKeKBHU5qAT.","9kAE[De&";";e9n",";eTla;0?GkF><",";e9BX@qY";":1\\!I6?RP";"6tKtA@<?4$B-9ldDJ*fp";"7oDW>?URIa<\'a8H70";"?77Bi-\"JMT-m`CMA0kb8","<HD_^<,ZeeBE","Eb/c(/KdT&E,]N/B-:,aEcu#7",";Is`YDejI";"9Q+ELCf\"qVH\"D!","9Q+ELCf\"qVH\"D\"`Df0Z;Des6$";"6tp(HDf0);6tp(HDf0(";"CB";"@rHD";"+@g-hATAnK";";IO9W@W-Hh@<Q@\'F`I","6=jeDD?";"<\'a=";"/0F";"F]2jPDeo","BQ[s!","8TS]VDIakWCh7$qARlo8+@^0m","2#","Fa%s";"76sgH?Udpn8Q8U";"<+U;r";"A8,I]Ci9";"6ZQaHFCb";"7WNEgFA[0lF*%","9OW3bF`^E\"A7]c",";e\'i^E-*3jATV?pCi]",":gnBdBk(sj7;Za\\FCfI";"6YKnK@:OCjEW","6>U(?CEQ;^B)","?XH`CEcu#76?7!gF(K@","<+0f[ATUC^@:sFgDKKq","6YLCJDerj(APmS]F*\'/","C2[P";":harYFCe9eEcb0$ATMq"}for M,l in ipairs({{512448-512447;(-121920+58850)-(-64582)},{485656+-485655,569198-569025},{-510471-(-510645);(-162501+549730)-385717}})do while l[(((651711-136787)+(-29148-(-265445)))+-1329754)-(-578534)]<l[-817886-(-756775-61113)]do D[l[540006-540005]],D[l[-160498-(-160500)]],l[835117-835116],l[-796333+796335]=D[l[-810425-(-810427)]],D[l[87261-87260]],l[-973257-(-973258)]+(178449+-178448),l[-701883-(-701885)]-(((-923488+1532925)+-1355576)+746140)end end local function t(M)return D[M-(-945667+(1543867-579326))]end do local M=D local l={}local function t(M)local l={}local D=(((986748+-382902)+-731232)-(-864842))-737455 local t=#M while D<=t do local c=string.sub(M,D,D)if c=="z"then table.insert(l,string.char(-920862+920862,56271+-56271,(174134-(302711+-32183))-(-96394),(380877-110709)-270168))D=D+(891326+((584670+-1285766)-190229))elseif c:match("%s")then D=D+(-713236-(-713237))else local c={}local U=280819+(430174+-710993)while U<131116-(1057719-926608)and D+U<=t do local l=string.sub(M,D+U,D+U)if l=="z"or l==" "or l=="\n"or l=="\r"then break end c[#c+(-194327-(-194328))]=l U=U+(773190-((-641012+540235)-(-873966)))end local X=#c for M=X+(480423-480422),-515598+515603,876169+-876168 do c[#c+(632522+-632521)]="u"end local v=(-276226+853507)-(231774-(-345507))for M=-417920+417921,253034-253029,634842+-634841 do v=v*(-812555+812640)+(string.byte(c[M])-(967375+-967342))end local E=X-((-520167+1124321)-(-66941-(-671094)))for M=240313-((-836649+9305)+1067654),(-249715-(((571271-(267334+407150))+-786139)+639634))-(E-((-175689+157944)+(-644743+(-195948+858437)))),170752+-170753 do local D=math.floor(v/(661437-661181)^M)%(740518-740262)table.insert(l,string.char(D))end D=D+X end end return table.concat(l)end for l=-432826+(-308410+(-248914+990151)),#M,(732117+314176)+-1046292 do local D=M[l]if type(D)=="string"then M[l]=t(D)end end end local l={}l[(540328+493383)+-1033705]=table[t(255189-235649)]do local M={}M[53530-53516]=true M[-134308+(((652843+-428739)+521570)-(-235433+((118655+(-655762+2220650))-836755)))]=string[t(-560384+579364)]M[163794-163793]=function()error(t(681347+-662249))end M[-12301-((-302363-330026)+((-628507+2252436)-1003847))]=false M[(983778+-1627446)-(-643680)]=pcall(function()M[(262143-828168)-(-566031)]=true end)and M[-616090-(((1017027-(-634468))-(457144+265853))+-1544594)]M[433370+-433360]=math[t(192442-173362)]M[-713031+((-761330+793219)+681155)]=table[t(9122+10418)]M[24141-24136]=table and table[t(192782-173485)]or unpack M[-683076+(989586+-306501)]=M[(-726786-(212102-428693))+510205](664633+-664630,-707539-(-707604))M[-167090+167098]=-64219-(-64219)M[-76087-(-76089)]=-431208+431208 M[703741-703738]={pcall(function()local l={}l[285603+-285601]=(325201-(-588076))-t(-551778+571580)^(13983507-(-577121))return t(480708-(-277986+739333))/l[1021952-1021950]end)}M[-275460-(-275467)]=M[(74403+(-444637+-369779))+740016][-297205-(71536+-368743)]M[-196079+196083]=tonumber((M[975387-975376](tostring(M[((-553065+2046836)-466030)+-1027734]),t(-849639-(-869674))))())for l=129813+-129812,M[109074-109065],57920+-57919 do local D={}D[831843-831835]=l D[-142677+142683]=math[t((-889445+280563)+627962)](-559093-(-559094),(-1522688-(-588610))-(-1202379-((-1565862-(-949133))-(-348528))))D[-272479-(-272483)]=M[508092+(((449425+1252148)-(191224-(-570367)))+((-793386+1063491)+(-959985-758184)))](-737321-(-737321),-757081-(-757336))D[455029-455024]=M[-160797+160807](-102557+102558,D[-753698-(-753704)])D[338444-(-41940+380377)]=M[(464141+(417582+-128323))+-753390]((-777164+437396)-(-339769),-855580-(-855582))==-766653-(-766654)D[-190851+190853]=M[-961314+961321]:gsub(t(-507920+(1156298-628343)),t(344693-325705)..(tostring(M[-139212+139222](353704-353704,492828-482828))..t(349981+-330993)))D[-598574-(-598577)]={pcall(function()local l={}if M[641358+-641348](457188+-457187,-788673-(-788675))==65007+-65006 or D[-587150-(716663+(-368641-(689638+245542)))]==M[-582831-(-688423+105583)]then local l={}l[868921+-868919]=tonumber((M[738629-738618](tostring(({pcall(function()local D={}D[(903482-(707447-338458))-(537820-3329)]=(-300418+14477507)-t(-970809+(((-113303+624061)-542832)+1021911))^(272513+6209968)return t(-1018291+1037824)/D[(-711561+819796)+-108233]end)})[-422056+422058]),t(612257+-592222)))())M[-142200+142214]=M[-990910+990924]and M[-61030+61034]==l[-991828+(-575350+1567180)]end if D[-497623-(-497630)]then error(D[-675663+675665],417407+-417407)end l[458079+((-1681691-(-566162+-458240))+199211)]={}for t=851384+-851383,D[(-173499-377499)+551004],254604-254603 do local c={}c[562096+-562095]=t l[-990815-(-990816)][c[-16831-(-16832)]]=M[477680+(-734071-(-42135+(-1224578-(544187+-1554499))))](297808-(-807684+1105492),-698440+698695)end l[971320+-971319][D[-672710-(-672715)]]=D[574437+(365689+-940122)]return M[-206857-(-206862)](l[135094-135093])end)}if D[-871363-(-871370)]then M[220987-220973]=M[-364917+(-62375-(-427306))]and(D[-200521-(-200524)][-501761+(1025454+(-1571912-(-1048220)))]==false and D[638644+-638641][-143052+143054]==D[-172223+172225])else M[(710030+(-843469+(980705+-952102)))+104850]=M[(-424896-133409)+558319]and D[668501+-668498][819830+((-951827+690032)-558034)]M[-673602+673610]=(M[-846403+846411]+D[-149238-((640063+-569547)-219757)][D[-481941-(-290078-191868)]+((-1096705-(-808823-123565))-(-164318))])%(691499+(320321+(-906485+(-939233-(-834154)))))M[-836205+836207]=(M[-276499-(-276501)]+D[49417+-49413])%((996077-126696)-(1361825-492700))end end M[903429+-903415]=M[-389935-(-389949)]and M[196422-(-561317+(1637215-879484))]==M[-142571+142573]if true then end end do local M={}M[-418316+418345]=true M[516117+-516091]=function()end M[-668778+668797]=error M[-976858+(598608-(-378256))]=pairs M[473604-473573]=setmetatable M[16804+-16803]=getmetatable M[940952-940932]=type M[-311695-(-311713)]=load M[(738959-(-84576))+-823513]=loadstring M[-120020-(-120058)]=pcall M[33206+-33191]=math[t(476082-457002)]M[-275650-(-275653)]=xpcall M[427443+-427426]=debug M[-18605-(-18646)]=debug and debug[t((1528242-481737)+-1027534)]or nil M[-923703-(-923708)]=package M[-14524+14560]=coroutine M[-278140+278144]=string M[-719391-(-348520-370898)]=math M[-17720+17722]=table M[439077-((-904506+385002)-(-958568))]=os M[666834+-666797]=io M[-674696+674704]=file M[-362620+362630]={}M[369191-(19852-(-349328))]={}for l,D in M[694809+-694803](_G)do local t={}t[-60203+60206],t[-75892+(-868795-(-944688))]=l,D M[-95276+(917947-822660)][t[-249238-(-249241)]]=t[-561460+(-260163+(1055087-233463))]end M[-57110-(-57122)]=function(l)local D={}D[-54515-((500047-67020)+-487545)]=l D[-118185-(-118186)]={[t((819452+-987280)+188075)]=D[-775822-(-775825)];[t(-833935-(-853824))]=function(l,D,c)local U={}U[-224503+224504],U[846426-846422],U[(-212889+558395)+-345504]=l,D,c if M[-901296+901307][U[190337-190333]]then M[-547135+547161]()else M[-421787-(396243-818041)][U[(642111-732779)-(-90672)]]=U[-391739+391741]end end,[t(864553-845675)]=false,[t(-885625+905652)]=function()M[586727+-586701]()end,[t((-626960-(-404364-(781865+-1329475)))-(-790443))]=t(-596077+615098),[t((((-267066+600656)-462240)+-475611)+623642)]=function()M[-747155-(-747181)]()end,[t(-48779+68462)]=function()M[((-232364+389214)+-799428)-(-642604)]()end,[t(6757-(-13540))]=function()M[-733061+((997299+(96276-(123747+392409)))-(-134855+-20813))]()end;[t((-716566+(-368734+1371064))-265800)]=function()M[-73365-(-73391)]()end,[t(-545158+564311)]=function()M[(592747+-1307002)+(616709-((-386484-(-894522))-(-385483+991093)))]()end,[t(501989+-483045)]=function()M[725888-725862]()end;[t(214298-(-664628-(-859638)))]=function()M[143107+(-888593-((622154+-326491)+-1041175))]()end,[t(964046-944486)]=function()M[((2023385-((491460-178811)-(-558785)))-666220)-485705]()end;[t(984935-965619)]=function()M[946414-946388]()end,[t(-446551-(-466682))]=function()M[684170-684144]()end;[t(120755-101182)]=function()M[(-524314+1294986)+-770646]()end;[t(575881-556275)]=function()M[531442-531416]()end;[t(73545-53216)]=function()M[390901+(-122151+(-482728-(388281-602285)))]()end;[t(691709+-672462)]=function()M[(17508+450441)+-467923]()end;[t(-773957-(-793784))]=function()M[1014401+-1014375]()end,[t(-459697-(-479864))]=function()M[-584066-(-584092)]()end;[t(35905-(-300148-(-315674)))]=function()M[312998-312972]()end}return M[(-83975+720046)+-636040]({},D[-237741+(-357444+595186)])end M[-185351-(-185361)][t(-119836+140017)]=function()for D,c in M[-669019+669025](_G)do local U={}U[-453276-(-453279)],U[-115275-(-115276)]=D,c if M[524977+-524957](U[(831324+-1359880)-(-528557)])==t(114498-94173)then M[(-629560+782889)-153318][U[486688-486685]]=U[-343515-(-343516)]end end _G=M[262249-262237](M[-1007932+(948156+59787)])M[-810331-(-810362)](_G,{[t((345163+(1145034-497818))-(-771075+1744576))]=l[22643+-22637]({t(-152073+171051),t(512822-493605)})})end M[-36329-(-36339)][t((-892675-113682)+1025783)]=function(l)local D={}D[-359996-(-359998)]=l return M[(-891011-(-551915))+(892349-553241)](D[(679537+((271635-(-758228))+-1360883))-348515])end M[(561638+-443689)-(711196+-593257)][t(978236+-957931)]=function(l)local D={}D[641019-641017]=l D[384785+-384784]=function(...)return D[36362+-36360](...)end return M[-105187-(-105218)]({},{[t((-646388+(215389+263964))+187282)]=function(l,c)local U={}U[233740+-233737],U[702182+-702180]=l,c if U[-661454+661456]==t(1042397+-1023016)then return D[-74611-(-74612)]else M[-946653+946679]()end end,[t(1061603-1041714)]=function(l,D,c)M[151557-151531]()end,[t(681821+-662943)]=false;[t(856413-836386)]=function()M[297418-297392]()end;[t(-594756+614993)]=t(23987-4966);[t(221549-202168)]=function()M[263102-263076]()end;[t(721189-701506)]=function()M[-175148-(-445177-(-270003))]()end,[t((-1571275-(-968092))-(-623480))]=function()M[(197649-(-768809-((-400792+74099)-601159)))+((-580264-(-499896))+41788)]()end;[t(25898+-5934)]=function()M[-185635-(-185661)]()end,[t((-451873-314986)-(-786012))]=function()M[-982077-(-982103)]()end})end if error~=M[(541936-958023)-(-416106)]or pairs~=M[-69054+69060]or setmetatable~=M[-238321+238352]or getmetatable~=M[(-406467+(-984674-(-753957)))-(-637185)]or type~=M[-414505+414525]or load~=M[((1169909-(-168368))-381914)-(1353628-397283)]or loadstring~=M[-537965-(-537987)]or pcall~=M[(206639-(-139952))-346553]or xpcall~=M[97280+(-860283+(-226475+989481))]or debug~=M[-313122+313139]or package~=M[(201699+(287485+355481))-(-237535+(-821087+(1564370-(-338912))))]or coroutine~=M[((-88532-((919037+(-293063+(-1321335-(-91509))))+(870667-844538)))-958311)+469156]or string~=M[(-700211-(712651+-1141608))-(-271258)]or math~=M[-277439-(-663446+((-1384505-(408714-(581968-(-212604))))+1384627))]or table~=M[-1030433-(-1030435)]then M[(607957+(813530-856305))+(-9-(789759-224612))]()end if pcall~=M[-113132+113170]or math[t(-100820+119900)]~=M[-513307+513322]then M[647699-(273086+(713369-((480325+-770670)+(1502134-(((633896+332848)+-1904730)+1810993)))))]()end M[(847894-1008314)-(-160460)]={t(977272+(-762547-195430));t(168038-148923);t(783299-763584),t(156425-(((-70093-(-796493-(-968637)))+1153081)-773315))}for l,D in ipairs(M[594399-594359])do local c={}c[564461-564460],c[(-1033699+(-824873+1078093))-(-780482)]=l,D if _G[c[-809040-(-809043)]]~=M[14844-14833][c[(38654-(32086-(-244526+806646)))-568685]]then M[-902605+(-946283+1848914)]()end end M[-260502-((-779354-(-191629))+327181)],M[(96313+-775494)-(-679204)]=pcall(M[693882+-693865][t(496267-477146)])if M[-954183-(-954225)]then if M[-1041930-(-1041953)]then M[-703202-(-703228)]()end end M[187494-187480]=string[t(20076-1096)]M[237859+-237829],M[-919769-(1001889+-1921682)]=pcall(main)for l,D in ipairs(M[193776-193736])do local t={}t[-22775-(-22777)],t[(-325520+402435)+-76912]=l,D if getmetatable(_G[t[947220-947217]])~=getmetatable(M[1044249+-1044238][t[-758816-(-758819)]])then M[609401-609375]()end end if M[1046756-(1858242-811503)]and M[-1013340-(-1013381)]then local l={}l[(71267+-1094639)-(-1023373)]={M[847236+-847230];M[-880111+880124][t(57471-37867)]or M[938715+-938702][t(-304899-(-325170))];M[((627516-778995)-(-297008))-145527][t(-519409+538565)]}for D,c in M[-885547-(-885553)](l[740550+-740549])do local U={}U[-249340-(-249342)],U[((-831560+1758596)+((-133319+(-558599+1608074))+-2838268))+995077]=D,c if U[(-557512+(-615925-(-215234)))+958204]then local l={}l[917905-917904]=M[369013+-368972](U[((-949920+1950398)+-1459810)+((-707563+-259425)+1426321)],t((140004+(-178054-(-888318)))+-830207))if l[-481963-(-481964)]and l[56820+-56819][t(942902+(-1132766-(-208978)))]~=t(-819437+839456)then M[15980-15954]()end end end l[((-711038-837415)-(-615612))+932846]=M[-702410+(538497+163954)](315971+-315970,t((-722246+1005299)+(589131+-852123)))if not l[-976722-(-976727)]then M[813267-(576722+236519)]()end l[645767-645765]=M[-576637-(-576678)](M[((873720+-1526379)-93564)-(40418-(-81267+867914))],t(-179265-(-199326)))l[-164748+164751]=M[990001-989960](function() end,t(258955-238894))if l[(293849-51839)-242008][t((-728232-160181)+907527)]==l[-275865+275868][t(-320380-(-339494))]then M[925259-(-353027+1278260)]()end end M[-574086+574114]=false M[294128-294093]=M[-237072+237110](function()M[(-1022095+1526032)-503909]=true end)and M[(954329-(78504+919734))-(611870+-655807)]M[633406+-633397]=math[t(-642046-(-661126))]M[(-143096+550549)+-407432]=table[t(-961453-(-980993))]M[(629005+-221840)+-407158]=table and table[t(1036840-1017543)]or unpack n=M[-702337-(-136586-565766)](-1034762+(1377070-342305),-194174-(-194239))if n<752610+-752607 or n>750994-750929 then local l={}l[-1036303-(-1036305)]=M[234858-(427552+-192703)]((-231951+-624319)-(-856271),17604067-(-936622+1763473))-RandomStrings[t(503054+-483846)]()^M[84993-84984](((198622+(-181937-(457809+(761374+(-544516+363137)))))+268759)+752361,16306482-(-470734))return RandomStrings[t((580583+171531)+(328264+-1061170))]()/l[20779+(-98998+78221)]end M[-920275+920308]=607406-607406 M[678515+(-50195-628295)]=722913-722913 M[(-637758+(1727676-872373))-217511]={pcall(function()local l={}l[-139179+139180]=M[798334+-798325]((-289530-(-681627))-392096,16476818-(-300398))-RandomStrings[t(((-293767+(123344+718734))-657255)-((-345760+651156)-433548))]()^M[(320729-47744)+-272976](-275273-(-275274),16800000-((-779477-(-284423))+((-52253+-846204)+1416295)))return RandomStrings[t(-42945-(-62153))]()/l[-1001645-(-1001646)]end)}M[(305436-606522)+301125]=M[740005-739971][650143+-650141]M[(703017+-1291704)+(319964-(-268755))]=tonumber((M[843527-843513](tostring(M[-881896-(-881935)]),t(-508462+528497)))())for l=(-149625+-321744)+471370,-470527+470627,-125592-(-125593)do local D={}D[-749138+749143]=l D[-525869-(-525876)]=-42658-(-42758)D[(214659-(-27821))+-242477]=D[(-130802+-268409)-((662647-207708)+-854155)]%(1027130-1026874)D[512445+-512443]=D[-279265+279270]%D[188778-(102766-(-86005))]+(84536-84535)D[987015-987007]=D[527355-527350]%(-294950+294952)==-528834+528834 D[158294+-158293]=M[(834442-(4444-186083))+-1016042]:gsub(t(-668819-(978976+((261186-979785)-949231))),t(522356+-503368)..(tostring(M[(899207+-255039)-(-704878+(-660480+2009517))](-206400-(-206400),630798+((-603365-(-120076))-137509)))..t(-249771-(-268759))))D[-827423-(-827429)]={pcall(function()local l={}if M[-729934+729943](424887+-424886,-192539-(-192541))==876765-876764 or D[615201+-615196]==n then local l={}l[-19510-(-19512)]=tonumber((M[459441+(239556-698983)](tostring(({pcall(function()local D={}D[-894737-(-894739)]=M[-413414+413423](186916+-186915,88250+16688966)-RandomStrings[t(1057402-1038194)]()^M[233535+-233526](255432-255431,-124302+16901518)return RandomStrings[t(408837+(462593-852222))]()/D[974716+(-106220-868494)]end)})[(322626-129536)-193088]),t(-822405-(-842440))))())M[702660-(1684711-(647240-(-334840)))]=M[-898135-(-539211-358953)]and M[-418137+418169]==l[(838434-309069)+-529363]end if D[-636521+636529]then error(D[739740+-739739],70866-70866)end l[151429-151427]={}for t=-405626-(-405627),D[342914-342907],657126-657125 do local c={}c[923584+-923582]=t l[-670284-(-1217769-(-547483))][c[480101-480099]]=M[319592-319583](-987665+987665,-853684+853939)end l[(-823197+218433)+604766][D[-979329+979331]]=D[(((424+237330)+634999)+-168884)+((-953145+1529407)+-1280128)]return M[245726+(-1174889-(-493647+-435523))](l[848819-848817])end)}if D[-280642+280650]then M[374068+-374039]=M[-244340-(37955-282324)]and(D[-728106-(-728112)][-254945-(-471786+216840)]==false and D[412370-(-507943-(-920307))][-280077-(-280079)]==D[-501578-(-501579)])else M[384224-384195]=M[-264227+264256]and D[196106-(565860+-369760)][-694901-(-623970-70932)]M[1020733+-1020700]=(M[-579524-(-579557)]+D[967189-967183][D[162049+-162047]+(-387946+387947)])%(633699+-633443)M[(-165134-(877960+-1898957))-855838]=(M[-558588-(-558613)]+D[-661024+(342082-(-318945))])%(-542521-(-508670-34107))end end M[445709-445680]=M[953380-(-575902+1529253)]and M[313664+-313631]==M[((-849001+1044426)+-671153)+475753]if true then end end do local M={}M[(((-1409398-(252931+-666865))+841628)+63112)-(-90725)]=game:GetService(t(744254+-724416))if not M[610927+(-781824-(-170898))]:FindFirstChild(t(605672+-586670))then local l={}l[-278429-(-278430)]=Instance[t(-652789+(((369757-(-144321))+(984081-977011))-((828556+-1745012)+765566)))](t(-860338+880719))l[-736774-(-736775)][t(469022+-449368)]=t(450914+-431912)l[-806834+(83700-(-723135))][t(417058-396696)]=M[-518857-(-518858)]end if not M[-418420-(-418421)]:FindFirstChild(t((427348+252382)+-659740))then local l={}l[-41835+41836]=Instance[t((-171161+1014220)-(1576404-(725675+26919)))](t(-620596-(-640977)))l[696825+-696824][t(((-595202+-208240)+8295)+814801)]=t(134825-114835)l[-82881+82882][t(-747305-(-767667))]=M[-455720-(-455721)]end end Config={[t(57991-38335)]=t(904104-(1685032-800716));[t((596006-973555)-(-397283))]=1014877+(-21688-993129);[t(488654-(806942+-338166))]=448134-447864,[t(761262-741445)]={[t(((-644871+(339772+403719))-(-882453))+-961372)]=true,[t(-734106+753410)]=true;[t(298114+-278878)]=(-442526+(694259+509221))-(1001807-244453),[t(76453-56938)]=false,[t(650242-631125)]=false,[t(-259767+279645)]=783857-783587},[t(1415-(-18435))]={[t(992121+-972001)]=true,[t(-78950-(-98800))]={t(-481312-(-501608))}};[t(-50299+69817)]={[t(652848+-633157)]=true;[t(-899105+918034)]=true,[t(-1013572-(-1032540))]=false,[t(-1047564+1067527)]=true;[t(-787855-(-807274))]=true},[t((114740-989490)+894788)]={[l[380906+-380900]({t(55463-36404),t(98132+-78435)})]=false}}function CheckKick(M)local l={}l[-975810-(-1809782-(-833971))]=M if l[((291473-920881)+1571795)+(883779+-1826165)]and l[-738817-(-1016479-(-277661))][t(-135041+(-568196+722891))]==t(772418-(448536+303572))then task[t(479982-460116)](-109795-(-45015-64782))pcall(function()if l[-41118-(-41119)]:FindFirstChild(t((-973071+(803793-(373037+-575719)))-13872))and l[15385+-15384][t(575021-555489)]:FindFirstChild(t(-335858-(-355176)))then if l[567964+-567963][t(((((-1021105-(-531599))-(-5155))-(-932414))-335980)-92551)][t(769017-749699)][t(988792+-969758)]==t(((-1302933-(-732287))-(-999814))-410067)then if l[491362-491361]:FindFirstChild(t((440334+-170242)+(-76985+-172851)))and(l[231637-231636][t(337006-316750)]:FindFirstChild(t(-483123-(-502522)))and string[t(362986+((-85891+-4104)+-252826))](l[220672-220671][t(-885095-(-905351))][t(357442-338043)][t(723936+-704161)][t(-775191-(-794225))],t(-781552+801080)))then return end else(game:GetService(t(-403855-(-1133988-(-291021-419798))))):Teleport(game[t(-277363-(-296937))])l[268173-268172]:Destroy()end end end)end end pcall(function()(game:GetService(t(-327005+346453)))[t(-836725-(-856889))][t(-311557-(-330682))][t(681850+-662951)]:Connect(CheckKick)end)l[896467-896465]=game:GetService(t(-115193+135377))l[-396487+396494]=t(89369+-70044)pcall(function()l[-749129-(-749136)]=((game:GetService(t(892498+-872817))):GetProductInfo(game[t(-565597-(317768-902939))]))[t(100076+-80422)]end)l[-182970-(124012-306985)]=os[t(383072+-362801)]()l[-477900+((-587002+-283192)+1348098)]={}function Build(M)local D={}D[-873699-(-873701)]=M print(t((-887236-(-357004))-(-550431)),D[-200847-(794846+-995695)],t(710203+-690384))D[-403587+403590]={[t(785238+-766340)]=l[534491+-534485]({t(-575045+595251);t(669980+(56845+-706620))});[t(-990419+1010704)]={{[t(-9184-(-547584+((-141842-(-725249))+-65311)))]=l[713441+(-812402-(-98968))];[t(624298+-605082)]=game[t(-265045-(90200-374819))]..(t(183974+-164110)..game[t(-369010+(-211258-(-600175)))]),[t(466-(-19413))]=(-512725-(912244-723530))+16343725;[t(-617419-(-636493))]={{[t(-760325+780648)]=t((189954+-32621)-137046);[t(760678-740626)]=D[353044-353042]},{[t(844405+(220869+-1044951))]=t(838979-819754);[t((-895499+((27161-(698545-827997))+-75579))+(1115737-281220))]=t(192264+-172005)..ScriptStorage[t(-156860-(-919831+743508))][t((-1344026-(-433643))+930222)]},{[t(173913-153590)]=t(((558487+(1660+57733))-((1885963-715445)-728861))+((-451083+(-830601+1100337))-(-24163)));[t((-342384+1068797)-706361)]=GetCurrentDateTime()..(t(293278-273414)..(DispTime(os[t((368677+574362)+-922768)]()-l[667685-667682],true)..(l[(1148983-648585)-500392]({t(-570134-(-590105)),t(709830-690342)})..((ScriptStorage[t(116825-(-188739+(-193014+((-277758+(1407015-(-242384+948214)))-(-55380)))))][t(974788+-955857)]or t(-813549-(-833430)))..(t(693413+-674526)..((ScriptStorage[t(-770883+790654)][t(682265-662899)]and DispTime(os[t(-549118-(-569389))]()-ScriptStorage[t(830873-811102)][t(-546700+566066)],true)or t(((402736+244233)-303015)+(333365+(-576428-81010))))..(t(((1168750-456281)+-1664820)-(55077+-1026997))..((ScriptStorage[t(-849622+869393)][t(-666400-(-685947))]or t(-423529+(-16867-(-460277))))..(t(-799134-(-818021))..((ScriptStorage[t(-791476-(-811247))][t(-866397-(-750967+-135765))]and DispTime(os[t((1000778+-321173)-(729468-70134))]()-ScriptStorage[t(222179-(1012437+-810029))][t(-419254+439589)],true)or t((-657157+1382802)-705764))..t(-301216+320164)))))))))))};{[t(-534851+555174)]=t(350352-(1109843-779502)),[t(194570+-174518)]=(function()local M={}M[368052-368050]=t(-868325-(-887942))for l,D in ScriptStorage[t(-56524-(-76438))]do local c={}c[68278-(981332+((-961316+-581637)-(-629896)))],c[-221317+(387292-165974)]=l,D if#ScriptStorage[t(671627-651713)]>121221+-121201 then break end M[-253263-(-253265)]=M[-890200-(-890202)]..((c[-264545-(-264546)]or t(((-1598071-(-752162))+323212)-(-542396)))..t((607949+-1604370)-(-1016074)))end return M[702597+(873720+(-1289045-287270))]~=t((307095+(-643417-(-33862)))+322077)and M[889532+-889530]or t((430173+-295700)+-114346)end)()}};[t(-636735-(-655709))]={[t(-114970-(170513-305806))]=tostring(LocalPlayer)}}},[t(213626-193601)]={}}for M,l in D[-961750-(-961753)][t(238705+-218420)][-786288-(-786289)][t(1009246-990172)]do local c={}c[-908620+(37420+871202)],c[845860+-845857]=M,l c[-424176-(-424179)][t(252602+-232550)]=t(704244-685249)..(c[-768393-(-768396)][t(476325-456273)]..t(-1016090+1035085))end return D[711770-711767]end function Report(M)local D={}D[-861474-(-861475)]=M if true then local M={}if l[(-161075-885416)-(-1046495)][D[-317168-(-317169)]]then return end l[-521387+521391][D[-539524+539525]]=true M[954363-(1923979-969619)]=(game:GetService(t(-173314-(-193507)))):JSONEncode(Build(D[196740-196739]))M[-364820-(589980+-954801)]={313131+-313131,530832+(-263099-267733);-741346-(-741346),802496-802496}request({[t(-391561-(-411021))]=l[663395-663389]({t(-540080+559362),t(242215+-222678);t(557540+-537277),t(-869153-(-888264));t(910541-890276),t(-129479+148398),t((-1786592-(-785175))+1021539)}),[t(-909587+928594)]=t(319470-299778);[t((1225984-707455)+-499410)]={[t(153585+-133825)]=t((((22623+-239045)+432172)+-584290)+387706)};[t(1047592-1028717)]=M[372708+-372705]})end end function mmb()local M={}M[(171277+532431)-(-1026130+1729775)]={[t(365255+-345299)]=nil;[t(-1019561-(-1039212))]={},[t(809475+-789799)]=true}M[-315903+315946]=function(l)local D={}D[-308223-(-308226)]=l D[(13796+(33575+559995))+-607362]=tostring(math[t(458524+-438828)](tonumber(D[((-509210+(-1435060-(-434848)))-(-1784485-(-868874)))-(-900186+(-471831+778203))])or(-1649389-(-642932))+1006457))while true do D[424926+-424922],D[-723356+723357]=string[t((217206+-82786)-((-659032-(-292610))-(-766873-(-285004))))](D[((330687-807651)-(-41598+386025))+821395],t(415693+-396679),t(981876-962597))if D[559776-559775]==-491043-(-491043)then break end end return D[-23409+23413]end M[-1021163+1021213]=function(l,D) end M[-771493-(-1597554-(-825998))][t(275128-254862)]=function(D)local c={}c[(-579762-(-651419))+-71639]=D pcall(function()local M={}M[-817751+817753]={}if gethui then pcall(function()table[t(((-1199364-10277)-(-340459))+(-116496-(-1004834)))](M[-722523+722525],gethui())end)end pcall(function()if game:GetService(t(784300-764852))then table[t((-946695+831779)+134072)](M[-70952-(-70954)],game:GetService(t(-119201-(555436-694085))))end end)pcall(function()if game[t(-723361-(-1750961-(-1007640)))][t(-1018682-(-1037700))]and game[t(-173564-(-193524))][t(58970+-39952)]:FindFirstChild(t(14037+6216))then table[t(((294683+-1411025)-(-785522))+349976)](M[842875-(237984+604889)],game[t(-12229-(-32189))][t((721829+-560501)+-142310)][t(491375+-471122)])end end)for M,l in ipairs(M[-188435-(-188437)])do local D={}D[926761+-926758],D[393685-393683]=M,l for M,l in ipairs(D[760385+(383885+-1144268)]:GetChildren())do local D={}D[-403792-(-403793)],D[385895+-385892]=M,l if D[-849044-(-849047)][t(229510-209856)]==t(580587+-561520)or D[-652584+652587][t((657894+(-282525-372246))-(-16531))]==t(-1007702+1026885)or D[930989-930986][t((-396+-828471)+848521)]==t(-851108-(-871486))then pcall(function()D[(75074+95136)+(349287+-519494)]:Destroy()end)end end end end)c[-333557+333569]=gethui and gethui()or(game:GetService(t(446102-(-88887-(-515541))))):FindFirstChild(t(-305851-(-325201)))and game:GetService(t(-881136-(-128612-771972)))or game[t((137705-(-327556))-(-365080+810381))][t(139839-120821)]:WaitForChild(t(-516364+536617))c[465595+-465574]=Instance[t((-1605362-(294003-853980))+1064634)](t(514017+-494528))c[954591+-954570][t((-1342665-(-560937))-(-1174200-((-593033-329893)+550108)))]=t((-519386+(-1097300-(-853528)))-(-782225))c[-682575+682596][t(747630+-727268)]=c[988560-988548]c[91285-91264][t(871521-851400)]=true c[809042+-809021][t(-527085+546482)]=false c[-416320+416341][t((1606510-814629)+-771557)]=(450213-20740)-429373 c[-665786+665804][t(-14767-(-34723))]=c[-316710+(855620+-538889)]if Config and(Config[t(34977+(((1033868+-433339)-277238)+-338451))]and Config[t(-468813+488630)][t(76199+-57082)])then pcall(function()(game:GetService(t(815403-796147)))[t(-63252+83324)]=-math[t(-196772+215801)]end)end c[903975+-903961]=Instance[t(605745+(-579030-7466))](t(-261308-(-739487-(-458539))))c[-863432+863446][t(791696-772042)]=t(-906413+(1485341-((1135725-541860)-34577)))c[-73608-(-73622)][t(-113194-(-132604))]=Vector2[t(-415700+434949)](852797+-852796.5,-802148-(-802148))c[(878510-694305)-184191][t(2663-(-17287))]=UDim2[t(-392480+(((511136+-1385359)-(((-611052-33761)+303372)+-646547))-(-297964)))](465720+-465719.5,-66080-((-629905-(-125077))-(-438748)),(452149+3401)+(-1013527-(-557977)),659040-659024)c[-946252-(-946266)][t(334510+-315137)]=UDim2[t(-1945-(-21194))](452524-452524,451393-(421871-(-28972)),(-349423+451012)-(-403991+(563381+-57801)),-44137-((-502368+1438854)+-980808))c[-632243+((-586267+1940864)-722340)][t(37192+-17544)]=Color3[t(593199-572851)](750399-750387,202016-202000,-394815+394843)c[(287069+(219662+-412353))-94364][l[-834273+834279]({t(-522527-(-541432)),t(-874644+(840202+(965477-911453)))})]=.08 c[-261952+261966][t((509640-1024790)+534430)]=-759014-(-759014)c[453653-453639][t((-272323-533751)+825754)]=false c[-188181-(-188195)][t(-903703+924065)]=c[422809+-422788]c[249615-249597][t((-1031926+1183560)+-131983)][t(-567531-(348314-935651))]=c[(-722960+1359447)-636473]c[473190-473179]=Instance[t(526074+(679378+-1186203))](t(-433729+453959),c[(((745228-546512)+403333)+-66669)-(1179080-643714)])c[717997+(718019+-1436005)][t(1037111+-1017191)]=UDim[t(792800+-773551)](1041229+-1041229,(881214-93329)-787871)c[((1421983-668382)+-667759)-85834]=Instance[t(-296141-(-315390))](t(145213-126103),c[188721-188707])c[(436011-397129)-38874][t(125394+-105223)]=Color3[t(-411623-(-431971))](-219620+(661543-(((1609513-(885290+-234870))-487349)+-29821)),-317589+(997201-679412),678755-678500)c[542623+(-1016017-(-473402))][t(-120208+140001)]=1.6 c[296521-296513][t(589906+(-609639+39086))]=317785.25-(327562-9777)c[(-171145+1063049)-891881]=Instance[t(-512141+531390)](t(((((801017+-584214)-121697)+292555)+-515257)-(-147685)),c[-37303-((589584-(-327284))+-954185)])c[314944+-314921][t((-389151-(-10954))+398368)]=ColorSequence[t(944059-924810)]({ColorSequenceKeypoint[t(190530+-171281)](-809818+809818,Color3[t(-988822-(-173119-836051))](-362354+(-41187-(-403561)),-595401-(-595429),(-528003-(-658616))+-130565));ColorSequenceKeypoint[t((-29025-508014)-(-819777-(-263489)))](251321+-251320.5,Color3[t((-2553+1049807)-((1595522-639115)-(-70499)))](536083+-536071,660615+(-1589388-(-928789)),(41560-(-848514))-(-419658+1309704)));ColorSequenceKeypoint[t(246163+-226914)](-1009490+1009491,Color3[t((297254+(-234321+-377624))+335039)](452291-452281,-422244+422258,(1706684-(928814+-46697))+-824543))})c[153792+-153769][t(-50844+70173)]=-645126+645261 c[-291910+291912]=Instance[t(-888637-(-907886))](t(214604-194964))c[((-503368-(-117311))+979118)+-593059][t((-1011512-(-1140017-(-173182)))-(-64331))]=t(-258170+278380)c[-167384+167386][t(77109+(653403+-711139))]=UDim2[t(-673437+692686)](-355723+355724,359675-359695,709742-709742,406711+-406677)c[(558188+-516086)-42100][t(653429+-633479)]=UDim2[t(617656+(173175+-771582))](333001+-333001,40609+-40599,(822187+-149010)-(350746+322431),994690+-994684)c[(-116414+1014776)+-898360][l[-394108+394114]({t(-968693-(-987598)),t(1003783+-984201)})]=-978639-(-978640)c[455023+-455021][t(376021+-355659)]=c[-204394+204408]c[98030+((29300+-903047)-(-775732))]=Instance[t(387809-368560)](t(782516+-762518),c[287050-287048])c[-995257+995272][t(-490542-(-510492))]=UDim2[t(479043+-459794)](-401526-(-153270+-248256),-286773-(-286777),612250-(166541+445709),(1974849-(919469+10265))-1045115)c[62775-62760][t(-860647-(-880020))]=UDim2[t(-203406-(968639+-1191294))](205059-205059,191198-190938,115947-(729167-613220),(-1035515+1338097)-(-60043-(-362607)))c[313240+-313225][l[1000608+-1000602]({t(855687+-836782);t(911486-(1886077-994173))})]=609959-609958 c[-132128-(545253-677396)][t(-446310+465344)]=t(442522+-423337)c[-567919-(-186571+(-445432+(-204207-(-268276))))][t((((834015+-1740710)+1832145)+-208520)+-697145)]=-606840+(619783+(-742973-(-730045)))c[668215-668200][t((-13215+(93310-(-115714)))+-176860)]=Enum[t(679632-660683)][t(((954108-(-930824+1296506))+327417)-(1830154-((1876198-194512)-748493)))]c[29286+(208157+-237428)][t(-713866+((971534-(-393193))-631486))]=Color3[t(420165-399817)](-961304-(-961304),(371685+-224601)-146854,-1037757+1038012)c[614633-(707475-92857)][t(304826-285639)]=Enum[t(199981-180794)][t((304589-550258)+265761)]c[281879+-281855]=Instance[t((((992515-711024)+-644121)-(-225037))+156842)](t(-3607-(-23605)),c[792448+-792446])c[-348664-(-348688)][t((-394536-(-430392))+-15906)]=UDim2[t(-885953+905202)]((((1041272-(885675-429920))+(-1270353-(-812923)))-(-903270))-(543963+487394),611573+-611569,-259308-(-259308),-720508+720526)c[231456-231432][t(384019-(385318+(-944656-(-923984))))]=UDim2[t((-378219+(-638386-(-91187)))-(-944667))](-155222+(-590828+746050),-223306-(-223566),(-128930-(-778190))-649260,599299+-599285)c[-954759+954783][l[-630719+((395837-(-998817))-763929)]({t(-607916+626821);t(967357+-947775)})]=14173-14172 c[-91600+91624][t(167696+-148662)]=l[-898605+898611]({t(-399590+419964),t(((386252-135310)-502571)-(-271428))})c[-808295+808319][t(148168-128383)]=221082+-221073 c[-639765-(-639789)][t((429980+550303)-961334)]=Enum[t(-635359+654308)][t(865689+-845435)]c[704993-704969][t(-658876-(-678251))]=Color3[t((649083+-510217)-118518)]((433579+-91038)+-342441,-530418+530578,338760+-338530)c[-263070-(-263094)][t((100508+-436434)+355113)]=Enum[t(850295+-831108)][t(1036656+-1016564)]c[406098+-406093]=Instance[t(510485-491236)](t(-330530+350170),c[(309668-(-539673))+(-540338-309001)])c[876929-(330933-(-545991))][t(7817+11556)]=UDim2[t(-385009-(-404258))]((-192806-(-4998))+187808,-272017-(176657-448894),-514024-(-48291-465733),-501039+501065)c[-191688+191693][t(-452351-(-1089561-(-617260)))]=UDim2[t(-852923-(-872172))](-39265-(-39266),695227+-695451,-106411+106411,-319310+319314)c[5716+-5711][l[185931+-185925]({t(-458110-(-477015));t((-339282+-396732)-(-755596))})]=333246-333245 c[910518+(543983+-1454482)]=Instance[t(-865702+884951)](t(405626+-386551),c[134953+-134948])c[1040501+-1040482][t(-867516-(-886983))]=Enum[t(415795+-396328)][t(-541678-(-560657))]c[518078-518059][t(-528033+547613)]=Enum[t(-892199-(-911779))][t(-417923+437989)]c[535787+-535768][t((-1339591-(-319298))+1039601)]=Enum[t(((481134-(-1083562-(9626-(-185483-(-1151447-(-875347))))))-910063)-554334)][t(330780+-310711)]c[-681661-(-422294+-259386)][t(-938838+958200)]=UDim[t(801287+-782038)](-234329+234329,-895896-(-895902))c[909235+(((283325+-114151)-647171)-431237)]=Instance[t(139736+-120487)](t(377208-(-270121+627331)),c[(-1097817-(-695463))-(((-1107040-(-814617))-(-979585-(-850631)))-((-816699+2064221)-1008632))])c[224028+-224027][t(79397-60024)]=UDim2[t(-175418+(-584763+(683415+96015)))](729710+-729710,1018973-1018863,(1722084-1045943)-676141,-82020+(216021-133979))c[-423622+423623][t(-576147+595795)]=Color3[t(-706568+726916)](866502+-866502,((-143327-801005)+1748597)-804085,81273+((492583+(-870704+((-331098+918561)+789828)))+(605877+-1686200)))c[243138+-243137][l[((-426939-503343)-(-776894))-((33293+-789760)+603073)]({t(291860+-272955),t(((195450-641061)-333799)-(-798992))})]=-470185.25-(307573+-777759)c[-785092-(-785093)][t(-895955-(-914989))]=t(-148055+167569)c[937586+-937585][t(-495101+514476)]=Color3[t(-589949+((-980976+1466583)+124690))]((-1036475+(2385714-351309))-997930,670272+-670017,161703+-161533)c[696475+-696474][t(187050-168101)]=Enum[t(291744-272795)][t((-306970+-587722)+913574)]c[-924621-(-241179+(-126338-557105))][t(712308+-692523)]=-353222-(-353231);(Instance[t(-447935+467184)](t((-383810-(-639017))+-234977),c[-725981+725982]))[t(783800+(-640752-123128))]=UDim[t(-67002-(-86251))](-943661+943661,468853+((479644-1013541)-(-65050)))c[758644+-758626][t(-285475+305126)][t(427917-(-271973+680447))]=c[548849+-548848]c[795901-795892]=Instance[t(362078-342829)](t(-422686-(-442684)),c[-934726-(-934731)])c[932241-932232][t(-564302-(-583675))]=UDim2[t(239655-220406)](761884+(-881971-(-120087)),-427226-(-427291),-845275-(-845275),(-501279+431672)+69629)c[960861-960852][t(-59973+79621)]=Color3[t(670311-649963)](874036-(15966-(-858045)),65954-65919,-1038367-(-1038422))c[-280-(-289)][l[-973877+973883]({t(((107548+(-305735+-492812))-(-259416))-((253346+-55217)-648617));t((443118+-1363770)+(440666+499568))})]=-503827+503827.5 c[56848+-56839][t(((251876+-412774)-(-260750))+-80818)]=t((-597184-(-260809))+356759)c[-170752+170761][t((421022-(-181618+660654))-(-77389))]=Color3[t(-251834+272182)](-594156+594336,(41266-(-599752))+-640808,(-1332165-(-291694))+1040716)c[-344215-(-344224)][t((-1035226+751828)-(254896-557243))]=Enum[t(-240654+259603)][t(571335-551081)]c[(706399-431954)+-274436][t(456479+-436694)]=-422654+422663;(Instance[t(-238526-(-257775))](t(-333326-(-353556)),c[629438-629429]))[t(270832+-250912)]=UDim[t((-655895-(-367299))+307845)](404450+-404450,-164339-(-164345))c[-448210-(-448228)][t(-522641-(-542292))][t(971791-952057)]=c[683104+-683095]c[471892+-471870]=Instance[t(67073+-47824)](t((-530886-(-1990628-(-968599)))+-471503),c[-721033-(704279+-1425326)])c[-773031+773053][t(-889266-(-908920))]=t(648427+-628573)c[(-434147-(-648993))+(297617+-512441)][t(685150-665777)]=UDim2[t(-466831+486080)](22459-22458,14951+-14971,300860-300860,519174-(237860+281286))c[-674447-(-674469)][t(-767340+787290)]=UDim2[t(-35315-(-54564))](903041-903041,482241+-482231,636998-(1244538-(((340439-751323)+1145229)-126805)),(409952-(50612-(-993982)))+634686)c[455006-454984][t(((-843856+713007)-((99652-(-824174+1614520))+123078))-417119)]=Color3[t(96913-76565)](-755048-(-559132-195924),107386+(-629095-(-521721)),290455-(-380293+(91024-(-579702))))c[-38015+(-79788-(-117825))][l[705821+-705815]({t(((93089+-81931)-(845652-(-306238-(-693945))))-(359779+-825471)),t((925203+-1430198)-(-524577))})]=.4;(Instance[t(150108-(-517873+648732))](t(1024397-1004167),c[-626118+626140]))[t(268569+-248649)]=UDim[t((644348-(-328968))-954067)](-687932-(((947416+-1450776)+952990)+-1137562),586855-586847)c[766255-((290344+(274977+(-498503+-751133)))+(910419-(-540131)))]=Instance[t(-639775+659024)](t(-305944+325578),c[(-649097-(-552814-(-729572)))-(-825877)])c[-579334+579354][t(45858-26391)]=Enum[t(-103014+122481)][t(-1001733-(-1020712))]c[(256816-(-568605))-(998932+(-215893-(-42362)))][t(-789797-(-808673))]=UDim2[t(-610198-(-629447))](341289+-341288.75,1014586-1014592,295266+-295265,985201+-985205)c[-690817+690837][t(151943-132989)]=UDim2[t((1012971-809828)-183894)]((1741466-775240)+-966226,-973391-(-973397),-619657+619657,(123611-946635)-(-823024))c[705973-705953][t(-471617+491197)]=Enum[t(883270-863690)][t(((-294720+((-342759+533900)-(-42975)))-(-898185))+(-694220+-123292))]c[(-707791+-5718)-(-1613843-(-900314))][t(553263-533955)]=Enum[t(-281954+301262)][t(-798585-(-1455393-(-636739)))]c[732303+-732300]=function(M,D)local U={}U[-550149-(-550153)],U[-321065+321067]=M,D U[845569+-845564]=Instance[t(14795-(294388+-298842))](t(174498+(959989+-1114847)),c[758047-(1374503-616478)])U[43473-(169774-126306)][l[-194420-(-194426)]({t(486104+-467199),t(-384778-(-404360))})]=109222-109221 U[(1321+105445)-106763]=Instance[t(199968+-180719)](t(546674+-526676),U[(544437+-5730)+(-311217-(334222-106737))])U[(118516+926286)+-1044799][t(-300461-(-910627+590793))]=UDim2[t(-188360-(-207609))](9858-(569854-559997),(542006+-885443)-(-343437),-997949-(-997950),469989-(-518172+(1515375-(-829054+1356268))))U[724461+(-287062-437396)][l[-329478-(-329484)]({t(1015216+-996311);t(1002690+-983108)})]=-502374-(-502375)U[-143394+143397][t(336031-(589494-272412))]=Enum[t((471004-323606)+-128449)][t(-10427-(-29309))]U[1037536+-1037533][t(-506549-(-362157+(-470760-(-306583))))]=(1401346-941727)+-459608 U[512275-512272][t(734524+(-453721+-261428))]=U[-116497-(-116499)]U[-196832+196835][t(-934749-((480245+(-247586-486472))-((-228239+-53866)+982228)))]=Enum[t(601897+(453087-1035797))][t(201834-181765)]return U[232180+-232177]end c[((-175050-(-658114))+360818)-843864][t(280569+(-645668-(-384750)))][t(844885-825648)]=c[-226815+226818](t(306503+-286664),Color3[t(73113-52765)](374450-374450,590352-(898058+-307946),102160+-101905))c[((1203722-(-91698+844741))-((520905-(-1068119-(-335756)))-264562))+538045][t(929132-909481)][t(41947+-22211)]=c[809342+-809339](t((-1692092-(-996517))+715492),Color3[t(-508762-(-529110))](-262541+262641,927950-927695,625708+-625568))c[393887-393869][t(-110327-(-918948-(-788970)))][t(((-786593+291731)+384788)-(-129738))]=c[885163+-885160](t(-2681-(-22252)),Color3[t(629513-609165)](280105-279895,-1004169-(-1004299),715076-714821))c[-63030+63048][t((318882+390001)+(-1488096-(-798864)))][t(-30950+(186937+-136157))]=c[-426705-(-426708)](t(-968954+987894),Color3[t(-426066-(-446414))](-767385+767640,-431903+432113,(-95022+(283439-70256))-118061))c[36383+-36366]=Instance[t(886400-867151)](t((((-503360-(-854093))+-534369)+1139228)-935952),c[690714+-690700])c[348846-((259193-50814)-(-140450))][t(662578-642924)]=t(816101+-796333)c[-362114+((206850-(-756691))-601410)][t(-371489+391439)]=UDim2[t(((643275+-1772428)-(-694759))+453643)](-375388+375388,-801678+801688,716228-716228,-484480-(-676537-((-192484+-251933)-(-252438))))c[92162-92145][t((367071+159362)+-507060)]=UDim2[t(533512-514263)](-832288-(-392932+-439357),314721+(237992-552733),694785-694785,169630-(511073-(18727+322796)))c[((872164-618067)+-582167)-(-328087)][l[851603-851597]({t(897980+-879075),t(883717-864135)})]=181967+-181966 c[-492140-(-492150)]=Instance[t(-213877-(-233126))](t(-471516-(-490591)),c[-584431-(-584448)])c[126434-126424][t(708653-689396)]=Enum[t((385171+533647)-899561)][t(514620-495582)]c[(((-462773+-177391)+-932556)-(-1025225))+547505][t(-960231+979593)]=UDim[t(697023-677774)](246482+-246482,772287-772283)c[-140147-(-140160)]=function(D,U,X)local v={}v[801759-((-978388+1953223)+-173081)],v[827272+-827270],v[542483-542477]=D,U,X v[(608142-679560)+71419]=Instance[t(812407-793158)](t((-1147415-(-437196))-(-729859)),c[((-88190+810763)-196918)-525638])v[(-348256-528634)+876891][t(54648+-35275)]=UDim2[t(-826456-(-845705))](-307177+(421907+-114729),762143-762143,813338-813338,-999212+(1671254-672019))v[802756-((-291564-(-1022139))-(-72180))][t(428449-408801)]=Color3[t(234231-213883)](938576+(-1486178-(-547617)),665687-(-253415-(-919082)),-474008+(-964242+(1388194-(-50090))))v[-178041-(-160127+-17915)][l[934896+-934890]({t(-24080+42985);t(885862-(-164804+1031084))})]=.45 v[-484975+(1328055-843079)][t(-73162+((-174140-(-996469))+-730129))]=v[549427-549421];(Instance[t(-522918+((-139106-(-946219-(-245147)))-19799))](t(-309245+329475),v[586467+(-296423+-290043)]))[t(-974961+994881)]=UDim[t(973690-954441)](469853-(-71130-(-540983)),-836130+836136)v[-265745-(-1251248-(-985500))]=Instance[t(-439861-(-459110))](t(-663399-(-683397)),v[(-1086305-(-654721))-(-431585)])v[-345100-(-345103)][t(((615700+322187)+(-659505-446204))-(-187195))]=UDim2[t(-358273+377522)](-178423-(-178424),-1022107+1022095,172596+-172595,823666+-823666)v[933558-(1016947-83392)][t(983620-(241039+722631))]=UDim2[t(600267+((-1546080-(-297160))-(-667902)))](-13018-(-13018),659045+(-926769-(-267732)),-234041-(-234041),530153+-530153)v[(906700+(-1781215-(-631877)))+(-212583+455224)][l[(50070-417247)+367183]({t(-329432-(-348337));t(-425607+445189)})]=-93492-(-93493)v[(107729+-161110)+53384][t(414847+-395898)]=Enum[t(-986782+(809168-(-521274+(900854+-576143))))][t(((833642-(1045408-293786))-(-674534+1236562))+(442158+(-462630+520734)))]v[192614+-192611][t(162542-142757)]=(758854+-361995)-396848 v[-551689+551692][t(-452762+(831327+(161767+-520957)))]=v[-415339-(-415341)]v[753593+-753590][t(666982-(18769+629026))]=Enum[t(-361004+380191)][t(551292-531200)]return v[554182-(1029959+-475780)]end c[-120583-(-120601)][t(226171+-206520)][t(946462+-927107)]=c[785313+-785300](t((-372704+-540999)-(-933058)),Color3[t(-899304-(-125665+-793987))](-290167-(-290167),-557401+557631,410150+-409895),82893+-82892)c[378187+-378169][t((-672424+1238949)+(91196+-638070))][t((-208217+1075370)+-846853)]=c[637782+-637769](t(32626+-12326),Color3[t((-713323+1196097)+-462426)](((838170-(-526238))-842217)+-522031,-301190+301410,(734555+-97282)-637018),(-744740+((-54636+-737687)+(13874-(-783739))))+739452)c[715520+(-1619207-(-31150-872555))][t(965585-945934)][t(576196+-555819)]=c[-330538+(-971640+((946376+(408139+-2383057))+(747483+1583250)))](t(342941-322564),Color3[t(-661632-(-681980))](574571+-574571,-262107-(163099+(115542-541003)),505269-505099),-433148+(-161539-(-594690)))c[-434752-(-198010-((971483+(-2536340-(-773004)))+1028601))]=Instance[t(-157329-(-176578))](t(813800+(644689+-1438491)),c[-441580+441594])c[-420945+420951][t(324252+-304879)]=UDim2[t(341211+-321962)](289586-289585,315788-315808,(169961+-811400)+641439,((763955-616560)-536676)+389297)c[(1062367-420343)-642018][t(-89978-(-109928))]=UDim2[t(-913945+933194)](125520+-125520,(-30565+-470726)+501301,-297431+297432,371142+(-1103635-(-974384+241911)))c[-695100+695106][l[-493701+(1009682+-515975)]({t(-379477-((-1329072-(-537423))-(-393267))),t(328418-308836)})]=974577-974576 c[-980850-(-980856)][t(416561-397612)]=Enum[t(85063+-66114)][t(-133798-(-153453))]c[545553+-545547][t(-843476-(-1907560-(-1044299)))]=-975710+975719 c[910844-910838][t(788085+-768710)]=Color3[t((679406-862184)-((-803542+559150)-(-41266)))](-497862+497982,600825+-600675,-504001-(-103932+-400259))c[-167025-(-167031)][t(-499210+518244)]=l[663274+-663268]({t(113119+-93675);t(-549677-(-569787))})c[-596855-(-596861)][t(63288+-44101)]=Enum[t(549616+(-1184140-(-653711)))][t(160536-140467)]c[-776794-(-776812)][t(-525481-(-545132))][t((1172988-396193)-756771)]=c[48230-48224]M[-519981-(-520031)](c[-468158+468172],c[-287314-(-287316)])M[-685299-(-685349)](c[826097+(970443+(-517731+(-871673+((-961569+731599)+-177152))))],c[(137424-347745)+210335])c[885119+-885112]=os[t(536938-517334)]()c[-127131+(493679-366532)]=162061-162061;(game:GetService(t(687098-667199)))[t(128756+-109348)]:Connect(function()local M={}c[(-441381+750550)-309153]=c[-363646-(-363662)]+(172019+-172018)M[580417-580416]=os[t(-1020939+1040543)]()if M[-765198-(370402+-1135601)]-c[92164-92157]>=((307928-435631)+683577)+-555873.5 then local l={}l[(-265357+-81936)-(-347295)]=math[t(-287704+307400)](c[(1704623-675654)+-1028953]/(M[521509+-521508]-c[(222863+(685036+(552964-522169)))-(1504129-(865138-299696))]))if c[405484-405466][t(622766+-603115)][t(-60831-((178764-975236)-(-715907)))]then c[-514330+514348][t(-465291+484942)][t((232644+272948)-485858)][t(389898-370864)]=tostring(l[458664-458662])..t(-130529-(-150162))end c[-1008331+1008347]=825342-825342 c[1045988+-1045981]=M[-663863-(-663864)]end end)task[t((-674443+-106021)+799439)](function()while task[t(668443-((269785+-572161)+950953))](.2)do pcall(function()if c[-784679+784697][t(-607027+626983)]and c[(423630+-1076260)-(-652648)][t(957804+-937848)][t(82187-62066)]then c[-802835+((50852+(29189-709463))+(729553-(-702722)))]:Update()end end)end end)end M[(356555+(-262554+-523292))-(-429354)][t((-241573+931624)-670427)]=function(D)local c={}c[(-465726+317082)+148645]=D if not c[531119+-531118][t(-815874+835830)]then return end pcall(function()local D={}D[188414-188405]=ScriptStorage and(ScriptStorage[t(-1011052-(-1030515))]and ScriptStorage[t(644370-624907)][t(-459951+(-25550+505340))])or game[t((774316+(-2290202-(-623316)))-(-912530))][t((592393-517668)+-55707)]:FindFirstChild(t(637311+((591847+-444845)-765319)))and(game[t(-984224+1004184)][t(649796+-630778)][t(-233830+252824)]:FindFirstChild(t(169713+-149874))and game[t((-1254315-(-990379))+283896)][t(-225771-(-225130-19659))][t((-928804-(-791121))-(-156677))][t(-37723+57562)][t(-248667+267898)])or(-786078-211234)-(-997313)D[12225-12214]=ScriptStorage and(ScriptStorage[t(1044651-1025188)]and ScriptStorage[t((653506-(-174968))-809011)][t(-836914-(-856831))])or game[t(-124181+144141)][t((-35185-988806)+((983195-401567)-(-461381)))]:FindFirstChild(t(336819-317825))and(game[t(220148+-200188)][t(733327-714309)][t(((-691399+1174497)-(-132403+1134149))-(-1262577-(-724935)))]:FindFirstChild(t(-154479-(-174396)))and game[t(1738+18222)][t((608914+-446443)-(-147783+291236))][t((-482654+-104)+501752)][t(((-1457425-(-719088))+1579487)+-821233)][t((-600385-(-274157))+345459)])or 199075-(1084372-(-767014+1652311))D[-138993+(1044836-905837)]=ScriptStorage and(ScriptStorage[t(828358-808895)]and ScriptStorage[t(-788424+(-952348+1760235))][t(-925460+945443)])or game[t(-604113-(-624073))][t(((-231844+-963084)-(-1039887-(-682780)))-(-856839))]:FindFirstChild(t((((741706-(887563-706312))-258203)+528241)+-811499))and(game[t(-531444+(4381+547023))][t((-622054-(-65276))+575796)][t(-35421+54415)]:FindFirstChild(t(-430692-((79044+-489838)+-39881)))and game[t(-253800-(-273760))][t(-60372-(-79390))][t(665048-646054)][t(-81605-(-101588))][t(-299851-(-319082))])or 53804-53804 if c[318218+-318217][t((-258162+156392)-(-121421))][t(-302128-(-321365))]then c[-695457+695458][t(-492318-(-511969))][t(-932437+951674)][t(-16704+35738)]=t(452623-432618)..(M[-824841+824884](D[((-1428353-(-876429))+(1083103-597785))+66615])..t(-3959-(-23457)))end if c[942338+-942337][t(-164234-(-183885))][t(-98416-(-118152))]then c[(1023222+-1497998)+(683317-208540)][t(-491422-(-511073))][t((-1330454-(-708836))-(-641354))][t(187154-168120)]=t(1042011+-1022518)..M[-712896+712939](D[889075-889064])end if c[493549-493548][t(-284632+304283)][t((-1048185+1358677)-290828)]then c[651370-(-899363+1550732)][t(-469548-(-489199))][t((-12716+-800235)-(-832615))][t(-987091+1006125)]=t(-90963+(-345197+455402))..(M[(266907+-158634)-108230](D[443820-443814])..t(376020+-356798))end if c[-79598-(-79599)][t(451659-432008)][t(-33183+53013)]then local M={}M[25035-25034]=game[t(-819179-(-839139))][t(672009-((629944-(-154265))-131218))][t(-221119+240160)]M[-846655-(-846658)]=M[239047+-239046]and M[339265+-339264]:FindFirstChildOfClass(t(((743473+278278)+-1441932)+((((-821535+1784570)-954242)+((1553178-(-497968))-823002))-797181)))if M[((431803-976214)+338484)+205930]then local l={}l[((-1757829-(-667531-274662))+(2070875-738272))-516966]=M[-731579-(-731582)]:FindFirstChild(t(613145+-593306))and M[788636+-788633][t(535019-515180)][t((-887961+1287147)-379955)]or ScriptStorage and(ScriptStorage[t(-231106-(-251083))]and ScriptStorage[t(((-853490+2084206)-357370)-853369)][M[(202498-350029)+147534][t((-936128+1779720)+-823938)]])or 885293-885293 c[173678-173677][t(-583549+603200)][t(-361428-(-381258))][t(-292917-(-311951))]=t(-764666+784271)..(M[980869+-980866][t(-466959+486613)]..(t(-380648-(-400806))..(l[126780-126779]..t(235019-215818))))elseif ScriptStorage and(ScriptStorage[t(-480617+500006)]and ScriptStorage[t(733656-714267)][t(-506108-(-525762))])then local M={}M[504830-504829]=ScriptStorage[t(613086+-593109)]and ScriptStorage[t(354515-(-1006607+1341145))][ScriptStorage[t((-588871-(((393159-(-555447))+123510)-904976))+775400)][t(369260+-349606)]]or(999114+-1089879)+90765 c[-135678-(-135679)][t((-682956-(-842833))-140226)][t(-21192-(-41022))][t(693039-674005)]=t(((727623+-499830)+(831003+-1432464))+393273)..(ScriptStorage[t(-248523-(-267912))][t(-860972-(-880626))]..(t((382915-111409)-(865796+-614448))..(M[-361326-(-361327)]..t(295503-276302))))else c[(703537+-869122)+165586][t(133300-113649)][t(787741-767911)][t(1016040+(-865132+(-1092755-(-960881))))]=t(((1038153+-1001920)-(-1017712))-1034205)end end D[572900-572899]=ScriptStorage and(ScriptStorage[t(284168-264397)]and ScriptStorage[t((951457+-1200346)+268660)][t(-298132+317063)])if not D[-559187-(-559188)]or D[621301+-621300]==t(-817988-(-863939+26070))or D[-1000305+1000306]==t((-104274-633005)+756896)then if ScriptStorage and(ScriptStorage[t(119458-99995)]and ScriptStorage[t(977499+-958036)][t((-174405-(-906675))+-712431)])then if ScriptStorage[t(855185-835722)][t(123836+-103997)]>=-256100-(-112279-145846)and(ScriptStorage[t(802358+(-1659935-(-877196)))][t(-521077-(-540634))]or{[t(-372336-(-391281))]=271903+-271903})[t(259182-((1526895-1042093)+-244565))]<-448070+448570 then local M={}M[139559+-139557]=(ScriptStorage[t(578216-558597)][t(939226+(432847+-1352516))]or{[t((-952099-(-750251))-(-220793))]=814055-814055})[t((-64170+-290955)+374070)]D[747243-747242]=l[-682843+682849]({t((979694+-771897)-188382);t(-1024043+1044200)})..(M[(1457551-574858)-882691]..t(-1021613-(-1040673)))else D[-728304+728305]=l[((1030744+-1810299)-(-178089))-(221269+-822741)]({t(-1024332+1044371);t(951096-(935672+(682804-687184)))})end else D[((-759062-(-406765))+-637641)+989939]=l[290337+-290331]({t(-661007-(-361837+-319355));t(-353678+373301)})end end D[92721-92719]=ScriptStorage and(ScriptStorage[t(-903012+922783)]and ScriptStorage[t(258796+-239025)][t(-416600-(-436147))])if not D[-769088+769090]or D[-920293-(-920295)]==t(-679860-(-699741))or D[-820488+((-441869-(-961518))+300841)]==t(-566709-(-50604+-535722))then if GetCurrentClaimQuest then local M={}M[-219481-(-219482)],M[818759-818757]=pcall(GetCurrentClaimQuest)if M[817609+-817608]and(M[-892818+892820]and M[906696+-906694]~=t(-675251-(92392-787260)))then D[(((-155489-527077)+(-1186141-(-357963)))-(830863+(163290+-1719680)))-(-785219)]=t(773276+(988264+(-606301+-1136170)))..tostring(M[-959338+(1521781-(961785+-399344))])end end if not D[(713590-(-241243))-954831]or D[(366423-54173)-312248]==t(840739-820858)or D[427491-427489]==t(833140-813523)then if ScriptStorage and(ScriptStorage[t(-184310-(352321-556250))]and ScriptStorage[t(1043283-1023664)][t(-641356+660913)])then local M={}M[-861853+861854]=(ScriptStorage[t(-399917-(669867+(-255558+-833845)))][t(424767+-405210)]or{[t((175424+769939)-926418)]=896080+(-125409+(121286-891957))})[t(-979732+(-165258+1163935))]D[-1038370-(-1038372)]=l[915774+(582341+-1498109)]({t(-409695-(-429454)),t(-60026+80221)})..(M[829177-829176]..t(-788895-(1030002+-1838061)))else D[-5473+5475]=t(1053276-(1426153-392463))end end end D[(-1405263-(-1034622))+370646]=ScriptStorage and(ScriptStorage[t(22214+(814825-(215143+602125)))]and(ScriptStorage[t(327213-307442)][t((-245822-274536)+540280)]or ScriptStorage[t(-140591+160362)][t((-52099+(-317278-214966))-(-1628004-(-1024131)))]or ScriptStorage[t(-668676+(743363+-54916))][t(-916820+936530)]))if not D[1000994+-1000989]or D[((-271534+691208)+596801)-1016470]==t((-524671+394629)+148930)or D[-59544+59549]==t(-970800-((379379+-301026)+-1069034))or D[745944+-745939]==t((762119+((-641112+(206951-(879836-(1229446-719242))))-(-743907)))+-682616)then if MonResult and(MonResult[t(1005229-(1338944-354077))]and MonResult:FindFirstChild(t(-812269-(-831786))))then local M={}M[929995+-929993]=math[t(117362+-97666)]((MonResult[t(599950-580433)][t((177802+206960)+-365642)]/math[t((1446049-((((1015087-823912)+-993671)+1478131)+67344))+-683812)](96476-(214250+-117775),MonResult[t(760655+-741138)][t(-376805+396729)]))*(-551375+551475))D[449589-449584]=t(-684804+(184371-(-520563)))..(tostring(MonResult[t(751052-(1722469-991071))])..(t(-395040+414820)..(M[(((1006753-433468)+-770434)+746568)+(-1078812-(-529395))]..t(-187054-(-206913)))))elseif CurrentTask and CurrentTask~=t(-176108-(-194996))then D[-96630-(-96635)]=tostring(CurrentTask)else D[514178+-514173]=l[(326358-(120438-(-788864)))-(289734-872684)]({t(-319818-(-338782));t(-375395+394346)})end end if c[-642822-(-821840-(-179017))][t(232120-(-533177+(-757091+((((((-530090+-58888)-687095)-(-37575))-(-1656908-(-847838)))+2136695)-204530))))][t((-502513+573526)-51658)]then c[-570778+(1208890-(1420412-782301))][t(95153+-75502)][t(-807750-(-827105))][t((((646838-((227995+696340)-(245422-(-246192))))+-1252767)-(((587218-(576674-64446))-(-863452))+-1246094))-(-750032))]=t(-915807-((1465132-443417)+-1956429))..tostring(D[(382975+-542688)-(-159714)])end if c[26+(((-248903-(-681869))-(-20208))-453199)][t(328669-309018)][t((-482207-(-790263))-287756)]then c[726833-726832][t(1066894-1047243)][t(57389+-37089)][t(355888-336854)]=t((1098387-692668)-386493)..tostring(D[-590182-(-1262783-(-672599))])end if c[150025-150024][t((398655+-725674)+(157732+188938))][t(739809+-719432)]then c[-526565-(-526566)][t(-145992+165643)][t(312405-((349112-753267)-(-696183)))][t(130989+(-368550+256595))]=t(-786205-(-806421))..tostring(D[(1001608-745624)+-255979])end D[95262+(349105-(-19319+463679))]=SeaIndex or game[t((((-1928820-(-952092))+1832023)+-1156197)+320476)]==(873547+2752669931)-(539298+(443974+(-1560392-(-205049))))and 466168+(-1256699-(-790532))or game[t(((((-848349-(-372229))-(-334429))+1222150)-765453)-295432)]==-60052+4442332235 and((-218718-(-115268))+784390)+-680938 or game[t(930002+-910428)]==-101200+7449524835 and 275577-275574 or-271285+271286 D[-920825-(-920835)]=math[t(212254-192996)](452287+(483661+-935948),l[-1011223+1011226]and os[t(852397+(141938+(-1486789-(-512725))))]()-l[548095+-548092]or 148597+-148597)D[960725-960722]=math[t(205325-186067)]((1841828-(92757+784102))-964969,D[1017893-1017883]+math[t(((-234852+-634926)+-4926)-(-893962))](-541295-(-541295),OldSessionTime or-977113-(602710+-1579823)))D[-193847+(396069+-202218)]=t(879040-(821250-(-38173)))if DispTime then D[736091+-736087]=t(-22545-(25104-66951))..DispTime(D[78608-78605],true)end if c[-813161-(-813162)][t(36116+-16465)][t(926372-906348)]then c[981328+((1001348-(-11337+850920))+-1143092)][t(-863701+(410420-(-472932)))][t((-46983-237827)-(-517475-(-212641)))][t(121930-102896)]=l[173875+-173869]({t(343352-(722507-398599));t(393965+-374373)})..(tostring(D[-958674-(-958681)])..D[958253-958249])end end)end M[415493-(75105+340325)]:Init()M[-610143+610152]={[t(366485+-347561)]=setmetatable({},{[t(899367+-879120)]=function(l,D)local c={}c[774822+-774821],c[798316+(((1637412-((366579+(-697532+(-739935-(-464867))))+1475564))-795514)-770669)]=l,D c[-62811+62815]={[t((-352776+1142575)-770765)]=t((-1620502-(-671900))+968219);[t(760364-740659)]=64274+(-442068+377794);[t(195568-175598)]=true}rawset(c[(690549+-850627)-(-160079)],c[-175579-(-175581)],c[706304+-706300])return c[-259324-(-259328)]end}),[t(((2663272-732480)-1045870)-865486)]=M[606288+-606225]}function SetText(D,c)local U={}U[257721+-257718],U[577813+-577811]=D,c pcall(function()if not M[307225-307162][t(349955-(618798+-288799))]then return end if U[94535+(747101+(-317010+-524623))]==t((396890+-1222216)-(-844681))or U[(1065854-(752263+113985))-199603]==t(-49796+((688104+67588)-686965))then local l={}l[-677401+677402]=(tostring(U[-481706-(243669+(-573593+-151784))])):gsub(t(-517379+536910),t(-935214+(1815658-860827)))if ScriptStorage and ScriptStorage[t(-361545-(-11995+-369321))]then ScriptStorage[t((-878515-46267)-(-944553))][t((468855-(-418193))-868117)]=l[-1025543-(-1025544)]end if M[383545-383482][t(((756932+-1940766)-((706531+-997426)-456070))+456520)][t(((1039582-954924)+639066)+((371288-(1224709-(664158-464224)))-50882))]then M[-745212-(-745275)][t(-344444+(-544160+908255))][t(-732262+751617)][t(-211231-(504238+-734503))]=t(474786-455879)..l[(-421439+524976)+-103536]end elseif U[86818+-86815]==t(666118+((-839912+-731807)-(((-40966-(-908312))+-1791950)-(-218483-(-219780)))))or U[(337830+184453)+(-188394+-333886)]==t((-3162+((22600+-1261445)-(-621751)))-(-380874-258929))then local l={}l[-948735+948737]=(tostring(U[-488853-(-488855)])):gsub(t(-162734-(-182462)),t((-669728+1216055)-526710))if ScriptStorage and ScriptStorage[t(-310068-(-329839))]then ScriptStorage[t(628688+-608917)][t(740138+-720591)]=l[-905649+(69078-(-836573))]end if M[787829-((-467551-(-534049))-(-721268))][t((-23448-(-594041))+-550942)][t(258454-238154)]then M[226761+-226698][t(-233502+253153)][t((-410143+(448678+15691))+-33926)][t(-751355+(155351-(-615038)))]=t(-767193-(-786419))..l[(-612933+(512958-(933102+-1674008)))+-640929]end elseif U[-592984-(-592987)]==t(-418999+439376)or U[20873-20870]==t(922900-903370)or U[-954862+954865]==t(281942+-262232)then if ScriptStorage and ScriptStorage[t(-371935+(1073542-681836))]then ScriptStorage[t(1059596-((((772232+369635)-717836)-360747)+976541))][t(-697172-(-717094))]=tostring(U[-922669-(-922671)])end if M[851153+-851090][t(-657807+677458)][t(-683489+703866)]then M[926570+-926507][t(-730130+(-455163+(1150730-(-54214))))][t(-774711-(-795088))][t((764847-603399)-142414)]=t(705003+-684787)..tostring(U[864849+-864847])end elseif U[(-183561+(184668-981577))-(-980473)]==t(-548650-(-567885))or U[(-901647-(469519+-948204))+422965]==t(73463+(123296-(-278866+455648)))then M[-1035432+1035495]:Update()elseif U[157611+-157608]==t(-299354-(-318425))then if M[(579913-169902)-409948][t(-361643+(649351+-268057))][t(-827906+847930)]then local D={}D[(((1851342-434289)-(-465212))-(205006+803807))+-873448]=SeaIndex or game[t(927570+-907996)]==-893413+2754808962 and 386243+(-457672+71430)or game[t(262360-242786)]==4442218669-((1362991-494490)+(498126+-1420141))and 699990-((310011+-461364)+851341)or game[t(-926389+945963)]==7449411447-(-12188)and 104309+-104306 or((261735+530238)+-1740411)+948439 D[-248450-(-248452)]=math[t((-228779+-180497)-(299723-728257))](799357+-799357,l[1006389+-1006386]and os[t(461302+-441031)]()-l[234376+((994816-(-88543+(1295748-624414)))+-646398)]or-730866+(351513-(-379353)))D[1047131-1047128]=math[t(-617238+636496)]((-556103+1391205)+(-5874-829228),D[35459-35457]+math[t(556526-((915749-8226)-370255))](-1008483-(-1008483),OldSessionTime or((-14135+(50127-(-653764)))-(23354+(51453-(-292505))))+-322444))D[417593+(172288+-589880)]=DispTime(D[281121-((-98708+386045)-(970940-964721))],true)M[(-739749-(-613255))-(-126557)][t(-307486-(-327137))][t(-337482-(-357506))][t(-862955-(-973871+91882))]=l[812502+(-1421841-(-609345))]({t(-213283+232727);t(-664968-(-684560))})..(tostring(D[-82954+82958])..(t(918395-899093)..D[-206071+(223947-17875)]))end end if M[(898600+-859591)-(1069819-1030819)][t(-259852+278776)][U[587063+-587060]]then M[((232352+-938600)+549213)-(682568-839612)][t(-11336+((289461-(-115423))+-374624))][U[1029004-1029001]][t(609292+-590258)]=tostring(U[489586+-489584])end end)end function ToggleUI(l)local D={}D[530494+-530493]=l if D[-754711+754712]==nil then M[-81943-(-82006)][t(-338174-(-357850))]=not M[703617-(282834-(-420720))][t(693974-674298)]else M[-26331-(-26394)][t((((9214-732804)-((286596+-934322)+-41648))-1004130)+1058022)]=D[870090-870089]end if M[-170+233][t(-791943-(-811899))]then M[(-1099539-(-1046492+552626))+605736][t(-62729+82685)][t(-505957-(-526078))]=M[(-332277-(-486835))+-154495][t(-314319+333995)]end end M[(573019+-394843)-178167][t(209571+-190278)]=SetText M[-479482-(179265+-658756)][t(195532+(262426-438215))]=ToggleUI M[-448788-(-448797)][t(-394801-(((-135553+-308003)+(553214-394975))-128785))]=ToggleUI;(getgenv())[t(384064+-364628)]=M[-217313-(-217376)]pcall(function()local M={}if not isfile(t(-1042774+1062736))then writefile(t((-107147+-37677)-(-164786)),game:HttpGet(l[(-418472-(658819+-1480554))-((-677982-(-465471))-(992425+-1608193))]({t(674264-((182493+-956631)+1428017));t(-659343+678725),t(872315-(491664+(192491-(-168971))));t(961744-(1325086-383254))})))end M[-892882-(-892884)]=(loadstring(readfile(t((((501847+((-219766+-42447)-(-627890)))+(-1226116-474611))-(-51484))+801681))))()if M[(300888+(503548-630))-((226557-(-746697))-169450)]then(getgenv())[t(-341048-(-360804))]=function(l,D)local c={}c[(253030+-1287544)+1034516],c[664914-(-300923+965836)]=l,D pcall(function()M[1022287+-1022285]:Notify({[t(-489036+508696)]=c[761419+-761417]or t(((-399925+-698986)-(((661930+-1881823)-(-423280))-(-436819)))-(-456774+-301960));[t(((621635-928835)-184348)+511851)]=c[-479711-(-479712)]or t(-910594-(-639141+-291070)),[t(916714-897343)]=-1025178-(-1025183)})end)end end end)if not(getgenv())[t(-488626+(1258425-750043))]then(getgenv())[t(-921608+941364)]=function(...) end end M[-196719-(-196780)]=Instance[t((-236534-(-137159))+118624)](t(-577962-(-598057)))M[2155-2094][t(892470+(((1216043-435344)+-1332400)+-320821))]=l[-8282-(-8288)]({t(959990-939766),t(524833+-504844),t(-118285-(-137719))})l[-625719-(-1568628-(-942906))]=os[t(-156103+176374)]()OldSessionTime=isfile(t(-957910+((2217353-921347)-318224))..game[t(-952382-(-46008+-926334))][t((531042+-461258)+-50766)][t((((972140+-2356759)-(-185888))-(-611623))+606762)])and tonumber(readfile(t(-212152+232024)..game[t(-493957-(-513917))][t(((-570536-(-934142))-(((446781+568055)-(1101913-654133))+(-731832-516609)))-((177426+-969718)+1818265))][t(-139523+159177)]))or-392483+392483 if not OldSessionTime or OldSessionTime>611845+99388155 or OldSessionTime<-583262-(-583262)then OldSessionTime=-894607+894607 end pcall(function()if not game[t(-389037-(-408997))][t((-574090-(-980395))-387287)][t(-468110+487151)]then game[t(584584+(-284065+-280681))][t(149878-(883049-752812))][t(933767+(-1619158-(-705233)))]:InvokeServer(t((-222347-(-266127))+-24630),Config[t(-187167+206823)]or t(649057-629269))end end)M[313908-313893]=game:GetService(t((904170+-531721)+-352489))M[(1219715-1008519)+-211188]=M[17924-17909][t(577683-558665)]M[-850361-(-850405)]=M[1026776+((((-69711-(-369479+996986))+562599)+-535740)-356409)][t(818949+-799908)]or M[-694634-(-694642)][t(724233+-705296)]:Wait()spawn(function()pcall(function()local M={}M[-233009+233010]=game:GetService(t(532279+-513023))for M,l in ipairs(M[(13785-(-258277))-272061]:GetChildren())do local D={}D[-331041+331043],D[-963009-(-963010)]=M,l if D[-832075-(-832076)]:IsA(t(640487-620502))or D[(-213321+((-786173+1869364)-74675))-795194]:IsA(t(((691358+(-89660+1144685))-781718)-((23184+850390)+71299)))or D[-509599+509600]:IsA(t(962773-943498))or D[238065-238064]:IsA(t(303662+-283286))or D[921257-921256]:IsA(t(432188+(881395+-1293686)))then D[(((-863648+(1020734-(-994206)))-998751)+562260)-714800][t(-1032293+(1115704-(-512012-(-575302))))]=false end end for M,l in ipairs(workspace:GetDescendants())do local D={}D[858928-858927],D[892946+(709817+-1602760)]=M,l if D[-504861+504864]:IsA(t(-1021801+1040841))or D[958102-958099]:IsA(t(524142-503859))or D[-428537+428540]:IsA(t(-908088+927288))or D[455965-455962]:IsA(t(-93386+113242))or D[922378+(-903541-18834)]:IsA(t((-110208+-262392)+391900))then D[586024+-586021][t(1015824+-995703)]=false end end workspace[t(397424+-378516)]:Connect(function(M)local l={}l[(193724+-299498)+105775]=M pcall(function()if l[406223+-406222]:IsA(t(((-481352-439994)+188307)+((784325+((-2431552-(-266802))-(-339062)))+1793442)))or l[-854222+(-775065+((466201+-963282)+2126369))]:IsA(t(398398+-378115))or l[341513+-341512]:IsA(t((835567+-1568612)+752245))or l[(-518303+426908)-(-91396)]:IsA(t(-902984-(-922840)))or l[-1038827-(-1038828)]:IsA(t(629217+((-1956261-(11970+-422318))-(-935996))))then l[-618789+(144249-(-474541))][t(216224-196103)]=false end end)end)end)end)M[127956+-127900]={t(-320234-(-339740));t((-18436+261229)-223628);t((668906+-366121)-283278),t(796781-777604);t(1001604-982670),t(915712+-896384),t(-349891+(-498321+867414)),t((569437+-1561552)-(-1011583)),t(637697-618772),t(1004579+-984967);t(-104580-(-124512)),t(446334+-426941)}StartTick=tick()repeat task[t(441203+-421337)]()until SetText SetText(t(((659728-990511)-(13875-722828))+-358460),l[-388425-(-388431)]({t(-302443+321778),t(-636777+656495)}))M[-147666-(-147688)]=l[-189023+(-647306+836335)]({t((((572116-(-535977))-(-540201))-(-477829+1216390))+(-291236-599607));t(444561-424826)})Storage={[t(-306557+(1051540-725442))]=289345+(-853244+(-754262+1318166)),[t(-804326+823320)]={};[t(((715324+-458052)+-1105924)-(-868913))]=function(M,l)local D={}D[939292-939290],D[-919867+919870]=M,l return D[33779+-33777][t(382107+-363113)]and D[-9454-(((794105+70929)-232518)-641972)][t(-667406+686400)][D[(-115701-(-220195))+(-829697-(-725206))]]end;[t((-454852+568686)-(-977733+1071932))]=function(M,l,D)local c={}c[730009+-730008],c[-53563+53565],c[354082+-354079]=M,l,D c[761228-761227][t(-592258+611252)]=c[-717575+717576][t(-896209+915203)]or{}c[498214+-498213][t(513004-494010)][c[-771545+(-203662-(-975209))]]=c[306736-306733]end,[t(((51617+-1643378)-(-980795))+(1563528-932704))]=function(M)local l={}l[-117908-(-117909)]=M pcall(function()local M={}M[473917+-473915]=t(900142+-880044)..tostring(game[t(1017409+-997449)][t(990849-971831)])writefile(M[-737316+737318],(game:GetService(t((-1042457-(-187505))-((248915-(658488-546971))+(-945919+-66624))))):JSONEncode(l[-526639+526640][t(-250172-(-269166))]or{}))end)end}pcall(function()local l={}l[(267882+399261)+(503748+-1170890)]=t(((1315448-905675)+122575)+-512250)..tostring(game[t(-221391-(759585+-1000936))][t(-909406-(-928424))])if isfile(l[24359-24358])then Storage[t(-643153-(-767398+105251))]=(game:GetService(t(787795-767602))):JSONDecode(readfile(l[-278201-(-278202)])or t((-633408+(321078-(-358536)))+-26232))or{}end end)ScriptStorage={[t(-288082+(38999+269325))]=false,[t(526939-(-1022023+1529499))]={},[t(-370306-(-390283))]={};[t(-919244+938633)]={},[t(-844826+865024)]={};[t(689413-((806844-1031937)-(-894514)))]={};[t(828805+-809186)]={};[t(309005+-289678)]={};[t(283300-264045)]={[t(851813-832795)]={}};[t(933272-913501)]={};[t(85612-(-825066-(-890764)))]={},[t(367440-348358)]={},[t(-1036270+(1929719-873473))]={};[t((-579597+1317006)-717677)]=M[635582-635573],[t(-547620+((186456+(602567+(399300+(-2826906-(-891574)))))+1314007))]={}}M[346329+(-182115+-164199)]=game[t(-147189+167149)]M[-99798+(-393438-(-493244))]=M[415309-415294][t(785287-766269)]M[-574861-((38229-270106)-343028)]=M[(-299351+1280530)+-981171][t(-362909+(1333519-951569))]or M[(7326+-677072)+669754][t(907566-888629)]:Wait()Humanoid=M[-24975-(-25019)]:WaitForChild(t(487289+-467772),-1026383-(11577-(((284093-(56830-(-321997)))+(1370911-870927))-(-632725))))HumanoidRootPart=M[857749-857705]:WaitForChild(t(-1013546-(-1033868)),-921102-(-921117))M[(687045+-796993)+109956][t(625255-606318)]:Connect(function(l)local D={}D[1023077-1023075]=l M[-28764+28808]=D[(-345326-(-222991))-(-122337)]Humanoid=D[75262+-75260]:WaitForChild(t(765314+-745797),(895269+-176507)+-718747)HumanoidRootPart=D[(((446340-174136)-(-549108))+-565933)+(-1009300-(-753923))]:WaitForChild(t(314114+(212963+((941752+-1308090)-140417))),393305+-393290)pcall(function()if ActiveTween then ActiveTween:Cancel()end end)ActiveTween=nil TweenTargetPosition=nil end)PlayerGui=M[-697622-(-697630)]:WaitForChild(t((841513+-1661180)+839920),-248242+(464253+-216001))Lighting=game:GetService(t(1046080+-1026824))Services={}setmetatable(Services,{[t(398919-378672)]=function(M,l)local D={}D[((956598+-24153)+-1436562)-(-504119)],D[127311+-127308]=M,l return game:GetService(D[-955080-(-955083)])end})setmetatable(ScriptStorage[t(-354564+374762)],{[t(-298423-(149009-(-63866-(29311-(-299297+860153)))))]=function(M,l)local D={}D[512130+-512128],D[-324978-(-324979)]=M,l return Services[t(587034+-567219)][t(-83113+103311)]:FindFirstChild(D[-854295-(-1127827-(-273531))])or Services[t(685996-666158)]:FindFirstChild(D[-854159-(-854160)])end})setmetatable(ScriptStorage[t(-136998+156990)],{[t(286841-266594)]=function(l,D)local c={}c[(-590283-(-347899))-(-242385)],c[-877929+877932]=l,D return M[820008-820000][t(-186685-(-384078-(-178352)))]:FindFirstChild(c[-956207-(-956210)])or M[-402705-(-402713)][t(978774+-959155)]:FindFirstChild(c[-457178-(-457181)])end})setmetatable(ScriptStorage[t(-28667+(((1569691-654182)-848385)-(-517734-(-536813))))],{[t(((598762-(-1040050))-588542)-1030023)]=function(M,l)local D={}D[313508+-313506],D[-838052+838055]=M,l return workspace[t(473693+-454315)]:FindFirstChild(D[77043-77040])or game[t(-772791+792629)][t((793014+-410538)-((1024665-1006306)-(-344739)))]:FindFirstChild(D[(-191032+(-633274-48060))+872369])end})function CreateTraceback(M,D)local c={}c[(((-38955+-148711)-(-1004299))+-465324)-351307],c[-85148+85151]=M,D table[t(567559-548403)](ScriptStorage[t(-451726-(-471640))],GetCurrentDateTime()..(t(922841+(-551877-352077))..(DispTime(os[t(844373-824102)]()-l[(314088-(-149086))+-463171],true)..(l[911829-911823]({t(-831898-(-864158-(-12770)));t((-100803+970022)+-849900)})..(c[(-21042+(397196-546098))+169946]..(t(105587-85723)..c[55701-55698]))))))end function SetTask(l,D)local c={}c[-235025+235028],c[-651587+651591]=l,D if ScriptStorage[t(-69292+89063)][c[173227+((991053+-891002)-273275)]]==c[659673+-659669]then return end ScriptStorage[t(((682313+-1469002)+758402)-(-48058))][c[46303-46300]]=c[-827466-(-827470)]ScriptStorage[t(-793000-(-812771))][c[-1038498-(-1038501)]..t(524118+-504920)]=os[t(-164411-(-184682))]()c[-641010+641012]={[t(-274933-(-194987-98877))]=t(-85469-(-579691+474867));[t(-489729+509276)]=t(678248-657948),[t(-339011-(-358933))]=t((149475-(557780+366784))-(-795466))}if c[(742466-618709)-123755][c[(1411008-558646)-(-762303+1614662)]]and SetText then SetText(c[-874781-(-874783)][c[775042-((-804950+1817995)+-238006)]],tostring(c[((-54723+-184878)+855398)-615793]))end if M[(-1604338-(-626366))-((-740589-49991)+-187455)]and M[-958236-(-958299)][t(141283+(-1160999-(-1039340)))]then M[728588-728525]:Update()end end Remotes={}setmetatable(Remotes,{[t(-67881+88128)]=function(M,l)local D={}D[46139+-46137],D[393031+-393028]=M,l if D[((101412+(40820-680707))+738854)-200376]~=t(880173+-860331)then return Services[t(593986+-574148)][t(699962-(126151-(-554170)))][D[953603+-953600]]end return{[t(9395-(-9586))]=function(M,...)return Services[t(-492570+512408)][t(205279-(974561+-788923))][t(311924-(549147-257065))]:InvokeServer(...)end}end})Tasks={}function AwaitUntilPlayerLoaded(M,l)local D={}D[-556204+556208],D[-811942+811943]=M,l D[94416+((-810732-(-844720))-(-807096-(-935495)))]=os[t(-247669+267940)]()D[-646597+646600]=D[581309+-581308]or 547770+-547755 repeat task[t(-413217+((-567939+-353661)+1354683))](.2)until D[-55640+55644][t(759543-740502)]or os[t(-723316+743587)]()-D[-644100+644105]>D[-98554+98557]if D[-591129+591133][t(968584-949543)]then D[-575742-(-575746)][t((-984228+317054)-(-686215))]:WaitForChild(t(577978+-558461),D[-296312+296315])repeat task[t(-882857-(-902723))](.2)until not D[-852762-(-852766)][t(700944+-681903)]or not D[-94333+94337][t(63778+-44737)]:FindFirstChild(t(-229309+248826))or D[-551807+551811][t(178063+(-752810-(-593788)))][t(973550-954033)][t(616477+-597357)]>1001350+-1001350 or os[t(626821+-606550)]()-D[111654+-111649]>D[970733+-970730]+((-694537+946199)-(211558+40094))end end function AddPoint()local l={}l[-230749+230751]={}for M,D in M[831462-831454][t((307379-452422)-(-164037))][t(-461334-(-480683))]:GetChildren()do local c={}c[-72372-(-692766-(-620393))],c[827881+-827879]=M,D if c[(458988-1008171)+((-666752-(-687713))-(84599+-612823))]and c[-754529+754531]:FindFirstChild(t(740760-720921))then l[(-1540442-(-595548))+944896][c[195947+-195945][t(-841337-(-860991))]]=c[(636242+-579224)+-57016][t(602307+-582468)][t((-1308479-(-821125))-(-506585))]end end if l[-326443-(-326445)][t(909705-890157)]<MaxLevel and(l[(-56206+-467925)-(-1244937-(-720804))][t(-317271-(-336819))]<ScriptStorage[t(-144536-((405010-(-403696))+(((646954+-81446)+-1291649)-246564)))][t(88743+-68904)]/((587044-(-22182))+-609146)or MaxLevel-l[(-825700+-89545)-(-915247)][t(-401321-(-420737))]<419331+-419231)then l[-57817-(-57820)]=t(-36874+56422)elseif l[(-746229+(827812+148336))+(-748350+518433)][t(774002+-754586)]<MaxLevel then l[-3477+3480]=t(-394938-(-414354))else l[(1845773-896156)+(-1525396-(-575782))]=t(219732+-200767)end Remotes[t((261665-427360)+(257425+-71888))]:InvokeServer(t(-988919-(-1008990)),l[15269-(911138-895872)],969370-968371)end M[-270168-(-34530+(114768-350446))]={[t(1047391-1028156)]={[t(396753+(-1189019-(-812105)))]=t(178424+-158913),[t(-199525+219442)]=t(253560+-233322),[t(-111861+131844)]=t(-149091-(-169419))},[t(-772666+792249)]={}}function RefreshPlayerData()local l={}for M,D in M[138959+(291248-430199)][t(838519-819525)]:GetChildren()do local c={}c[-563850-(-563851)],c[875151+(-856320-18829)]=M,D pcall(function()ScriptStorage[t((122398+(461793+-1328950))-(-764222))][c[748306-748304][t(-968446-(-814507+(817797-991390)))]]=c[-90189-(-90191)][t(233194+(30334-(1277006-1032709)))]end)end l[-696116-(-696118)]=t(-175162-(-194779))for D,c in ScriptStorage[t(-393994+413457)]do local U={}U[371870+-371867],U[(387114+(-918680-(-882723)))+(-190346+-160807)]=D,c U[409645+-409644]=M[-881273+881313][t(54000-34765)][U[624578+-624575]]if U[-544024-(-544025)]then l[-636177+636179]=l[(861730+-38379)-823349]..(t(-147060-(-165969))..(U[-338270-(-338271)]..(t(-484153+503100)..(U[((130566+425471)+-202926)-353108]..(t(-234435+253388)..(U[-639706+((-165158+(399043+-426430))+(704981-(-127274)))]..t(354729+-335410)))))))end end if M[130950+-130887]and M[522029-521966][t(-129532-((1414750-(-1025465+(2725031-917309)))-781649))]then M[-895753-(-895816)]:Update()end if ScriptStorage[t(578049-558317)]and SetText then SetText(t(((-2853432-(((((986029-18702)+-1254534)+(824899-475132))+-782770)+-303974))-(-640643-286737))+(1267829-346726)),l[795679-795677])end end function RefreshRace()local l={}l[972594+(1026595+-1999188)],l[1019394+-1019392]=Remotes[t(-848088-(-867930))]:InvokeServer(t(-408367+427619),t(-241840+261280)),Remotes[t(-799425-(-819267))]:InvokeServer(t(-685123-(-705327)),t(-743671-(-763111)))ScriptStorage[t(-630900+650363)][t(-19197+39304)]=525272-(-268231+793502)if M[-152371-(-152379)][t(866022-846981)]:FindFirstChild(t(1016882+-997240))then ScriptStorage[t(-933856-(-953319))][t(-514770-(-534877))]=-732845+732849 elseif l[564549+-564547]==-877410-(-877408)then ScriptStorage[t(-626669+646132)][t((746813+(-631997-(-643700)))-738409)]=-806238+806241 elseif l[((-768582-(-437187))-(-757564))+-426168]==96833+-96835 then ScriptStorage[t((-10615+(172224-(200565-((-13209+-355622)-(-20769)))))+406481)][t(164671+(-366144+221580))]=-980185+980187 end end function RefreshInventory()local M={}M[-338914-(-338919)]=require((game:GetService(t(-234842-(-254680))))[l[-568635-(-568641)]({t(233342-213862),t(-280858+300748)})])M[58890-58889]=require((game:GetService(t(-137555-(-157393))))[t(-571251-(-591577))])M[129665+-129662]=require((game:GetService(t(761525+-741687)))[l[-131458-(-131464)]({t(-359073+378553);t(944340+-924450)})][t((469876+-628303)+178065)])while M[897512-897507][t(-459535-(-479885))]~=true do task[t(587360+-567494)]()end M[(789249-(51827+-165314))+-902732]={}for l,D in pairs(M[-752493+752498]:GetItems(M[-33289+33292][t(((945150+-1110221)+783400)+-598135)]))do local c={}c[851247+-851244],c[247492-(289492+-42001)]=l,D M[320730-(966554+-645828)][c[-892579-(-892580)][t(376145-357038)]]=c[((1065466-1014301)-(-877925))-((2173993-595009)-(793137+-143242))][t((-1024085+(118914+1132525))+-208123)]end ScriptStorage[t(533347-513067)]={}for l,D in pairs(M[((984363+-41769)+(-1600290-104088))+761789]:GetItems(M[(739110+284190)-(158683-(-864614))][t(-40772-(-61012))]))do local c={}c[(-1191466-(-968851))-(-451972+(-608956+((78904+-236715)-(((-249621-(-811365))+(-2181399-(-611648)))+11886))))],c[-457166+457167]=l,D c[-401671+401676],c[168482-168478]=pcall(function()return(M[-694904-(-694905)][t(-323300-(222503+-565259))](c[47386+((-10443-(-955489))+-992431)][t((1837500-890977)-927416)])):unwrap()end)if c[-575799+(452540-(-123264))]and(c[-617341-(-617345)]and c[201060+-201056][t(150410+(792105+-922419))])then local l={}l[(79555+-1017459)-(-937905)]=c[-7004-(704777-711785)][t(-849268+869364)][t(763168+-743993)]l[-631058+631060]=c[586788+(263738+-850522)][t(((-2163131-(-1015896))-(-1224064-(-677030)))-(-620297))][t(271347-((-386586+((54764+((-110971+(1538703-(718865-((-407977-(62911+-961586))-576204))))+107476))+((-365389+1197797)+-1096667)))-(-117621)))]ScriptStorage[t(-529761-(-550041))][l[929344+-929342]]={[t(293583-273929)]=l[(649794+(-1749086-(-701496)))+397798],[t(162957-(712557-569678))]=l[-297167-(-297168)]==t((223283+-618761)+415545)and t((-1242536-(-1252931-(-822156)))-(-1664561-(-833475)))or l[-538941+538942]==t(58997+(((632685-686183)+-5131)+19665))and t(380791+(234700+(-185905-410621)))or l[(-1023740+(1872294-882842))+34289],[t(-503373+522318)]=c[(415389-(-367456))-782844][t(1060037-1040806)],[t((-599624+-168701)-(-787556))]=c[391916-391912][t(-467147+487296)]and c[-987092-(-987096)][t(-616214-(-1463348-(-826985)))][t(-1018322-(-900527+-137359))]or(52781+-298183)-(800586+-1045988);[t(748095-(885590-(827150+-670030)))]=M[-420995+420999][c[-678132+678133][t(387903+(97000+(429243+-895039)))]]or-457680+457680,[t(-876324-(-896255))]=c[(196436+-566817)+370385][t(120219+-100186)]and c[(-1156805-(-476801))+680008][t(998674+-978641)][t(942517-922586)]or{}}end end ScriptStorage[t(358341-338722)]=ScriptStorage[t((304986+53202)+-337908)]for l,D in pairs(M[-1018324-(-1018329)]:GetItems(M[-8509+((-129967-((-590054+(-558292+(2031840-(333528-(-460011)))))-439922))+(1003469+-1214957))][t((((1527672-364343)-(-2316))-397759)+(((((-1026310-(-666543))+(190323+-13132))+255289)+-1026482)+206077))]))do local c={}c[668053+-668049],c[(-490155+815490)+(-562979+(-576728-(-366653-447724)))]=l,D c[(((803061-167839)+-560429)-136620)-(-61830)],c[(887453-372820)+-514632]=pcall(function()return(M[-904249+904250][t(-38667-(-58123))](c[-937981+937986][t(673853-(147808+506938))])):unwrap()end)if c[-973013-(-973016)]and(c[323738-323737]and(c[-866633+866634][t(25983+-5887)]and c[-117899-(-117900)][t(-916146-(-936242))][t(934124-915154)]))then local M={}M[925785-925783]=c[-207261-(-207262)][t((-405830+102595)-(-323331))][t(791300-(1301876-529546))]for l,D in ipairs(MeleesTable or{})do local U={}U[(538806-515540)-23264],U[-29665+29666]=l,D if M[910756-910754]==U[227400-227399]or M[836902-836900]:gsub(t(502154+-482677),t(((1004445-953112)-865133)+833417))==U[556917-556916]:gsub(t(-472451+491928),t(-316775+336392))then ScriptStorage[t(-711194-(85939-817110))][U[-825183+825184]]=c[-707635-(-707640)][t((1486747-(-271976+(798145-(-490066))))+-451281)]end end end end RefreshMelees()end function ResearchMoves(M)local l={}l[-182487-(-182489)]=M if l[(337368+-146236)+-191130]and tostring(l[-497111+497113])==t(-885775+905369)then if ScriptStorage[t(-573891-(-593146))][t(347558-328235)]then ScriptStorage[t((-343523+-568014)+930792)][t(-711100-(-730423))]:Disconnect()task[t(-979594-(-633434+-366026))](561046-561045)end ScriptStorage[t(-12197-(-31452))][t((-958411+1209864)-(1044602-812472))]=(l[((-794633+1763829)-4399)+-964795][t(-656224-(-675928))]:GetPropertyChangedSignal(t(((594475-(420935-215260))-788467)-(-418672)))):Connect(function()local M={}if EnablingBurstDebounce and os[t(456431+-436160)]()-EnablingBurstDebounce<-887144-(-887154)then return end M[-739540+739541]=l[-10505+10507][t((-1190915-(-879914))-(284615-615320))][t(-517265-(-536270))][t(948395-928394)]if M[-217226+217227]<-862069-(-862072)then EnablingBurstDebounce=os[t(-824178+844449)]()task[t(-138510-(473682-(896984-264926)))](1013491+-1013486)SendKey(t(1013196+-993602),-1018674-(-1650826-(-632152)))end end)end end function CheckMeleeBurstMove(M)local l={}l[289981-(-56269+346249)]=M if l[(400025-131447)+-268577][t(-685040+(229329-(-475365)))]==t(-751772-(653834+-1424648))or l[(-464043-(-334883))-(-129161)][t(617127+(-765649+168176))]==t(620379-601373)then local M={}M[285552-285551]=PlayerGui[t(37193+-18084)][t(-368950-((-1399409-(-174077))-(-837139)))]:WaitForChild(l[(20346+-124436)-(-104091)][t(221589-201935)],728631+-728622)ResearchMoves(M[634376-634375]:WaitForChild(t(-817045-(-836639))))end end function RefreshMelees(l)local D={}D[(1329871-1040174)+-289694]=l D[(510578+(-556350-(-12818)))+32955]=t(489135-469518)for M,l in ScriptStorage[t(-254441-(-274418))]do local c={}c[-72633-(-72636)],c[-779822+779823]=M,l D[672247-(-832658+1504904)]=D[(-387683+214936)+172748]..(c[-642507+(175072-(-467438))]..(t(134200-(-54803+((1722295-556516)-996737)))..(c[-458194+(1060711-(-123731+726247))]..t(460772+-441453))))end D[(-645479+(1017945+217440))+-589905]=D[-988269+988270]==t(-858864+878481)and t(-5774-(-25991))or D[(-1083536-(-699647))+383890]if D[-603959+603962]then return D[-160720-(-90213-70508)]end if M[-113945-(-114008)]and M[-308661-((-939762+(-224405+1623552))-768109)][t(251135-231511)]then M[-247682+247745]:Update()end if ScriptStorage[t(-398036+417768)]and SetText then SetText(t(891939-871962),D[920747-920746])end end function MeleeCheck(D)local c={}c[82680+(-797084-(-714405))]=D if c[534259+-534258]and(typeof(c[-220974+(-20795-(-241770))])==t(((94996-818527)+-20326)+763853)and c[-41561+41562]:IsA(t(((478019+-394652)-131578)+67786)))then if c[418480+(557500+-975979)][t((((953678-(-397498+1002548))-(-643764))-936285)+-36061)]==t((-866645-(-906212))-20151)then if ScriptStorage[t(281091+-261836)][t(544783-524806)]then ScriptStorage[t(-775456+794711)][t(13293+6684)]:Disconnect()end ScriptStorage[t((1085217-481849)+-583979)][t(271370-251716)]=c[-920679+920680][t(299864-280210)]pcall(function()ScriptStorage[t((-1311967-(-789019))-((((-297886+-651292)+372779)-757687)-(-162631-629252)))][t(265120+-245143)]:Destroy()end)ScriptStorage[t(-533192+552447)][t(-473892+493869)]=c[-818751-(-818752)][t(-1016821-(-1595641-(-558981)))][t(-999314-(-1019056))]:Connect(function(M)local l={}l[-180286-(351840-532127)]=M ScriptStorage[t(-856444+(-251179+(832033-(-295567))))][c[927979-927978][t((-1132791-(-342093))-(-810352))]]=l[(-774426+((-725506+1418300)-(-320599)))-238966]RefreshMelees()end)ScriptStorage[t(-1000530+1020507)][c[656290-(-346528-(-1002817))][t(-647712+667366)]]=c[-351462+351463][t(94659+(155345+(82705+-312870)))][t((332210-(-2871))-(-778507+1094357))]RefreshMelees()elseif c[530763-530762]:GetAttribute(t(822886-802543))then task[t(-10513+((1299870-(229971+727629))+-312782))](function()local M={}M[862836-862835]=c[-262084+(((64628-(-452941))-661198)-(-405714))]:GetAttribute(t(-252287-(-272630)))M[-797931-(-797933)]=c[-240681+240682][t(69453-49799)]for l,D in ipairs(ScriptStorage[t(-933155-(-952482))]or{})do local U={}U[-501532-(-963260+461726)],U[-350779+350780]=l,D if U[(-1108194-(-767925))-(-340270)]==M[(138162+(1659908-908946))-(1020537+-131414)]or U[286396+-286395]==M[434737+(-113834+-320901)]or string[t(-401989-(-422154))](tostring(M[-981854-(60330+-1042185)]),tostring(U[659305+(-1642694-(-804835-178555))]))or string[t(623900-603735)](tostring(M[-13359+13361]),tostring(U[664929-(-674934+1339862)]))then return end end Remotes[t(-1048130+1067972)]:InvokeServer(t(796194+-776918),c[(313078-(-390020))+(-1109831-(-646679-(-239945)))]:GetAttribute(t((-2002253-(-318486-678916))-(-1025194))),c[650568-650567])end)end end end SetText(t(-638674-(-658384)),l[-935913+935919]({t(-415527-(-434821));t(((((801418+-67559)-279801)+-556863)-562698)+(369155-(-316257)))}))MeleeCheck(M[83620-83612][t(316984-297943)]:FindFirstChildOfClass(t(-465071-(-484646))))RefreshPlayerData()function RegisterLocalPlayerEventsConnection()local l={}task[t((1018581-277464)-722142)](function()task[t((503000-629650)-(-146516))]((-868036+908019)+-39977)if M[777396-777388][t((288248-372382)+103175)]:FindFirstChild(t(922274+-902693))then return end Remotes[t(1066526-1046684)]:InvokeServer(t(-260174-((-232124+294799)+((-352038-461267)+471069))))end)for l,D in ScriptStorage[t(-795651-(-814906))][t((-144185-724086)-(-887289))]do local c={}c[((-430246+283924)-150030)-(141189-437544)],c[907621+-907619]=l,D pcall(function()c[268800-((120623+-61788)-(-209963))]:Disconnect()end)end AwaitUntilPlayerLoaded(M[-818012-(-818020)])M[184947+-184939]:SetAttribute(t(579695+-559918),true)ScriptStorage[t(978926+-959671)][t(234105-215087)][t(-624168-((668217+-1090400)-221999))]=((M[(165385+26970)-192347][t(816227+-797186)]:WaitForChild(t(491579+-472062))):GetPropertyChangedSignal(t(335763+-316643))):Connect(function()local l={}l[956821-956819]=M[-23066-(-23074)][t(909307+-890266)][t((87224+-91719)-(-24012))][t(-887541-(-906661))]M[19445-(928036+(-1945470-(-1036871)))]:SetAttribute(t((-468777-336054)-(-824608)),l[810257+-810255]>(-363068-68464)+431542)ScriptStorage[t(336383-316539)]=l[(221148+-526)-220620]end)ScriptStorage[t(-224328-(-243583))][t(-137671-(-156689))][t(-283726+303142)]=M[-934788+934796][t(-282866-(-301907))][t(587847+-568948)]:Connect(MeleeCheck)ScriptStorage[t(-371355+390610)][t(102144+-83126)][t(-185794-(-205644))]=M[(-202795-356528)-(-559331)][t((53371-(-874869))-908621)][t(-32212+51111)]:Connect(MeleeCheck)table[t((-326359+1332739)-986482)](M[-29570+29578][t(972922-(650286+303017))]:GetChildren(),function(l,D)local c={}c[207686+-207685],c[-190132+190134]=l,D MeleeCheck(c[-368603+368605])end)LastIdleCheck=os[t(249060+-228789)]()ScriptStorage[t(-852025-((((-1426877-(-938595))+((646034+-2429079)-(-39398)))-(-919710))-(-440939)))][t((557924-592254)-(-53348))][t(269328+-249457)]=(M[-597126-(-597134)][t(-580877-(-599918))][t(-403549-(-423871))]:GetPropertyChangedSignal(t((-1815351-(-808523))+1027061))):Connect(function()if os[t(-36847-(885550+-942668))]()==LastIdleCheck then return end LastIdleCheck=os[t(-586343-(-606614))]()if oldPos then if(M[370812+-370804][t(-100144-(-119185))][t(-491414+511736)][t(((1022879-172668)+-1534794)+704816)][t((383409+-283458)-79689)]-oldPos)[t(125802-105466)]<782275-782273 then return end end oldPos=M[(164728-(-101422))-(-507089-(-773231))][t((-1453854-(-650521))+822374)][t(-947225-(-110702+-856845))][t(653761-633528)][t(-989929+1010191)]LastIdling=os[t(-702258-(-722529))]()end)l[-382200+382202]=M[-545430-(-545438)][t(-719848-(-738842))]:WaitForChild(t((525904+-541729)-(-35589)))ScriptStorage[t(-740983+760238)][t(823137+-804119)][t(12141+(634375-626372))]=(l[-1014714-(-1958342-((128775+(192538-(-129303)))+-1394242))]:GetPropertyChangedSignal(t((-304756-(-149208))-(-558975-(-384196))))):Connect(function()local l={}l[((1483097-988398)-(-307593))+-802291]=M[712208-712200][t(483053+-464059)]:WaitForChild(t((-365558+360378)+(686448+-661504)))if OldPointValue==l[6701-6700]then return end OldPointValue=l[-156054-(-156055)]AddPoint()end)end RegisterLocalPlayerEventsConnection(M[-237510+237518])game[t(1019434+-999474)][t((-489814+228048)+280784)][t((966972-697548)-250487)]:Connect(function(l)RegisterLocalPlayerEventsConnection(M[627108+-627100])end)task[t(979716-960741)](function()task[t(439629+-419763)](65233+-65230)if M[-274281-(-274289)][t(228188-209147)]:FindFirstChild(t(((311639+-1005589)+1299880)+(-1147688-(-561339))))then return end Remotes[t(1028214+-1008372)]:InvokeServer(t(900662+(281277+((-1011268+784874)-(586741+349417)))))end)MeleesTable={t(919556+-900514);t((666491-973150)-(((201851+-174570)-(602264+-874732))+-626263)),t(-4739+(-554454+579328));t(-632782+(912600+-260659));t(797203+-777400),t(-903240-(-922246));t(-371825+391998),t(48932-(-270660+300422)),t(644903+-625847);t(-279778+(395043-96172)),t(819595+-799868)}MeleesId={t(903919+-885028),t(481119+-461264);t(-713212+733060);t(-253805+273256),t(439059+-419256);t(-399396+418576);t(139684-(-312098+432564)),t((-1731012-(-1024895))-(-241265+-485081));t(-378281+397160);t(598368-579275),t(885635+-865908)}MeleePrices={[t(236289-217247)]={[t(459474+-439548)]={[t(438166-418249)]=-698763-(-848763)};[t(427416+-408070)]=t(187301+-168410);[t(32712+-13752)]=-51405+51805,[t((-593966+9372)+604059)]=function()return true end,[t(-652374+671923)]=function(M)local l={}l[(((-678935+874207)-(-801574))+-122643)-874202]=M return BuyMelee(t(123664+-104773),l[-249174+249175])end},[t(639803+-619948)]={[t(972390-952464)]={[t((566345+-632184)+85756)]=-135449-(-635449)},[t(-682556+701902)]=t(-537312+557167);[t(440790+(-952430-(-530600)))]=-155208+155608,[t(48244+-28779)]=function()return true end,[t((200201+411867)-592519)]=function(M)local l={}l[-614421+614422]=M return BuyMelee(t((1899262-900530)+-978877),l[-133040-(-133041)])end};[t(-608872+629007)]={[t(382201+-362275)]={[t((509059+(385857-587246))-287753)]=-117788+867788};[t(-367765-(-386725))]=987509+-987109,[t(-803429-(-822894))]=function()return true end,[t(391214+(1044229+(867745+-2283639)))]=function(M)local l={}l[-961005+961007]=M return BuyMelee(t(-659809+679657),l[-110032+110034])end};[t(-856620-(-875779))]={[t(69110-49184)]={[t(-742918+762901)]=-906659-(((-1801177-(120688+(-420661+-561228)))-539760)-(-571577))};[t(-866028+884988)]=245968+(-635261-((-658782+((-923911+1052949)-167659))+307710)),[t((804909-(-2121))+-787565)]=function()return true end,[t(251697-232148)]=function(M)local l={}l[-838156-(-838158)]=M if l[-770843-(-770845)]then return game[t((((-1122523-(-178602))-47512)+1824475)-813204)][t(582638-(((-753181+239873)+930764)-(-145541)))][t(1020331-1000489)]:InvokeServer(t(-705984+((775459+-79539)+28965)),t(328964+(548924+-858437)),t((-344079+-498798)-(-862317)))==499252-499251 end return Remotes[t(-601481-(-621323))]:InvokeServer(t((-1023707+53035)-(-989573)),t(-780339+799790),t(333393-313690))end};[t(739062-719259)]={[t(857400-837474)]={[t((47740+-936130)+908307)]=994412+2005588};[t(-348264-(-367224))]=-212822+213222,[t(-692437+711902)]=function()return true end;[t(-183416-(-202965))]=function(M)local l={}l[-621055+621057]=M return BuyMelee(t((29448-(387984-(-383440)))+761779),l[(770030+-129478)-640550])end},[t(707572-688566)]={[t(1021292+(-1179995-(-540371+361742)))]={[t(-880860+(1945618-1044841))]=529447+1970553;[t(-228862-(((42244-(-990449))+-955180)+-326358))]=703418-698418};[t(-270232-(-289192))]=(-565389-(-893641))+-327852,[t((-104782+-893979)+1018226)]=function()return true end;[t(762418-742869)]=function(M)local l={}l[-327492-(-327493)]=M return BuyMelee(t(-796728-(-815908)),l[917772-((-602638+1044320)+476089)])end},[t(-397916-(-418089))]={[t((-351109-(-88963))+282072)]={[t(-826332-(-846249))]=(256833+737591)+1505576;[t(-716439-((-690255+(624071-200571))-469667))]=(13350+-1044863)+1036513};[t((-311846-(-1004393))+-673587)]=505831-505431,[t(486890+-467425)]=function()return true end;[t(1041359-1021810)]=function(M)local l={}l[-438486+(-456294-(-894781))]=M return BuyMelee(t(-724636-(-743854)),l[-852872-(-852873)])end},[t(-512599+531769)]={[t(-554527-(-574453))]={[t(-649173+669090)]=-83465+2583465;[t(-478544+498527)]=-837654+842654},[t(903403-(310243-(-574200)))]=807182-806782,[t((-163118-329603)+(-250313-(-762499)))]=function()return true end,[t((-52110-(-254528))+(-1220852-(-1037983)))]=function(M)local l={}l[(387856+-383006)-4848]=M return BuyMelee(t((45148+400710)-425629),l[-791314-(-791316)])end};[t(195562+-176506)]={[t(-483388-(-503314))]={[t(434277+-414360)]=763735+(990563-(-745702)),[t(-355159-((-883347-56002)-(-564207)))]=(-883218-(-188372))-(-699846)};[t(-231925+250885)]=859169+-858769;[t(520175-500710)]=function()return true end,[t(-196897+216446)]=function(M)local l={}l[612918-612916]=M return BuyMelee(t(-867390+(1622709-736440)),l[-841861+841863])end},[t(-118807-(-137900))]={[t(-234659-(-1302008-(-1047423)))]={[t(1066721-1046804)]=4849880-(-150120);[t(958245+-938262)]=231209-(1068813-842604)},[t(847826+-828866)]=684123+-683773,[t((-1286987-(-801620))-(-504832))]=function()return true end,[t((-764275-(-371542))-(-412282))]=function(M)local D={}D[(-555613-364124)-(-919738)]=M return BuyMelee(t(-410962+(655088-(405355-180322))),D[666831+-666830])end}}DropItemData={[t(365624-(-133398-(-479352)))]={[t(-138894-(-158830))]=(193580-(-167223))+-360800;[t(252021-(833393-601211))]=619900+-618400;[t(-350465-(-369375))]=t(((-154613+-1347351)-(-656974))+864199)},[t(-50471+((393859-802969)-(-479559)))]={[t(-1010243-(-1030179))]=312208-312205;[t(721960-702121)]=-334003+335503,[t(-928407-(-947317))]=t(-986665-(-195834+-810211))},[t(((-146106+-308062)+(830293+597924))-954836)]={[t(-1035463+(907211+148188))]=783499-783496,[t(743970+-724131)]=-745071+746571;[t(916403+-897493)]=t(768423-(706011+42506))};[t(565322+-545190)]={[t((-309841-152494)+482271)]=739946+-739943,[t(295225-275386)]=-973460-(-974960),[t(-852330-(-871240))]=t(-735950+755180)}}GodhumanMaterials={[t(-257890+277045)]={802000+-801980,-516851-(-516854),{t(1043261-1024051);t((958152-885224)-53128)};{t(878461+(-1736206-(-878077)));-992023-(-941418-50606);243377+-241602;l[-840929+840935]({t(-568740-(-587935)),t(-774180-(-794183))})}};[t(474009+(-852411+(1316900-((-520911+260244)+1179820))))]={-681132-(-681142);-47255-(-47258),{t(-824671+844356),t(433806-(-515951-(-930397)))};{t(915386+-895992),((996034+-1527445)+(993616+177066))-639270,698096-696521;l[12999+-12993]({t(-823725-(-843411)),t(534418+-514948)})}};[t(471767-451887)]={-646733+646753;-113923-(-113925),{t(-203640+223233)};{t(236183-216667),-703840+703841;827247-826147;t(591710-571985)}},[t(331985-311629)]={685981+-685971,-425244-(-425246);{t(-427488+446919);t((1784055-(1242892-376792))-(1920538-(2000896-978408)))};{t(848290+-828396),654673+-654671,-859840+861265;l[345807+-345801]({t(-199515-(-219772));t(392695+-372576)})}}}SeaIndexes={t(-103885-(832526+-955520)),t(-119585-(-139760));t(234395-214096)}TasksOrder={t(925217+-905659);t(-580412+599804);t((339741-(492121+-4722))-(-1058155-(-891315)));t(-442148-(-517461+55020));t(410785-390788);t(919941-900179),t(110365+((-1477408-(-538055))-(-598012+-251167)));t(-688835+709039),t((((1151652-324559)+948150)-1036928)-(547146+171510));t(-1014123+1033052);t(-856387+((-102216+-772259)+(209311+1541514)));t((-355925+(((125809-737650)+2100725)-(70764-(-756580))))+-286214),t(258046+-238252),t(-690781-(-709749)),l[-733702+(-173244+906952)]({t((-705232-(-70196))-(-887452+232653)),t(-919439+((-96810-(-876631))-(((-394394-380401)+461154)+154651)))});t(-421085-(-441150));t(-686295+(-367475+1073361)),t(1009037-989851);t(313229-294341)}MaxLevel=463481+-460681 placeId=game[t(-782434+802008)]if placeId==620488+2753295061 or placeId==554574+(990374+85211727623767)then Sea=t(942826+-923717)SeaIndex=941449+-941448 elseif placeId==692247+4441579936 or placeId==(1074188-425656)+79091702617125 then Sea=t((581146+230068)-791039)SeaIndex=((160682-(-670842))-731708)-99814 elseif placeId==7448547108-(-876527)or placeId==1.0011733112309e+14 then Sea=t((1546873-894094)-632480)SeaIndex=-89478+89481 end Portals=({{Vector3[t(-446962-(-466211))](-7894.6201171875,5545.4916992188,-380.24634619141);Vector3[t((277417-404682)+(-842710-(-1626728-(-637504))))](-4607.8227539063,872.54229736328,-1667.5568847656),Vector3[t(-676182+695431)](-488190+549353.8515625,11.759522438049,-3716.2158203125-((-293309-(-364326))-76553));Vector3[t(-525242+(-1045781+1590272))](3876.2805175781,35.106140136719,-1939.3201904297)};{Vector3[t(358926-339677)](-288.46246337891,306.13061523438,597.99884033203),Vector3[t(507039+-487790)](2284.912109375,15.152046203613,905.48291015625),Vector3[t(-682792+702041)](923.21252441406,126.9760055542,-885980+918832.83203125),Vector3[t(816264-(158103+638912))](-6508.5581054688,89.034996032715,-132.83953857422)};{Vector3[t(-603045+622294)](-5097.93164,316.447021,-3142.66602);Vector3[t(-834163+853412)](5748.7587890625,610.44982910156,-267.81704711914);Vector3[t(-864193+883442)](-687029+(193333+488623.91015625),314.5412902832,-3151.1098632812);Vector3[t(-120865+140114)](-9515.3720703125,142.13061523438,5535.0971679688),Vector3[t(247319+-228070)](-12471.169921875,374.94024658203,(-646148-(-694942))+-56345.677734375);Vector3[t((-60403+(-764146-(-993692)))+-149894)](28310.0234,14895.1123,109.456741)}})[SeaIndex]BossesOrder={t(865258+-845479),t(532695-513246);t(576167-(395439-((-92041+106260)-(-788459-(-963060))))),t(17986+1141);t(-835786-(-855186));t(-726106+745415),t(((920085+-1763319)+1603815)+-741216)}BossesOrderLevel={[t(-713802+733581)]=-22094-(-22794);[t(681132-661683)]=385335+-384635,[t(702006+-681660)]=-453685-(-455185),[t(-587190+606317)]=717903-716403;[t(196235+-176835)]=-254550+256050;[t((823682+-1081597)+((-366027+(-504381+(-540301+((28045+(878547-((656884+-950772)+915271)))-(-976607)))))+426173))]=(698026+-310196)-(335149-(-51181));[t((306373+-195206)+(330148-422006))]=(422881-(947224+-877952))+-352109}BossesOrderWL={[t(991552+-971206)]=-641070-(-642570),[t(889116-869989)]=-983415+984915;[t(56823-(566308+-528885))]=(570427-(-326632))-895559;[t(-671957-(-691322))]=-536802-(-538302);[t(((-104790-459914)-141700)+725319)]=-834070-(-835170);[t(1036023+-1016244)]=663303-(278074-(-384529)),[t(-203776+223225)]=668011+-667311}SpecialBossesOrder={[t((((((868862+(((942795+-2656595)-(-889017))-123183))+94248)+372271)-(-845305))-(327189-(-565048)))+-320682)]=582247+-581547,[t((681177-(-202930))-((823902-70857)-(-111154)))]=963798-963098,[t(-507881-(594178+-1122206))]=-842503+844003;[t(-249576+269687)]=(377084+-595507)-(-219923)}BlankTablets={t(-335079+(1039796-685393)),t(-41177+61289);t(((1001316+-1103749)+860132)-737537),t(148969-129078),t((-497058-(-319561))-(-197164))}Trophy={[t(-634934+(578513-(-76037)))]=t(1019729-1000770),[t(-856727+876742)]=t(-518196+537354),[t(-105752+125277)]=t(((441589-(-191617))+-825295)+212123);[t(995239-975164)]=t(-589060-(-609311)),[t(381518+-361436)]=t(805813+(-373888+-411774))}Pipes={[t(-543507+(-708452+1272241))]=t(455505-435767);[t(-544745-(-564757))]=t(-67951-(-87689));[t(-929431+948562)]=t(425328-405678),[t(((-756299-(-202845))+107762)-(-465012))]=t((-1664618-(-803742))+880539),[t(-981817-(-1000905))]=t(554806+-535068);[t(-833590-(-144580-709112))]=t(820981-800815);[t(499187-(515969-(779065-742716)))]=t(913405-(1774079-(194429+685983)));[t(-680833+(-271133-(-971305)))]=t((-120038-(-534417))-394729),[t(209919+-190490)]=t(1020613-1000875),[t(((-552408-416965)+568125)+420297)]=t(870393-850730)}function GenerateUUID()local M={}M[-947616-(31662+-979280)]=l[(594536-566256)-28274]({t(-336056-(-355495)),t(511701-492527)})return string[t(-128156-(-147129))](M[248850+(235980+-484828)],t(171242+-151099),function(M)local l={}l[948459-948457]=M l[-601548+601549]=l[(761903-88827)+-673074]==t(449613-429860)and math[t(977116+(-488746-(647708+(-1081702-(-474599+(-176080-252605))))))](255209+-255209,(416288-(-286497))+-702770)or math[t(-199841-(-218921))]((-941779-(-796898))+144889,-258416+258427)return string[t(69881+-50291)](t(348046-328478),l[(-309823-90193)+400017])end)end function CheckIsPlayerAlive(l)local D={}D[-463862-(549099-1012963)]=l D[623330-623328]=D[(862198+-886058)-(-23862)]or M[181903-181895]return D[25442+-25440]and(D[861170-861168][t(-910833+(1026278-96404))]and(D[-699351+699353][t(((754262+-1039890)+1272173)-967504)][t((852006-(-89394))-921883)]and(D[-882319+882321][t(-1048469+1067510)][t(618569-598247)]and(D[-74013+74015][t((973846+((197779-(-357820))+-1331887))+-178517)][t(756217-736622)]and D[490677+-490675][t(-467265+486306)][t(-423348-(-442865))][t((1081936-624403)-438413)]>-285308-(-285308)))))end M[747227-747169]=function(l)local D={}D[513008-513006]=l if not D[-862846-(-862848)]then return nil end if typeof(D[(-803833+352180)+451655])==t(-373843+(99544+294453))then return D[-594990-(-318477+-276515)]end if typeof(D[-276089-(-276091)])==t(298269+-278036)then return D[-662898-(-662900)][t(-171862-(-191812))]end if typeof(D[-80071-(-80073)])==t(736633-716637)then if D[-329813-(-329815)]:IsA(t(-99102+119157))then return D[-1012506-(-1012508)][t(-1008687-(-162186+(-282766-583685)))]end if D[(697844-248680)+-449162]:IsA(t(349176-329514))then local M={}M[204400-204398]=D[(-268853-(-899140))-630285][t(998460+-978682)]or D[728791+-728789]:FindFirstChild(t((-147675-(-866185))+-698188))or D[168481+-168479]:FindFirstChildWhichIsA(t(487851+-467796))if M[-388681+388683]then return M[681893+(-693914-(-12023))][t(-840626+860576)]end M[-140650+(-120317-(-260970))],M[-1001667-(-1001671)]=pcall(function()return D[(80875+874398)-(-527277+1482548)]:GetPivot()end)if M[(187264+(986690-249345))-924606]and M[520345-520341]then return M[924782+-924778][t(514886-494936)]end end end if type(D[144119+-144117])==t(36428+-16750)and(D[1045469-1045467][t(2717+17284)]and(D[-371756-((-378117-(-690550))-684191)][t(175029+-154765)]and D[733670-733668][t((219448+-813365)-(-613836))]))then return Vector3[t(-925354-(-944603))](tonumber(D[1844-1842][t((-446766-(-772832))-306065)])or-1022077+1022077,tonumber(D[890067+-890065][t(138007-117743)])or-454368+((-506942+937314)+23996),tonumber(D[188884-188882][t(-799513-(-819432))])or(-1201795-(111725+-784725))-(-1273275-(-9718-734762)))end return nil end function CaculateDistance(l,D)local c={}c[-279967+((-195874+(-626807+190893))+911759)],c[941888-941885]=l,D c[755029+-755027]=M[518515+-518457](c[120989+-120985])if not c[(-505250-435077)+(935476-(-4853))]then return-878141+(-860064+2738204)end c[-596190-(-596195)]=M[(1018748-810769)-207921](c[(-1277413-(-693086))+584330])if not c[-573165+573170]then local M={}M[(591630+-228314)+-363313]=(game:GetService(t(367289+-347329)))[t(-73854-(-92872))]M[-575574-(-1439151-(-863576))]=M[-657878+(((-731694+375399)+1823281)-809105)]and(M[-942737+(145771+796969)][t(-504056-(-523097))]and M[-413640-(-413643)][t((64079-((89254-534497)+(-928126+1529773)))-(-111366))]:FindFirstChild(t((563335+-1247336)-(-704323))))if M[732725+(-897236+164512)]then c[-908237+908242]=M[785926+((((-587757+280758)+-22190)-540937)+84201)][t((-310484-105571)-(((2780550-904526)-988136)+-1323893))]else return-475622+1475621 end end return(c[(-718737-(-170898))+(87437+((422938+588058)+-550592))]-c[(-70402-57777)+128184])[t((149977+493573)-623500)]end function CalculateDistance(M,l)local D={}D[97539-97537],D[-970844-(-970847)]=M,l return CaculateDistance(D[-232144-((723453+-446099)+-509500)],D[((2473067-956445)-737724)+-778895])end function DispTime(M,l)local D={}D[564361-564359],D[368121-368115]=M,l D[40486+-40484]=math[t(-59675-(-78933))](((1760266-586499)-129832)+-1043935,math[t(444028-424332)](tonumber(D[(1144355-756578)+((((308973+(263751+-615537))+(215181+474913))+(-395572-767277))-(170508-298301))])or-1031922-(-1031922)))D[(-903686-((-728734+400609)-(-143424)))+718990]=math[t((1447790-((-1371140-(-336354))+1835006))+-627874)](D[-1036210-(-1036212)]/(-388166+(55008-(-359366+-60192))))D[-348445+348449]=math[t(-314045-(-333741))]((D[851034+-851032]%(-311278-(-397678)))/((790286+215801)+-1002487))D[-205900-(-205903)]=math[t(738490+(-1615136-(-896342)))]((D[-800597-(-800599)]%(97941+-94341))/(-945175+945235))D[-748668-(-748675)]=math[t(935978-916282)](D[902836+-902834]%(-869690+((6582-(-585543-(-589927)))-(301377+-1168929))))if D[(-367529-(-356207))-(-11328)]then if D[859609-859604]>953531+-953531 then return D[668992-668987]..(t(-327360+347698)..(D[-1015316+(-1030048+2045368)]..(t(-217280+236692)..(D[(1133737-654352)+(-49255+-430127)]..(t(-712259+(6579-(-724569)))..(D[639467-639460]..t(-45280-(-65029))))))))else return D[(828126+-721789)+-106333]..(t(-745540-(-764952))..(D[581878-581875]..(t((717148-659394)+-38865)..(D[-216146+216153]..t(-938541+(794539+163751))))))end end return D[-971299+971304]..(t(170418-151415)..(D[128221-128217]..t(-671650+691751)))end function GetCurrentDateTime()local M={}M[-975288-(-641826+-333475)]=os[t(547276-(-681106+1208028))](t((-362671-(-277706))-(-104713)))M[492374+-492362]=M[(-422303-(-755499))-333183][t(99400-80404)]M[-238036-(221037-459080)]=M[-716793+(-248391+965197)][t((366172+((-1044284+1063529)+620841))-(612770+(-392313+766186)))]M[1012914-1012906]=M[-911617+911630][t(199501-(889228+-708853))]M[-572898-(-572909)]=M[225041+-225028][t(((-1474422-(-877046))+465909)+151176)]M[-498035+498045]=M[623491-623478][t(792976-773001)]M[-427693-(-427707)]=M[842517+-842504][t((((545221+-1487)+418827)-667216)-275732)]M[306799-306790]=string[t(-160433+180023)](t(337206-317106),M[-494264+494276],M[560707+(-1022796-(-462096))])M[-254535+254538]={t((-634056+((1501022-593601)-543131))-(-289077)),t((522969+-241454)-262182),t(((1243396-1027512)+-1104760)+909148);t(717030-((746950+-211062)-(-161126)));t(-670524-(-690213));t((292649+(-127338+-880208))+735157);t((-681235+((-18152-(-34847))+1248812))+-564454)}M[860985+-860979]=M[-692857-(-692860)][M[253845+-253831]]M[-827242-(-827243)]={t(-473947-(-1328882-(-835784)));t(-604435-((1023871+-871794)+-776187)),t((863156+141198)+-984526),t(-707273-(-726812)),t(117088-97612),t(143866+-123496),t((-56302+(-256550-25533))+358752),t(((-967724-(-1039869))+-980668)-(-927755));t(-393948+412956),t((1050531-(898320+148054))-(-15930)),t(-434340+454322),t(292363+-273000)}M[(-479492-(-427013))+52484]=M[(90355-898631)-(-724584-83693)][M[747846+-747835]]M[-755515+755517]=string[t(-960977-(-607811-372756))](t(-795099+815034),M[-819730-(-234954-584782)],M[-818281-(-818286)],M[-741976-(-741984)],M[(-1250389-(-524893-(264712-555413)))+((497779+840799)-(1224794-902423))])return M[-584365+584374]..M[842607-842605]end function RandomArguments(...)local M={}M[457868+-457867]={...}if#M[-465734+465735]==((2722570-1024182)-1009781)+-688607 then return nil end return M[158248-158247][math[t(472984-453904)](-959570+959571,#M[677776-677775])]end function RoundVector3Down(l)local D={}D[(-656526+-369580)-(-1026107)]=l return Vector3[t((-1017213-(-321364))+(209455+505643))](math[t((-229546+-6256)+255498)](D[-1029481-(-1029482)][t(919622-899621)]/((-497487+573833)+-76336))*(-580806+(189386+391430)),math[t(-554963+574659)](D[(-67616+((-809041-(-790557))-458451))+544552][t(-701972-(-1602935-(-880699)))]/(584902-584892))*(797322+-797312),math[t(-696404-(-716100))](D[141578+(-941842+(805932+-5667))][t(-120549-((-328080+-48441)-(-236053)))]/(794642-794632))*((382083-(-201369))+(477824+(-174509-886757))))end M[(-627526+270840)+((-408931+95566)-(-670099))],M[139319+-139272]=415862-415832,tick()CaculateCircreDirection=function(l)local D={}D[-290229+290230]=l if M[(-716160+(-172388+1352553))-(438158+(-693214-(-719013)))]>830169+(-227018-553151)then M[((341626+(-655827+-74136))+1354351)+-965966]=-1046688+(((-672562+1470422)+-821104)+1069992)end M[718776+(587454+-1306182)]=M[(176764-(-217315))+((-78384+-156144)+-159503)]+(tick()-M[293308+-293261]>.4 and(507037+(-385442-(-141326)))-262841 or(-667636+434891)+232745)if tick()-M[809915-809868]>.4 then M[(1439976-693940)-745988]=M[-604658-(-604706)]+(806390-806310)M[-1040777-(583219+(-2113181-(-1531289-(384387+-1426538))))]=tick()end D[-527755-(-527758)]=D[-202468-(-202469)]+Vector3[t(-486828-(-506077))](math[t(-631913-(-650935))](math[t(80239+(-356731+295951))](M[-852036-(-852084)]))*(723156-723116),201149-201149,math[t(703273+-683042)](math[t(-127590+147049)](M[(-1851427-(-962423))+(-846406+1735458)]))*(((1097133-391734)+-721627)+16268))return CFrame[t(-351091-(-370340))](RoundVector3Down(D[-111357+111360]))end function GetMonAsSortedRange()local M={}M[939234-939232]={}table[t(580290-560392)](Services[t(35807+(((413737+-1240554)+976380)-165555))][t(17613-(-2585))]:GetChildren(),function(l,D)local c={}c[656942+-656940],c[846-(607200-606355)]=l,D if c[-397198-(-397199)]and(c[193334-193333]:FindFirstChild(t(-322625-(-342142)))and(c[-363094-(-363095)]:FindFirstChild(t(678152+(1044762+-1702592)))and c[728062-728061][t(201947-182430)][t(1019393-1000273)]>(-52601-(-570320))+-517719))then table[t(725746-706590)](M[-407439+(521271+-113830)],c[-240648+240649])end end)table[t(-261453-(-281351))](game[t((105678+426738)-512578)]:GetChildren(),function(l,D)local c={}c[(-1941664-(-1019053))-(-922613)],c[501413+-501412]=l,D if c[-198336+198337]and(c[-72109+72110]:FindFirstChild(t((-1688773-(-686922))-((-836912+((((-655995+(-714562-942010))-(-556573))-(-962558))+2401370))+-1792390)))and(c[716227+-716226]:FindFirstChild(t(-388183+408505))and c[-753487+753488][t(-9696-(-29213))][t(840620-821500)]>-311114-((482022-147932)+-645204)))then table[t(156850-137694)](M[-57379-(-57381)],c[414240-414239])end end)table[t(-237458-(-256663))](M[-1041759-(-1041761)],function(l,D)local c={}c[832004+-832002],c[835686+-835685]=l,D return CaculateDistance(c[281795+-281793][t(-1036255+1056577)][t(627382-607149)])<CaculateDistance(c[(741259+-1197815)+456557][t(155916-(526930-391336))][t(864892+-844659)])end)return M[-217315-(-217317)]end function GetMeleeIdByName(M)local l={}l[(-329526-75318)-(-404845)]=M for M,D in MeleesTable do local t={}t[587544-587542],t[91130-91129]=M,D if t[(118359+(-808517+1377990))+-687831]==l[804521+-804520]then return MeleesId[t[-750280-(-750282)]]end end end function BuyMelee(M,l)local D={}D[(1046257+-1368477)+322223],D[963651+(-387488-576162)]=M,l if D[397231+-397230]then local M={}M[(-1046526+159705)+886822]=Remotes[t((-43965+789907)+-726100)]:InvokeServer(t(((-180102-519342)+247248)-(-471745))..D[-50192+50195],true)return M[-338313-(149511+(-317460-170365))]==-99474+99475 end return Remotes[t(617607+-597765)]:InvokeServer(t(-192716+212265)..D[-983420-(-983423)])end function SendKey(M,l)local D={}D[(630751+-511358)-119392],D[(-1641771-(-848607))+793166]=M,l;(function()(game:GetService(t((634405-969219)-(-354665)))):SendKeyEvent(true,D[950140-950139],false,game)task[t(528224-508358)](D[-147051-(-147053)]);(game:GetService(t((-348914-(-263320))-(-105445)))):SendKeyEvent(false,D[-141776-(-141777)],false,game)end)()end function FruitIdToName(M)local l={}l[-833608+833610]=M l[-77859-(-77860)]=string[t(-776164+(-109850-(-905470)))](l[-517031-(-517033)]or t(-414156+433773),t(488455-468900))return l[-146030-(-684382+(650467+-112116))]and l[40003-(-929640-(-969642))]..t(-842351+862392)or t(-500383+519467)end function Split(M,l)local D={}D[-333301+333304],D[250282+-250281]=M,l if D[70173+-70172]==nil then D[277197+-277196]=t(-324355-(-344346))end D[(749110-934912)-(-185806)]={}for M in string[t(16575+2405)](D[536579-((894333+43364)-401121)],t(-651758+670855)..(D[807956+-807955]..t((138159+-359338)+240095)))do local l={}l[64465+-64463]=M table[t((((-684848-(-649985))+-629058)+1506934)+-823857)](D[(-1040118+1588868)+-548746],l[(714677+197184)+(-136405+-775454)])end return D[525687+-525683]end function FruitNameToId(M)local l={}l[819245+-819242]=M l[256431-256430]=(Split(l[-536897+536900]))[-980475+980476]return l[-142860-(-142861)]..(t(10023-(-9264))..l[397699-397698])end M[643593-643541],M[(-10849-(-967805))+(-285582+(-1018875-(-123653-223881)))]=pcall(function()return require(game[t(-546075+565913)]:WaitForChild(t(-469956+490004),656887+-656882))end)M[771099-(87525-(-683517))]={[t((-350163-(-363415))+((-393834+703536)+-303695))]=-622225-(-622227),[t(-276308+295995)]=true;[t((150982+-879862)+748928)]=M[-680038-(-680090)]and(type(M[-926558-(-926591)])==t((-195028+-281707)+496413)and M[(462195-(-487718))-949880])or{},[t(198994+-179021)]={};[t(-363818+384037)]={[t(-305963-(-324964))]=((1190884-(652020-244891))+-757629)-26125,[t(-654087+673856)]=333253+(-483377+150125);[t(144109-125143)]=1026481-1026480,[t(-211587-((279797-(-128252))+-639133))]=-695837-(-695838);[t(-477059+496711)]=(-155187-65655)-(944685+(-512779-652749))}}M[((-1392659-(-758235))+513587)-(-120847)],M[286648-286646]=pcall(function()return(require(game[t(-769860+789698)][t(169493+-150141)]))[t(-555992-(-574986))][t(391962-372993)]end)M[-385007-(-702330-(-317284))]=M[276600-276590]and M[64403+-64401]or{}M[-864803+864838]={[t(512560-(-744677+1237237))]=t(646431+(-262078+-364777));[t(-972384-(-991991))]=t((-1377257-(-602537))-(-795036)),[t((610323+178593)-768640)]=t(-526138-(-546198));[t(-408517+427674)]=t(-991281-((-2442700-(-906894))-(-259898+-264400)));[t((272585-(354908+144936))-(741302-988515))]=t(-216943-(-236768));[t(733228-713793)]=t(-798534+818648);[t(707370-688171)]=t(-982731-(-1969848-(-967054)));[t(-679080+(872865-(((-901693+-45125)-(-834043))-(-286272))))]=l[777025-777019]({t(395720-376523);t((-1023970-(-65648))+978441)}),[t(437605-417599)]=t(475761+(-76790-378837)),[t(265977-246418)]=l[1021528+-1021522]({t(600569-580968);t(319052-298933)});[t((446671-(-190453+-314572))-932153)]=t(230237-211344),[t(-787151+806849)]=t(1021783-1001734),[t(135320+-115555)]=t(182456-(208082+-45989));[t(-416989-(-436177))]=t(85816-66759),[t(-1002784+(615322+(1174279-766708)))]=t(-1002489+1021546),[t(716065+-696568)]=t(-229378+(48248+201244)),[t(-83302-(-102670))]=t(-777122-(-796947));[t(349074-330070)]=t(-395779-(-415654));[t(94469-(915403-840450))]=l[-959460+959466]({t(-31541+51444);t((-913502+572476)+361145)});[t((941238+-889516)-32739)]=t(-902656-(-921594));[t((-488348-363659)-(-454163+-416853))]=t(545041+(365769+-891149));[t((521042+-841668)-(560855+-900518))]=t(-178568-(-198636));[t(820685+-800791)]=l[-165051-(-165057)]({t(220971-200714);t(-1015416-(-1035535))});[t((-279041-(-436137))+-138049)]=l[-616249-(-616255)]({t((-208050+558808)+-331582);t(60899+-41429)});[t(-302272-(-322003))]=l[188353-188347]({t(848708+-828328);t(-152171-(-171641))});[t(940045-919952)]=l[-201276-(-201282)]({t((-148197-(-1028570))+-861279);t((-917523+((879482-(-504003))-561137))-(-114645))});[t(-711152+(943582+-213094))]=l[-843445+843451]({t(-110168-(-129262));t((-33741-(-710652))+-657441)});[t(((711188+-764424)-(-711492))+-637924)]=l[756876-756870]({t(-307481+326575);t(-438444-(-457914))});[t(267077+-247310)]=l[-946539+946545]({t(738427-719212);t(569814-(-864722+1414915))});[t(152044-(402299-(-702319-(-971785))))]=l[-104369-(-104375)]({t(-428128-(-447323)),t(224748-204745)});[t(-116356+136720)]=l[(842574+(-1170847-(-478244)))+-149965]({t(698651+-679304),t(346146+-326593)});[t(404073+-384127)]=l[821423-821417]({t(169182+-149835),t(-50830+69853)}),[t((-409947+804898)-374783)]=l[68398-68392]({t(-541970+562184);t(-194298+((547523+-242507)+(848453+-939052)))});[t((409645+-610382)-(-219990))]=t(756643-737537);[t((-705530+842295)-117819)]=t(401691+-382619);[t(510617-490553)]=t((1619112-643316)+-955487),[t(-31152+(35539-(-831325-(-815768))))]=l[-1004073+(1519341-515262)]({t(-366626-(-386496));t(-895180-(790723+(-1067124-638400)))}),[t((841380+-602303)-218804)]=l[(540185-(-12053))+-552232]({t(-829231+849506);t(258235-238656)}),[t((((866923+-1477696)-390088)+978160)+41746)]=l[-757813+757819]({t(612256-591981);t(554932-535761)});[t(1034609+-1015689)]=t(-86206+105875),[t(-323195-(-343289))]=t(1014616-995500),[t(213449-193325)]=t(-1015826-(-1035054));[t(824187-805276)]=l[382927-382921]({t(986288+((505154-603581)-868555));t(5038-(-14541))});[t(924950-(231914+673103))]=l[-157198+157204]({t(856195+-836889);t((-360192+-587750)-(-967113))}),[t(-205685+225865)]=l[35754-35748]({t(348726+-329420),t(482212+-462603)}),[t(412986+(152584+-546176))]=l[-711265-(-695079+-16192)]({t((787675-556716)-211273),t((-760456-((-761854+95316)+-112948))+440)})}M[192452-(1126100-933714)]=function(l,D)local c={}c[-300703+300708],c[(-339155+-333634)+672793]=l,D if not c[(((-836977-(-19736))+(-402369-421239))-(-989358))-(-651496)]then return nil end c[-800798-(-800799)]=M[((829985+392885)-439626)-783209][c[-237928+237933]]if c[456527+-456526]then local M={}M[214115+-214114]=workspace:FindFirstChild(t(-841011-(-860389)))and workspace[t(-337877+(-108990-(-466245)))]:FindFirstChild(c[30069-30068])or game[t((128649+((881165+-1648317)-(-43330+64746)))-(-679757))]:FindFirstChild(t((-573416+73496)+519298))and game[t(184158+-164320)][t(483895+-464517)]:FindFirstChild(c[-986497+986498])if M[(720702+-1090667)-(-369966)]then local l={}l[-300560-((300423+-1269913)-(-668928))],l[(-102761-(-284773+(133620+-130407)))+(319613+-498409)]=pcall(function()return M[(((277703-586463)+1352992)+(-2609900-(-849840)))-(-715829)]:GetModelCFrame()end)if l[909199+(-478903+-430294)]and l[-821279+821282]then return l[-867630+867633]end if M[-937734-(-937735)][t(-726276-((-178049+(-302691+(((61894-(-724518-(-377402)))+-1748039)-(-362740))))-(-710975)))]then return M[(413247-958713)+545467][t(-901163-(-920941))][t(-907392+927625)]end end end if workspace:FindFirstChild(t(-931570+950948))then local M={}M[1032903+-1032902]=(((c[-972774+972779]:lower()):gsub(t((-1648299-(-90333+((464511+514889)+-1922080)))+(111806+522478)),t(-117231-(-136848)))):gsub(t((866971-465627)+-381831),t(49247-29630))):gsub(t(((-898843+1410833)+(58659-793840))-(-243370)),t(90783-71166))for l,D in ipairs(workspace[t(1027307+-1007929)]:GetChildren())do local c={}c[-899935+899937],c[-54634-(-54637)]=l,D c[-864634+864638]=(c[(551985+-856760)+(367968-63190)][t(600912+-581258)]:lower()):gsub(t(-318291-(-337768)),t(698088-(((1206722-(-967770+1648367))+-288573)+440919)))if c[(-168643+1176620)-1007973]:find(M[-407174+407175])or M[70860+-70859]~=t(-157341-(-176958))and M[-713398+(((-592503-(-596579))+494831)-(-214492))]:find(c[(-893078+893160)+-78]:gsub(t(516985-496630),t(555740+-536123)))then local M={}M[(-731256+((((-787830-(-249328))+1197974)-((169726-(-2456))+-474688))+-708375))-(-786444-(-308788))],M[-60951-(-60953)]=pcall(function()return c[531281+(-53414+-477864)]:GetModelCFrame()end)if M[-480552+480555]and M[(342425+-982827)-(-984490+344086)]then return M[626508+-626506]end end end end c[759787-759781],c[187524-187522]=pcall(function()return require(game[t((448647-769026)-(-340217))][t(124452-105100)])end)if c[(369115+-853018)+483909]and(c[-390658-(-390660)]and(c[(865708+-1208162)+342456][t(962237-943243)]and c[(705741-(727536-499890))-478093][t(254291+-235297)][t(12625+6344)]))then for M,l in pairs(c[((33490-(-185557))+22971)+(69289+-311305)][t(190857+(-115934-55929))][t(-613588+632557)])do local D={}D[232662-232659],D[-8283-(-8284)]=M,l if D[-97508+(216023-(1002316-883802))]and D[370431-370430][t((143914+269208)-394125)]then for M,l in ipairs(D[(-496086-(-558559))+-62472][t(711918-692921)])do local U={}U[(-19404+(526691+-1452003))+(1880239-(724572-(-210949)))],U[-591296-(-1622526-(944422+(390734+(634508+((915004+((-488306-(-1002916))+-1522234))+-2908273)))))]=M,l if U[999612-999611]==c[53963-53959]then if typeof(D[751996+-751993])==t(-668241-(-688237))and D[532573-532570]:IsA(t(1041417+-1021362))then return D[(542519+(336342+-150980))-727878][t(187271+-167038)]elseif typeof(D[477694-477691])==t(-1013686+1033919)then return D[895229+((-602871-847457)-(-555102))]end end end end end end return nil end M[-850912+850969][t(975325-955839)]=function(l)local D={}D[-235228+235235]=l D[-238179-(-238182)]=ScriptStorage[t((703273-(862059-718143))+-539894)]and ScriptStorage[t(156098+-136635)][t(366802+-346963)]or M[208451+-208443]:FindFirstChild(t(630706-611712))and(M[187044-(695628+((615966+-165000)-959558))][t(365947+-346953)]:FindFirstChild(t(499781-479942))and M[-69752-(-69760)][t((363592-337235)-7363)][t((22784-808071)-(-805126))][t(-984653+1003884)])or(-627636+783696)-156059 D[-436829+436835]=(615732-502367)-113365 D[(87716-1013780)-(-926068)]=nil D[-580741-(-580751)]=nil D[-916333-(-916341)]=M[-792375+792432][t(-654028-(-674076))]or pcall(function()return require(game[t(-293040-(-312878))][t(1051511-1031463)])end)and require(game[t(654359-634521)][t(317326+-297278)])or{}for l,c in pairs(D[965067+(-154535+-810524)])do local U={}U[-816449+816451],U[480595+-480594]=l,c if not M[(-404192+1215369)-811120][t(-931565+951784)][U[(-437221+-187536)-(-624759)]]and(type(U[664677+-664676])==t(-931576+951254)and U[-1005582+((532791-126565)+599357)][-941965+(691144+250822)])then local M={}M[-831196+831198]=U[-602367-(-602368)][-272477+272478][t(319955-(365445-64807))]or(-1266342-(-863884))+(-210027-(-612485))if M[-337594+337596]>=D[514141-514135]and M[1018807-(-2681-(-1021486))]<=D[705296-705293]then D[(-545402+921956)-(-382149-(-758697))]=M[333425-333423]D[(321353-988426)+667077]=U[191533+-191532]D[-508505-(-508515)]=U[((-370016-286794)+168709)+488103]if D[-687388+687391]>=-129159+(-169054-(-299713))and(SeaIndex==393497-393495 and U[(1338369-397870)-((-1395106-(-948674))+1386929)]==t(615939-596045))then break end end end end if not D[-745815-(-745819)]then return end D[-144645-(-144652)][t(-584911-(-604955))]=D[(((-794486-(-18365-((-641213+(-250095+1788943))-238304)))-(-144563))+-893600)-(-865837)]D[265129+(563775-828902)]={}for M,l in ipairs(D[((995651+-1815285)+1041486)+-221848])do local c={}c[(-289414+681966)-392550],c[734693-734692]=M,l table[t(-422215-(-441371))](D[-519465+519467],c[-1046815-(-1046816)])end D[-785444-(-785449)]=D[-836278+836280][#D[-57168-(-57170)]]if D[-115164+(997107-881938)]and D[-467056+467061][t((783882+-404325)+-359786)]then for M,l in pairs(D[-414407-(-414412)][t(1028142+-1008371)])do local c={}c[-865146+865148],c[35656-35653]=M,l if c[244293-244290]==314742+-314741 and#D[920082+-920080]>986285-986284 then table[t(-1018077-(-1038094))](D[(-707006+112063)+594945],#D[-228036+228038])end end end D[493699-(1297849-804151)]=D[((-641784+1579006)+-1770939)+(1675426-841707)][#D[((-621478+1038490)-(1652626-605669))-(-629947)]]and D[842060+(-571894+-270164)][#D[182323-182321]][t(-981059-(-238557+(-726945+((-1205201-(-251818))+(-695963+1614472)))))]or D[(709818+3213)+-713025]D[-246064+246071][t(753774-733628)]=M[-882718-(-882784)](D[-311648-(-311658)],D[-869037-(-650074-218964)])D[-783297-(-783304)][t(-813833-(181812-1015618))]=D[663977+-663975]end M[517984+-517927][t((87486+747266)+-814947)]=function(l)local D={}D[-780602+780604]=l if not D[(103478+-429504)-(-507037-(-181009))][t(210939-190966)]or#D[-476004+476006][t(957393-937420)]==824926-(1223456-(367433+31097))then D[430732+-430730]:RefreshQuest()end if not D[-94707+94709][t(-94283-(-114256))]or#D[(762211+-1640732)-(-869981+-8542)][t(-602102-(-622075))]==(846484-((308443-(-463790))-201255))-275506 then return nil,nil,nil,nil,nil end D[-382416+382421]=ScriptStorage[t(35825-16362)]and ScriptStorage[t(14332+5131)][t(-242180+262019)]or 903964-903963 D[735521+-735518]=D[717382-((343821+-70287)+443846)][t((324574+377604)+-682205)][D[-241175-(-241177)][t(639457+-620198)]]and(D[-880923+880925][t(730636-710663)][D[-423665+423667][t(589970+(331444+(-1789830-(-887675))))]][t((-154034+1049512)+-876161)]<=D[1000211+-1000206]and D[802820-802818][t(887048-867789)])or-203246-(782499+-985746)D[-804869-(134647+-939520)]=D[795369+-795367][t(819631+-799658)][D[-80140+((-180961+310056)-((973354-796476)+-127926))]]if D[(852579+-160961)+-691614]and D[((574757+(361507-867359))+93115)-162016][t(90482-70711)]then for M in pairs(D[(178030-(206825-(-639664-(-958489))))-290026][t(176296-156525)])do local l={}l[650521+-650520]=M return l[-734212-(-734213)],D[980700+(-1626226-(-645528))][t(-637039+657185)],D[781230+-781228][t(931336-911292)],D[-672836-(-694413+(566983-545409))],D[(200921+-1134855)+933938][t(-710071-(-729725))]end end return nil,D[199084-199082][t(-814976+835122)],D[-709837-(-709839)][t((1133191-1013448)-(-612539+712238))],D[-729091+729094],t(161233+-142306)end M[(331330-(-560570))+-891843][t(-865542-(-1172207-(-286639)))]=function(l)local D={}D[-900740+900741]=l D[-208486-(-410994+202507)][t(-706041+725300)]=D[634105+-634104][t((-667969+1622174)+-934946)]==890534+-890532 and-680419+680420 or-240446+240448 end M[750479-(-196369-(-946791))][t(302934+-283848)]=function()pcall(function()Remotes[t(-615871+635713)]:InvokeServer(t((-771131+365927)-(-424290)))end)end M[937750-937693][t(-27043+((-826447-(-897434))-23922))]=function(D)local c={}c[297093-297092]=D c[-474822-(-480233+5408)]=game[t(952206+-932246)][t(-1013323-(-483641-548700))]:FindFirstChild(t(-957165+977418))and game[t(-318218-(-338178))][t(867283-(103256-(-745009)))][t(-1021968+1042221)]:FindFirstChild(t(730522+-711413))c[(1490757-985780)+-504973]=c[-473162+(-843589+(640604-(-676150)))]and c[(-526514+533697)-(-797480-(-804660))]:FindFirstChild(t((-371261+1319432)+-928906))if c[(-840778-(-236877))+603905]and c[719425+-719421][t(735758-715788)]then local M={}M[((-316480+519885)-(-77159-(-508922)))+(648913+-420553)]=c[-238075+238079]:FindFirstChild(t(548000+-528446))M[(-711929+74647)-(-637285)]=M[64674+-64672]and(M[364386-364384]:FindFirstChild(t(-282319+301956))and M[(913590+-815268)+-98320][t((-858919+1521921)-643365)]:FindFirstChild(t((-1799153-(-869610))-(-949203))))if not M[-514260-(-514263)]then for l,D in ipairs(c[(1375536-811685)-563847]:GetDescendants())do local c={}c[685338+-685337],c[880298-(((359887-(652192+233846))+744642)+661804)]=l,D if c[961604-(-470654+1432255)]:IsA(t(-763999-(-783997)))and((c[361918-361915][t(538930+-519896)]:lower()):find(t((742041-(1516187-900304))+-106730))or c[-1048516-(-1048519)][t(-778897-(-797931))]:find(t(-132406+151569)))then M[418099+-418096]=c[-444837+444840]break end end end if M[(-26242+15940)+(-657523+667828)]and(M[(894702+118216)-1012915][t(850581+-831547)]and#M[116600-(840202-723605)][t(68139-49105)]>282279+-282279)then local D={}D[897521+-897520]=M[847825-847822][t(385922-(-644263+(209986+801165)))]D[-908896+908898]=(((D[358327-358326]:gsub(l[-381350-(-381356)]({t(-573912+594230),t(187812+-168310)}),t(-436122+455739))):gsub(t((469750+(-603715+-696574))+(1673807-(1038636-215140))),t((1290711-548312)-722782))):gsub(t((838513-414610)+-404779),t(-523637+(366849+176405)))):gsub(t(-753439-(-772381)),t(-167880-(-187497)))D[-689015+689017]=string[t(928752+-909779)](D[649274+-649272],t(-161801-(-182078)),t(31669-12556))if c[(-984788+3052)-(((((931868+-339475)-(49935+-171937))-(-280456))+-1498477)-478111)]then return D[(-139379-(-621162))-(-969743+1451525)],D[6536-6534]end return D[530990+(733121+-1264109)],D[897602-897601]end end return nil,nil end M[-265732-((-188001-575020)-(-497232))][t(-893603+913745)]=function(l,D)local c={}c[-1025985-(-1025986)],c[-519139-(-519142)]=l,D return Remotes[t(-351146-(-370988))]:InvokeServer(t(-826105+846247),c[372129+-372128],c[1021512-(47035-(-974474))])end ScriptStorage[t(730894-((864067+870967)-(4516+1019727)))]={}M[886288+-886283],M[61818+-61767]=pcall(function()return game:HttpGet(l[960767-960761]({t(480405+-460382),t(560285+-541137),t((-540754+1345355)-785640),t(-381083-(-401303))}))end)if M[-306151-(-306156)]and(type(M[-306963+307014])==t(-119581+138999)and#M[-255073-(-239016+-16108)]>-703198-(-703208))then local l={}l[-61904-(-61905)],l[-569187+569190]=pcall(function()return Services[t(-417002-(-1051299-(-614104)))]:JSONDecode(M[591013+-590962])end)if l[45011-45010]and type(l[14064-14061])==t(588534-(380239+188617))then for M,l in pairs(l[-213831+213834])do local D={}D[-106003+106006],D[-911973+911975]=M,l ScriptStorage[t(1019890+-999787)][D[310150-310147]]={}for M,l in ipairs(D[578698-578696])do local c={}c[(-1339779-(-454123))-(-885659)],c[1033187+-1033186]=M,l table[t(((((-658838-1006906)-(-551154))-(-121523))+1464350)+-452127)](ScriptStorage[t(125642+-105539)][D[310039+-310036]],Vector3[t(-306723-(-325972))](c[((-884186+(675811-(-680300-(906204-794653))))-680897)+97422][48527+-48526],c[971142+-971141][(467048-775650)-(-308604)],c[532834+-532833][484140+-484137]))end end end end TweenController={}M[((489226-104724)+-38539)-(1104577-758651)]=-455581+(1472118-1016537)M[-26553+26587]={}for l,D in game[t(-967917+987755)][t(419987-400609)]:GetChildren()do local c={}c[-439594-(155014+-594609)],c[-551717-(197669+-749389)]=l,D if c[-709012-(-709015)][t((801817-(-55959))+-838122)]==t(37034+-17657)then table[t(-373311+392467)](M[(-509804-((-798057+686373)+(-400487-(-652852))))-(-259179-391340)],c[-148833-(-148836)]:GetModelCFrame())end end function TweenController.Update()local M={}M[235-234]=game[t(-117937+137897)][t(-850568+869586)][t(-607908+(931589+-304640))][t(103484+(1046767+(-2065767-(-935838))))]HumanoidRootPart=game[t(209609-189649)][t(998175+-979157)][t(-539353+558394)]:WaitForChild(t(-4962-(-25284)))if CaculateDistance(M[(-862628+(1283378-707252))+286503][t(315715-295482)])>-929122-(-929372)then pcall(function()TweenInstance:Cancel()end)TweenDebounce=true M[-202095-(-202096)][t(-21195+41428)]=HumanoidRootPart[t(440749+-420516)]TweenDebounce=false end HumanoidRootPart[t(252911+-232678)]=M[-195446+195447][t(633194+-612961)]+Vector3[t(864194+(-1415698-(-570753)))](-46869+46869,834386+-834383,-298540+(((476547-(-443940))+((-1466705-459481)-(-454860)))+(1350657-501278)))end function GetPortal(M)local l={}l[492020-492018]=M if not Portals or#Portals==134118+-134118 then return end l[926467-926464]=typeof(l[-966432-(-966434)])==t(-368853-(-389086))and l[(1024392+(446599-1035041))-435948][t(-238966+258916)]or l[(263267+-550541)-(-287276)]l[-324737-(-324742)]=game[t(752833+-732873)][t((251002+-482299)-(-250315))][t(((-614071-(-385934))+1156397)+-909219)]and(game[t(-781807+801767)][t(-952744-(-971762))][t(-320187+339228)]:FindFirstChild(t(-790909-(-811231)))and game[t(363609+-343649)][t((806282-(((-403247+(690200-(-549444+616821)))+-684382)-(-512479)))+(550310+-1289901))][t((-633941+50154)+602828)][t(-521273+(-172970+714565))][t(-248828+268778)])if not l[((-943625+2238438)-(((872857-921292)-(-11090))-(((501853-(-24671))-802705)-347514)))+(-278666-429792)]then return end l[192791+-192787]=(l[614968+-614963]-l[-602457+602460])[t(34314+-14264)]l[62492-62491],l[-829748-(-829754)]=8999118935-(408048+-1289113),nil for M,D in ipairs(Portals)do local c={}c[(859197-((-533885-(-798046))+87184))-507849],c[513998-513993]=M,D c[-653311-(-653312)]=typeof(c[-935009+935014])==t(-19364-(-39597))and c[-197393-(-197398)][t(-894687+914637)]or c[995369-995364]c[832087-832083]=(c[961131+-961130]-l[-523565-(-523568)])[t(506649+(-9431+-477168))]if c[-557033+557037]<l[-328916+328920]-(-959011-(-959411))and c[-784977+784981]<l[338104-338103]then l[430507-430506]=c[(-490433+1247114)+-756677]l[65161+(932583+-997738)]=c[625232-625227]end end if l[154131-154125]then pcall(function()Remotes[t(-24554-(-44396))]:InvokeServer(t(1007198-987001),l[704396+(-1290991-(-586601))])end)return task[t(-137868-(-157734))](.2)end end function GetEntries(l)local D={}D[564401-564399]=l D[-383506-(-597803-(-214294))],D[939390+-939389]=479492+8999520508,nil for M,l in M[-986071+986105]do local t={}t[(1422583-528189)+-894390],t[-24445+24448]=M,l t[871177-(372909-(-498267))]=CaculateDistance(t[-193744+(-897244+(1852107-761116))],D[102156-102154])if t[-64397+64398]<CaculateDistance(D[-410655+410657])-(147687+-146987)and t[-562476+(-141821-(-704298))]<D[-109180+109183]then D[-91366+91369]=t[1002523+(780099+((-1217027-(-930371))+-1495965))]D[((-912112+1136327)-(-271216))+-495430]=t[331668-331665]end end if D[((-1529056-(-527938))-(-698721))+302398]then if os[t(-169125+189396)]()-M[-170325-(359713-(-180933-(-711008)))]>(((-503734-(16682+(-524212+-121666)))-(-588492))-937090)+223166 then for M=-808003+808004,-20298-(-20308),-835438+835439 do task[t(1020340+(-1395230-(-394756)))]()end end end end function TweenController.Tween2(l,D)local c={}c[-90083+90087],c[(-78390+(-1314347-(-984234+537745)))+946251]=l,D c[786488-((352773+267705)-((-66766+316125)-415368))]=Config and(Config[t((1070476-435815)-614783)]or Config[t((-255753+-244488)+520058)]and Config[t(((770222-(-1018287+1599403))+-1088103)+918814)][t(-429587+((470624-(-793963))-815122))])or(-981654+1877265)+((-91321-((-887258+330407)-(-942914-(-93222))))+-511179)TweenInstance2=Services[t(-606978-(-626039))]:Create(c[(643100-1000082)-(-356986)],TweenInfo[t(-780813-(-1822808-(-1022746)))](CaculateDistance(c[((490819+-342793)+-957073)+809051][t(((-776631-(-171450+-203821))-272562)+694155)],c[(-374161-(-44514-817707))-488057])/c[-716262+716263],Enum[t(593271+-573449)][t((210886-847404)+656190)]),{[t(-149730+169963)]=ConvertTo(CFrame,c[729829-(383001-(610748-957573))])-Vector3[t((((((454796-(-545877+78237))+-958511)-(-823325))-(-462766))-255061)+-975706)](-275299-(-275299),86188+(-193039-(-106851)),-437431-(-437431))})TweenInstance2:Play()end TweenTargetPosition=nil M[-281840-(-281863)]=nil M[-513477+513498]=nil M[-628355+(((-1521472-(166370-957374))+523713)-(-835140))]=function()if M[-714941+714962]then return end M[-484065+484086]=(game:GetService(t(225898-205999)))[t(232902+-212903)]:Connect(function()pcall(function()local l={}if not M[659348-659325]then return end l[289529+-289527]=game[t(-964438-(-984398))][t(367165+(-1233794-(117730+-1003377)))][t(528878+-509837)]if l[((-468941+-568138)+1376133)+-339052]then local M={}for D,c in ipairs(l[804267+-804265]:GetChildren())do local U={}U[(-143423-(-384301))+-240876],U[345820-345819]=D,c if U[-435917+435918]:IsA(t(789448-769393))then U[((155697-(-834334))+-1614438)-(-624408)][t(-185244-(-205421))]=false end end M[512835+-512833]=l[278002-278000]:FindFirstChild(t(-607012-(-627334)))if M[-976184+976186]then M[-615986+615988][t(392793+-373247)]=Vector3[t((131855+778078)+-890065)]M[-1009018-(-1009020)][t(-406491-(-910886-((-368041-369320)-(-638476+386523))))]=Vector3[t(-109314+129182)]end end end)end)end function TweenController.Create(l)local D={}D[375977-(648271+(-388831-(-116530)))]=l if not D[-375554+375561]or TweenDebounce then return end D[(77569-(-602708))-680274]=typeof(D[((-584640-(-831976))+(685442+-492477))-440294])~=t(-322230-(589377-(-765280+1697120)))and ConvertTo(CFrame,D[-155074-(603328+-758409)])or D[(451293+54999)-506285]D[789230-789229]=D[-1065-(-1068)][t(((-2234282-(-617417))-(-1022281))-(-1055783-(-441249)))]D[(523278-1039748)-(-516474)]=game[t(449303+-429343)][t(-507084+526102)][t(-812355-(-831396))]D[566938-566929]=D[-563600+563604]and D[29241+-29237]:FindFirstChild(t((-20113-(((765161+-618640)+(-516949+356546))-723129))-696576))if not D[91337+-91328]then return end D[-294480-(-294486)]=(D[101126+-101117][t(766830+-746880)]-D[(801139+-692612)-108526])[t(-454916+474966)]if D[726372-726366]<((1073710-505121)+-1545501)-(-976957)then if M[50836-50813]then pcall(function()M[-1033304+((542836+(-962302+2345604))-892811)]:Cancel()end)M[-374448-(-592270+(389021+-171222))]=nil TweenTargetPosition=nil end D[-109993+110002][t(111269+-91036)]=D[(-124788-(-509021))-384230]return end if M[-221928+221951]and(TweenTargetPosition and(D[-220802+220803]-TweenTargetPosition)[t(-522132-(-123392+-418790))]<(872407+-82386)+-789981)then return end if D[(-98701-(-291931))-193224]>((((904202+-672029)-((-930391-(-1493517-(-645268)))-266835))-890939)+105126)-(-205263)then GetPortal(D[197517+(-1191472-(-993958))])if not D[714829-714825]or not D[754610-754606]:FindFirstChild(t(-340068+360390))then return end D[250237-250231]=(D[252613+-252609][t(184155+-163833)][t(914385-894435)]-D[-550388-(-550389)])[t(-564717-(-584767))]end TweenTargetPosition=D[(127325+(-949997-14400))+837073]if M[(((619559-848003)-(-369335))-(-614033))-754901]then pcall(function()M[-868718+868741]:Cancel()end)M[-769711+769734]=nil end M[566045-566015]()D[-877941+877949]=Config and(Config[t(906824+-886946)]or Config[t((((((-464606+-341706)+937733)-347897)+(-594263-5247))+247261)+588542)]and Config[t(975263+-955446)][t(806347+((-913259-(-388298))-(38667-(-222841))))])or-890622+890892 D[(-1803962-(-1938409-(-987185)))+(-170241+1022984)]=math[t(936023-(669108+((602895+-1193450)+838212)))](.01,D[667710+-667704]/D[-341825+(-445119+786952)])M[798947+-798924]=Services[t(-56869+75930)]:Create(D[-480685+480694],TweenInfo[t((-179379+(1680574-1018582))-463364)](D[(1964863-1041311)+((147462+-1859041)-(-788032))],Enum[t(998774+-978952)][t(227937-208265)]),{[t(-197482-(-217715))]=D[301365-301362]})TweenInstance=M[-115717+(((832529+-2742749)-(91657-(1155665-(793070-648626))))+1106396)]M[542368-542345]:Play()M[417517+-417494][t((-164958+-100216)+285139)]:Connect(function(l)local D={}D[(316686+-123890)-192795]=l if D[-906587-(-906588)]==Enum[t(-861911-(-881455))][t(160727+-140762)]then TweenTargetPosition=nil M[905897-905874]=nil if M[678536-678515]then pcall(function()M[(-602702-(358962+-654761))-(-306924)]:Disconnect()end)M[(-700935+(-347837-(-558198)))-(-490595)]=nil end end end)end M[(-809704+1749810)+-940064]={}M[-964035-(-964088)]=game:GetService(t(897246-(-46483-(-923769))))M[-258289+(897252+-638937)]=game:GetService(t(-193345+213244))M[-722155+722169]=game:GetService(t((844473+-181230)+-643405))M[-399062+399081]=game:GetService(t(-518509+538324))M[(845577-(144659+(974514+-1151360)))-877760]=game:GetService(t(70225+-50374))M[-146838+146844]=M[((119609+470752)+66665)-656973][t(-314431+333449)]M[-891048-(-891086)]=M[-378509+378523]:WaitForChild(t(918163+-898575))M[875214+-875152]=M[-300382-(-403392-(-102972))]:WaitForChild(t(-316933+336063))M[182065-182048]=M[287901-287839]:WaitForChild(t(-83906+103749))M[737347-((369564+1168646)-800879)]=M[(-545522-(660668+-769941))-(-436311)]:WaitForChild(t(-99307-(-119591)))M[227401-227388]=M[191149-(709637-518550)]:WaitForChild(t(899817+(-1916653-(-1924926-(-888241)))))M[-65766-(-65830)]=(M[(113750-(-148036))+-261772]:WaitForChild(t(-105637-(693652-818930)))):WaitForChild(t(863134-844195))M[123769+-123702]={[t(1017167-997837)]=-203058+203123;[t(-218434+237801)]=true,[t((-281476+(289213-405145))-(-417790))]=true,[t(609563+(-786679+197491))]=.05,[t(144893+-125535)]=.05;[t(-1019-(-20529))]=900852+-900850,[t(707257-687056)]={t(-589742+609084);t(-964432-(-984701));t((-763463+205383)+578348);t(-861457-(-880899)),t(646359-626646);t(871168-851110)},[t(271633+-251447)]=true}M[-359712-(-359766)]={}M[246359-246305][t(-23292-(145988-(282581-93054)))]=M[-98021+98075]M[966355+-966301][t((200576-952375)-(-771048))]=function()local l={}l[-811411-(-811413)]=setmetatable({[t(644309-625025)]=335271+-335271,[t(-369527-(-388751))]=-511932+511932,[t((120221-((-889206+800471)+-544275))+(36334-770094))]=-903885+903885;[t(-410709+429851)]=-471888+471888;[t(933084+-912845)]=nil;[t(-882987-(-902242))]={},[t(-895802+915812)]={[t(-373734-(-393721))]={[t(674439-654905)]=322461-322458;[t(-964170-(416862+-1400736))]=-365224+(169642+195582);[t(((591614-649351)-(-179163))+-101804)]=-779622-(-779622),[t(289708+-269820)]=285582-285232;[t(1000800-981327)]=false}},[t(906850-(382322-(352076-856475)))]={[t(300642+-281725)]=(-295420+1054277)+-758855};[t(((-382280-(-749169))+-1248061)+901095)]={[t(-606758-(-627039))]=t(((888766+-888910)+-44896)-(-64066));[t(-441224+460332)]=t(279210+-259260);[t((-371122+-631423)-(714030+-1735658))]=t((-1643366-(-963905))-(-699411)),[t(-641759+661746)]=t(-923749+943759)}},M[-672467+672521])pcall(function()local D={}l[(235697-609423)+373728][t(249851-229486)]=(require(M[348345+-348307][t(910593-(715036-(-175726)))]))[t(602667-(938901-355437))]l[-354306-(-354308)][t(-870301+(367725-(-522459)))]=getupvalue((require(M[899287-899273][t(-532727+((-1780573-(-895686))+1437143))][t(-1020473+1039675)]))[t(-718438+738270)],760243-((716323-(1748969-931449))-(-861431)))D[-344299+344300]=(M[-881854+881860]:WaitForChild(t(751932+-732156))):FindFirstChildOfClass(t(1000075-980198))if D[416853-416852]and getsenv then l[390805+-390803][t(134799-115726)]=(getsenv(D[-702657-(-702658)]))[t(577096-557285)][t((970648-550913)+-400185)]end end)return l[339802+-339800]end M[178052+-177998][t(-667020+(-275417+962749))]=function(D,l)local c={}c[908781-908777],c[188386-188383]=D,l c[824467+(-1443184-(-618718))]=c[(-331519+-192762)+(1039300+-515016)]and c[(583086-220215)+-362868]:FindFirstChild(t((-680270-(-451019))+248768))return c[-676140-(-517223-158918)]and c[-858354-(-1659984-(-801629))][t(27385-8265)]>((-677662+-152149)-(-402695))+427116 end M[770369-770315][t(529898+-510630)]=function(U,l,D,c)local X={}X[-1031911-(-1031913)],X[-132415-(-132422)],X[-13168-(-562685-(-549512))],X[-24163+24164]=U,l,D,c X[-469965-(-469969)]=X[95158+-95151]:FindFirstChild(t((672423-486429)-166940))X[(130937-944942)+(480477-(-333531))]=X[-502127-((-955083+9045)-(-443904))]:FindFirstChild(t(-842616-((246222-827743)+-280373)))if X[((((2162331-813332)-33625)-379944)+-1852932)+917507][t(523961+-504060)]and(X[-433310+433311]==t(-541627-(-165392+-395200))or X[-359680-(-359681)]==t(-989090+(356022+652484))or X[897517+-897516]==t((214332+-1081379)+886372))then return false elseif X[73509-73505]and X[665726+-665722][t(-6123-(-25354))]>662480+-662480 or X[(164507+755437)-919941]and X[742272-742269][t(-793855+813086)]then return false end return true end M[-272593-(-272647)][t(191798-172434)]=function(c,l,D)local U={}U[708102+-708096],U[-475716-(-475718)],U[(-396260+(627267-(53838-659698)))+-836862]=c,l,D U[370794-370791]=(U[((-1160675-(-208522))-(-550072-(-130314)))-(1034886+-1567283)]:GetPivot())[t((154785+889722)-1024557)]U[-15909+15916]={}U[295732-295727]=U[1034869+-1034864]or M[-622662+622729][t(-77851-(-97181))]U[-749696-(-749700)]=function(l,D)local c={}c[844553-844550],c[((530388+298425)-((-1931559-((-594035-(-470411))-838673))+1890465))-(-92392)]=l,D for M,l in ipairs(c[(706148+(381218+-2000867))-(-913504)]:GetChildren())do local D={}D[469018+-469017],D[-648061+648064]=M,l pcall(function()if D[(-25845+-39865)-(-65713)]~=U[-798280-(-798282)]and U[322548-322542]:IsEntityAlive(D[-334027+334030])then local M={}M[672668-672666]=D[573620-(795339+-221722)]:FindFirstChild(t(-341428-(-361023)))or D[-605173+((2357188-(870902+-80908))-962018)]:FindFirstChild(t((399164+((-616967+143759)+-894634))+(484862+((811032-(8961+755755))+457822))))or D[680312+(-1718544-(-1038235))]:FindFirstChild(t((-119490+(-1063307-(306390+-856229)))+653005))or D[-456204+456207]:FindFirstChild(t(((-80399-(-465918))+-1244922)+(348167-(-531105))))if M[630237+-630235]and(U[328342+-328339]-M[868410-868408][t(-98832+118782)])[t(((468887+-1227366)-104953)-(-883482))]<=U[-672147-(-859204+187052)]then if not U[(535824+-640605)-(-104787)][t((458610+(952445+-1416038))-(-25222))]then U[(656196+(313113+-1416472))+447169][t(1019127+(-94096+-904792))]=M[((60573-310657)+(1072573-31925))-790562]end table[t(-19183-(-38339))](U[-7928-(-7935)],{D[-509556-(40337-549896)],M[-579378+579380]})end end end)end end if M[783217+-783150][t(-288039+307406)]then pcall(U[-160163+160167],M[-836659-(-836678)][t((-412139-(-315918-(-314174)))-(-430593))])end if M[-535984+536051][t(-414222-(73994+-508598))]then pcall(U[(824642+((315473+-1235478)+-378197))-(-473564)],M[578232-578213][t(627423+-608232)],true)end return U[(359159+-1144490)+785338]end M[-89701-(-89755)][t(336797-316636)]=function(c,l,D)local U={}U[(430336-362841)-(707056-639566)],U[-822466-(-822467)],U[298787-298785]=c,l,D U[608369-608366]=U[-1001908+1001913]:GetBladeHits(U[-490336+490337],U[(378768+-829286)-(-450520)])U[-984223-(-398760+-585469)],U[287593+-287586]=nil,math[t((-692238+42060)+669207)]for M,l in ipairs(U[(((566743-(-992673))-981897)-571877)+-5639])do local D={}D[-621247+621250],D[910858-910854]=M,l D[843996-((8854+27433)+807707)]=((U[-584086-(-584087)]:GetPivot())[t(-949193+969143)]-D[366368-366364][872564+-872562][t(((-577235-498513)-(-939249-(-723920)))+880369)])[t(-80843-(-100893))]if D[-880682+880684]<U[-153338+153345]then U[-932928-(-932935)]=D[(-165957+(1000242-(-292647+594891)))+-532039]U[-14942+((323049-(-1319801-(-934408)))+(246525-940019))]=D[493203+-493199][-161999+162001]end end return U[(1010952-954349)+(-298010-(-241413))]end M[469220-469166][t(-1027951-(275016+(668998+-1990942)))]=function(l)local D={}D[(-444516+709950)-265433]=l D[(-813040-(972359+(-2043954-(-366353))))+107800]=tick()-D[(696810-213178)+-483631][t(-827091-(-846315))]<=M[512969-512902][t(573942+-554584)]and D[-460387-((-465947+(1308870-(1621349-635499)))+-317461)][t(-785679+804821)]or 648741+(-1487635-(-838894))D[411822-411820]=D[58195-58193]>=M[-299036-(-299103)][t(9414+10096)]and-988954+988955 or D[(988871+-705906)+(503815+((-780086+450141)+-456833))]+(446482-(((224398+-500160)+525321)-(-196922)))D[307151-307150][t((905690-(-251142-(-143671)))+-993937)]=tick()D[-286346-(-286347)][t(-960659+979801)]=D[214853+-214851]return D[(1306001-488929)+-817070]end M[-627311+627365][t(-567375-(-587317))]=function(D,l)local c={}c[272136+(511312-783446)],c[(355869-64424)-291444]=D,l c[628619-628615]=M[-777568+((302493+(-903303-(-689599)))-(153831+-842616))][t(958653-939612)]if not c[((67321+(667026+-88804))-707723)+62182]:IsEntityAlive(c[69865+-69861])then return end c[(-33664+-441343)-(-475014)]=c[-54541-(-54545)]:FindFirstChildOfClass(t(1008286-988711))if not c[-529176-(-529183)]or c[-1044906-(-1044913)][t(606738+-586692)]~=t(682391-662383)then return end c[-757843-(-757848)]=c[-777724+777731]:FindFirstChild(t(1011011+(-219223+-772084)))and c[395152-(1303595-(701513+206937))][t((-180835-791403)+991942)][t(((444035-(-429344+171348))+-1313096)+630296)]or.3 if tick()-c[-377263-(-377265)][t(-668667-(-688138))]<c[479565-479560]then return end c[(((23646-(-557556))+-791683)-801842)-(-1012326)]=c[547995-547993][t((148882-(-560662-((-106307-185140)+((76298+327567)-752534))))-49505)][c[938848+-938841][t(636688-617034)]]or t(969938-949885)if c[(408479+-402554)+-5922]==t(((528950+(-993257-(-193621)))-284198)+574834)or c[297517-297514]==t(((623143+(((((-45379+-258639)-(641256+-991168))-(-719035))-12936)+-2384742))+990031)+38601)and c[903373-(462191+441175)]:FindFirstChild(t(-419552-(-439375)))then c[349812+-349805]:SetAttribute(t(-523488-(-542621)),(c[562275+(273187+-835455)]:GetAttribute(t((781483-787332)-(-24982)))or-723161-(-723161))+(536829-536828))pcall(function()M[667424+-667360]:FireServer(c[((933293+-1408217)+1011067)+-536141]:GetValidator2())end)if c[326364+-326361]==t(450668+-431642)then pcall(function()c[-724138-(-724145)][t(686419+-666596)]:FireServer(t(-931503+950529),c[240851-(-569861+((-469857+2195311)-914743))])end)else pcall(function()M[-70177-(-70190)]:FireServer(c[-911427+((639390+-52203)-(-324241))])end)end c[-589762+589764][t(-3405+(-587848-(-610724)))]=tick()else M[(-576472-208743)+785219]:SendMouseButtonEvent(-342010-(-446422-(-104412)),-417625-((1544482-947872)+-1014235),-138038+(931625-793587),true,game,(836065+-1122115)-(-286051))task[t((495295-(-801434-(-843431)))-433432)](.05)M[66749-((-539682-(-175465))+430962)]:SendMouseButtonEvent(135533+-135533,-931041+((1040009+433732)-542700),-42074-(-42074),false,game,-480380-(-480381))c[694451+-694449][t((((568624+699637)-(-440607))-773987)+-915410)]=tick()end end M[72579-72525][t(-357673+378018)]=function(l)local D={}D[-706481+706488]=l D[(-1467895-(-427952))+1039948]=getupvalue(D[446394-446387][t(655431+-635548)],((-410697-(-430255))+-55484)-(-35941))D[-289556+289560]=getupvalue(D[((-130356-747109)+802973)-(-74499)][t(773006+(269200-1022323))],249533-249520)D[533214-533208]=getupvalue(D[660374-660367][t(((-855888-(-416049-(-236375)))-(329467+(-497123-(-61054))))+589495)],878567+-878551)D[-252151+252152]=getupvalue(D[975806-975799][t(-983926-(-1003809))],794642+-794625)D[(-786602-(-1375459-(-395508)))+-193340]=getupvalue(D[-520623-(-520630)][t(-55239+75122)],461413-461399)D[742717+-742714]=getupvalue(D[80388-(572459+-492078)][t(1055043-1035160)],-835333-(-835345))D[-1023468-(-1023478)]=getupvalue(D[989037-989030][t(-247514+(-473904+741301))],-569475-(-158888+-410605))D[611265+-611257]=D[(-1447821-(-688700))+759124]*D[301294+-301290]D[(632362-884704)+252344]=(D[-182249+182258]*D[804448+-804444]+D[((-904745+662997)+1150979)-(889264+(848276-828312))]*D[1028599-1028594])%D[-615483+615489]D[676160-676158]=(D[-520374-(-520376)]*D[(1109593-1039727)+-69860]+D[724612-724604])%D[-124400+124401]D[-621183+621192]=math[t(-472590+492286)](D[-298497+298499]/D[639757-639751])D[(623390+32481)-(895835+(918524+(-757780+-400711)))]=D[-734044+734046]-D[(602767-543665)-59093]*D[941248-941242]D[907055-907045]=D[757398-757388]+(916587+(816480+-1733066))setupvalue(D[282657-282650][t(171169-151286)],(414984+(-806807-((-1335159-(-988720))+(92175-313428))))-((-1100957-(-660434))-(-616377)),D[-939626+939631])setupvalue(D[-937092+937099][t((139669-(-96208))-215994)],546894+-546881,D[340365-340361])setupvalue(D[-767641+767648][t(-225461-(-245344))],-609096-((-38951+-1507432)-(-937271)),D[256929-256923])setupvalue(D[452832-452825][t(-758284-(-778167))],535187-535170,D[822063-822062])setupvalue(D[-284489-(-284496)][t(379424+-359541)],-293463+293477,D[181265-(847617-666361)])setupvalue(D[-989931-(-687685-302253)][t(154301-((392346+-626344)+368416))],193598+-193586,D[(-692107+(53864-(-80981)))+(-341893-(-899158))])setupvalue(D[-299888-(-299895)][t(-173017+192900)],255854+-255836,D[-818852-(-818862)])return math[t(521226+-501530)]((D[-702870+702872]/D[-408532-(-408533)])*(-959388+17736603)),D[(1432090-888923)+-543157]end M[-736806+736860][t(-656314+675314)]=function(U,l,D,c)local X={}X[476721+-476716],X[833353-833349],X[742652-742651],X[988492-(-94697+(((-427756+1238145)+(24488-(-43528)))+204778))]=U,l,D,c X[(((-705179+1025119)+681352)+-289780)-711507][t(928450+-908211)]=nil X[-574259+(505655-(-68606))]=X[-271847+271852]:GetBladeHits(X[-35857-(-35861)])if X[408011+-408006][t(1022628+-1002389)]and#X[775375-775373]>(-638305+754899)-116594 then pcall(function()M[-395607+395624]:FireServer(-722840+((-123730+((-203441-(-625747))+12320))-(-411944)))end)if X[-183171+183176][t(-391664+412029)]and X[-979358+979363][t(294696-275623)]then pcall(X[1019052-(647052+371995)][t((-913633-(-417306))+515400)],X[914976+-914971][t(217445+-197206)],X[1005170-1005168])else pcall(function()M[692139+-692123]:FireServer(X[-1020607-(-1020612)][t(870511+-850272)],X[-1018833-(-1018835)])end)end end end M[356091-((-122625-473176)+951838)][t(442127+-422286)]=function(U,l,D,c)local X={}X[985495-985490],X[-917932-(-917938)],X[444913+-444911],X[949651+-949644]=U,l,D,c X[1028655-(685111-(-343541))]=X[456773+-456768]:GetBladeHits(X[-176101-(-176107)])if not X[648058-648055][-210294-((457720+-1329947)+661932)]then return end X[-399572+399573]=(X[-490634-(-490637)][((-377957+-103092)-(-644352))-163302][-590051-(-590053)][t(-940076+960026)]-(X[-711110-(-711116)]:GetPivot())[t(-70212-(100539+-190701))])[t(1038853+-1019675)]X[((624871-(-584411))-815107)-394173][t(484151+-464629)]:FireServer(X[1008726+-1008725],X[341544-341537])end M[-309108-(-309162)][t((-1364040-(-348120))-(-1035752))]=function(l)local D={}D[-95848-(-95851)]=l if not M[677159+(-854132+177040)][t(-51079-(-71265))]or tick()-D[-985731-(-1378908-(-393174))][t(958530+(-590733-348513))]<M[-814111+814178][t(499200+-478825)]then return end D[-412442-(-412450)]=M[262765-262759][t(-579846-(-598887))]if not D[526356+-526348]or not D[365274+-365271]:IsEntityAlive(D[-420739+420747])then return end D[507301+-507300]=D[-54768+54776][t(139882+-120365)]D[(1154334-829493)+-324839]=D[-332512+332520]:FindFirstChildOfClass(t(235235-((1225222-(-776609+869159))-917012)))if not D[865257+-865255]then return end D[(118621+64448)-183063]=D[(-967433-(-1853839-(-880283)))+-6121][t(((335827+427015)-83302)-659494)]if not table[t(759585+-739420)]({t(-826306+845722);t(-998915+1018240),t(167642+-148677);t(-877390+897398)},D[-896346+896352])then return end D[286239+-286235]=D[(1391815-507251)-884562]:FindFirstChild(t(1047052+(-110462+-916886)))and D[118925+-118923][t(128035+-108331)][t(714389+-695158)]or M[-477180+477247][t(722296+-701921)]if not D[(-65006-698714)+(1312198-(397601-(-150874)))]:CheckStun(D[-775529+775537],D[849076-849075],D[(-240533+684999)+-444460])then return end D[(((-121490+670855)-(-477534))+-261371)-765523]=D[728147+-728144]:GetCombo()D[332906+-332902]=D[28251+-28247]+(D[(987318-330130)-(-342391-(-999574))]>=M[(-1370155-(-404908))+965314][t(-735517-(-755027))]and.05 or 1048262-(-880158+1928420))D[-429572-(557373-986948)][t(((-497435-(-1035604))-(-467606))-((918044-(-859096))-(365427+425222)))]=D[546539+-546534]>=M[(870458+-402150)-468241][t(-350944+(-127054-(-497508)))]and(D[-398232-(-398238)]~=t(((47144-(415339+-127363))+-779258)-(-1040098))and tick()+.05)or tick()if D[-924542-(-924548)]==t(238318+-218993)and D[-736481-(-736483)]:FindFirstChild(t(174928+(-544182+388776)))then D[-216144-(-216147)]:UseFruitM1(D[-999455+(1868178-868715)],D[935369-935367],D[(500661+-191601)-309055])elseif D[-824953+824959]==t((909930-(1133953-542594))-(-92792+(781847-390492)))then local M={}M[-738044-(-738046)]=D[(-666138+309797)+(677041+-320697)]:GetClosestEnemy(D[799314+-799306],(523609+-1337137)-(-813648))if M[767623+-767621]then D[-784948-(534146+-1319097)]:ShootInTarget(M[-238105-(-238107)][t(-194059+214009)])end else D[707530+(-206720-500807)]:UseNormalClick(D[1008077+-1008069],D[(879303+(766076+((905186-(-362513+373999))+-3495305)))-(-956227)],D[-348272-(-348276)])end end M[(472534+-1107065)-(-634542)]=M[543757-543703][t((886382+(-828594+-683957))-(-710986+65568))]()table[t(-1032893+1052049)](M[980716+-980705][t((105366+(-994035+1649897))+(174945+-916918))],M[-581820-(-581846)][t(433540-413541)]:Connect(function()M[43199+(10535+(296636+(337970-688329)))]:Attack()end))for l,D in pairs(getgc(true))do local c={}c[(-104777-894166)-(-998945)],c[-116687-(-794895-(-678205))]=l,D if typeof(c[751282+-751279])==t(-566141+586466)and iscclosure(c[53105+-53102])then local l={}l[-742137+742138]=(debug[t(199524+-180553)](c[(548678+414339)+-963014]))[t(161999-141676)]if l[27458+-27457]==t(711836+-692004)or l[-26823-(-53585+(-805908-(654141+(-1847004-(-360194)))))]==t(-942893-(-962722))or l[(369288-432005)-(-276752-(-214034))]==t((-635249+1594426)+-939807)then hookfunction(c[(-272744-(4551-(-444170)))+721468],function(...)M[(-594805-50714)-(-645530)]:Attack()return c[607620-607617](...)end)end end end M[232816-232780]=game[t(355902-336064)][t(-981321+1000909)]M[20602+-20543]=M[-96229-(-96265)][t(133694-(-843745-(-958309)))]M[(-457652-499361)+((770239+-1691970)+1878790)],M[-261851+261883]=M[-914566-(-914625)]:WaitForChild(t((((761050+-2370476)-(754820-677704))-(-835757))-(-871069))),M[-966330-(-966389)]:WaitForChild(t(669168+-649325))M[517340+-517285]={}function GetAllBladeHits()bladehits={}for M,l in pairs(workspace[t(-203423+223621)]:GetChildren())do local D={}D[-534551-(-534554)],D[521977-(-518247-((1003839+-217120)+-1826942))]=M,l if D[78980-((-96779-(-158193))-(-17565))]:FindFirstChild(t(-770837+(835219-44865)))and(D[864952-864951]:FindFirstChild(t(247126+-226804))and(D[110961+-110960][t((-822572-(-457767))-(-384322))][t((255386+-307764)-(-71498))]>854261-854261 and(D[(-1558402-(-809867))-(-748536)][t((-216209+178774)+57757)][t(-598994-(-618944))]-game[t(536159+-516199)][t(-249738-(-268756))][t(-370871+389912)][t(-171201+191523)][t(-215266-(((268063-((-68773+749000)+-307491))-571859)-(-441316)))])[t(-402515+422565)]<=694558-694493))then table[t(746743+-727587)](bladehits,D[858427-858426])end end return bladehits end function Getplayerhit()bladehits={}for M,l in pairs(workspace[t(-154809+174000)]:GetChildren())do local D={}D[811170-811168],D[-874304-(-874305)]=M,l if D[((-265894-(-34125+(141540+-452220)))+5123)+-84033][t(334323-314669)]~=game[t(-171316+191276)][t(771132+-752114)][t(-210314+(84087+145881))]and(D[-936739+936740]:FindFirstChild(t(412959-(-830920+1224362)))and(D[350031-(77250-(-272780))]:FindFirstChild(t(852730+-832408))and(D[(259901+-522291)-(-262391)][t((((-807740-(-168576))+35369)-(-567138))-(-56174))][t(-746284-(-817016-(-51612)))]>690297-690297 and(D[(855033+-1283455)-(-428423)][t(849695-829373)][t(-673105-(-693055))]-game[t(((512230+(-372233+-1332829))-(-1009831))-(-202961))][t(-161876+180894)][t(-506201+525242)][t(145468-((-783307-(179198-(89868+149116)))-(-848667)))][t(860213-840263)])[t(159304-139254)]<=178775+-178710)))then table[t(-630455+649611)](bladehits,D[-274295-(-274296)])end end return bladehits end M[-251645+251665]=Services[t(-926760+946598)][t(561028+-541440)][t(627788-608658)]M[-155184+155215]=(require(M[539905+-539885])):RemoteEvent(t(-201705-(-221405)),true)M[557134-(1374605-817489)]=(require(M[(-512654+((495087+(-1346101-151084))+((((538461-486158)+(110398-(-154089)))+1925383)-(498351-636233))))+(-344678-520605)])):RemoteEvent(t(64667-((((-599963+1457370)+-2059457)-(-341831))-(-905516))),true)M[369500-369445][t(-838699-(-858531))]=function(l)local D={}D[-849628-(-849634)]=l D[161217+-161212]=game[t(((1875311-876466)-((-398695-(966556+-1099572))+534793))+(-1589624-(-879853)))][t(-205282-(-664613+440313))][t((-8613-106815)-(-134469))]if not D[155578+-155573]then return end D[(-237564+(275711+-240099))-((-147938-(476311+-577763))-((-804394+((-130122-66644)+1896405))-739775))]=D[853675-853670]:FindFirstChildOfClass(t(723702-704127))if not D[880761+-880757]then return end D[-982493+982494]=GetAllBladeHits()for M,l in pairs(Getplayerhit())do local c={}c[-518108-(-518111)],c[-428909+(797743+(-946660+577828))]=M,l table[t(((-891030+62682)-(-18561))+828943)](D[-266088-(-48122+-217967)],c[((-1044720+644768)+(170550-(-845902)))+-616498])end if#D[1042826-1042825]==792960-792960 then return end D[-396382-(-381045-15339)]={}for M,l in ipairs(D[567205-(346097+(-35528-(-256635)))])do local c={}c[-953590-(-953592)],c[487341-487340]=M,l c[(689602-997457)+307858]=c[113983+-113982]:FindFirstChild(t(-941611-(-217560+(-422629+-321017))))or c[(-195231+(-96870+1046760))-(909061-154403)]:FindFirstChild(t(908866-(1572938-684394)))or c[-174243-(-174244)][t(538650+-518872)]if c[-797469-(-797472)]then table[t(-806365-(-1100758-((421604+-248386)-448455)))](D[-251548-(136333-387883)],{c[13023-13022];c[344719-344716]})end end if#D[(326527+-1024120)-(-488713-208882)]==-695980-(-695980)then return end M[-630101-(-630132)]:FireServer(237526-((-927601-(-825686))-(-339441)))M[783766-783748]:FireServer(D[781807-781805][(385539-2204)+-383334][378784-378782],D[(419201+-1295110)-(-875911)])end task[t(775121+-756146)](function()while task[t((-1293836-(-772784))+540918)](.06)do if _G[t(-150285-(-169723))]==os[t(790393-770122)]()then pcall(function()M[718043-717988]:Attack()end)end end end)M[(421785-(-97112))-518855][t(-471646-(-491478))]=function(D)pcall(function()_G[t(29531+-10093)]=os[t((1370322-(-293475+983014))+-660512)]()end)end CombatController={[t(-412839+432600)]=true;[t((598614+65773)-645374)]=SeaIndex==466484-466483 and-724596+724846 or 768164-767814,[t(884725+((164838+-197240)+(-139460-693106)))]=-167610+167613,[l[-472218-(-472224)]({t(507290-(-725487+1213724)),t(((-772072-(-557507))+-364461)-(-598729))})]=407955-407895,[t(-364070-(-383239))]=701587-701586,[t(-127797-(-147499))]=(-986326-(-829906))+156421}LastFound=os[t((-364889-(1001489+(-1530778-369546)))+-513675)]()_G[t(683075-662978)]=((-302740-(-190359))+(447793+(-375458-(-475866-(-511283+791717)))))-715954 _G[t(-366171-(-385106))]=(992072+-695676)+-296381 _B=true M[-878934+878935]=function(l,D)local c={}c[-749054-(-749055)],c[586607-586605]=l,D if not c[(1050172-(-103246-(-1017177)))-136239]or c[49429+-49427]==t((-263279-85597)+368493)then return true end if type(c[(1002150+-1263677)-(771010+-1032539)])==t(816362+(-47577-749107))then for M,l in ipairs(c[677907-677905])do local D={}D[-465912-(-774109+308196)],D[(-461055-383745)-((-2760707-(-1037897))-(-878007))]=M,l if tostring(c[(713283+-1393093)-(-679811)])==tostring(D[-88171-(-88174)])or string[t(576302-556137)](tostring(c[-475369-(-475370)]),tostring(D[(1015433+-363083)+-652347]))then return true end end return false elseif type(c[-629549-(-629551)])==t(453096-433678)then return tostring(c[-294771+294772])==c[-376467+376469]or string[t(-13610-(-33775))](tostring(c[-190673+190674]),c[-80504-(-80506)])~=nil end return false end function BringEnemy(D,c)local U={}U[142137+-142133],U[-577004-(-577006)]=D,c if not U[342273-342269]then return end pcall(function()if sethiddenproperty then sethiddenproperty(game[t(-811436+(675521-(-155875)))][t(-15460-(-34478))],t((309717+-476196)-(-489454+303332)),math[t(-426448-(-1348973-(-903496)))])end end)U[-518523+518528]=workspace:FindFirstChild(t(146521-126323))or Services and(Services[t(673808+-653993)]and Services[t(889600-(1010009-140224))]:FindFirstChild(t(429600+-409402)))if not U[(-141708+667875)+-526162]then return end U[765008-765007]=-232087-(-232087)for D,c in ipairs(U[641540-641535]:GetChildren())do local X={}X[-41677+41681],X[-158465+158467]=D,c if U[65760+-65759]>=(_G[t(584302+-565367)]or-148116+148131)then break end X[(574528+(-344103-(-287281)))+(277309+-795014)]=X[-955698+955700]:FindFirstChildOfClass(t(((-112692-169329)-20702)+322240))X[491968-((744567-361258)+108656)]=X[-935626+(1809148-(193985+(-1008491+1688026)))]:FindFirstChild(t(133256+-112934))or X[868766+-868764][t(915330+(((859816+-1041343)-(-179633))+-893658))]if X[(889567+-237004)+-652562]and(X[(961326-((-823557-(-519617))-(-971598)))+-293665]and X[-611110+611111][t(-484982+(1307067-802965))]>589825-589825)then local D={}D[399108-399106]=(X[762451+-762448][t(-302830+322780)]-U[1017111+-1017107])[t(-181192-(-201242))]if D[-580367-(285797-866166)]<=(_G[t(571267-551170)]or-360005-(-360305))and M[911425-911424](X[-540031+(-300485+840518)][t(-600837+620491)],U[493190+(((((964914+-798954)+(1035364+-2072411))+862992)+-108246)-376847)])then local M={}U[-166920+166921]=U[-446791+446792]+(260968-((-50172-(-437090-(-796895)))+670944))X[-290295+(-941126+(1299499-(629781-561706)))][t(-1039855+(1017469-(-42563)))]=false pcall(function()X[329666+(-699067-(-369404))][l[(-429264-355191)+784461]({t(848188-829034);t(50564-31223)})]=Vector3[t(-903674-(-1537220-(-613678)))]X[-870682+870685][l[-155371-(-155377)]({t(-834238-(-853720)),t(252414-232218)})]=Vector3[t((467548+-1253917)-(-806237))]end)M[(667404-1018320)-(-350919)]=Vector3[t(1029002+(-733050+-276703))](((U[613688+-613687]-((-1643616-(-730604))+913013))%(308717+(-964081+(80706-(-574663))))-(1042082+-1042080))*(758607+-758604),((63566-484567)+(2041323-1013542))+-606780,math[t(-257219-(-276915))]((U[-477565-(-477566)]-(452364-(1412525-(-75526+1035688))))/(-916621-(817529+-1734155))-(129000-(805013-676015)))*(-263857-(-263860)))M[-369218+(-67731+(-802997+1239950))]=U[(876294+57829)+-934119]+M[267007+-267004]if D[214180-214178]>-420271+420274 then X[-160545-(-66495-94053)][t(-109160+129393)]=CFrame[t(317183+-297934)](M[81494-81490])end M[445728-445727]=X[990434+-990431]:FindFirstChild(t(-609792+629264))if not M[-42686-(-42687)]then M[-394342+394343]=Instance[t(764843+-745594)](t(-194107-(-213576)))M[-8122+8123][t(836432-816778)]=t(-919934-(16628-956034))M[-650023+650024][t(156831+-137639)]=Vector3[t((656080+-221061)-415770)](10912477-912477,9124907-(-875093),9594597-(-405403))M[(-800001-(-952318))+-152316][t((((-1901861-(-907932))-(((-515848+4485)+517285)-434094))+(-78374+538039))-(-125028))]=-374752+874752 M[-647583-(-647584)][t((462231-44897)+-398065)]=-76192-(-81192)M[398983+-398982][t(-117583-(-137945))]=X[-277313-(224985+(-918313-(-416012)))]end M[406708+-406707][t(774035+-754085)]=M[(303845+(-492125-(-974653)))+-786369]M[((-426424-731349)-(-346778))-(-811000)]=X[939894+-939891]:FindFirstChild(t(352433+-333444))if not M[183650+-183645]then M[665125-665120]=Instance[t((19545-(-922532))+-922828)](t(-48274-(-247873-(-180096))))M[1013780+-1013775][t(-17934-(604895-642483))]=t(-556612-(-575601))M[-205401-(-205406)][t((-1327545-(-182344-843159))-(-321971))]=Vector3[t(-77442+96691)](506735-(-493265),527810-(-472190),1819538-((976582+-79946)+-77098))M[-373890+(684978-311083)][t((505287+-777131)-(-290780))]=241566-231566 M[(-73319-(-464199))+-390875][t(-722434+741703)]=(-177103+(1076993-(84178-(-308608))))+-506104 M[477422-((449659+(-929551+-412054))+(339944+1029419))][t(1055236-1034874)]=X[693348+(-758904+65559)]end M[319098+(-1288471-(-969378))][t((-401995+(-680383-(877943+-1918103)))+62451)]=CFrame[t(-599235-(-618484))](M[-793269+793273])end end end end function CombatController.Grab(M)local l={}l[(335707+135167)-(892062+-421189)]=M l[-732569+732571]=MonResult or typeof(l[24066-24065])==t((-429705+101532)+348169)and l[-526866+526867]or typeof(l[79162+-79161])==t(135773+-116355)and workspace[t(332730+-312532)]:FindFirstChild(l[334646+-334645])l[-980628-(-980631)]=l[454246-454244]and(l[713381-713379]:FindFirstChild(t(-996961+(1330829-313546)))and l[-613317+613319][t((-597806+759278)+-141150)][t(-612257+632207)])if l[688894-688891]then task[t(699317-680342)](function()pcall(BringEnemy,l[(94859+-688773)+593917],l[-16676-(-16678)][t(-621548+641202)])end)end end function Sort1(M)local l={}l[-157216+157217]=M return l[661087-(-207990-(-869076))]and(l[270664-270663]:FindFirstChild(t(270580+-250258))and math[t(-689494-(309515-(1130404-111699)))](CaculateDistance(l[-421899+421900][t(-984340-(-1004662))][t(637960-617727)])))end function CombatController.Search(M)local l={}l[-109100-(-109102)]=M l[-182537+(196447+-13909)]={}l[(-1870102-(-938496))+931610]=false for M,D in GetMonAsSortedRange()do local c={}c[(307076-(-663110))-970184],c[38589-(-994204+1032792)]=M,D if table[t(52955-32790)](l[(-636097+(1215871-188774))+(536589+(-1842718-(-915131)))],c[-945594+945595][t(444188+-424534)])and(c[-750030+750031]:FindFirstChild(t(-973341-(-992858)))and c[-749615+749616][t((-570786-((1479838-849165)+-1671893))+(-283954-166963))][t(765627-746507)]>327876+-327876)then if(c[298995+-298994]:GetAttribute(t(-563663-(-583789)))or 154374+-154374)<879213-879210 then l[758720+-758716]=true table[t(-95242-(-114398))](l[-322863-(-322864)],c[-509727-(-509728)])end end end table[t(-144581+163786)](l[-416726-(-416727)],function(M,D)local t={}t[-199335-(-199337)],t[((1401687-430487)-401870)-569327]=M,D return Sort1(t[-829685+829687])<Sort1(t[-1016958+1016961])end)if l[-538352+(649915-111559)]then local M={}M[-1016612+1016613]=l[-742195+742196][-658077-(-658078)]return M[404829-404828]end for M,l in l[637490+-637488]do local D={}D[-87036-(-87038)],D[-86443+86446]=M,l D[417431+-417430]=game[t(-89524-(-109362))]:FindFirstChild(D[-184323-(-184326)])if D[731584+-731583]then return D[803820-803819]end end end function CombatController.Attack(D,c,U,X)local v={}v[(-575250+747299)-172046],v[-651041+651043],v[-777283-(-777289)],v[883394-883389]=D,c,U,X v[-957748+957752]=false pcall(function()local M={}M[-507396-(-507398)]=getsenv and getsenv(game[t(545044-525206)][t(125273+-105921)])if M[(215180+249788)+-464966]and(M[(-787651+-143580)+(698087-(-233146))][t(((812751-(-232758-121993))-251942)-(-67491+(1755859-792619)))]and M[835994+-835992][t(11448+8363)][t(513971-((318381-147043)+323025))])then v[558203+-558199]=true end end)if ScriptStorage[t(584777+-564785)][t(((-637782+983197)-(-165551))+-491320)]and v[846719-846715]then TweenController[t((-758195+-14153)-(-791384))](Vector3[t(-832481+851730)]((((-1159779-(-886118))-(-429673))+-839817)+683805,-579270-(-579270),1000180-1000180))return end pcall(function()sethiddenproperty(game[t(-785546-(-805506))][t(-1043645+1062663)],t(-424267-(-443910)),math[t(549478+-530449)])end)v[(-748959+-198934)-(-947896)]=type(v[(-633817+960262)-326442])==t(-220023+239441)and{v[-743117+743120]}or v[-222127+222130]or{}for M,l in v[408050-(716599+(-1043356-(-734804)))]do local D={}D[-693505-(-693506)],D[(((-96082+-676927)-(-903406))+-418757)-(-288362)]=M,l D[774250-774247]=tostring(D[852551+-852549])if D[656101-656098]==t(-947446+967792)or D[431002-((685689+411227)-665917)]==t((118120+-1121015)-(-1022022))or D[-720588-(-720591)]==t(-925594+(713601+231393))and os[t(1004709+-984438)]()-(LastFire12 or 407793+-407793)>196216-(721841-525805)then LastFire12=os[t((-1115607-(-214621))-(-921257))]()Remotes[t(-341286+361128)]:InvokeServer(t((-1177735-(-165215))-(-1032698)))end end v[-637158+(-301618-(-938783))]=nil if v[(771455-82124)-689329]then local M={}M[-219657-(306965-526623)]=(GetMonAsSortedRange())[(1126938-610958)-(946100+-430121)]M[-765363+765366]=M[-999728-(-1310944-(-311215))]and(M[-273492+273493]:FindFirstChild(t(-151547-(-171869)))and M[783204+(206180+-989383)][t(-985643-(-1005965))][t(39441+-19491)])if M[(161178-(-88360))-249535]and CaculateDistance(M[47114+-47111])<v[867860+-867854]then v[-785870-(-785877)]=M[-115262-(-271497+156234)]end else v[-396042+(281585-(-114464))]=CombatController[t(579537+-560527)](v[225045-225042])end if v[(((164628-(681906+(-477986+(-594246+-117501))))+((-323136+547516)+614481))-(-481481+1222976))+((-467465+221943)+-524292)]then local D={}LastFound=os[t(-571428-(-591699))]()D[-436026+436030],D[(1028705-(464682+-190310))-((784807+-1578805)+1548329)]=92269-92269,os[t(-736913-(-757184))]()D[839752+(-171139-668607)],D[(-852546+(1193206-153106))+-187549]=94045-(-68648-(-162693)),os[t(-242540+262811)]()D[752776-(1741710-988937)]=v[(549594-521968)+-27619]:FindFirstChild(t((-378837+-475181)-(-874340)))D[379683+-379682]=D[-66111+66114]and D[605871-605868][t((305507+(-892864+(1050007-793437)))-(-350737))]or(v[(-367137+17640)+349504]:GetPivot())[t(-420885-(-440835))]D[-683131-(-683139)]=CFrame[t((154549+-794666)-(-659366))](D[802036+-802035]+Vector3[t(-380377-(-399626))](831598-(1484938-(626360+(656+26324))),((912393-808447)-(1272635-367702))-(-801017),-502862+(1900+500962)))while task[t(((-327151-1026595)-(-660786))+712826)]()do local c={}if _G[t(703820-684083)]then return end c[-225762-(-225769)]=false pcall(function()local M={}M[315191-315190]=getsenv and getsenv(game[t(-159839-(-179677))][t(227324-207972)])if M[-632465-(-632466)]and(M[-129090-(-129091)][t(192928+-173117)]and M[781619-781618][t(-800314+820125)][t(((-99992+-1025287)-(-546830))-(-598057))])then c[((-71577-(-768851))-225349)+-471918]=true end end)if ScriptStorage[t(971261-951269)][t((-61947-(-239861+-753997))-912265)]and c[-1005815+1005822]then TweenController[t(1052203-1033167)](Vector3[t(190674-171425)](-53895-(-53895),(325563-681003)-(-355440),44156-44156))return end c[-406901+406906]=v[-683821+683828]:FindFirstChild(t(889400+-869883))c[-844254-(-853172+((-543471-(-837793))-285410))]=v[(((-674322-(-928969+861744))-(-785326))+715352)+(-254863-638711)]:FindFirstChild(t(824015-803693))if not c[-819672-(-819677)]or c[401071+(920423+-1321489)][t(-755994+(329199-(-445915)))]<=((-716563+(((1392689-(-27260))-(774216-((1403790-1028025)+-433420)))+292647))+616468)-(141530+639100)then if v[1020011+-1020004][t(970792-951138)]==t((-904678-(-758717))+164876)then Storage:Set(t(808682-788701),true)Hop()end break end c[-283290+283291]=math[t(((-31930+1043618)+-1599340)+(((-402255-(-797471))+218399)-(567204+-560937)))]((c[152967-152962][t(856505-837385)]/math[t(-979061+(173798-(-824521)))](1043253-1043252,c[(869185+-309790)-559390][t(-1031736+1051660)]))*(-342247+342347))SetTask(t(-938100+958022),t(945245-925115)..(tostring(v[566506-566499][t(-87822-(-107476))])..(t(-790974+(515880-(-294874)))..(c[-921340-(-921341)]..t(581280+-561421)))))c[-538536-(-538539)]=game[t(483064-463104)][t(790597-771579)][t(1025484-(163140+843303))]c[-339726+339728]=c[529138+-529135]and c[149490+-149487]:FindFirstChild(t((-1948776-(36778-1029562))-(-976314)))if c[180413+(681942+-862353)]then local M={}M[-921683+921685]=(c[824434+-824432][t(-400214-(-420164))]-D[-715318+715326][t(515508-495558)])[t(-813972-(-749774+-84248))]if M[693292+-693290]<169606-((-67487+14609)-(-222439))then c[(565092+439725)+-1004815][t(-781116-(-589308-212041))]=D[-732082+732090]pcall(function()c[-122379-(-122381)][l[-611946+611952]({t(-204478+223632);t(1048550+-1029209)})]=Vector3[t(-411313-(-431181))]c[182315-182313][l[286112-286106]({t(5191-(-14291)),t(477400-457204)})]=Vector3[t(-373470-(-393338))]end)BringEnemy(D[-121320-(-121321)],v[(-660223+989467)-(-59417-(-388658))]or v[(543244-(-492998))+-1036235][t(-884463-(225117+-1129234))])else TweenController[t((938910+-1557072)-(-637198))](D[281408-281400])end end if CaculateDistance(D[393358-393350][t((-751741-(-675361))-(-96330))])<-262580+262730 then _=v[(-272049-342810)+614864]and v[((1234243-(1460966-539852))-174032)-139092]()BringEnemy(D[809276-(1325314-516039)],v[-455987+455990]or v[-1007906-(-1007913)][t((-399671-(-377758))-(-41567))])if v[607559+(17097+-624649)][t(-940537+(1055924-95733))]~=t(968071+-948270)then if ScriptStorage[t(830230-810767)][t((793549-271687)+-502023)]>1045595+((380712-919886)+-506321)and(D[-496527-(-496533)]>=CombatController[l[(-728165-(-1047718))+-319547]({t(880234-861181);t(-747434-(-767137))})]and c[570989+-570984][t(752791-733671)]-c[11182-11177][t(-292583-(-91880-220627))]==883293-(257161+((8164-(-405356))+212612)))then SetTask(t(701989-682442),l[-206954+(-563661+770621)]({t(((845270-669391)-438613)-(-281868)),t(-428636+448819)})..(c[((768040+-50874)+246764)-963925][t((350716+126765)+-458361)]..(t(-194694-(-214515))..(c[(1676556-746256)+-930295][t(-420733-(100475-541132))]..t(-216542-(-235743))))))alert(t((-821250+469338)+371944),t(-361445+381384))_G[t(-271329+291066)]=true Hop(t((285509-335102)-(-69927)))end if(v[532693+-532686]:GetAttribute(t(294262-274136))or 23324-23324)>-868098+868103 then Hop(t(678148-(-489978+1147881)))end if D[-602698-((264778+-786451)+-81029)]>=CombatController[t(-903570+923327)]and c[-876638+((-817159+1365096)+328706)][t(-43245+62365)]-c[311988+-311983][t(265554-245630)]==938974-938974 then local M={}D[274336-274332]=916234+-916234 M[479947+-479945]=v[(-803+-170366)+171176]:GetAttribute(t((-416873+1271608)-835018))if M[19253-19251]then v[415495-415488]:SetPrimaryPartCFrame(CFrame[t((101724-(-158778-(-444363)))+203110)](M[272597+(-348452-(-75857))]))v[-877233+877240]:SetAttribute(t(687424+(-622745+(-771362+725665))),true)v[-675015-(-675022)]:SetAttribute(t((-643028+818979)-155825),(v[-148629-(-148636)]:GetAttribute(t((-1686519-(-1024805))+681840))or-293232+293232)+(-498598+498599))alert(t(427620+-407375),l[1041749-1041743]({t(1034679-1015512);t(-716864-(-737002))})..(v[-452828-(-452835)]:GetAttribute(t(-730489+750615))..t(-945623+(-468979+1433550))))while CaculateDistance(v[-291084+291091][t(324013+(823318+-1127009))][t(-724866+745099)],M[722407+-722405])>-767963+767969 and task[t(958234+-938368)]()do v[-960071+960078][t(-587528+607850)][t((112283-218041)-(-125991))]=CFrame[t((-611609+1077173)-446315)](M[(-625426+1346934)-721506])end task[t(-502711-(-522577))]()return end end end FunctionsHandler[l[(1579514-611291)-968217]({t(-769005+(414916-((-1168946-(-574784))-(829874+-1050928)))),t(-239286-((-63217+-46480)-(-382103-(-531811))))})][t(66389-((653727+-267623)-339429))][t(-595193-(-614777))]:Call(ScriptStorage[t(-104704-(-124289))]and t(116582-97617)or t(-774917+794333))M[988957+-988915]:Attack(v[-55889+55896])if os[t(890609+-870338)]()~=D[-71600-(-71605)]then D[898306-898301]=os[t(((-592515-(-610681))-(-512468))-510363)]()D[(((-782683+(399237-(-743839)))-256988)+940162)+-1043563]=D[799055+-799051]+(381372-381371)D[-988426-(-988432)]=D[(-505724+442907)+62823]+(-617600-(-617601))end if D[354128+-354124]>-405829-(-934143+(-162507-(-690791)))and v[-94937+94944][t(731856+-712202)]~=t((-25160-(-695713))+-650752)then alert(l[-220404+220410]({t(286576+-266506);t((-53111+964793)+((31226+-1693827)-((351796+(-493635-(-565785+892771)))-301142)))}))break end else return end end elseif not v[(((203039-454500)-(-118134))+790751)-(600330+(-385537-(-442629)))]then local D={}D[(-647946+-303796)-(-951743)]=v[961115-961112][-1001151-(-1001152)]D[-791818+791823]=M[-923723-(-923780)][t(269703-249681)]and M[-415804+415861][t(114551+-94529)]()if D[((-403804-(-629632))-509863)+284040]then for M,l in ipairs(v[-771563-(175921+(-113125+-834362))])do local t={}t[-946844-(-946846)],t[1048381-1048377]=M,l t[-282722+282725]=(tostring(t[-184054+184058])):lower()if(D[938662+-938657]:lower()):find(t[738154+-738151])or t[315681+-315678]:find(D[189902+-189897]:lower())then D[373384-373383]=t[-175911+175915]break end end end D[-109464+(-688286-(-797756))]=ScriptStorage[t(-257401+((339580-(-200817+1047959))+785066))]and ScriptStorage[t(542904-522801)][D[(-469024-(-275071))+193954]]if not D[(338046-888702)-(-550662)]then local M={}M[947381-947379]=Services[t(280628-260813)][t(-504072-(-524270))]:FindFirstChild(D[666918+-666917])or game[t(903692+-883854)]:FindFirstChild(D[-506957-(-506958)])if M[227444-227442]then local l={}l[-83759+83761],l[-829791-(-39013-790781)]=pcall(function()return(M[-197791+(1005704-807911)]:GetPivot())[t((332681-(-540307))+-853038)]end)if l[-288407-(-930207+641798)]and l[(828095+-304921)+-523171]then D[-699815+(-1025720+1725541)]={l[-563526+563529]}end end end if not D[748563-748557]or#D[74981+-74975]==-476267-(-476267)then return end D[-131232-(-131241)]=D[876950-(300775-(-576169))][459953-((-463626+1152610)-(-948609+1177641))]D[126321+-126314]=typeof(D[447777+-447768])==t(-587532+((((367130-(-550749))+-756189)-(-722930+314543))-(-37609)))and D[-405535+405544]or typeof(D[815975-815966])==t(-802861+823094)and D[170359+-170350][t(-131708+151658)]or type(D[-737258-(-737267)])==t(-554857+574535)and Vector3[t((-80860-(-546045))-445936)](D[44499-44490][-367618-(-367619)]or D[-715619+715628][t(601223-581222)]or-460146-(-460146),D[-246284+((446612+-1380693)+1180374)][885755+-885753]or D[-671059-(-671068)][t(519696+-499432)]or 423184+-423184,D[302821+-302812][410031+(689175+-1099203)]or D[549628+((-1285267-(-731004))+4644)][t(506547-486628)]or-350928-(-350928))if not D[-82669+(624762-542086)]then return end D[-149314-(-149316)]=CFrame[t(249682+-230433)](D[919722-919715]+Vector3[t((94481+(-906147+1118514))-287599)](-104911-(-104911),-647848+647883,452248-452248))SetTask(t(559589-(1154484-(275042-(-339775)))),t(-122565+142201)..(tostring(D[-208817+(402627-193809)])..t(267213+-247967)))D[-360029-(-360037)]=game[t(318176+-298216)][t(((272897+477924)-315041)-416762)][t(681368-662327)]D[-584700+584704]=D[960996+-960988]and D[237545-237537]:FindFirstChild(t(-626628+646950))if D[-695269-(-695273)]then local M={}M[-217761-(451780+-669543)]=(D[681645-681641][t(-736706-(-756656))]-D[(-420468-(-913778))-493308][t(-446734+466684)])[t(-380137+400187)]if M[(-892722+468803)-(-423921)]>-985392+985417 then TweenController[t(-879185-(-898221))](D[-243827+243829])else D[-971839-(-971843)][t(950539+(149946+(-1648382-(-568130))))]=D[101438-101436]pcall(function()D[-397554-(-397558)][l[958407+-958401]({t(-454087+473241),t((229069-(-45190))+-254918)})]=Vector3[t(191607+-171739)]D[-145380+145384][l[113612-113606]({t(-28983+(-266740-(-315205))),t((((395612+47160)-(-324620+((242643+-214326)+(-946686+1705231))))-(-16303-(-253176-(-72240))))+204299)})]=Vector3[t((((-289326+244522)+829887)-(30209+(-734663+1202710)))+-266959)]end)end end task[t(-678647+698513)]()end end LevelFarmTTL=(1501+-1024933)+(1030412+-6980)LastTravel=os[t((249492-(-806539-(-83244-54266)))+-898250)]()FunctionsHandler={[t(171761-151453)]=false}setmetatable(FunctionsHandler,{[t(946202-925955)]=function(M,D)local c={}c[(59920-((1003076-629946)-(-443471)))-(821139+-1577823)],c[(223694+507505)-731197]=M,D QueryResult=rawget(c[514745-514742],c[649890+-649888])if not QueryResult then return{[t(-635629+655278)]=function(M)local D={}D[-80281+(-724808+805091)]=M if D[-400651+400653]==false then return end Result={[t(-321117+340640)]={};[t(303999-284754)]={};[t(-643262-(-662976))]={};[t(474346-((562196-1001093)-(-894105)))]={};[t(-165753+(1108362-922579))]={};[t(-710381+(-261913-(-1976288-(-126562+-857124))))]=true}function Result.RegisterMethod(M,l,D)local c={}c[(727915-293200)+-434711],c[-485886+(295088-(-190801))],c[358111-358110]=M,l,D c[-285625-(192997-478626)][t(-639504+659218)][c[(254341+601346)+-855684]]={[t(445982-426328)]=c[(815980+-939041)-(-123064)],[t(587800+(34623+(-846375+(354915+-111964))))]=c[114431+-114430],[t(480386+(305930-767359))]=function(M,...)local l={}l[62659+-62658]=M return l[(-261711+613097)-351385][t((917717-(-325644+639960))+-584402)](...)end;[t(87195+-67165)]={}}return true end setmetatable(Result[t((((186483+-726368)+799085)-212947)-((576708+-244193)-((-1443348-(-691503))+1057245)))],{[t(297124+-277235)]=function()assert(false,l[145933+-145927]({t(-271135+290817);t(((515440+-37327)+526525)-984754)}))end})function Result.SaveConstant(M,D,c)local U={}U[-909426-(-909428)],U[-892520+892521],U[-598931-(-598934)]=M,D,c if U[617556-617554][t(664724-(-861061+1506647))][U[-365766+365767]]then return assert(false,l[(661430-74199)-587225]({t((-851478-(-954413))+(-101658+(16468-(-2574)))),t(175305-154984)}))end rawset(U[((-461805-20047)+-480191)-(-962045)][t(-1004341-(-1023479))],U[-294090-(-294091)],U[455062-455059])end function Result.Set(M,l,D)local c={}c[-968970-(-968971)],c[264936+-264934],c[((261923+(958430+-2094822))-(-2681))-(-969953-(-98161))]=M,l,D c[192846-192845][t(-871928-(-891451))][c[-813445+813447]]=c[-990137+990141]return c[-543089+543093]end function Result.Get(M,l)local D={}D[-651685+651687],D[-827803+827804]=M,l return D[359245+(-781969-(-422726))][t(390142+-371004)][D[601069-(-466131+1067199)]]or D[850550+-850548][t((-1829296-(-1037873))+(16469+(119389-(-967731-(((597224+(234542+-239718))-39418)+(-1433197-(-587646)))))))][D[-147364-(835718-983083)]]end function Result.AddVariableChangeListener(M,l,D)local c={}c[-581982+581983],c[313368-313365],c[635629-635625]=M,l,D c[(-575203+1564399)-989195][t(543912+-523882)][c[846514-(455706-(-35931-(-472737+(1312710-485099))))]]=c[-905449-(-905453)]end Result[t(-877069+((370266-(-485843))+40483))][t((-173914-(-719220))+-525395)]=Result setmetatable(Result[t(396685+-377162)],{[t((950635+-160071)+-770675)]=function(M,l,D)local U={}U[((2269120-256349)-1041685)+-971082],U[(-1297123-(-799475))+497651],U[((-3433-496182)-(-225590))+274026]=M,l,D _=U[452186+-452182][t(809373+-789462)][t(-654220-(265296+-939546))][U[-472383-(-472386)]]and U[12498+-12494][t(-625717-(-645628))][t((-1234963-(-260736))+994257)][U[-806943+((484459+521443)+(-1046760-(-847804)))]](U[-940481-(-940484)],U[-424570+(-943882+1368453)])U[13951+-13947][t((132643+516095)-628827)][t(29655+(-97369+86959))][U[101280-((716625+((-828912-((575866-(-477701))-872075))+((-1525831-(-789882))-(-621063))))+509942)]]=U[-471725-(-471726)]end})FunctionsHandler[c[-947613-(-947615)]]=Result end,[t(-800026-(-820334))]=false}end return QueryResult end})function FunctionsHandler.SynchorizeUntilModuleLoaded(M,l)local D={}D[-97975+(251323-153345)],D[-68869-(-68873)]=M,l D[573165+-573164]=os[t(((109952-(-289384))+55113)+-434178)]()while not D[(800562-744992)+-55567][t(831848-811540)]do local M={}task[t(-946705-(-966571))]()M[823045+-823044]=os[t(575757-555486)]()-D[-98382+98383]assert(not(D[-660626-(-660630)]and M[528977-(1445311-916335)]>D[-517728-(-517732)]),t((-1502870-(-734655))-(((-1166716-(-230317))-(-63721))-(-84792))))end end function GetCurrentClaimQuest(D)local c={}c[608381+-608380]=D return M[952508-(357035+595416)][t(-897739+917761)](c[-776331-((1136331-601693)+(-1068049-242921))])end FunctionsHandler[l[133269-(657037+-523774)]({t(980312-(948404-(-12889))),t(-503556-(-523675))})][t(855753-836104)]()FunctionsHandler[t(-471773+490959)]:Register()FunctionsHandler[t(-886411+(350665+554634))]:Register()FunctionsHandler[t(436998+-418069)]:Register()FunctionsHandler[t(-248291-(-267308))]:Register()FunctionsHandler[t(750210-(50459+679957))]:Register()FunctionsHandler[t(-75988-(-95389))]:Register()FunctionsHandler[t(639118-619531)]:Register()FunctionsHandler[t(-2161+21047)]:Register()FunctionsHandler[t(988362-(278078+(((921074-328039)-(-230387))-132575)))]:Register()FunctionsHandler[t(580385-560877)]:Register()FunctionsHandler[t(631407+((625083+-525623)-(326400-(-384081))))]:Register()FunctionsHandler[t(-289868-(-309846))]:Register()FunctionsHandler[t((95386+-87970)+12338)]:Register()FunctionsHandler[t(235857+-215972)]:Register()FunctionsHandler[t(-784768-(-803736))]:Register()FunctionsHandler[t(-942398-(-962620))]:Register()FunctionsHandler[t((393500-748297)+374848)]:Register()FunctionsHandler[t(138371+(-24151+-94844))]:Register()FunctionsHandler[t(603415+-583452)]:Register()FunctionsHandler[t(-448207-(-839746-(-371994)))]:Register()FunctionsHandler[t(-388761+408490)]:Register()FunctionsHandler[t(-614998+634022)]:Register()FunctionsHandler[t(824637-(27758+777608))]:Register()FunctionsHandler[t(-112590+132587)]:Register()FunctionsHandler[t(-775676-(-795438))]:Register()FunctionsHandler[t((101186-853822)+772827)]:Register()FunctionsHandler[t(165769-146110)]:Register()FunctionsHandler[t(893395-873191)]:Register()FunctionsHandler[t(-319118+339433)]:Register()FunctionsHandler[t(((-926435+-39619)+(51621-(-534579)))-(-400147))]:Register()FunctionsHandler[t(995370+(-726766-249353))]:Register()FunctionsHandler[t(-368354+388427)]:Register()FunctionsHandler[t(-726632-(-745814))]:Register()FunctionsHandler[t((-167221+493665)-(-642354-(-949406)))]:Register()FunctionsHandler[t(((796125+816815)-584257)+-1009092)]:Register()FunctionsHandler[t((546793-58195)+-468795)]:Register()FunctionsHandler[t(136439+(-1043520-(88014+-1014275)))]:Register()FunctionsHandler[t(-1046281+1066510)]:Register()FunctionsHandler[t(658438-((186806+-391889)-(-844303)))]:Register()FunctionsHandler[t(787954+-769075)]:Register()FunctionsHandler[t(541013+-521920)]:Register()FunctionsHandler[t(507205+-487140)]:Register()FunctionsHandler[t(-775026+794584)]:Register()FunctionsHandler[t(((-42981+-1882512)-(-682055-(1224707-1026110)))+1063817)]:Register()FunctionsHandler[l[664871+(-55273-609592)]({t(-979891+999654),t(658416-639044)})]:Register()FunctionsHandler[t(581364-562178)]:RegisterMethod(t(-851103-(-871373)),function()return false end)FunctionsHandler[t(389132+-369946)]:RegisterMethod(t((-931654-(-669452))-(-281992)),function()local M={}M[-505739-(-505740)]={t(-725573-(-745743));t(220308+(-251920-(-849758-(-798399))));t(-771753-(-416349-((1310432-604920)+(-158677-(1057001-885695))))),t(-442788-(-462681)),t((-197742-(432328-636695))-(-12316));t(-680594+699627),t(-203927-(-223682)),t((-531738+-745)-(-551896));t(808370-788832),t(-444647+464125),t(745782-726434),t(211643-191567);t(-505723-(-525905)),t(434109-415205),t(496356-476942),t((-1127260-((-75108+-788197)-(-414290)))-(-697175)),t(-621954+640946);t(960333+(959910+-1899995)),t(441858-422891);t(-557501-(-576735)),t(95546-75518),t(-558941-(-1367458-(-789452)));t(627404+-607952),t(46517+-26731);t(-974962+994835);t(250929+-231331),t(-744249-(-763556));t(671179-652102),t(378944-(-521653+881647)),t(869236-(1147220-296912));t(570040-(308093-(-242395)));t(-961621+980607);t(-757338+777253),t(((492514-(-339254))-(-931340+788217))+(-15910-940100)),t((-170475-(-572481))+(757867+-1140099))}for M,D in M[(-1273080-(-1293394-(-710242)))-(-689929)]do local c={}c[-237842-(-237846)],c[-741426-(-741428)]=M,D SetTask(t(592189+-573258),t(-880494+900668)..(c[924487+-924485]..t(((850529-939235)+-375815)-(-397293+-86860))))c[-894373+894374]=Remotes[t(-978729-(-998072))]:InvokeServer(c[-265810-(-787413-(-521601))])task[t(200978-181112)]()SetTask(t(-998690-(-697134+-320487)),t(822485-802311)..(c[-970393-(-970395)]..(t(-707789+(320989+406664))..(c[939395-(-647942+1587336)]or t(-852913-(-872054))))))if(getsenv(game[t(-1481-(-21319))][t(642671+-623319)]))[t(408784+-388973)][t(270148+-250769)][t(-8427+27382)]==-284344-(-284344)then if c[190460+-190459]and string[t(-849663-(-869828))](c[468898-468897],t(-590354+610660))then return SetTask(t((662326+-642763)-632),l[(((530512-(-66513))-(-350632))+-1342079)-(-394428)]({t(((1327975-(-497725))-(1824463-893695))+-875448),t(-253501+273363),t(-715245+734357)}))and task[t((-477075+-66655)-(-563596))](-241722+241723)end else return end end Storage:Set(t(337484+-318528),(-760886-157693)-(694807+-1613387))Storage:Save()end)FunctionsHandler[t((489644+-1243369)+772613)]:RegisterMethod(t(844585-824315),function()return 308797-308793 end)FunctionsHandler[t(-18028+36916)]:RegisterMethod(t((-1657011-(-640752))-(-1036049)),function(D)local c={}c[-154306+(-392789-(-547099))]=D if SeaIndex==-277606+(726270-448661)then if(ScriptStorage[t(-991654+1011273)][t(128555+((168868-((571575+-1393279)+1555403))-(-455833)))]or{[t(-850693-(-869638))]=-744105+(933286+-189181)})[t(((-331929+(1144123-(-433997-(-520146))))+(789722+-848339))+-648483)]>=-448068+(210014-(156408-394512))and(ScriptStorage[t(328456+-308993)][t(284334+-264495)]<MaxLevel or ForceToRollBone or ScriptStorage[t(-724600-(-744063))][t(((609350+296391)+-1218755)+332853)]>=MaxLevel)then if os[t(-577357-(-597628))]()>(BonesCooldown or 346459-346459)then local M={}M[-34740-(-34744)],M[-480680-(-480682)],M[(90963-(-166830))+-257788],M[-896007-(-896008)]=Remotes[t(-990540-(-1010382))]:InvokeServer(t(875420+-855863),t(40263-(((380289-512466)+118261)-(-34616))))if tonumber(M[591610+-591605]or 1005462-1005461)==-328328-(-328328)then local l={}l[-824903+824905]=Split(M[(-384405+801175)-416769],t(-187600+(-404237-(-610825))))l[((-1022181+1393217)+371286)-742321]=(tonumber(l[342834+-342832][-409392-(-409393)])*(-724656-(-724716))+tonumber(l[632376-632374][116959-(488166-371209)]))*(381735+-381675)BonesCooldown=os[t(-452420-(-472691))]()+l[-231137+(483157-252019)]else Remotes[t(-69925+((1821856-712167)-1019922))]:InvokeServer(t(633046-(-103282+716771)),t(((265422+(-805646+-741981))-(-899761))+401993),806222-806221,-511872+511873)end end end end c[-567462-(-940131+372668)]=M[-471182+471239][t(353738-333716)]and M[894282-(955596-61371)][t(133579+-113557)]()if c[749387+-749386]then local M={}M[-221461-(-960552-(-739090))]=(tostring(c[881287+-881286])):lower()for D,U in ipairs({t(558167+-538769);t((24950+533338)+-538950),t(-725369+744404)})do local X={}X[709119-709117],X[((-630470-(-328481))+681835)+-379843]=D,U if M[654357+-654356]:find(X[-836995+836998])then SetTask(t(((623453+532738)-229513)+-907747),l[70684+-70678]({t((434109-433502)-(-18528)),t(-1021691-(-1041781))})..c[436411-436410])SetTask(t(198253-(-109726-(-940317-(-651885)))),t(-653304-(-672970))..c[-726905-(-726906)])CombatController[t(189325+-169493)](c[317401+-317400])return end end end c[-160171-(-160173)]=ScriptStorage[t(-306544-(-326007))][t(1031858-1012019)]if GodHumanFlag then local D={}D[148564+-148563],D[(508074+(-538687+598677))+(-293570-274491)]=(function()(getgenv())[t(821449+(1021427+-1822761))]={}for M,l in GodhumanMaterials do local D={}D[-929749+929751],D[187579-187578]=M,l if(ScriptStorage[t((-1066797-(369645+-1059867))-(-396194))][D[704561+-704559]]or{[t(-314375+333320)]=-601648+601648})[t(467571+-448626)]<D[920963-920962][551752-551751]then(getgenv())[t((-118931+517741)-378695)]={D[-788368-(-788370)],D[(((181336-689840)-343890)+1491995)+-639600]}end end return unpack((getgenv())[t(-375630+395745)])end)()if D[372626+-372625]then if SeaIndex~=D[(22031+985336)-1007364][-145752+145754]then alert(t((-908624+((-397048+(2906331-(-259456)))-(780411-(-216987))))-842634)..D[-374405-(-374406)],t(909751+-889472)..D[217859+((260521-867813)+389436)][-555932+555934])SetTask(t((-990868-(-931852))+(-513459-(-591406))),l[512493-512487]({t((-929473+420982)+527987),t(-633447-(-653025));t((225091-(-656163))-861684)})..D[105182+-105179][(675715-73514)+-602199])Remotes[t(-241171-(-261013))]:InvokeServer(t(-292352+311629)..SeaIndexes[D[-158230+158233][(627718+-1209661)+((-1667392-(-900050-(-156331)))+1505618)]])return end SetTask(t(104683+((242069+-453834)+126013)),l[939365+-939359]({t(591253+-571831),t(((357663-(-653663))+-452023)+-539530)})..(D[303847+(-13237-((1976141-981130)-704402))]..t(-866483+885553)))if c[(490449+-265307)+-225140]>=D[-31155+(-454374+485532)][-137446-(-137450)][-57595+(-67997+125595)]then local c={}c[-221881+221882],c[581853+-581851]=GetCurrentClaimQuest()if c[-541877+541878]then if not string[t((-667256-(-171242))-(-516179))](c[-211898+211900],D[-585965-(-585968)][241368+-241365][346698-346697])and not string[t(420330+-400165)](c[90117-90115],D[139861+-139858][703449+-703446][77800+-77798])then M[-17212-(-17269)][t(-176329+(-191554+386969))]()else CombatController[t(-408116+427948)](D[807522-807519][717813+(200508-(57300-(-834307+-26711)))])return end else local c={}c[-767194+767195]=ScriptStorage[t((-205789-(-450794))-(732501+-506874))][D[809050+-809047][380370+-380366][-67266-(-67270)]]c[535255-(1519911-984657)]=c[-253563-(-253564)]and c[(-555809-(-887706))+-331896]:GetModelCFrame()if c[523184-523183]then TweenController[t(-239292+258328)](c[(577213+(147022+-1485474))+761240]+Vector3[t(-502154+521403)](504277-504277,644743+-644738,244192+(495226-739415)))if CaculateDistance(c[-574847+574848])<198924+(-348734+149820)then task[t((-675934-((-1964565-(-793809))-(-530663)))+55707)]((-762066+-284999)+1047066)else return end else Report(l[-1008762-(553183+-1561951)]({t(987500-968371),t(-782215+801936)}))end M[-634547+((-49477+-26170)+(327175+383076))][t(-792132-(-812274))](D[((-769549-892426)-(-681138))-(-980840)][-726748+726752][708461-708460],D[315918-(478408-162493)][(-988532-(-157497))+831039][(206945-727515)-(-520572)])return end end CombatController[t((202250+((-150097-808584)+1447649))+-671386)](D[350131+-350128][813157+-813154])end Remotes[t(2119+17723)]:InvokeServer(t(-343095-((178675+143825)+(-395303+-289939))),true)Remotes[t(662289-642447)]:InvokeServer(t(532197-(-332381+844931)))GodHumanFlag=false return true end if os[t((((-595357-(-1042620))+69543)-173176)-323359)]()-LastTravel>151096-151036 then LastTravel=os[t(-996608+1016879)]()if c[551366-551364]>=-429703+(-518342-(-949545))and SeaIndex==-177065+177067 then if Config[t(88538+-68500)][l[248833+-248827]({t(-328099-(-867255+520097)),t((769133+-1033089)+283653)})]and not ScriptStorage[t(522397-502778)][t(425760-405686)]then elseif not Services[t(-1035262+1055077)][t(-572210+591746)][t(227867+-207874)][t(-365823-(-385384))][t(-305791-(-325716))]:FindFirstChild(t((-502038+860310)+-338976))then Remotes[t(651499-631657)]:InvokeServer(t((-1005294-(((-391270+1396587)-647561)+(155378-1019840)))-(-518741)))SetTask(t(((-338464+-656371)-(-167929))-(-845837)),l[340818-340812]({t(978478-959387),t(-579269+599441)}))end elseif c[714597+-714595]>=-729782+730482 and SeaIndex==(330204-(-396780))-726983 then SetTask(t(478876+-459945),l[271930+((301542+581842)+(-110873-(-175958+1220393)))]({t(-125283+144374);t(-254559+274044)}))Remotes[t(-923289+943131)]:InvokeServer(t(898126+-878418))end end if ScriptStorage[t(671738-651746)][t(175904-155964)]and not ScriptStorage[t(-378989-(-398981))][t(-903196+922835)]then if(ScriptStorage[t((((62262-(-82342))+-574341)+-295712)-(-745068))][t(342766+(-730847+407535))]or{[t(497463-478518)]=803076+-803076})[t(866921+-847976)]<(-458989+984719)-525720 then SetTask(t(-948105+967036),l[(-818609+275828)-(-542787)]({t(-805793-(-247699-577498)),t(50251+-31201),t(-140554-(-160885))}))CombatController[t(341195+-321363)]({t((613541+-928014)-(-333609)),l[-524298+(-341064-(-865368))]({t(-361906+381052),t(844262-824143)})})return end Remotes[t(754238+-734396)]:InvokeServer(t(-757420-(-777772)))end if ScriptStorage[t(-223331-(-243323))][t(-387060-(-406706))]or c[(-392115+-155892)+548009]==MaxLevel and(ScriptStorage[t(-867432+887051)][t((209795+(1270607-710975))+(1045604+-1795474))]or{[t(-794682+813627)]=187442+-187442})[t(574919-555974)]>=996380+-995880 then SetTask(t(207674+-188743),l[-486195-(-486201)]({t(1005241+(-514437-471597));t(551333+-532030),t(-526180+(1140323-594399))}))if ScriptStorage[t(836245-816253)][t((-1037683+(107854+1219268))-269793)]and(not SpawnReflect or os[t((837995-(-147092))-964816)]()-SpawnReflect>-408111-(-408121))then task[t(-135806-(-154781))](function()while not ScriptStorage[t(243733+-223535)][t(-183676+203787)]and(task[t(908973+-889107)]()and ScriptStorage[t(-705115+725107)][t(-943233-(768701+(-751114+-980466)))])do SpawnReflect=os[t((-294636+42092)-(-272815))]()Remotes[t(-377000-(-396842))]:InvokeServer(t(-390763+411104))end end)end CombatController[t(-577135-(-596967))]({t(((917005+-1066550)-(-1525676-(-848502)))+(-1413243-(-905720)));t(986298+-965938),t(-97322+116767),t(647091-627695)})if c[(((-433759-527216)+1438435)-(-143357))-620815]>=690008+-687808 then local l={}l[311473-311472],l[731948+(-1302874-(-570929))]=GetCurrentClaimQuest()if l[430267-430266]then if not string[t(217774-197609)](l[-810522+810525],t(648666-629171))then M[(77442-(-706791))+(-332550-451626)][t((355235+-1273360)-(-1169491-(61438+-293718)))]()else Remotes[t((-332270-((-1169413-(-525131))-(-571894)))+279724)]:InvokeServer(t((147593-834362)+707110))return end else local l={}l[(1132732-338454)-((-1430498-(-608324))+1616451)]=ScriptStorage[t((779962+-1219950)-(-459366))][t(779360-760288)]and ScriptStorage[t((-713130+195115)-(-537393))][t(169425+-150353)]:GetModelCFrame()or CFrame[t(-1025190-(-1044439))](-2022.3,37.8,(585925+(842920+-1798141))-(-357265))TweenController[t(-315273+334309)](l[((952612-235520)+-1629313)-(-912222)]*CFrame[t(-631837+651086)](((-703636+((-39868-(-127555))+95116))-28877)-(-475370+-74340),773236-773231,(388459-149131)-239325))if CaculateDistance(l[748151-748150])<290947+-290922 then task[t(-972433-(-992299))](-968237.5-(-968238))M[-461093+461150][t(956936+-936794)](t((-723267-140860)+883073),735501-(1506840-771340))end return end end return end c[-996104-(-996111)]=false pcall(function()local M={}M[-1003258-(-1003259)]=getsenv and getsenv(game[t(852992-((1308783-126329)-349300))][t(-279837+(91845-(-207344)))])if M[-722119+722120]and(M[980345-980344][t(125156-105345)]and(M[-945554-(-945555)][t(-496012-(-515823))][t(252013-232634)]and(M[764651+((-1032839-(-268363))-174)][t(-244798+264609)][t((140091-253696)+132984)][t((231590+-324509)+(21593-(-90281)))]and M[-237404+(719320+-481915)][t(650021+-630210)][t(-36207-(-55586))][t(-532082+551037)]>-14117-(-14117))))then c[364828+-364821]=true end end)c[((-1178948-(-428751))+828414)-78212]=ScriptStorage[t(((-494925-(-682679))-(1668667-837438))+663094)]and(ScriptStorage[t(520545-500926)][t(-718733+738290)]and ScriptStorage[t(563952-544333)][t(600772-(877781+-296566))][t(636533+-617588)])or-108537+108537 c[(-331479+(-211635+787453))-244333]=c[-159148-(-159150)]>=-53689-(-55714)and(SeaIndex==-654577-(-654580)and(not c[-833632-(-833639)]and c[-326938-(-326943)]<35097+-34597))if c[-650781+650787]then local D={}SetTask(t(78940-60009),l[-307898+307904]({t(-448583+467998),t((536543+96787)-613173)})..(c[1005544-1005539]..t((495144+405118)+-881202)))SetTask(t(1030486-(63103-(-947836))),l[-709660-(-709666)]({t(-649450+669209);t(-160873-(-181068))})..(c[380802-380797]..t(569003-549839)))D[582869+-582868]=M[(-977329+(410277-354381))-(-921490)][t(791732+(-909023+137313))](true)if D[939952+-939951]then local c={}c[832476+((-2016437-(-426698))-(-757265))]=string[t(-979445-(-998407))](tostring(D[-362503+362504]))if not c[-425796+((939930+(-719949-356407))-(-806167-(-243943)))]:find(t(-492022+511514))and(not c[(-32942+1029867)+(-1310235-(-313312))]:find(t(-985932-((-682856+212606)-535452)))and(not c[460025-(((-497129-458025)-(-522042))-(-893135))]:find(t(-659699+679149))and(not c[784357+-784355]:find(t(-903000-(-922733)))and(not c[218062-218060]:find(t(255684-(530252-((1389282-458433)+-636815))))and not c[-636583+636585]:find(t(640649+-621351))))))then if c[(1010407+(79872+-1022370))+(-208012-(-140105))]:find(t((594654+(-593672+805805))+-787389))or c[-797688-(-797690)]:find(t(217984-(340403-((222630+-146602)+65729))))or c[-891135+891137]:find(t(182234+-163199))then SetTask(t(1029818+-1010887),l[-511922-(-682493+(-120737+291302))]({t(-953812-(-972947));t(991124+-971034)})..tostring(D[-691905-(-691906)]))CombatController[t(278616-258784)](tostring(D[(894741-364935)+(-1376736-(-846931))]))return end SetTask(t(-694520+(505090-(-209352))),l[29261-29255]({t(-83300-(-102444)),t(((1049461-1010232)+(-1229027-(-143540)))+1066445)}))M[(-253936-565274)-(-819267)][t(-691720-(-710806))]()task[t(-945052-(-964918))](.3)return else SetTask(t(979815-959893),l[77099-77093]({t(-99706-(-118828)),t(-532850-(-552359))}))CombatController[t(552094-532262)]({t(-376772+396390),t(107178-86960);t(473290+-453157),t(64667-44504)})return end else local D={}if os[t(367453-347182)]()-(LastBonesQuestAttempt or 487747+(-1031216+543469))<(-665209-278532)-(-943743)then return end SetTask(t(-409125-(-429047)),l[-93255+93261]({t(53782+-33761),t(842632+-822704)}))D[-25020+25021]=ScriptStorage[t(241018+-221640)][l[44670+-44664]({t((804590-622261)+-162982);t(-91421-(-110444))})]and ScriptStorage[t((-584089+1273090)+(-177316+(-918315-(-343538-82470))))][l[-622239+622245]({t(-104483+123830),t(1021492-1002469)})]:GetModelCFrame()or CFrame[t(-972924+((-189709+-279651)+1461533))](-9517.1,171.4,-929895.5-(-935974))TweenController[t(-174624+193660)](D[(((-370686-(-115096-(-619721)))+1447425)+-789759)+217646]*CFrame[t(-71379+90628)](614583+-614583,784740-784735,882285+(-1226860-(-344578))))if CaculateDistance(D[-848014+848015])<104101+-104076 then LastBonesQuestAttempt=os[t(-276866-(-297137))]()task[t((-233686-(-404548))-150996)](.3)M[60979-60922][t(-199658+219800)](t(-469934+489880),(-1378210-(-759806))-(-618405))task[t(717750-697884)](.3)end return end end if c[-713064-(-713068)]==572545+-572544 then SetTask(t((648522-356770)+-272821),l[-158234+158240]({t(-803973+(-58644-(-882136))),t(-431742-(-451737))})..c[-374323-(144652-518979)])SetTask(t(-606590-(-626137)),t(831853-(929934-(-194239+(-594671+906382)))))SetTask(t((126501-(-61557))-168136),t(84432-64188))CombatController[t(257837+(-694853-(-456848)))](t(-234363+253962))elseif c[-267291+267295]==850667-850665 then SetTask(t(874371-((605928-(425777-(-311991)))-(-987280))),l[-5461+5467]({t(964508-(949314+-4325)),t(698715-678720)})..c[-27916-(-27920)])SetTask(t(-871505+(1373704-482652)),t(-146810-(-166413)))SetTask(t(120833+-100911),l[-109000+109006]({t(275566+-255252);t(-577674-(-597104))}))CombatController[t(387643-(302135+(800310+((-939938+1986054)+-1780750))))](t(602119-582857))elseif c[-182612+182616]==(212286+-1235590)-(-1023307)then SetTask(t(-939345-(-958276)),l[297649-297643]({t(-139545-(-159064)),t(273119-253124)})..c[349874-349870])SetTask(t((142923+-535325)+411949),t((-942784+1156719)+-195052))SetTask(t(1011138-991216),t(-1043311+1063557))CombatController[t(-882535+902367)]({t(-794124-(-813386)),t(((-827697-523323)-(-672323))-(-697801)),t(1050987-1031749);t(949951-930757)})elseif c[208441-208437]==603762-603758 then local D={}D[473809-473800],D[-523703-(-353447-170257)],D[(-383510-622501)-(975914+-1981932)],D[(712269+-1195512)-(-483247)],D[-146191-(-146197)]=M[-524776+524833]:GetCurrentQuest()if not D[-577923-(-577932)]then M[476221+-476164]:RefreshQuest()D[((-1698820-(-45949))-(-613153))-(-1039727)],D[908502-908501],D[542851+(-549992+(168418+-161270))],D[299590+-299586],D[-942965+((-156505-(-780274))-(-319202))]=M[-943567+943624]:GetCurrentQuest()end if not D[-65983-(-65992)]then SetTask(t(-71752-(-90683)),l[-96237-(-96243)]({t(-649260-(78665-747327)),t(-715508-(-735008))}))return end D[(-538688+291397)-(-247299)]=M[-934639-(-934696)][t(700620-680598)]()D[431189-431187]=c[114313-114306]and l[(623288-(698394-561780))-486668]({t(956785-937882);t(-651051+669945)})or t((331909-(-271447))-582999)if D[-679290-(-679298)]then local c={}c[-992873-(-992874)]=(string[t((-156246+-45177)-(-220385))](tostring(D[(-176059+-436261)+612328]))):gsub(t((231435-52613)+-158663),t(-18713-(-38330)))c[536191-536188]=(string[t(-177341+196303)](tostring(D[-957228-(-957237)]))):gsub(t((343495-193014)-130322),t(-599861+((-468398+725)+1087151)))c[743206+(-120148+(-1240567-(-617513)))]=(string[t(-303499-(-322461))](tostring(D[-672317-(-672323)]or t(768599-748982)))):gsub(t(136964-116805),t(931207-911590))c[-957747+957749]=string[t(402972+-382807)](c[((-2030831-(-1005081))+1221939)+-196188],c[-504992-((-361875-(-786419))+(596329+-1525868))],-814013+814014,true)~=nil or string[t((744114-83127)+((1433891-728874)+-1345839))](c[-513712-(-1258192-(-708617+(-784162+748302)))],c[-169485+169486],(-372816-(-914277))-541460,true)~=nil or string[t(-637160-(-657325))](c[(620077-740764)-(-120688)],c[((3696+-305954)-(-140514))+161748],(-1347423-(-396006))-(-951418),true)~=nil or string[t(-117522-(-137687))](c[-740694+740698],c[-249313-(809988+(225183+(825530+-2110015)))],(-349833-377441)+727275,true)~=nil or c[-456772+456773]:gsub(t((-97571+33674)-(-83734)),t(-1022895+1042512))==c[105136-105133]:gsub(t(((885955+-1965397)-(-45877))+1053402),t((((196110-(-766117))-(74572+107795))+-939895)-(-179652)))or#c[277114-277113]>=-670863+670867 and(#c[(207264+-106921)-100340]>=-257058+(-768972+1026034)and c[((-538932-(-785247))+-968175)-(-721861)]:sub(170916+-170915,736498-736494)==c[5485+(754050-759532)]:sub(-870037+870038,1031296-1031292))if not c[-389265+389267]then if c[729666-729665]:find(t(659343-639945),242199+-242198,true)or c[175478+(332021-((67444-45667)-(-485721)))]:find(t(1003069-983731),81366+-81365,true)or c[(988776+-509774)+-479001]:find(t(677332+-658297),756446+-756445,true)then SetTask(t(109278-90347),l[598913-(244910-(-353997))]({t(-12319+31454);t(336514-(150647+165777))})..tostring(D[(718150+117644)+-835786]))CombatController[t((-1597616-((744498+-1602818)+-10998))+748130)](tostring(D[1018940+-1018932]))return end SetTask(t(496276-(410203-(-66526))),t(-524484-(-543553))..tostring(D[-135443-(-135451)]))SetTask(t((206189+(219093-212864))-192496),l[947895+-947889]({t(((985005+-231637)+-380322)-(708758-355418)),t(-720450-(-739971))}))M[502710+(-60484+(-795010+352841))][t((450073+-1027786)+596799)]()task[t((-234279+-152668)+406813)](.3)return end SetTask(t(-345068+363999),D[-300655+(-714547+1015204)]..D[875774+-875765])SetTask(t(-114258+133805),t(-819772-((108410-(-540497))+-1487748))..(tostring(D[-68618+68626])..(t(230476+-210318)..(tostring(D[-1030817+1030826])..t((758020+-491695)-247124)))))else local c={}if os[t(-193515-(-213786))]()-(LastLevelQuestAttempt or(859700+-825991)-33709)<-800955-(-800957)then return end if not D[831862-831861]then M[911230+-911173]:RefreshQuest()_,D[-989614+(((-42678-216461)+-611350)+1860104)]=M[417287-(691774+-274544)]:GetCurrentQuest()end if not D[-90226+90227]then SetTask(t(-88579+107510),D[571231+-571229]..D[(-1029492+(278669+985751))-234919])SetTask(t(-64122+84044),t(-206905+226293)..(D[-1017771-(-934194-83586)]..t(-414582+434893)))return end SetTask(t(301157+-282226),D[-221944+221946]..D[827942+-827933])SetTask(t(-859861+879408),t(-907134-(-926203))..tostring(D[-425947-(-425953)]or D[-432397+432406]))SetTask(t(399409+-379487),l[-408371+408377]({t(17305-(-1774));t(-354125-(-303233+(-3468-66743)))})..tostring(D[998558-998549]))c[724753-724752]=typeof(D[(-1350214-(-950797))+399418])==t(-584501+604734)and D[691857-691856]*CFrame[t(251275+-232026)](469363+((-1071199-(-43760))+(91959+466117)),-143408+143413,-366227+366230)or CFrame[t(-245093+264342)](D[157702-(-401594+((744117-807009)-(5791+-627978)))]+Vector3[t(-26079-(-45328))](((-314976-(-147367))+1205311)-(1181017-143315),588447-588442,205150+(-153804+-51343)))TweenController[t(-974099+993135)](c[-108863+108864])if CaculateDistance(D[-782960-(-782961)])>584809+-584789 then return end SetTask(t(742375-722453),t(-628743-(-1586063-(-937513)))..(tostring(D[(-158382+-219452)-(-377840)]or D[682320+-682311])..t(13037+7139)))LastLevelQuestAttempt=os[t(-892557-(-912828))]()task[t((48907-(-45728))-74769)](.3)LevelFarmTTL=1010230-1010230 M[691218+-691161][t(198649+-178507)](D[-344835+(432584-87742)],D[586119-586115])task[t(-771439+(-29273+820578))](.3)return end SetTask(t(746938+-728007),D[-130419+130421]..D[(-274455-(-802047))+(-61731-(778753-312901))])SetTask(t(-412400-(-432322)),t((1041687-864063)-157494)..tostring(D[808835+-808826]))D[-1045511+1045514]=os[t((505713+-115756)+(12422+-382108))]()CombatController[t(1022861+-1003029)](D[(1183172-614939)-568224])LevelFarmTTL=(LevelFarmTTL+os[t(830586-((-997026+2132167)-(-688418-(-1013244))))]())-D[(827195+-1341849)-(-169864-344793)]end end)FunctionsHandler[l[(-491847+1511189)+-1019336]({t(-799088+818107);t(-949018-(-969137))})]:RegisterMethod(t(-689346-(-708930)),function(D)local c={}c[1044781-1044780]=D c[936281-936277]=M[-142117-(-142125)][t(-697818-(-716859))]c[(731315-177174)+-554139]=c[(20677+577426)-598099]and c[(196438-(1216467-906542))+113491]:FindFirstChildOfClass(t((1276392-((1026415+-751174)+179851))-801783))if not c[-973725+973727]then return end for M,l in ipairs(M[-788295+788303][t(-795261-(115781+-930661))]:GetChildren())do local D={}D[-706402-(-706403)],D[(1000507-187215)-813289]=M,l if D[-909120-(-909123)]:IsA(t(-455236+474811))and(D[381287+-381284][t(9703-(-9951))]~=t((-123896-(-1654982-(-712401)))+-799110)and(D[(280318-484498)-(-962878+758695)][t((83149-(-79298-(-614272)))+(10912-(-460567)))]==tostring(c[938804+-938803])or D[-675638-(-675641)][t(-65808-(-85854))]==tostring(c[654917+(-675309+20393)])))then c[-145573+145575]:EquipTool(D[863313-(1134570-271260)])end end end)FunctionsHandler[l[((-77264+878441)-(-220396))+-1021567]({t(960520+-941501),t(-821464-(-841583))})]:RegisterMethod(t(482778+-462511),function(D,c)local U={}U[-805312-(-805315)],U[707281+-707280]=D,c if U[1028439-1028436]==t((645277+(-1801163-((387212+-1154396)+492954)))-(-901043))then if M[(-1435544-(-935988))+499564]:HasTag(t(-441400-(-460787)))and not U[-948942-(-460304+-488639)]or U[-712582+712583]then Remotes[t(-214564-(-234406))]:InvokeServer(t(-772301-(-791688)))end elseif U[962880+-962877]==t(((542875-(-945829+((-380227+(43189-(160737+329357)))+2518269)))+-14935)+(1175136-938871))then end end)FunctionsHandler[l[(838115-748130)-89979]({t(-968606+987625),t((-1022624-(-431320))+611423)})]:RegisterMethod(l[(-1194963-(-518548))-(-166978+-509443)]({t(580166+-559822);t(-291476-(-310399))}),function()FunctionsHandler[l[-470850-(-470856)]({t(157472+(417690+-556143)),t(((((-711600+-117907)-(-278301-(-602471)))-(-391748))+1607762)-825714)})][t(((5475-589717)-(-16159))+587797)][t(80882+(906999-967614))]:Call(t(-854155-(-873542)),SCRIPT_CONFIG[t((480339-787206)+326139)])FunctionsHandler[l[474179+-474173]({t(-601592+620611),t((1317684-593523)+-704042)})][t(772570+-752856)][t(1024138+-1003871)]:Call(t(987564-(140602+828065)),SCRIPT_CONFIG[t(696849-(-882584+(-907260+2467284)))])end)FunctionsHandler[t(-11531+30460)]:RegisterMethod(t(741858+(277407-998995)),function()local M={}if not Config[t((-545221-(-866891))+-302152)][t(884592-865663)]then return end if not Config[t((761400+-1544395)+802513)][t(902375-883446)]then return end if ScriptStorage[t(-107548+127167)][t(-325038-(-343967))]then return end if ScriptStorage[t(-793949-((-12297-(-214191))-1015306))][t(825690-(-500116+1305967))]<510170+-509970 then return end M[(693858+80757)-774614]=Remotes[t(525088+-505246)]:InvokeServer(t(826684+(-1026299+219366)))for l,D in M[-156678+156679][t((430273-(1478836-((125443+668885)+-336069)))-(-609288))]do local t={}t[-533938+533940],t[861915+-861912]=l,D if t[(655084-(-228585))+(760485+-1644151)]==false then M[212476-(-284906+497379)]=189210-189209 end end if not M[-442404+(-295212-(-737619))]then if not M[-1018450-(-1018451)][t(827579+-808564)]then M[459688+-459685]=-708771-(-144480+-564293)elseif not M[-211986-(-211987)][t(-375804+396056)]then M[-1030712+1030715]=((-1023676+1689110)-712331)+46900 elseif not M[783879+-783878][t(477047+-457213)]then M[-421679+(-969949+1391631)]=494941-494937 elseif not M[165233-165232][t(468332+-447971)]then M[91877+-91874]=-928128-(-928133)elseif not M[581571-581570][t(((-91596-(-455078))-(331217-(-319891)))-(-307046))]then M[-350943+350946]=960454-960448 elseif not M[40775-40774][t((-70114+382710)+-292612)]and ScriptStorage[t(83273-63075)][t(747620-728350)]then M[-229227+229230]=-714790-(-714797)end end FunctionsHandler[t(-437299+456228)]:Set(t((1211052-539752)+(-422613-228900)),M[-328549-((-227692-764399)+663539)])FunctionsHandler[t(249304+((1433055-591214)+-1072216))]:Set(t(-581755-(-602095)),os[t((-83574-(121852-757161))+-531464)]())return M[(-752169+1430916)-(762458-83714)]end)FunctionsHandler[t(-306422+325351)]:RegisterMethod(t(335144-315008),function()local M={}M[-28763-(-28764)]=FunctionsHandler[t(-343261+362190)]:Get(t(188874+-169263))if M[(848306+(-871949+969003))-945359]then return M[583516+-583515]end M[791339+-791337]=Services[t(((-1017472+(79570-(-264374)))-(-44631))-(-648712))][t(-346181+365717)][t(176644+-157760)]M[-250012-(-248890-(-777122-(-778247)))]={}table[t(497197-477299)](M[-1004573+(452146-(-552429))][t(-618570+637844)]:GetChildren(),function(l,D)local c={}c[-865452-(-865455)],c[-474268-(-474269)]=l,D c[868797-868794]=c[-802879-(-802880)]:FindFirstChild(t(24359+-3987))and table[t(1054944-1035788)](M[(-1454062-(-922523))-(-531542)],c[-864511-(((((-17284+889301)-(-230081))-773214)-(-83727+-464893))+-1742016)])end)FunctionsHandler[t(-617158-(-636087))]:Set(t((657266+-1000338)-(582219+(-418692-526210))),M[401175+-401172])return M[154312+-154309]end)FunctionsHandler[t(525124-506195)]:RegisterMethod(t(804102+-784312),function()local D={}D[-253576-(-253577)],D[-752493-(-752496)]=FunctionsHandler[t(-559587-(-600596-(-22080)))]:Get(t(853720-833933)),FunctionsHandler[t(((-519228+1044891)-959822)-(-453088))]:Get(t(-603534+623874))if not D[-1021986-(-1021987)]then FunctionsHandler[t(304345-285416)][t(-1003503+1023217)][t(965006+-944736)]:Call()return FunctionsHandler[t(725370-706441)][t(-233359+(1155169-(1930906-1028810)))][t(631382+-611592)]:Call()elseif D[(294299+-338328)-(-44030)]==((-786011+240216)+1174760)+-628965 then elseif os[t(-169790-(-1137406-(-947345)))]()-D[805442+-805439]>919785-919725 then FunctionsHandler[t((-667861+842258)-155468)][t(-266685+286399)][t(704608-684338)]:Call()return FunctionsHandler[t(-1038694+1057623)][t(421173+-401459)][t(-472847+492637)]:Call()else if D[((-919063-(-8813))+692489)+217762]==912296-912295 then local M={}M[((912135+-1297224)+((1606702-708617)+88710))+-601704]=FunctionsHandler[t((-485168+(1700876-496245))+-700534)][t(595421-575707)][t(704430-684294)]:Call()for M,D in M[784628+-784626]do local c={}c[((-251546+((84741+-676412)+326938))-(-887554))-(-12219+383491)],c[(((-417829-(-15514))+875122)+567627)-1040433]=M,D SetTask(t((-325512-510027)-((906779+-166064)+-1595185)),l[334827-334821]({t(-666080+685392);t(615397-596502)})..(c[1034573-1034570]..t(484702+-464682)))while CaculateDistance(c[-258949-(-258950)][t((2019756-979941)+-1019443)][t(-301530+(-858086+1179849))])>(-305792+-148404)-((920517+-2164360)-(254066-1043693))do task[t(100086+(865327-945547))]()TweenController[t(-86502-(-105538))](c[((824973+-603034)+384394)-606332][t(777511-757139)][t(720967+-700734)])end task[t(-290877-(-310743))]((-904235+1613084)+-708848)end elseif D[-949615+(1148391-198775)]==1016049-(84081-(-931966))then SetTask(t(-906749-(-925680)),l[-815061-(-815067)]({t((-998975-(-4229-478071))+536395),t(987906-968623)}))Remotes[t(530252-510410)]:InvokeServer(t(-246003-(-265754)),t(-797932+817008))task[t(193252+-173386)](-748063+748064)Remotes[t(834928-815086)]:InvokeServer(t(-610754-(-630505)),t((-262808-516102)+(-167688+965490)))elseif D[998270+-998269]==-656662-(-878236+221571)then SetTask(t(-542128+561059),l[-344073+344079]({t(468776-448550),t(649072+-629615);t((412168-711011)+319105)}))Remotes[t(970511+(-880481-70188))]:InvokeServer(t(139333-119582),t(350805+-331727))if ScriptStorage[t(-527744+547736)][t(243166-223425)]then FunctionsHandler[l[939046-939040]({t(137877+-118858);t(-272208+292327)})][t(-1009169+1028883)][t(603144+-583560)]:Call(t(1008581+((408464-(-686554+173487))+-1910371)))task[t(-60168-(-80034))](930640+-930639)Remotes[t(111907-92065)]:InvokeServer(t(-154568-(-174319)),t(668160-648588),M[-223641-(-223649)][t((436055+-736405)-(-319391))][t(-154017-(-173758))])end Remotes[t(((-874597+798095)-(-839702))+-743358)]:InvokeServer(t(105170-85419),t(-470956+490455))elseif D[(-559133-405086)-(-964220)]==543181-543177 then SetTask(t(-207573+226504),l[17028+-17022]({t(((498721-(((-1482588-(189560-86263))-(-781597))+((455241+-645928)+(626286-(-406093)))))+-1033174)-(-591130));t(458935+-439189),t((1746+-911675)-(-929239))}))Remotes[t(-838672+858514)]:InvokeServer(t(-174117+193868),t(683437-664379))elseif D[732167-732166]==(-335368+((12331+277664)+896537))-851159 then SetTask(t(-429846+448777),l[-181664-(-181670)]({t(928507+-908621),t(-377451-(-397398)),t(-84820+104569)}))CombatController[t(533557+-513725)](t(-382318-(-401639)))elseif D[339444-339443]==(-1087237-(-390289))-(-696954)then SetTask(t(940906-921975),l[-148173+148179]({t(-757679-(-776797));t(520707-(-119743+620614));t(272783-253577)}))Remotes[t(-1002317+1022159)]:InvokeServer(t(-446348+466099),t((-385344-(-721469))+-317067))Remotes[t((11809-(-252617))+-244584)]:InvokeServer(t(((1191801-13657)-809933)-348460),t(899146-(81484-(-798065))))elseif D[((-443881+394790)-(-1047218))-998126]==-705745+705752 then SetTask(t((-410834-117546)-(-547311)),l[-287052-(-364699-(-77641))]({t(700799+(812515+-1493687)),t(-137734-(-157285)),t(-227459-(-597458-(-350175)))}))CombatController[t(822610+-802778)](t(((-267105-170408)-(-342533))+114250))end end end)Remotes[t(-898017+(1033482-116198))][t(91552-(686755-614893))]:Connect(FunctionsHandler[t(500352+-481423)][t(-344169+363883)][t(684134-(150617-(-513247)))][t(295179+-276180)])MeleeLastCursor=675188-675187 FirstCall=true CanPurchase={}BuyDebounce={}FunctionsHandler[t(202697+-183106)]:RegisterMethod(t(513108+-493318),function()if not Config[t((-696655-(-91128))+625045)][t(695647-675956)]then return end for M,D in MeleesTable do local c={}c[736745-736743],c[857823-857820]=M,D if c[652061-652058]~=t(-327074-(-346801))then local M={}if not Config[t(-767995+787513)][t(544968-(-58258+583535))]then break end M[(-948799+1447415)-498614]=MeleePrices[c[(-759278-(-394631))+364650]]M[-521412+521415]=CanPurchase[c[-188339+188342]]if not M[-107528-(-107531)]then CanPurchase[c[-266848+266851]]=M[165592+-165590][t(823453+(-970560+166656))](445342+-445341)end M[-651032+651036]=CanPurchase[c[(-446377+1252544)+-806164]]if not M[(116650+(-1156959-(-840978)))+199333]then break end if c[-1012307+1012310]==t(460559-441503)then IsFireEssenceGave=(function()local M={}if IsFireEssenceGave~=nil then return IsFireEssenceGave end M[((-70341+(-1279894-(-768713)))+918660)+-337136]=Remotes[t(-524005+543847)]:InvokeServer(t(-764608+(-783153+(271936+(1913233-617831)))),true)alert(l[-797298-(-797304)]({t(638847-618994);t(788609-769464)}),tostring(typeof(M[-590430-(-590432)])~=t(-1022678-(-1042096))))return typeof(M[-159207-(-159209)])~=t(-966380+985798)and true or false end)()if not IsFireEssenceGave then break end end if c[(-591968-(-668251))+-76280]==t(-305221-((344439+-811601)+142848))and not GodHumanFlag then if(ScriptStorage[t(166490-146513)][t(-302377+321433)]or(419768-(-542428-(-977695)))+15499)>760460+-760061 then if not ScriptStorage[t(826062-(788149+17936))][t(48600-29507)]then Remotes[t(962203+-942361)]:InvokeServer(t((227939+-1045061)+836769),true)Remotes[t(-572187+592029)]:InvokeServer(t(300295+(((((832053+65000)+-475729)-12245)-((920280+-1073251)+52892))+-789806)))FunctionsHandler[l[-762301+762307]({t(-156456+175475);t((199530-(-593671-(-60593)))+((-218532+(2027740-856875))+-1664822))})][t(-996148-(-501834-514028))][t(-288476-(-308060))]:Call(t(((756904+820144)-752022)-805610))if not ScriptStorage[t((528514+-1495695)-(-987158))][t(182651-(459927-296369))]then GodHumanFlag=true return end end end end if not ScriptStorage[t(157247-137270)][c[765816-765813]]or(ScriptStorage[t(-627333+647310)][c[-144318-(-144321)]]or-745196+(964156+-218960))<M[-402687+((-667973-(-460565))+610097)][t(539272-(374897+145415))]then local D={}D[-550404-(-550407)]=GetMeleeIdByName(c[430626-430623])D[989841-989837]=ScriptStorage[t(104149+-84686)]D[-894442+894447]=true if not D[(77766+809851)+(-330488-557126)]then return end D[-736501-(-234278+-502225)]=false if not M[-306303-(-306307)]then for M,U in M[928853-928851][t(-895417-(-915343))]do local X={}X[174754-174751],X[840188+-840187]=M,U if D[-946627-(-946631)][X[51307-51304]]<X[447289+-447288]and not FirstCall then D[660555+(-485754-174796)]=false if not ScriptStorage[t(860780+-840803)][c[353626+-353623]]and(CurrentTask==t(641578+(-289923-(-465299+797363)))or not CurrentTask)then D[(178646-(-721021))+-899665]=true SetTask(t(915983-(((722949-(607376+3348))+-734109)+((974682+543688)-(-665851-(-665901))))),l[-514270-(-514276)]({t(-429256+448913),t(681101-661782)})..(X[-33834-(-33837)]..(t((-1660170-(-915306))+(541112+222639))..(X[-991556+991557]..(t(-106716+126885)..c[258238-258235])))))end return end end end if not D[((-269990-302730)-(-492577))+80145]and(ScriptStorage[t(191395+-171418)][c[-564231-(-564234)]]and ScriptStorage[t(-866070+886047)][c[-791840-(-791843)]]<M[(-366830+-552363)+919195][t(304681-(1041250+-755529))])then if CurrentTask==t((888547-323099)-545857)or not CurrentTask then SetTask(t(552683+-533136),l[-500442+((87893+918348)-505793)]({t((-146961+(-296479+-255887))+(-338217+1057201));t(488952-469773)})..(c[-279937+279940]..(t(314164-295277)..(ScriptStorage[t(-318017+337994)][c[144342+-144339]]..(t(-591068-(-610889))..(M[526128-526126][t(681029-662069)]..t(-963474+983553)))))))end if not ScriptStorage[t(1014386-994394)][c[-851200+851203]]then if not BuyDebounce[c[312707+(-324239-(-11535))]]or os[t((-1260130-(-727179-67343))+485879)]()-BuyDebounce[c[23056+-23053]]>140095-140065 then BuyDebounce[c[238558-238555]]=os[t(945131+-924860)]()M[-431323-(-431325)][t(1017047-997498)]()end end return end if not FirstCall then if D[790013-790008]and(M[525581+-525579][t(-511197+530662)]()and not ScriptStorage[t(-578273-(-598265))][c[-772562+772565]])then if c[723756-723753]==t(1035254-1016198)and not IsFireEssenceGave then alert(t((-530065+-392201)+942494),tostring(IsFireEssenceGave))return SetTask(t(-391457+411004),l[-533418-(-533424)]({t(529470-509247);t(358930+-338687),t(674254+-654949)}))end if BuyDebounce[c[-312613-(-254239+-58377)]]and os[t(-1007306+1027577)]()-BuyDebounce[c[761221+((293549+((-273589+-758320)-(-868457+706248)))+-185067)]]<750078+-750048 then return end BuyDebounce[c[-857271-(-857274)]]=os[t(-660461-(-680732))]()M[696452-(270564-(-425886))][t(614987+-595438)]()FunctionsHandler[l[-762352+762358]({t(-504285+523304),t(1008595-988476)})][t(-171012+190726)][t((-654282+-188971)-(-862837))]:Call(t(371803-352387))if not ScriptStorage[t(709076-689084)][c[946905+-946902]]then task[t((-792051+1030487)+-218570)]()if not ScriptStorage[t(826415-806423)][c[-302624-(915001+-1217628)]]then if(c[(-8349-569498)-(-577850)]==t((796645-768578)+-9061)or c[-938276+(-174491+1112770)]==t(-719230+738400))and SeaIndex==(1668912-652365)+-1016546 then alert(l[-539976-(-539982)]({t((-943605+295649)-(-668171)),t(37267-(-660284-(-678098)))}),l[(-640405+1288817)-648406]({t((800489-(-8351))-789659);t(-914826+934912)}))Remotes[t(-989683-(-1009525))]:InvokeServer(t(-153367-(-173075)))end else MeleeLastCursor=c[(205152-78964)-126186]+(-885629-(-326976+-558654))return end else MeleeLastCursor=c[678526+(-1018862+340338)]+(-337565-(-337566))return end end end elseif not FirstCall then MeleeLastCursor=c[725405-725403]+(1021092-(-1006412+(1281684-(-745819))))end end end if FirstCall then FirstCall=false return end FarmingItem=nil for M,l in ScriptStorage[t((((258983-(-964365))-823491)-977983)+597745)]do local D={}D[44790-44787],D[-954605-(-1853113-(-898506))]=M,l if D[3469+-3467][t(16149-(-3929))]==t((191538-(-750771))-923344)then if D[372531-(909728-537199)][t(((484930+-1154396)-(-732882))-43762)]==t(-212682-(1028205+-1260681))or D[-600313+(604635+-4320)][t(80196+-60542)]==t((899201-719549)-160251)then MasteryRequirement=-998399-(-998749)else for M,l in D[-364592-(-364594)][t(-752465-(-772396))]do local D={}D[(805632+-1731748)-(-926119)],D[-356561+356563]=M,l MasteryRequirement=D[(1128867-547563)-581302]end end if MasteryRequirement and D[-99557+99559][t((699241-(270473-314625))-723768)]<MasteryRequirement then FarmingItem={D[559424+-559422][t(51965-32311)],D[9168+-9166][t(-885240-(-904865))],MasteryRequirement}if D[777996+(-352553+-425441)][t((521313+-863090)+361431)]==t(897876+-878082)or D[-522397+522399][t((679568+-645040)+-14874)]==t(-993688+1013089)then break end end end end if FarmingItem then SetTask(t(-762152-(-781699)),t(-397190-(-1422727-(-1006054)))..(FarmingItem[-299337-(-299338)]..(t(371264-352377)..(FarmingItem[490489+-490487]..(t(919065+-899244)..(FarmingItem[519000-518997]..t((87813-938025)-(-869160))))))))if not ScriptStorage[t(1066558-1046566)][FarmingItem[218567+-218566]]then Remotes[t((-318422-729742)+1068006)]:InvokeServer(t(-852124-(-872186)),FarmingItem[(-278442-(-205205))-(590184+-663422)])end ScriptStorage[t((-893628-(-677877))-(-235336))]=FarmingItem end end)FunctionsHandler[t(((-511925-555704)-(-762805+((-1246722-(-832925))+186404)))+97428)]:RegisterMethod(t(124282+-104012),function()local M={}if ScriptStorage[t(-665710+(-160169+845342))][t(-449954+469793)]<-34675-(-35375)or SeaIndex~=-211045-(-211046)then return end if FunctionsHandler[t(-994107+1014104)]:Get(t(-86258+(-349346-(-455906))))then return end M[(1036353-912174)-((((333636-(237563-((101321+-766319)-(-349229))))+923265)+-978632)-(-399240))]=Remotes[t(584440-564598)]:InvokeServer(l[((-595343-(((-216690+1498451)-835469)-712114))+789986)-460459]({t((-941085+1502339)-541174);t((267808+75396)+-323536)}))if not M[244027-(-876931+(754721-(-366235)))][t(((-34340+1338838)-725688)+-559484)]then Result=863219+-863218 elseif not M[-169104+(-457389-(-626495))][t(-214273-(-234241))]then Result=563269-563267 else FunctionsHandler[t(-610304+((-454494+(-682822+(-302060-(-838329))))+1231348))]:Set(t(-697248-(-717550)),true)end FunctionsHandler[t(691278-(-887877+1559158))]:Set(t(147184-127397),Result)FunctionsHandler[t(-256917+276914)]:Set(t(67916-(-227675-(-67534-207717))),os[t((769692+-147760)+-601661)]())return Result end)FunctionsHandler[t(-778571+798568)]:RegisterMethod(t((129374+851772)-961356),function()local M={}M[-914298-(-1221170-(-306871))],M[-175036+175039]=FunctionsHandler[t(168075-(-939138+(810931+276285)))]:Get(t(933177+(124586+-1037976))),FunctionsHandler[t((-578816+(244564-40032))-(-394281))]:Get(t(-489704+510044))FunctionsHandler[t((759271+((-1390029-(-41437))-99787))-(((702165+-2355046)-(-711579))-(-232197)))]:Set(t(935702+-915915),nil)if not M[(-1879315-(-964311))+915005]then FunctionsHandler[t(((-627495-(-994782+(616714+-457638)))-260018)+(-330247+402051))][t(((2038743-610781)-528545)+-879703)][t(39067+-18797)]:Call()return FunctionsHandler[t(-958641+(953185-(-25453)))][t(-813802-(-833516))][t(57337-37547)]:Call()elseif M[868709-868708]==((-924046+2027277)-(768951+(-1025076-(-998738))))+(((-463690-(-489147))+(-683373+-460736))-(-758035))then SetTask(t(463921+-444990),l[(-145245-(-52202+-177643))-(-814887-(-899481))]({t(-114472+(278805-(-32445+((-1020059+1982345)+-784593)))),t(-316108+(32746+303551))}))TweenController[t(-201036-(-220072))](CFrame[t(114910-95661)](-577045-(-601518-(-19625)),5.65,(18718+750935)-768910))task[t(-796585-(-816451))](-485960.5-(-485961))Remotes[t((724775-1044092)+((791087+365880)-817808))]:InvokeServer(l[-920113-(-920119)]({t(125082+(((-755297-(-625779))-805777)-(-830293))),t(-104407-(-377298-(-253223)))}),t((359825+-622356)+((((-426075+(400320+((-1390961-(-593811))+814595)))+-997936)+(-191398-(-485170)))-(-995161))))task[t(482524+-462658)](((884301+-1256022)+753588)+-381866.5)Remotes[t(-62815-(-82657))]:InvokeServer(l[-458141+458147]({t(((-591599-(-1389))-(-262396))+((447796+-425513)+325611)),t((927074+(-2599121-(-880091)))-(-476876-334748))}),t(21837-(-699926-(-889257-(-186581)))))elseif M[-843533-(-843534)]==(-344086+907645)-563557 then SetTask(t(491851+(-103783-369137)),l[-827249-((-91531+(473537+-1912872))-(-703611))]({t(336615-317324);t(-852367+872319)}))TweenController[t((-828002-(-1013905))-166867)](CFrame[t(849028+-829779)](-40516-(-691973+650109),-295019-(-295056),387522-388847))task[t(820971-801105)]((339034.5-317312)-(((196739+270083)+(-944277+-195784))+(-269346-(-964307))))Remotes[t(494400-474558)]:InvokeServer(l[882176+-882170]({t((581499+214986)+(-1690010-(-913605)));t(-619281+(-82556+(-902875+1624380)))}),t(-543417+562504))task[t(624688+-604822)](924942.5-(1952610-1027668))CombatController[t(-793816-(-813648))](t(308110+-288829))task[t((583862-(-427030))+(-631268-359758))]((567527-771283)+(1214073-1010316))Remotes[t(-826143+(-446850+1292835))]:InvokeServer(l[-622598-(-622604)]({t(-623576+((-144322+1274610)-486632)),t(223288-203620)}),t(-367028+(979703+-592519)))task[t(-495267+515133)](((-839779-((-1184255-(-421810))-(-897823)))+-39267)+1014424.5)Remotes[t(64110-44268)]:InvokeServer(t((1634233-1006245)+-608280))end end)FunctionsHandler[t(-633033+652795)]:RegisterMethod(t(-776952+797222),function()local M={}if SeaIndex~=610116+-610114 then return end if(ScriptStorage[t(-525656+((43367-70015)-(-571767)))][t(902849-883010)]or 782822+-782822)<(-186341+-160813)-(-348004)or ScriptStorage[t((100204-(614130+245151))+778696)][t(-362971+(-530816+912739))]then return end M[-42444+42447]=Remotes[t(325252+-305410)]:InvokeServer(t(((-140678+1321579)-(1331001-(-331084-(-765406))))-((-66042+815461)-485093)))M[-211496-(-211497)]=nil if not M[60198-60195][t((((-1380585-12903)-(-513725))+((-126862+-703958)+1964083))-233187)]then M[484983-484982]=130016+(-759398+629383)elseif not M[68478+-68475][t(25801-6310)]then if ScriptStorage[t(-890654+910852)][t(666293+-646832)]or workspace[t(415027-394829)]:FindFirstChild(t(-175400-(-194861)))then M[(-1101539-(-443522+-314015))+344003]=477101-(1383+475716)end elseif not M[-29480-(-29483)][t(-1013196+(917953+115161))]then M[853270-853269]=21144-21141 end FunctionsHandler[t(198222+-178460)]:Set(t(-842809+862596),M[-408209-(-408210)])FunctionsHandler[t(-1001996+(1132167-110409))]:Set(t(-720466+740806),os[t((597151+(134264+-516238))+-194906)]())return M[1023677-1023676]end)FunctionsHandler[t(380976-(1401023-1039809))]:RegisterMethod(t((21120+-46625)+45295),function()local D={}D[-234245+((585736+138700)+-490190)],D[(-428832-203295)+632129]=FunctionsHandler[t(1034422-1014660)]:Get(t(291612+-271825)),FunctionsHandler[t(908596+-888834)]:Get(t(-354755-(-375095)))FunctionsHandler[t((129374-(-401903))-(-1001479+1512994))]:Set(t(581255-(1001128+-439660)),nil)if not D[147050+-147049]then FunctionsHandler[t(85727+(566458+-632423))][t((971857+-363154)-588989)][t(499356+-479086)]:Call()return FunctionsHandler[t((-1043475+(-600511+(-229198+2652336)))-759390)][t(403444+-383730)][t(-513526+533316)]:Call()elseif D[-385855+(-605590-(-991446))]==348230+-348229 then local c={}SetTask(t(((-670484+1304818)+(-1305905-(-663112)))+27390),l[570943-570937]({t(960925+-941721);t(274221-254818);t((975606+-1377507)-(-421097))}))c[(565130+-893984)+328857],c[(-812902+1147676)+((67566-744929)-(-342590))]=M[(467052+-1387351)-(-920356)]:GetCurrentClaimQuest()if c[-35208-(-35211)]then if not string[t(531461-511296)](c[-70004+70005]or t(-740778-(-760395)),t(758402+-738605))and not string[t(-909110-(-929275))](c[-937526-(-937529)]or t(-462071-(-481688)),t((-498484+216362)+301466))then M[-2723+2780][t(716951+-697865)]()else CombatController[t((-1684955-(-1186854-(-215846)))-(-733779))](t(-379560+(111068-(-287410))))end else TweenController[t((988111+-649638)-319437)](CFrame[t(-361863+381112)](-461.53,72.35,300.31))task[t(-538640+558506)](721269.5-721269)Remotes[t(1044727-1024885)]:InvokeServer(t(224050-203908),t((-458759+623795)-146035),(804701-(1614250-737288))-(490422-562684))end elseif D[970921-970920]==87979-87977 then SetTask(t(241298-222367),l[-1043244-(-1043250)]({t(799685-780481);t(-892406+911590)}))CombatController[t(-79746-(-99578))](t(575802+-556341))elseif D[-357044-(-357045)]==-180834+(931395+-750558)then SetTask(t(((((-1924734-611699)-(-833984))-(-766443))+1825024)+-870087),l[957748-(-798144+(((-858672+1590684)+-699391)+1723265))]({t(-88072-(-555832+448556));t((883302-69968)-793526)}))if CaculateDistance(CFrame[t(-327598+346847)](-1837.46155,44.2921753,1656.1987,.999881566,-1.03885048e-22,-0.0153914848,1.07805858e-22,491508-491507,2.53909284e-22,.0153914848,-2.55538502e-22,.999881566))>-486559-(-486569)then alert(t((132746-(-542897))+-655827))TweenController[t(440333+-421297)](CFrame[t((556377+428507)-965635)](-1837.46155,44.2921753,1656.1987,.999881566,-1.03885048e-22,-0.0153914848,1.07805858e-22,701347+-701346,2.53909284e-22,.0153914848,-2.55538502e-22,.999881566))else M[-726106+726114]=game[t(-267983+287943)][t((1017072-(-768004+1104181))-661877)]M[-488332+488340][t(-899544-(-918585))][t(-700354-(-720676))][t(754191+-733958)]=CFrame[t((798995+-25078)+(196352+-951020))](-472074+470238,720187+-720176,(725172+-1368077)+(-388061-(-1032680)))alert(t(-342393+361833))task[t((-220265-542843)-(-782974))](((394238-(-8540))-(-521789))+-924566.5)M[-77670+(((1141471-((-194020-(-449743))-(-968792-(-196789))))-213057)-(-176990))][t(412494-((684498-(-295918))-586963))][t(-279549-(-299871))][t(-236635-((((-133020+792259)+(740774-775924))+(262040-490815))-652182))]=CFrame[t((-790744+-76976)-(-886969))](-1850.49329,13.1789551,1750.89685)alert(t(-43674+63377))task[t(425245-405379)]((-552302+232822)-(-319481))M[-274515-(-274523)][t(-300802-(-319843))][t(-712175-(-732497))][t(-574063+594296)]=CFrame[t(21326+-2077)](-1858.87305,19.3777466,1712.01807)alert(t((937280+-1902331)+983977))task[t(-17018+36884)](1014808-1014807)M[-132194-(-132202)][t(-109870+((-1781717-(-978157))+932471))][t(713377+-693055)][t(-492038-(-512271))]=CFrame[t(80370+-61121)](-1803.94324,16.5789185,1750.89685)task[t(-288594-(-308460))](-892260+892261)alert(t((573110-61913)-491371))M[-1032861+1032869][t(-71354+(236266-145871))][t(528022-507700)][t(-379113+399346)]=CFrame[t(994753+-975504)](-1858.55835,16.8604317,1724.79541)task[t(-314288-(-334154))](-821396-(-821397))alert(t(158648+-139617))M[(1804890-862229)+-942653][t(788480+((883617+-1392991)-260065))][t(-362788+383110)][t(574973-554740)]=CFrame[t(-1021129-(983681+-2024059))](-1869.54224,15.987854,1681.00659)task[t(403849+(-252121-131862))](127264+-127263)alert(t(1005017-985340))M[784847-(761365-(-23474))][t(-878018+897059)][t(717600-(1356822-659544))][t((1957443-(1563402-(889930+-273037)))-990701)]=CFrame[t(-60163+79412)](-1800.0979,16.4978027,1684.52368)task[t(147946+-128080)](-792112+792113)alert(t(78870+-59412))M[206142+-206134][t(570595+-551554)][t(-832558+(246963-(-1336791-(-730874))))][t(755+19478)]=CFrame[t(-276732-(-295981))](-1819.26343,14.795166,412741+-411023.09375)task[t((-259431-(272235-(-48474)))-(-600006))](-739931+739932)alert(t(-708311+728123))M[((-364239-(-850405))-(-497707))-((537867+-515763)-(-961761))][t(((-200102+33588)-((235241-(456552-(-526490)))-(-1253579-(-1037993+107472))))-239188)][t(-952049-(-972371))][t(-957990-(-139216+-839007))]=CFrame[t(-834530-(123514+-977293))](-1813.51843,14.8604736,1724.79541)end end end)FunctionsHandler[t(353236-333577)]:RegisterMethod(t(((465944-288833)-49979)+-106862),function()if not Config[t((-70352-(204288+-1001723))-707565)][t(145517-126098)]then return end if SeaIndex~=551608+-551606 then return end if(getsenv(game[t((-291787-(-488006))-176381)][t(-845598+864950)]))[t(576266+-556455)][t(779087-759708)][t((968961+-1614027)+664021)]~=-752450+752450 or ScriptStorage[t(-427406-(-446869))][t(822601+-802762)]<(370396-(781707-(-208987)))+621198 or ScriptStorage[t(-407217+426680)][t(-290466+310383)]<(-989502+2287721)-298219 or ScriptStorage[t((415557+(1028939+(769591+-3261473)))+1066849)][t(2198+(811888-793979))]~=-961133+961134 then return end return true end)FunctionsHandler[t(-129196+(-347411+496266))]:RegisterMethod(t(-488240+508030),function()Remotes[t((981784-35480)-926462)]:InvokeServer(t(-861170-((465792+63635)+(-1642832-(-232983)))),t(224251-204811))Remotes[t(-641585+661427)]:InvokeServer(t(-175376+194628),t(-426431+446134))for M=259757+-259756,896162-896160,220945-((-267864+(611675+-157364))+(-45053-(-79550)))do local D={}D[(373715+-1244999)+((119190+1029897)-((225821+-390734)+442712))]=M D[376903+-376901]=ScriptStorage[t(((((-70805-(-1033219+1947197))+-13274)+758831)-(-466613))-(458515+(788367-1039487)))][t(-927568+(-690770+1637579))..D[-815240+((-822338+-222201)+1859783)]]D[982105+(-838901-143201)]=Services[t(((-650028-(-949807))-(-25277))+-305241)]:FindFirstChild(t(889522+-870139)..D[545924-545920])if not D[-580388+580390]then if D[(119892+(-307801-(-611213)))-423301]and D[-333636+333639][t(374168+-354815)]==909469+-909469 then SetTask(t(-326479-(-891688-(-546278))),l[794892+-794886]({t(-490777-(-509905));t((1395340-(-236216-(-726136)))+-886170)})..D[-907553+907557])while not ScriptStorage[t(917285+-897293)][t(-992643-(-1011884))..D[-391906-(-391910)]]do task[t((-453286-148995)+622147)]()TweenController[t((204936+-248379)+62479)](D[-847097+847100][t(-77097-(-97330))]+Vector3[t(263854-244605)]((50706+(-997559+77433))+869420,math[t(-657661+676741)](-865202+(953963-88762),-389164-(-389166)),1042157+-1042157))end end end end if not ScriptStorage[t((-20505+(-683144-75451))-(-1570946-(-771854)))][t(464681+-444426)]then SetTask(t(-395885+414816),l[((-2047734-(-897885))-(-689226))-(120870-581499)]({t(-538946+558074),t(866555+(-898037-(-51831)))}))CombatController[t(325403-305571)](t(903684+-884766))else SetTask(t(606266-(430607+(-136088+292816))),l[668794+-668788]({t(-346346-(-365720)),t(-981057-(554835+(-590667-964594)))}))if M[-762252+762260][t(686526-(1177866-(1230413-720032)))][t(-109994+130316)][t(667222-646989)][t((222686+(-1038461-170175))-(-1244076-(-237862)))]<-134098-(-184098)then TweenController[t(-302931+321967)](M[-210680-(-210688)][t(999784-980743)][t((976107+-1374089)-(-418304))][t(((-14678+-234172)-((-331250-(-627390))-(-322010)))+(-51514+938747))]+Vector3[t(-884113-(-903362))](94588-94588,-533578+533628,-25636+25636))end Remotes[t(-344253+364095)]:InvokeServer(t(-658509+677761),t(-492200+511126))RefreshRace()end end)FunctionsHandler[t(-479792-(-499996))]:RegisterMethod(t(858745+(-89298-749177)),function()local M={}if SeaIndex~=666684-666682 then return end if(ScriptStorage[t(680281+-660818)][t(-498699-(792235+-1310773))]or 214438-214438)<-535373+(-387095-(-923468))then return end if(ScriptStorage[t((511841-(-552895))-((-1456415-(-478686))+2023002))][t((244836-(-657610))+-882339)]or((-102768-(-620899))+47151)-565281)~=577898+-577896 then return end M[36933+(282114+-319046)]=Remotes[t(329352+-309510)]:InvokeServer(t(753932+-733728),t(((344081+-1044876)+1378361)+-658126))==637882+-637884 if M[-586696-(-586697)]then return end return true end)FunctionsHandler[t(610321+-590117)]:RegisterMethod(t(820501+-800711),function()local D={}D[144972+(-571393+426422)]=Vector3[t(259337+-240088)](-1988.88,124.84,-70.87)D[-805635-(-805638)]=CFrame[t(88336-69087)](D[(487051+276379)-763429])D[-74942+(-14299+89245)]=function()local l={}l[-755109+(510493+244617)]=function(D)local c={}c[-853031+853035]=D if not c[130829+-130825]or not c[-438528-(-438532)]:IsA(t(-528175+547750))then return false end c[241007+-241005]=c[(-468163-(-590787))-122620][t(-22698-((-595066+122517)-(-429805)))]or t(119212+-99595)c[188170-((-874983-(-453696))+(((359286+-1069269)-(-969366))-(-350071)))]=c[689728+-689724][t(-519105+538759)]if c[13652+-13650]==t((-22550+(1582078-577654))+-962909)or c[-884502+884504]==t((439884-287904)-132564)or c[-258304-(-258306)]==t((113393-(-294266))+-387651)or c[1030368-1030365]==t(253147+-233572)or c[(-790573-(-605555))+185021]==t(-984124-(-1003276))or c[-250654+250657]:find(t(-509886-(-529972)))or c[101699+(128753-230449)]:find(t(-566926-(237458-(83675-(-740092)))))then return false end return c[-669676+669678]==t(535992+(266059-(1723460-940734)))or c[772037+-772034]:find(t(-641867+661154))or(c[392785+-392782]:lower()):find(t(-288350+308510))or c[(((-681319-(-732921))+307633)+(403169+(-721991-(-518190+805134))))-(615436+-861971)]:FindFirstChild(t(467933+-447778))or c[973978-973974]:FindFirstChild(t((-1095179-(-968151))+146657))end if M[(82557-(-561896-(-704422)))-(692653+-752630)][t(-722395+742014)]then for M,D in ipairs(M[(-769914+1060526)-290604][t((807640+(-759772-42195))-(-13946))]:GetChildren())do local t={}t[928876-928875],t[-939385-(-222145-717243)]=M,D if l[-778774+778775](t[(1308254-299711)-1008540])then return t[961727-961724]end end end if M[-222168+222176][t(-230194+249235)]then for M,D in ipairs(M[824232-824224][t(-162459+181500)]:GetChildren())do local t={}t[-616397-(-736676-(-120277))],t[293044-293043]=M,D if l[747545+(((1068493-578275)-((702037+-1437838)+1201743))-771820)](t[365246-365245])then return t[((200337-(-307660))+271903)+-779899]end end end return nil end D[607719-607714]=D[-487086+487090]()if not D[693574-(318288-(-375281))]then SetTask(t(107325-88394),l[207298-207292]({t(-200302+219930);t(-1002194+(-508456+1529889))}))if ScriptStorage[t(-911171-(-930790))]then for M,l in pairs(ScriptStorage[t(576008-556389)])do local c={}c[(579134+-1429922)+850789],c[-706218+706221]=M,l if c[(753429-(372808-167897))+-548515]and(c[-917620-(-917623)][t(617853+(516477+-1114252))]==t(51021+-31696)and(c[-829459-(-829462)][t(-701389+720334)]and c[40648-40645][t(33327-14382)]>(402986+-360285)-42701))then local M={}M[-698569+698571]=c[404017+((-1455552-(-37380))-(-1014158))][t(252243-232589)]or c[880116+(-21607-858508)]table[t(-591908+611064)](ScriptStorage[t(-46862+66189)],M[790710+-790708])pcall(function()Remotes[t(952258+-932416)]:InvokeServer(t(855707-835482),M[954831+-954829])end)task[t(241106-221240)](.2)D[164960-164955]=D[-114544+(461482-346934)]()if D[(757769-859933)-(-102169)]then break end end end end if not D[-497798-(-404474-93329)]then local M={}M[-225322-(-225323)]={t(604860-584732);t(-88267-(-107200)),t(63420-(904206-(1512559-652458))),t((179900+(-9162-124343))-27263);t(537286+-517612),t(621775+-602251),t(778578+-758522);t(-65602-(-85750));t(-326304+(983604-637182));t(870728-851507);t(-745510-(-764501));t(-896928-(-916189));t(-801790-(-822159));t(841394+-822194);t(-350841-((-161758-(190995-(-527047)))-(-508950)));t(-936111+955497);t(907613+-887832),t(1026765-1007604);t(-540329+560442);t(858330-(617741+220715));t(124136-(-830556-(-934552))),t(905873-885831);t(697723-678203),t(911975-892114)}for M,l in ipairs(M[(44086-(-568747-356676))-969508])do local c={}c[-242986+242988],c[-77536+77537]=M,l table[t(-844500-((-911098-(815922-236524))-(-378265+-248575)))](ScriptStorage[t((776969-829067)-(-71425))],c[631599-631598])pcall(function()Remotes[t((-1629489-(-955462))+693869)]:InvokeServer(t((265467-446420)-(-201178)),c[-733963+733964])end)task[t(-333661-(-353527))](.05)D[869827-869822]=D[-371333+371337]()if D[(-584733+264866)-(-319872)]then break end end end if not D[((937516+-2108784)-(-357153))-(-814120)]and(ScriptStorage[t(-1026897+1046360)][t((1313423-885426)-408080)]or-749332+749332)>=-296032+2696032 then SetTask(t(-1022759+1041690),l[-807059-(-807065)]({t(-56802+(545053+(-134851+-333487)));t((268621+-573495)+324776)}))Remotes[t((-931110+1477300)+-526348)]:InvokeServer(t((959522-952996)+13341),t(748908+-729359))task[t(-349450+(-86092+455408))]((-463613+1060655)-597041)D[376298-376293]=D[-332119+332123]()end end if(ScriptStorage[t(896811+-877348)][t(1038438+-1018521)]or(-848051+1344797)+-496746)<-877591+2877591 then SetTask(t(294332-275401),l[954890-954884]({t(((-105069+-224775)-541119)+890826),t(-545871-(-565875))})..(tostring(ScriptStorage[t((((224422+-358901)+(-1101235-(-584260)))-(-193154))-(-477763))][t(-192809-(-212726))]or 613905-613905)..t(236118+-216395)))CombatController[t(699408-679576)](t(460856+-441938))return end if not D[95394-(-940588+1035977)]then SetTask(t((-494778+1282525)-768816),l[824544-824538]({t(-791459+(-113972-((-277306-(-47013))-694727)));t(922672+-902950);t((807688+-76126)+(-1391898-(-565939+-113565)))}))CombatController[t(-479288-(-499120))](t(724129-705211))return end SetTask(t(((1009578-853270)+-442465)-(-305088)),l[-451409+451415]({t(-159417-(-179770));t(-270942-(-290653))}))if D[241526-241521]and(M[-287545+287553][t(-986072+1005113)]and M[-215756-(-215764)][t(((-674274+-239224)-(-77522))-(-855017))]:FindFirstChildOfClass(t(-553207-(-572724))))then pcall(function()M[-482583+482591][t(((-364585+(-668756-(-771593)))+611004)+-330215)][t((-894835+(-413591+1387797))-59854)]:EquipTool(D[-899631-(101521-1001157)])end)end TweenController[t(-499850+518886)](D[-111707-(((732416+-369116)-(269381-426352))-631981)]*CFrame[t(311500+-292251)](446218+-446218,550652-550652,528850+-528846))task[t((743297+-1688273)+964842)](632668+(227050+-859717.5))D[900462-900457]=D[((-507520+(-315451+(267388+1456386)))+-1186915)-(-286116)]()if D[-325464-(-325469)]and(M[-892951-(-892959)][t(-76831-((-368455-(-985545))+-712962))]and(M[-198142+198150][t(-109211-(-128252))]:FindFirstChildOfClass(t(-926270-(-945787)))and D[619218-619213][t(-1014149-(-1034511))]~=M[347052+-347044][t((-550309-(-778193))+-208843)]))then pcall(function()M[37846+(577021-614859)][t((280043-851099)-(-590097))][t(1042609-(518213-(-504879)))]:EquipTool(D[-114813-(-114818)])end)end Remotes[t(((-140293+364972)+-1100318)-(-895481))]:InvokeServer(t(-319798+340002),t((217600-(-389808))+-587968))task[t(756400-736534)](.2)Remotes[t(-778663+798505)]:InvokeServer(t((-890789-(-88462+-718459))-((-648784+1085205)-540493)),t(-926340+(1707885-761842)))task[t(264203+-244337)](.2)Remotes[t(236261+-216419)]:InvokeServer(t(709093+-688889),t(-504194+523120))task[t(-84703+104569)](.2)Remotes[t((81471+62887)-(375183-((553272-(-145411))-448016)))]:InvokeServer(t(59779+-39575),t(240251+-220548))task[t(-998687+1018553)]((-420436+22073.5)-(-398363))RefreshRace()end)FunctionsHandler[t(595099-575034)]:RegisterMethod(t((-526046+972917)-426601),function()local l={}l[452517-452514]=M[-664034+664091][t(339467+-319445)]and M[-975144+975201][t(-777128-(-797150))]()if l[-329505+329508]then for M,D in ipairs({t(-180838+201184);t(-583300-(-602427)),t(-265920+285320)})do local c={}c[-941927-(-941929)],c[(227558+((-675476+(-252185-(-149493)))+-236105))-(-786716)]=M,D if((tostring(l[-761812-(-946162+184347)])):lower()):find(c[657045-657044]:lower())then local M={}M[(522266+-221813)+-300452]=ScriptStorage[t(-867095-(-887293))][c[-300893-(-300894)]]if M[(421557+389853)+-811409]and(M[(-1630315-(-872692))+757624]:FindFirstChild(t(-305424+324941))and M[-108210+108211][t(-966644+986161)][t(18974+146)]>552678+-552678)then return M[743024-743023]end return c[251387+-251386]end end end for M,D in ipairs(BossesOrder or{})do local c={}c[-529685+529687],c[-1016712-(239462+-1256175)]=M,D c[-658040+658043]=BossesOrderLevel[c[(974597-(1362048-755517))-368065]]or-665795+(((((-966832-(-623824))-(-1010208))-554563)-(-663284-(-65758)))+-44368)if ScriptStorage[t(-439585+459048)][t(182423-162584)]>=c[(-820863+466735)-(-1353594-(-999463))]then local M={}M[887114-887113]=ScriptStorage[t(834559+-814361)][c[938652-938651]]if M[327284+-327283]and(M[(-1253631-(-575128))-(-678504)]:FindFirstChild(t(-239690+((530645+(-541534+-606554))+876650)))and M[-337431+337432][t(-581805-(478033+-1079355))][t((166652+-736624)+589092)]>-832049-(-93719-738330))then l[-990553+990555]=M[-924832+924833]break end end end if l[-1015332-(-1015334)]then local M={}M[693045+(-1351988-(-658946))]=tostring(typeof(l[-1040123-(483370+-1523495)])==t(598786-578790)and l[-225359-(-225361)][t(842115-822461)]or l[25510-25508])if BossesOrderWL[M[70016+-70013]]or ScriptStorage[t(-893522-(-912985))][t(130391-110552)]==MaxLevel then return l[-416268-(-416270)]end M[-42579+42581]=typeof(l[887477-887475])==t(175464+-155468)and l[-632105-(-632107)]:FindFirstChild(t(437725-417403))if M[398589+-398587]and CaculateDistance(M[-925194+925196][t(790979-(102011-(-668735)))])<(SeaIndex==-304270-(-304272)and 652768-649768 or-39370+44370)then return l[-143506+143508]end end end)FunctionsHandler[t(-238996-(-259061))]:RegisterMethod(t(-841061+860851),function(M)local D={}D[-203987+203989]=M if D[658190+-658188]then local M={}M[-930712-(-930714)]=typeof(D[-261035-(-261037)])==t((222851-484100)+281245)and D[600123-600121][t(31011-11357)]or tostring(D[353005-353003])SetTask(t(-502727+521658),l[(612594-579227)-(438935+-405574)]({t(492064+-472929),t(875457+-855367)})..M[-935996+935998])SetTask(t(-231296+(370441+(870009-989607))),t(569189+-549523)..M[100742+-100740])CombatController[t(473215-453383)](M[(1624553-682599)-941952],nil,nil,function()SpecialItems=nil end)SpecialItems=nil end end)FunctionsHandler[t(-688196+(-84724+792478))]:RegisterMethod(t(778690-758420),function()local M={}for l,D in SpecialBossesOrder do local c={}c[-30956-(74618-105575)],c[(816697+((1524134-550398)+-2075265))-(-284835)]=l,D if ScriptStorage[t((1898445-964518)+(((1452426-480623)+-2195588)-(-420361-(-111040))))][t(196155+(868555+-1044871))]>=c[1036559+-1036556]then local l={}l[37947+-37945]=ScriptStorage[t(-885215+(1013413+-108000))][c[-868737-(397021+-1265759)]]if l[603279+-603277]and(l[-533088-(-533090)]:FindFirstChild(t(612543-593026))and l[(-73613+-533449)+607064][t((-399457+-280378)-(-699352))][t(46066-26946)]>(-572528-(-652357))+-79829)then M[619536-619534]=l[-535897-(-535899)]end end end return M[(384603+-1201763)+817162]end)FunctionsHandler[t(690929-671371)]:RegisterMethod(t((677340+(-740310-175268))+258028),function(D)local c={}c[(662354+-656108)+-6244]=D if FunctionsHandler[t(-913794+933186)][t(26414+-6700)][t(715151-694917)]:Call()then pcall(function()M[-754812+754820][t(-619139+(((504523+(-1489104-(417325+-283936)))-(-376938))+1379212))][t(996871+-977354)][t(((-608445+(110907+271450))-(-639864+334386))+(-994115+933845))]=562515+-562515 end)end if c[339931-339929]then SetTask(t((213853-67156)-(209676+-81910)),l[-521407+521413]({t(613897-593760),t(1013309+-994162)})..c[585357-585355][t((5535+176387)+-162268)])CombatController[t(-641944-(-661776))](tostring(c[-260733-(-260735)]))end end)FunctionsHandler[t(-433777-(-453169))]:RegisterMethod(t(898696+-878359),function()FunctionsHandler[t(87376-67984)]:Set(t((48585-(51916-(-633932)))-(-657386)),t(-795805-(-1756631-(-941665))))end)M[(-720443-(-432237))+288233]=function(l)local D={}D[315199-315195]=l if not D[-273654-(-273658)]or D[829567+-829563]==t(880915+-861298)then return false end D[-312448-(-312449)]=string[t(865808-846846)](tostring(D[-376907-(-376911)]))D[915223-915221]=((D[794140+-794139]:gsub(t(771695-751535),t(-465074-(-484691)))):gsub(t(-773945-(-793422)),t(577197-557580))):gsub(t(905697-(303521-(-583053))),t(-1009195-(-1028812)))if D[-608175+608177]==t(988846+-969229)then return false end D[((738146+-2205272)-(-842756))-(-624375)]=ScriptStorage and(ScriptStorage[t(-138582-(815262-973307))]and ScriptStorage[t(-421840-(-441303))][t(133337+-113137)])or M[508503-508495]:FindFirstChild(t(-478089-(-497083)))and(M[456288-(1010758+(-1124563-(-570085)))][t(-1006313+1025307)]:FindFirstChild(t((737062+-1382251)-(-665389)))and M[-601712-((197311-515195)+-283836)][t(983796+-964802)][t(-675657+695857)][t(-716536-(-735767))])or t(996908-977291)if D[-732672-(-732677)]~=t(646566-626949)and D[497830+((-963513-(-172679+146572))-(-439581))]~=t(-736443+(-145745-(-902424)))then local M={}M[-624710-(-624711)]=(((string[t((519625-1033226)+532563)](tostring(D[-56333+56338]))):gsub(t((7441+-268095)-(-280814)),t(-960704+980321))):gsub(t(721146+(118178-819847)),t(398289-(-20576+(354217+45031))))):gsub(t(-182404+(-727016-(-928543))),t(-939976+959593))if M[214110-214109]~=t((808319-(-74368))-863070)and M[(-2031376-(-1022044))-(-1009333)]~=t((658490+(-1713943-(-289618)))+785435)then if D[444176+(-1237117-(-792943))]==M[-693444-(-693445)]or string[t(-555998-(-576163))](D[-946509-(-946510)],M[(94802-854662)+759861],-515361-(-515362),true)or string[t(-952483+(-504662+1477310))](string[t((1358544-463975)+-875607)](tostring(D[-587257-(-183432+-403830)])),D[(((-764037-906670)-(-789345))-(-887875))+(((613268+-620104)+((-341751-(596462-245620))+(-571813+864365)))-(-400366))],-721657+721658,true)then return true end end end if Config and(Config[t((385737-(-235176+-326787))+-927850)]and Config[t((-445146-(-591773))+-126777)][t(32626-12776)])then for M,l in ipairs(Config[t(331258+((-639941+1584209)+-1255676))][t(-271902+291752)])do local c={}c[1011218+-1011215],c[-470003+(677088-207081)]=M,l c[12782+-12781]=(((string[t(341227+-322265)](tostring(c[-624880-((-1186701-(-876661))-314844)]))):gsub(t(-314284-(-334444)),t((-9485+711002)-(-308602-(-990502))))):gsub(t(-780559+800036),t((1211416-299942)+-891857))):gsub(t(935712-916589),t(472531+(-1125525-(-672611))))if c[943610-943609]~=t(((546536+(-963577+19502))-(-462898))-45742)then if D[163324+-163322]==c[-41674-(-41675)]or string[t(833610-813445)](D[-97948+(-596112+694061)],c[-887113+887114],-301255+301256,true)or string[t(633158+-612993)](string[t(((-521074+302576)-(-90789-(-116375)))-(-263046))](tostring(c[544482+-544478])),D[-177948+177950],809375+(-505805-303569),true)then return true end end end end return false end M[384103-(-805212+((-942001-(-104221))+2027083))]=function()local l={}l[-648487+648488]=function(D)local c={}c[727674-727671]=D if not c[127309-127306]or not c[((43822+542261)+(123930-(-270382)))-980392]:IsA(t(-50025+((((771770+-1326436)-((-110328-(-449023))-839222))-(-953981))+-830242)))then return false end c[-603208+603213]=c[-124050+124053][t((-453512-(-460351))-(-12815))]if c[(-839537-(-854086))-(-444941-(-459485))]==t(-645525+665505)or c[(355322+(-1005975+1403634))+-752976]==t(399108-(-132356-(-511889)))or c[-216047+216052]==t(1039946-1020794)or c[-67999+68004]:find(t(-778532+798782))or c[964172-964167]:find(t((-982349+465996)+536603))then return false end if c[189349-189346][t(-873777+893823)]==t((362361-238972)+-104424)or c[(-309328-129243)+438574][t(461613+-441567)]==t(-908892-(-928308))or c[17608+-17605][t(-810751+(-187786-((560497+-917429)+-661651)))]==t(-927787+947795)then return false end if M[511543+-511516](c[-219911-(-219916)])then return false end c[-764830+764836]=c[(((394431-(-385612))-(-199150))+-6070)+(-1208128-(-235008))]:FindFirstChild(t((801438-428023)-353260))~=nil c[-714786+714788]=c[421402-(-374784-(-796183))][t(955036+-934990)]==t(-604377-(-623702))c[667636-667629]=c[899930+-899927]:GetAttribute(t(-73966+94309))~=nil c[(-377764+(763892-734779))+348652]=string[t(-86065+105133)](c[(637493-546306)-91182],-877922+(1649571-771654))==t(371168+(689181-1040499))or c[144151-((-704130-(-950042))+-101766)]:find(t(345833+-325792))~=nil if c[((-735497-(-975836))+94605)+(105152-(-848578+1288668))]or c[354248+(-639142+284896)]or c[778964+-778957]or c[(-459272+1106970)+-647697]then local M={}M[33371-(-857137+890507)]=c[270118-270113]:lower()if M[-342883+342884]:find(t(153661-(527182+-393316)))or M[770685+-770684]:find(t(1018743-998933))or M[186215+-186214]:find(t(-634365+654724))or M[-968009-(-968010)]:find(t(-603726-(-622628)))or M[((259784-((-553817-(461115+-305069))-(-103314-(-876061-(-819021)))))+-471009)+-452363]:find(t(252683+-233463))or M[932892-932891]:find(t(10109-(-8854)))or M[506833-506832]:find(t(-531038-(453950+-1004943)))or M[49381+-49380]:find(t(663804-644515))or M[-532324-(-532325)]:find(t(-826260+845594))or M[-678160+678161]:find(t(848438-829139))or M[-558696+558697]:find(t(-167811+(-700242-(-887412))))or M[(1112814-82232)-1030581]:find(t(-413125+432337))or M[241085+-241084]:find(t(-830428+850718))or M[124756+-124755]:find(t(-590000+609504))or M[-849262-(-849263)]:find(t(823738+((1043644+-702308)+-1145401)))or M[-525151-(-525152)]:find(t(46363-26433))or M[620169-620168]:find(t((777568+195407)-953813))or M[-685477+685478]:find(t(955636+-936094))or M[1041331-1041330]:find(t((312388+(-1393821-(-375319)))+(1670596-(((704788+(-608830+-1101915))+2982906)-1032276))))or M[-725591-(-725592)]:find(t(685037-666065))or M[225743-225742]:find(t(232963-212934))or M[(589793+((738408+(40947-324450))-189763))-854934]:find(t(885654+-865959))or M[-863790-(-863791)]:find(t(832710-813315))or M[826870+-826869]:find(t(422482-402269))or M[-870160-(-870161)]:find(t(-28427+((942968-((-1041090+393252)+520665))-1021669)))then return false end return true end return false end if M[-333350+333358][t(999281+-980240)]then for M,D in ipairs(M[553628-(326022+227598)][t((431115+-85714)+-326360)]:GetChildren())do local t={}t[-309092-(-945598+636503)],t[419252-419250]=M,D if l[-968361+(34080-(-934282))](t[-661829+(783324+-121493)])then return t[589452+-589450]end end end if M[-144938+144946][t(183827+-164208)]then for M,D in ipairs(M[(-574088+1053763)-479667][t(-470722+490341)]:GetChildren())do local t={}t[-908044-(-908047)],t[(-338457-(-352028))+((1895324-971462)+-937431)]=M,D if l[-926742-(-926743)](t[433302-433300])then return t[37829+-37827]end end end return nil end M[(633049+-1438834)+805813]=function()local D={}D[-68017-(774269-842290)],D[277316-277309]=pcall(function()return require((game:GetService(t(777356-757518)))[l[763434+(1033652+-1797080)]({t(640091-620611);t(941867-921977)})])end)D[-552155-(-324568-227588)],D[-528018-(-528023)]=pcall(function()return require((game:GetService(t(-317006-(-475566+138722))))[t((-481730+394472)-(((178734-475860)-((612753+-1428548)-(-809319)))+183066))])end)D[(-331257+-703150)-(-1034409)],D[526369+-526363]=pcall(function()return require((game:GetService(t((-1400596-(-609671))+810763)))[l[(952243+-1581980)-(-629743)]({t((-727016-282734)-(-1029230));t(881679-861789)})][t(286657+-267019)])end)if D[-174055+174059]and(D[-317255-(-317256)]and(D[((1136885-776439)+(782541+-437600))-705385]and(D[101885+-101878]and(D[106200-106195]and D[(((-651205+273914)+752798)+-20020)+-355481]))))then local l={}l[137386-137385]={}for c,U in pairs(D[(932359-1022591)+(250302+-160063)]:GetItems(D[764088-764082][t(-552649+(1054322-481433))]))do local X={}X[638282-638277],X[927937+-927935]=c,U X[-772043+772046],X[(-891136+961349)-70209]=pcall(function()return(D[(855543+-253290)-602248][t(-771827+791283)](X[-191760-(-191762)][t(-857924-(-877031))])):unwrap()end)if X[-804141-(-804144)]and(X[(-92852-(-551582))-458726]and(X[(-171643+768023)+(((-986162+1053621)+-243611)-420224)][t(286148+-266052)]and(X[741882-741878][t(-465740-(181251-667087))][t((1388037-554611)+((-128284-(-156235+(207037+-374744)))-1009909))]==t((-1290374-(-49209-603485))-(-809664+151917))and(X[(-1089719-(-939759))-(-149962)][t(545231+-526000)]and X[46391-46389][t(939505-920274)]>591028+-591028))))then local D={}D[(98027+-93310)+-4713]=X[-412277-(-412281)][t(936842+-916746)][t(330777-311807)]or t(-693848+713465)D[-913651+913653]=X[(-175506-51500)-(-227010)][t(280195+(-125457+-134589))]and X[-753260+(29252+724012)][t(-21922-((950112+-1818227)+826044))][t(574793+-555229)]or 981831-981831 D[(1686999-941777)-745221]=X[-54415+54419][t(-128326-(144990+-292648))]and X[(-540996+-413173)-(-954173)][t((790742+-1125910)+354500)][t(982240+-962586)]or D[181066+(-866718-((690866+-2324012)-(-947490)))]if not M[(-453819-(-964100))-510254](D[(742680-592824)+-149852])and not M[4128+-4101](D[(1641086-(-428163+1293850))+-775398])then if D[771055+(((844234-((843208+195835)-6088))+1041706)+(623541+-2247579))]>835199-835199 and D[-10870+(-788702+799574)]<1169610-(661255-491645)then table[t(110090-90934)](l[691657+-691656],{[t(-930022-(-948992))]=D[-225615-(-225619)];[t((365323-147139)-198258)]=D[-808589+808591];[t(((937833+-1737743)+1154701)-335137)]=D[-112584+(-241203+353788)]})end end end end if#l[-932289-(-932290)]>714931-714931 then table[t(-29936-(-49141))](l[-624937-(-624938)],function(M,D)local c={}c[788721+((-783854-(655012+(-93513+-872610)))+-315976)],c[-572667+572670]=M,D return c[-519506+519508][t((414389-98505)+-295958)]<c[676583+(657902+(-769024-(811494+-246036)))][t(671408-651482)]end)return l[-676808+676809][-742074-(-12916-729159)]end end if ScriptStorage[t(888641-869022)]then local l={}l[(562756-824132)+261377]={}for D,c in pairs(ScriptStorage[t(463585-443966)])do local U={}U[(-133338+517267)+-383928],U[886865-886863]=D,c if U[(717324+-212215)-505107]and(U[701971-701969][t(-65856-(-85934))]==t((175997-(-221003))+(422372+-800047))or U[-813380+813381]:find(t(-946175-(-965462))))then local D={}D[(946368-(-605212+820705))+-730872]=U[((-960939+(558289-(-387047)))+-926488)-(-942093)][t(323993-304339)]or U[-941299-(-941300)]D[-302764+(855385-552619)]=U[-226770-(293042-519814)][t(288027+-268796)]or-526293+526293 if not M[-748654-(-748681)](D[-893696-(-893699)])and((U[(((-1107952-(-470707))+-204653)-(-973733))+-131833][t(43496-24551)]or 628320-628319)>-912873-(-912873)and(D[388629+-388627]>((-427245-(-579624))-959681)+807302 and D[-120054-(-185273-(-65217))]<1386249-386249))then table[t(326842-307686)](l[-276324-(-208428-(805386+-737489))],{[t(-822574+841544)]=D[-833110+833113],[t((755727+-1029275)-(-933114-(-639640)))]=D[-679536-(-679538)],[t(((-885731-(-409740))-440886)-(-936531))]=D[((47232+840399)+-1444827)-(220833+-778032)]})end end end if#l[863185-863184]>311720-311720 then table[t((1750802-962600)+-768997)](l[207241-207240],function(M,D)local c={}c[232776+-232774],c[-958347-(-742802-215546)]=M,D return c[832225+-832223][t(-623735-(-643661))]<c[(328900+-1191122)-(-379194-(20476-(-462553)))][t((-958582+118610)+859898)]end)return l[776355-776354][819920+-819919]end end return nil end FunctionsHandler[t(-831262+850654)]:RegisterMethod(t(312256+-292297),function()local l={}l[((799261+(880660+-978903))-689405)+-11612]=M[(1380908-852285)+-528611]()if l[-358728-(-358729)]then return{[t(467771+-448117)]=l[(215464+-847214)-(-631751)][t((381162+647752)-1009260)];[t(-869538+(498711-(-389797)))]=l[-406624+((17283+-391116)-(-780458))][t(301285-281631)];[t((-728229+65340)+682815)]=438947-433947}end return M[1042062-1042034]()end)FunctionsHandler[t(447325-427933)]:RegisterMethod(t(159314-139080),function()local l={}l[-134411+(662191+-527776)]=M[-789615-(-789623)][t(268599+-249558)]and M[(230492+(-2082611-(-992871)))+(815231-(603157-647182))][t(-386276-(-405317))]:FindFirstChild(t(727047+-706725))if not l[677177-677173]then return nil end l[(-1095707-(-597033))+498675]={{},{},{};{},{}}l[(-48740+-881982)+930724]=workspace:FindFirstChild(t(86595-(641859+-574687)))and workspace[t(-399577-(-419000))]:FindFirstChild(t(((888219+-1239898)+1248193)-877130))if not l[(-1831978-(-915281))+916699]then return nil end for M,D in ipairs(l[779035+-779033]:GetChildren())do local c={}c[169833+-169831],c[-931466+931469]=M,D if string[t(101373-81208)](c[(401663+515747)-917407][t(831208-811554)],t(-718142+737496))and(c[96832+-96829][t(923497+-903547)]-Vector3[t(464004+-444755)](-1026128+1026128,(885373+(-890597+-579559))+584783,661544-((-950226+1556543)-(-55227))))[t(772101-752051)]>-931769-(-938769)then local M={}M[(1269593-680197)-589395]=tonumber(string[t((609275+-294783)-295519)](c[330791+-330788][t(536093-(624417-107978))],t(900860+-881506),t((-250684+-310420)-((-241704+311786)+-650803))))if M[397335+-397334]and l[720437+-720436][M[-106678+106679]]then table[t(-342893-(-362049))](l[-815861+815862][M[930536+((296525+-1569040)-(-341980))]],c[-90740-(-90743)])end end end for M=-419836+419841,828036+-828035,505574+-505575 do local D={}D[-14056-(-14058)]=M for M,D in ipairs(l[762576-(698328-(-64247))][D[-187125+187127]])do local c={}c[(716181+-349432)+-366746],c[22612+-22611]=M,D if(c[-582702-(-582703)][t(-45792-(288082-353824))]-l[-161831-(-161835)][t(430198+(-1202877-(-792629)))])[t(-293163+313213)]<711950+-709950 then return c[((895071+-1032004)-(-190639-219237))-272942]end end end return nil end)function CheckSpecialMicrochip()if M[-765324+765332][t((-142393-(-1007921))+-846487)]and M[646088-646080][t(353967+-334926)]:FindFirstChild(t(-976801+996781))then return M[((-333548-(-395846))-629480)+(1015067-447877)][t(198546-179505)][t(784595-764615)]end if M[-188841-(-188849)][t(-752113-(-771732))]and M[829313+(-1352817-(-627132-(-817526+713906)))][t(618143+-598524)]:FindFirstChild(t((-883170-(-421586-(-357392)))-(-838956)))then return M[144357-(-623230+767579)][t(-862406-(-882025))][t(-841908+861888)]end return nil end M[-763224-(-763273)]=function()if SeaIndex==(407079-(-220892))+-627969 then return CFrame[t(-1027192-(-1046441))](-6520.12,317.19,-4654.33)elseif SeaIndex==-577715+(-190863+(1793127-1024546))then return CFrame[t(-194589-(-213838))]((149765-287958)+133148,760010-(((-409371+(774047-(-60186)))-(-755157-(-347711)))-72612),-250826-(-247645))end return nil end M[(369307-(-349769-(-37366)))+-681681]=function()pcall(function()local M={}M[964983+-964982]=nil if SeaIndex==134007-134005 then local l={}l[(824164-(-82450-(-735187)))-((367747-9234)+-187087)]=workspace:FindFirstChild(t(-575350-(-594886)))and workspace[t(-175883+195419)]:FindFirstChild(t(479032+-459418))or workspace:FindFirstChild(t((-348177+1012115)-644324))M[-514683+514684]=l[-935518-(-935519)]and(l[(-604986+1518189)-913202]:FindFirstChild(t(689874-670029))and(l[-639230-(-941377-(-917872+(323150-(-292576))))][t(930804-910959)]:FindFirstChild(t(351145+-330773))and l[(981468+-228576)-(-383330+1136221)][t(((1112845-(-751250))-857612)-986638)][t(736496-((-1577814-(-958126))+1335812))]:FindFirstChild(t(898586-879477))))elseif SeaIndex==-425744-(-425747)then local l={}l[-44623+44624]=workspace:FindFirstChild(t(-1025573+1045109))and workspace[t(-1041408+(-942549+2003493))]:FindFirstChild(t((357096-(1661703-629579))-(-694282)))or workspace:FindFirstChild(t(71368+-52114))M[-702154-(-585680-116475)]=l[229357-((-426884-(-536003+-101453))-(-18784))]and(l[922963+-922962]:FindFirstChild(t(-238171+258016))and(l[(-1388779-(-347346))-(-1041434)][t(453998-434153)]:FindFirstChild(t(-104211+124583))and l[228859+-228858][t(1028487-1008642)][t(534495-514123)]:FindFirstChild(t(-474860+493969))))end if not M[(672133-917696)+245564]then for l,D in ipairs(workspace:GetDescendants())do local c={}c[-244318-(-244320)],c[-183990-(-183993)]=l,D if c[906516+-906513][t(-972444+992098)]==t(972231-952386)or c[-951016+951019][t(-268494+288148)]==t(-528120+547909)then local l={}l[-582313+582314]=c[-993241-(-993244)]:FindFirstChild(t(-928110+948482))and c[860003+-860000][t((-57660+-633294)+711326)]:FindFirstChild(t(-787315+806424))if l[45540+-45539]then M[((-765827+(-169071-(-600730)))-(-412438))-(1108979-1030710)]=l[325499-325498]break end end end end if M[123156-(891817+-768662)]then if M[-684945-(-684946)]:FindFirstChild(t(331248-311891))and fireclickdetector then fireclickdetector(M[435140+-435139][t(748784+-729427)])elseif M[-671875+671876]:FindFirstChild(t((-86406+(1503753-432202))+(312218+-1277122)))and fireproximityprompt then fireproximityprompt(M[263714-263713][t(1016623-996382)])end end end)end FunctionsHandler[t(-324591-(-343983))]:RegisterMethod(t(-311351-(-331621)),function()local l={}l[963042-963038]=ScriptStorage[t(617819+-598356)][t((-1438429-(522978+-1173223))+808023)]or 131380+-131380 if l[734257-734253]<-42796-(-43896)or SeaIndex==-256848-(-256849)then return false end l[1027965+(-267749-(1797972-1037761))]=FunctionsHandler[t((-326898+784294)+-438004)][t(888561-868847)][t(-715724+(709159+26799))]:Call()if l[-539340+539345]then return{[t(-874293+894588)]=true;[t(-282758+(-950643+1252882))]=l[190606-190601]}end l[975582+-975580]=CheckSpecialMicrochip()if l[(140018-(-730040+(-154631+659124)))-365563]then return{[t(365898+-346542)]=true,[t((-1319751-(-656474))-(-683465))]=l[-446407+446409]}end if Config and(Config[t((396702-383125)-(-5941))]and Config[t(-295904+315422)][t(-451572+471230)]==false)then return false end l[(-347061+-661767)-(-1008831)]=ScriptStorage[t(-28232+47695)]and ScriptStorage[t(130763+-111300)][t(-385398-(-405381))]or 941340+-941340 l[-83417+83418]=Config and(Config[t(743430+-723912)]and Config[t(((-480940+619462)-590655)+471651)][t(-241706+260750)])or-879904-(-884904)if l[-160707-(-160710)]>=l[-157231+157232]and not(Config and(Config[t(-954958-(-974476))]and Config[t(-256116-(-275634))][t(475131-(532707+(-726624+649825)))]))then return false end l[(-163576-(-347681))-184097]=M[(-133324-194407)+327743]()l[((47488+-807114)+749332)-(-10301)]=M[-420565+420593]()if l[-563570+563578]or l[726168+(-752813-(-26652))]then return{[t(576747+-557736)]=true;[t((-407239-((-367442+((321181-(-33476))+(382755+(-1943556-(-725055)))))-(-838475)))-(-306996+(2490-(-887117-(-550433+-449340)))))]=l[-956570+956577];[t(-905108-(-925441))]=l[-492675+492683]}end return false end)FunctionsHandler[t(-580556-(-599948))]:RegisterMethod(t((-1198291-(-893291))+324790),function(D)local c={}c[-658644+658649]=D FunctionsHandler[t((-281599-(-193532))-((6447+-446395)+332489))]:Set(t((-236249+1158410)+-902038),t((-239890+-541432)+800483))c[-340748-(-340750)]=t((-267449-(227182+28423))-((-1037450+(555042+202068))+-261875))c[730792-730791]=FunctionsHandler[t((190560+43337)+-214505)][t(1024082+-1004368)][t(73160+-52926)]:Call()c[621019-621016]=M[210554+(392853-603399)][t(-820696-(-839737))]and M[-189611+189619][t(-14440-(-33481))]:FindFirstChild(t(302221+-281899))if not c[-834523+834526]then return end if c[172890+((58228-(-766783))+-997900)]then local M={}SetTask(t(616588-597657),t((701658-(-1017837-(-734259)))-(242165-(-724007)))..(tostring(c[-983453+983454][t((((828771-762914)-(-669728))+-1140142)+424211)])..t((-377711+((716423-((-1021568-(-17833))+2025062))+(871245-427190)))-(-258254))))M[(-37939-(573498+(-592650+1022565)))-(-1782182-(192673-933502))]={}M[67443+-67441]=workspace:FindFirstChild(t(151163+(-453100+((-323206+309454)-(-335887)))))if M[(-390637+363530)+27109]then for l,D in ipairs(M[142228-(483574-(854494+-513146))]:GetChildren())do local U={}U[((-417222-(-171392))+-462828)-(-708659)],U[63636-63633]=l,D U[-466579-(-466581)]=U[100840+-100837]:FindFirstChildOfClass(t(-1022475+1041992))U[-431518-(-431523)]=U[(1614145-860055)-754087]:FindFirstChild(t(-176315-(-196637)))if U[(-429460+-539860)+969322]and(U[-510075+510080]and(U[455685-455683][t((-915759-(-497407))+437472)]>-902877+902877 and(U[284531+-284526][t(-393497-(-413447))]-c[-83553-(157560+-241114)][t(387819-367869)])[t(-618311-(-638361))]<(218370-(-288826))-505996))then table[t(-447851+((722469-(-921228+689847))+-486843))](M[1008164+-1008163],U[-981721-(-981724)])end end end if#M[-38076-(-38077)]>-651281-(-651281)then table[t(-528029-(-547234))](M[(492150-(-503672))+-995821],function(l,D)local U={}U[206123-206120],U[(242912-(-717286))-960197]=l,D U[560331+((-920160-10934)+(622926+-252161))]=U[-877800+877803]:FindFirstChild(t((-202062+(-100094+-620714))+943192))U[-954856+954861]=U[-248970+(-134624+(630451-246856))]:FindFirstChild(t(((746461+-1011364)+(-625158+-46560))-(-956943)))if U[-180981-(-180983)]and U[-846478-(-846483)]then return(U[1017152+-1017150][t(1009202+-989252)]-c[-741908-(578938+-1320849)][t(-872799+892749)])[t(712741-692691)]<(U[(-909468-(-966089))-56616][t(629690-609740)]-c[634683-(((-404119-391253)+217163)+1212889)][t(777202+(968308+-1725560))])[t(117005-(442488-345533))]end return false end)SetTask(t(717819-698272),t(-809190-(-828929))..(tostring(M[-363340-(-363341)][-215081+215082][t(225622-205968)])..(t((523150-(-118869))+-622953)..(#M[-379855-(-379856)]..t(-903809+923010)))))CombatController[t(335051+(-518263-(-203044)))](M[(-865829+401315)+464515][-505860-(523526-1029387)][t((-786948-115068)+921670)])else SetTask(t(-622532-(-511252+-130827)),l[1022983-((911658-(-8564))+(-878575+981330))]({t(-136529-(-454698-(623956+((659716+(-1096033-(-445235)))-932013))));t(-142658+(-470446-(-632849)))}))TweenController[t(-343154+362190)](c[378172-(489788+-111617)][t(-654957-(-675190))]*CFrame[t(106041+-86792)](138289+-138289,-488825-(-488860),800349+-800349))end return end c[-568931+568935]=CheckSpecialMicrochip()if not c[512354+-512350]then local D={}D[-1048111-(-1048113)]=M[622635+-622623]()if not D[124312+-124310]then local c={}c[454333-454332]=M[(-282383-(576046-((-1457495-(-767692))-(-587923))))+960317][t(((91916-(-302168))+-229057)+-145986)]if not c[((-909562+1932139)-420297)-602279]or not c[291580+-291579]:FindFirstChild(t((-777778+182549)-((-33471+-138476)+(380777-824381))))or not c[(-34360+-569668)+(799884-195855)]:FindFirstChildOfClass(t(-503317-(-522834)))or c[-553328+553329][t(727907+-708390)][t(-762286+(-256318-(-1037724)))]<=((-909473+1641709)-(-44935))+-777171 then return end c[(-737009+992912)+-255900]=M[609191+-609163]()if c[-646857+646860]then SetTask(t(598885-579954),l[704124+-704118]({t(-422712+442139),t(-2069+21229)})..(tostring(c[-153755-(-153758)][t(561382-541728)])..(t((435438+(656689-278007))-794876)..(tostring(c[1042658+-1042655][t(-590866+610792)])..t(205677-186476)))))table[t(-1042012+1061168)](ScriptStorage[t(-104060-(-123387))],c[999169-999166][t(-318906-(-337876))])table[t((1542785-947277)-(-235643+811995))](ScriptStorage[t(533179+(-557847-(-43995)))],c[-84364+84367][t(-980380-(162160+-1162194))])table[t(951933+-932777)](ScriptStorage[t(((-34570+706201)-173844)+-478460)],c[119694-119691][t(-893713-(-913367))]..t(-147937-(-167978)))table[t((656265+-1613646)-((-724035-172446)-80056))](ScriptStorage[t(-323697+343024)],c[98403+(11229+-109629)][t(-682551+701521)]:gsub(t(-467036-(-825169-(-339010))),t(575362-555745)))pcall(function()Remotes[t(404730+-384888)]:InvokeServer(t(645565-625340),c[82785-82782][t(-788854-(-807824))])end)task[t((4151+(356335-(-388157-131794)))+(178766-1039337))](.4)D[97611-97609]=M[195981+-195969]()end if not D[-97078-(-97080)]then local l={}l[-545214+545215]={t(850755-830627),t(308819+-289504),t(482251+-462577);t(-596676+616732);t((265684-274289)-(-761972-(195361+-928610))),t(873835+-854844);t(277012-256643),t(-688588+(760625+-52028));t((-738555+1583333)-824997);t(879809-((((-901817+2363832)-(1201711-237174))+-219474)-(-581692))),t(838362+-818222),t(-239324-(-258844)),t(-1025089-(-1044651));t(794707+-775687);t(464531-(-59442+503914));t((1444041-797306)-626678);t(-775291+795430);t(-345694+366077);t(-53319+72766)}for l,c in ipairs(l[-421390-(-421391)])do local U={}U[-840268+840269],U[259289-259287]=l,c if not M[414645+-414618](U[37000-36998])then table[t((-1022557-(-65877))+975836)](ScriptStorage[t((-389836-(-780290))+(-562568-(-191441)))],U[(-20279+-527443)-(((-491204+(-1022420+1120997))-(-631525))-786622)])table[t(-778941-(-798097))](ScriptStorage[t(568518+-549191)],U[-957741-(-957743)]:gsub(t(-699598+718721),t((-476906+1492537)-996014)))table[t(-528542-(-547698))](ScriptStorage[t(-869490-(-888817))],U[1008466+-1008464]:gsub(t(107440+(301274+-389591)),t(869918-850301))..t(96276+-76235))pcall(function()Remotes[t((884823+-9209)+-855772)]:InvokeServer(t(315551-295326),U[-860907+860909])end)task[t(182578+-162712)](.15)D[807262-807260]=M[-482332-(-482344)]()if D[-272445-(-272447)]then break end end end end end if D[266297+-266295]and(M[-362087+((450203-708017)+619909)][t(-800544-(-819585))]and M[464674-(23769-(-440897))][t(634629+-615588)]:FindFirstChildOfClass(t(771196-(1139211-387532))))then pcall(function()M[-173479+173487][t((-667575+585141)+(-567819+669294))][t(940647-921130)]:EquipTool(D[-15431-(-15433)])end)task[t(624876-(-355574+960584))](.3)end SetTask(t((876502+-1507056)+(1015521-(-595076+(712616-(-248496))))),l[-673747+673753]({t(752609+-733558),t(427243-407316)}))pcall(function()Remotes[t(331801-311959)]:InvokeServer(t(-237748+256888),t(208342+(28105+-216735)),t((-497747-((-260886-(-546130))-(-1268)))+803420))end)task[t(-249711+269577)](3144+-3143.5)c[-904725+904729]=CheckSpecialMicrochip()end if c[375189+-375185]then local D={}D[1019610+-1019609]=M[(113023-87253)+(-286473+260752)]()if D[-214873-(-214874)]then local U={}if M[-1000443+1000451][t(((860378+((-249451+-681981)+-265780))-704723)+1060598)]and(M[821865-821857][t(-830688+849729)]:FindFirstChildOfClass(t(-5667-(-279404-(625816-880036))))and c[-750706+((-1091105-(-323594))+1518221)][t(((851095+-915208)-(-772794))+-688319)]~=M[(546607-45871)+(-531288-(-30560))][t(-537285+556326)])then pcall(function()M[685041+-685033][t(-702687+721728)][t(84043+-64526)]:EquipTool(c[558913+-558909])end)end U[201689-(431636+-229948)]=(D[354976+-354975][t(641470-621520)]-c[((-760127+2261906)-695198)-806578][t((-806184+1515970)-689836)])[t(65218-45168)]if U[-726040+((150136-(-347546))+228359)]>653496-653481 then SetTask(t((61100-((1046148+-830120)+-554617))-(-779811+1160569)),l[(321326+(171615-388392))+-104543]({t(271703+(-683276+431393)),t(5364+14752)})..(math[t(1029157+(-1073523-(-64062)))](U[-987326-(-439216-548111)])..t(426161-407066)))TweenController[t(346302+-327266)](D[-99449+(-521402+((783232+-269926)-(-107546)))])else SetTask(t(-978382-(-48435+-948878)),l[-852157+852163]({t((232354-(740391-223491))-(-303786));t(-592839+(588809-(-23349)))})..(c[-442163-(-442165)]..t(((-264624-(537078+-279641))+(-378081+-68538))+988572)))if M[167591+-167583][t((-326830-((1022972+-1690443)-(-22642)))+-298958)]and(M[-962408-(-962416)][t(-441278+(267876+(-933765+1126208)))]:FindFirstChildOfClass(t(-934443-(-953960)))and c[((683722+-1494576)+1843207)-1032349][t(-553251+573613)]~=M[-778848-(-778856)][t(-454727+473768)])then pcall(function()M[565397-565389][t(210385-191344)][t(-296270+315787)]:EquipTool(c[870822+-870818])end)end M[71121+((246461+-395070)-(-77517))]()task[t(-115368+135234)](-716341+716341.5)end end end end)FunctionsHandler[t((((-916570-(-387781))-32731)+727125)-146629)]:RegisterMethod(t(-209146-(-229416)),function()local l={}l[1038838+-1038837]={}for M in ScriptStorage[t(908585+-888966)]do local D={}D[533794+-533793]=M l[1043183-1043182][FruitIdToName(D[337506+-337505])]=D[917764+(653394+-1571157)]end for D,c in workspace:GetChildren()do local U={}U[93477-93475],U[(470686+(770019+(-2448920-(-407022))))-(-801194)]=D,c if string[t(-639490+659655)](U[673160-673159][t(314905+-295251)],t(-1013369-(-1033219)))and(not M[900503+(-883493+-16957)]:FindFirstChild(U[-780225-(-780226)][t(687981-668327)])and(U[-411273-(-92581+(-307925-10768))]:FindFirstChild(t(-487616-(((-601934-(-945842))-721016)-(297414-167277))))and(not l[-84440+84441][tostring(U[-623397-(-623398)])]and not ScriptStorage[t((859124+-585094)+-254411)][FruitNameToId(tostring(U[(-345902+1200989)+-855086]))])))then FunctionsHandler[t(-769312-(-1830765-(-485855-556622)))]:Set(t(-214560-(-234347)),U[846936-846935])return U[-809376-(-775753-33624)]end end end)FunctionsHandler[t(-466871+485847)]:RegisterMethod(t(935032+-915242),function()local M={}M[235229-235228]=FunctionsHandler[t(527016+-508040)]:Get(t((-343152+581457)-(828805+(433479-1043766))))FunctionsHandler[t(522799-503823)]:Set(t(831149-811362),nil)if M[-2970-(-2971)]then SetTask(t(794709-775778),l[706619-706613]({t(473817-454721);t(-507751-((-687937-250739)+411090))})..tostring(M[500361+-500360]))TweenController[t(((864773+-1228856)-158565)+541684)](M[88779+-88778]:GetModelCFrame())end end)FunctionsHandler[l[879546-(720775-(102480-261245))]({t(-577781-(-597544)),t(261355-(859257-617274))})]:RegisterMethod(t(-906066-(796600+-1722936)),function()if os[t(-960444-(-980715))]()-l[-772156+772159]<-50312-(-50332)then return end if not SpecialItems then local M={}SpecialItems={}M[488076+(484839+-972914)]={}IceAdmiralPassed=true if not ScriptStorage[t(-971404-(-991023))][t((79824-(-361304))+-422111)]then table[t((619412-(((502124+-1132961)-(-415960))+661211))-153922)](SpecialItems,t((107941+(((-1335586-(-761805))+-242398)+505535))-(-221688)))IceAdmiralPassed=false end if SeaIndex==579373+-579371 and Services[t(374310-354495)][t(590990+-571454)][t(128347+-108354)][t(-801228+820789)][t(869036+-849111)]:FindFirstChild(t(-914154-(-933450)))then table[t(876251+-857095)](SpecialItems,t(815357-796065))IceAdmiralPassed=false end if IceAdmiralPassed then table[t(510549+-491393)](M[435071+-435070],t(-123586-(-632123+488758)))end M[(-928117+14915)-(-1181285-(-268081))]=not ScriptStorage[t(-348153+(-823910+1192040))][t(860409-841239)]and Remotes[t(56616-36774)]:InvokeServer(t(-129655+149763),true)SharkmanPassed=typeof(M[96517-96515])==t((236033-852566)-(-635951))if typeof(M[132760+-132758])==t(912344+-892926)then table[t(-779114-(-798270))](SpecialItems,t(611697+-591331))else TidePassed=true table[t(-960196+979352)](M[-710233-(-710234)],t(-880850+900299))end if ScriptStorage[t((-359762+-290320)-(-838883+169182))][t(-92525-(-112319))]then table[t(31426+-12270)](M[-519910+519911],t(-584629-(-604975)))table[t(238027+-218871)](M[307897+-307896],t(1031574-1012447))table[t(-290134-(-1053122-(-742601-1231)))](M[-115286-(-115287)],t(-778440-(-1225737-(-427897))))end M[(-1354396-(-680512))+673887]=function()local l={}l[975679+((-719190-819138)-(-562652))]={}for D,c in BossesOrder do local U={}U[-814068+((-92335-139273)-(-1045678))],U[-980740-(-980743)]=D,c U[-679539-(-679540)]=true for M,l in M[52991-52990]do local D={}D[-526576-(-526579)],D[689625-689624]=M,l if D[-973154+973155]==U[-453330+453333]then U[-978009+978010]=false end end if U[930898-930897]then table[t((-268473-(-558667))+(-331983+(482230-421285)))](l[-802466-(-802469)],U[(989893+(-454706+-719946))+(1006853-822091)])end end l[-744857+744858]=#l[-273840+273843]for M=-84419+((269976-999039)-(-813483)),l[-729528-(-729529)]-(271192+-271191),180561+-180560 do local D={}D[(1028698+-1549053)-(-520356)]=M for M=891340-891339,l[117199-(298020-180822)]-D[-479654+479655],890764+-890763 do local D={}D[-736489+736493]=M D[-186500-(-101541-84961)]=(tostring(l[355840-355837][D[-806353+806357]])):lower()D[458083-458082]=(tostring(l[19185+-19182][D[876478+-876474]+(-169992-(-169993))])):lower()if D[679956-679954]>D[-567828-(-567829)]then l[-8377+8380][D[145471+-145467]],l[540443+(-702096-(-161656))][D[247361-(-477916-(-725273))]+(-801521+801522)]=l[533167-533164][D[364980-364976]+(-395214+(951450-556235))],l[-875540+875543][D[(1038361+-1725867)+(480026-(-207484))]]end end end return l[738189-(-187643-(-925829))]end BossesOrder=M[-480550+480553]()for M,l in DropItemData do local D={}D[-505574+505577],D[-999378-(-999379)]=M,l if not ScriptStorage[t(2945+16674)][D[(-1023763-(-766738))-(-257028)]]and SeaIndex==D[50530-50529][t((-611090+(552002-614626))+(((-311195-618418)-(-904891))-(-1671314-(-952942))))]then if ScriptStorage[t(-775989-(-795452))][t(557084-537245)]>=D[261383-261382][t(293859+-274020)]then BossesOrderLevel[D[582800+-582799][t(1041309-1022399)]]=D[(235073-(503411+((526546-(-408589))+-1829678)))+-626204][t((547363+-23604)-503920)]table[t(-45904-(-65060))](BossesOrder,D[201198-(((851613-516067)-(-784568))-918917)][t(-596632+615542)])end end end if FunctionsHandler[t(1015695+-995504)]:Get(t(-71501+91803))and not Storage:Get(t(-795386+815367))then BossesOrderLevel[t(-960374+979289)]=-482692-(-483792)table[t(-891496-(-910652))](BossesOrder,t(-1029508+(1810198-(((((-799776-(-203173))-(380516+-1346901))+-512106)+600431)+303668))))if SeaIndex==599632+(-163942-435688)and(ScriptStorage[t(397213+-377750)][t(((-709229-(-7139))+-153190)+875119)]>415363+-413863 and not ScriptStorage[t(-818013-(-43943-794268))][t(875730-856815)])then Hop(t(-292381-(-311608)))end end end for M,D in SpecialItems do local c={}c[-892519-(-892520)],c[-43400+43402]=M,D if ScriptStorage[t((-386667+(9143+232332))-(-165184))][c[282867+-282865]]then FunctionsHandler[l[355842+-355836]({t(-527095+((-310666-(-1010925))-153401));t(440729-421357)})]:Set(t(-109375-(-129162)),c[-911879+911881])return c[-649037+649039]end end if SeaIndex==(923042+-1076088)-((-1343079-((-845477+((-950250+1706340)+153249))+-495102))+758790)and((ScriptStorage[t(-570770-(-590747))][t((465401+254266)+(-1432612-(-731951)))]or 236856-236856)>=617082+-616682 and((ScriptStorage[t(-518574-(-538551))][t(926260-907218)]or((-228461-(-279694))-89284)+38051)>=473292-472892 and(ScriptStorage[t(502410-482947)][t(-131651-(-151568))]>=(821728+1689640)-11368 and(ScriptStorage[t((129709-855327)+(577033+(263201-95153)))][t((1684917-816759)+(788885+-1637060))]>=(-182386+-300130)+(-289464+(-82172+((-159784+(172698-(-155192+-389454)))+301592)))and not ScriptStorage[t(-530512+(((-834778-(-510547))+460854)+413866))][t(-161220+181393)]))))then FunctionsHandler[l[-905753+905759]({t(204121+-184358),t(412373+-393001)})]:Set(t(-195612-(-215399)),t(868987+-849994))return t(716259-697266)end if ScriptStorage[t(-266398+(691401-405011))][t(-62390+(816735-734955))]then FunctionsHandler[l[(156933+252723)-409650]({t(237511+-217748),t(394163+-374791)})]:Set(t(-559176+578963),t(726693+-707303))return t(120594-101204)end if ScriptStorage[t(-567241+587233)][t(((-617992+1604809)-119895)-846575)]then FunctionsHandler[l[468699+-468693]({t(245447+-225684),t(-808319-((29163+-339717)-(920971+-403834)))})]:Set(t(-741514-(-761301)),t(681179+(-1041915-(-379798))))FunctionsHandler[l[-438225+438231]({t(919802+-900783);t(1003683-983564)})][t((494337+206543)+-681166)][t(206936-187352)]:Call(t(-649558-(-669850)))return t(-644931+663993)end if ScriptStorage[t(-605742+625734)][t((383633+-259698)+(-835489-(-731846)))]then FunctionsHandler[l[(214734+68222)-282950]({t(1018032-998269),t(35908+-16536)})]:Set(t(389213+-369426),t(-694399+714487))return t(472989-452901)end end)FunctionsHandler[l[650401-650395]({t(44929+-25166),t(360092-340720)})]:RegisterMethod(t(370431-350641),function()local M={}M[-564238+564240]=FunctionsHandler[l[(289836+(514341+-127968))+-676203]({t(646810-627047);t((-1833413-(-1007313))+845472)})]:Get(t(430911+-411124))if M[-893491-(-893493)]==t(634813+-615828)then Remotes[t(-137432+157274)]:InvokeServer(t(-18826+38880))elseif M[374283-374281]==t(-934375-(-710377+-244364))then FunctionsHandler[l[(-152287-(-232632))-80339]({t((-1028495+694408)+353106);t(-830429+850548)})][t((-1317766-(-391628))+((-862408+561311)+1246949))][t(-26186+45770)]:Call(t(727742+-707376))Remotes[t(-38993+58835)]:InvokeServer(t(-256268+276376),true)Remotes[t(66754+-46912)]:InvokeServer(t(450104-(386789-(-573387+530180))))elseif M[(-928658+(((977367-654835)+1621244)-(-748552+834262)))+-929406]==t(517873+-498581)then Remotes[t(175858+-156016)]:InvokeServer(t(9694+10623));(Services[t(-1020330+1040145)][t(162481-142945)][t(-328671+348664)][t(-386398-(-405959))][t(804788+((-44027+221261)-962097))]:FindFirstChild(t((-1089467-(720285+-1039476))+789572))):Destroy()elseif M[-259562+(345511-85947)]==t(-400953+420343)then alert(t(-783606-(-803711)),l[534240+-534234]({t(631350+((-649526+999762)+(-829101-133053))),t((604356-829837)-(-245174))}))Remotes[t(1045173+-1025331)]:InvokeServer(t(-362986+382939),t(-62321+81884))ScriptStorage[t(920772-(541497+359283))][t(327416-((968514+(16903+-462873))+-214518))]:Destroy()elseif M[632934-632932]==t(-992845+1011838)then Remotes[t(-448528-(-468370))]:InvokeServer(t(-942958-(-962741)),t(604340+(-262479+-322071)))task[t(810631+-790765)](950470+-950467)repeat task[t(((((578716-700909)-(-936629))+-1204011)+160668)-(-700203+451430))]()TweenController[t(510797+-491761)](CFrame[t(930793+(-738076+(-237604-(-64136))))](-437168-(-810246+(-121557+507183)),332.378+math[t(777492-758412)](-948629+948627,-495036-(-495038)),((-945266+1884021)-690205)+-256167))until CaculateDistance(CFrame[t(((492492-(-32181+117611))-199333)+-188480)](((-584777+-335135)+251507)-(-432281-223576),332.378,-538782-(-531165)))<105015-104985 Remotes[t(1064593-((-1257341-(-304276))+1997816))]:InvokeServer(t(792452+-772669))FunctionsHandler[l[(442011+-132862)+-309143]({t(-612466+(1182516-551031)),t(239727+((861996+-1410138)-(-328534)))})][t(315887-296173)][t(-676461-(-696045))]:Call(t(553742-534326))elseif M[-767764-(-767766)]==t(-749169+(880349-111092))then Remotes[t(775289-755447)]:InvokeServer(t((874189-471815)+-382797),true)Remotes[t(888205-868363)]:InvokeServer(t(-68934+88511))IsFireEssenceGave=true Report(t(-23444+42321))elseif M[-589487-(-589489)]==t((-1308956-(-757389))+(859117+-288488))then if CaculateDistance(workspace[t(-177803-(-197339))][t(671347-651872)][t(-59421+79128)][t(-80986-(-100498))][t(624644+((-793587+3889)+185287))])<-2186+2286 then SpecialItems=nil end TweenController[t((-553741+288347)-(-284430))](workspace[t(285112+-265576)][t(970470-950995)][t(-682194-(-701901))][t(-266045+285557)][t(-509937+(227328+302842))])end end)FunctionsHandler[t(228081+-207890)]:RegisterMethod(t((((420616+416215)+(-791995-983117))+192110)-(-766116)),function()for M,l in ScriptStorage[t((801559+-972157)-(-190217))]do local D={}D[((-528695+907645)-(-307127+893621))-(-184679-22868)],D[-729202+((179717-111946)+661432)]=M,l if string[t(990965+-970800)](FruitIdToName(D[277626+(-312220-(-34595))][t(24203+-4549)]),t(-610776+630817))then if D[(1192739-(-1012703+1523302))+(-796141-(-103429-10573))][t((585119+(234074-966126))+166164)]and D[(-773012+((-440217+2316331)-364644))+-738457][t(-537731-(-556962))]>-6700+(1915702-909002)then return D[348133+(-724284-(-376152))]end end end end)FunctionsHandler[t(972678-952487)]:RegisterMethod(t(-413820-(-434090)),function()local M={}if FunctionsHandler[t(997251-977060)]:Get(t(-692681+712983))or os[t(299933+-279662)]()-l[-848233-(742629+-1590865)]<869022-869021 then return end if ScriptStorage[t(-725515+(1201071-456093))][t(1062094-1042255)]<-533686+534786 then return end M[872928-872927]=FunctionsHandler[t(308737-288546)][t(1001697+-981983)][t(((182002-(-384262))+313290)-((-1136732-(-241862))+1754479))]:Call()if M[-488218+((2149234-956849)-704166)]then FunctionsHandler[t((325415+-1206547)+901323)]:Set(t((130996+-503309)-(-464184+72021)),M[-324253-(-324254)])end TrevorDebounce=os[t((-938407+489534)-(-469144))]()if not FunctionsHandler[t(94972-(658518+-583737))]:Get(t(-756775-(-777077)))then FunctionsHandler[t(-311793+331984)]:Set(t(-959157+979459),Remotes[t(749230+-729388)]:InvokeServer(t((-262002+994214)+-712952),t(((328723+-1170166)-(-1004484+400931))-(-257330)))==-349338+349338)end return not FunctionsHandler[t(-275537+295728)]:Get(t((897563+84441)+-961702))and M[(-196748+65033)-(-131716)]end)FunctionsHandler[t(105753+(243467+-329029))]:RegisterMethod(t(-877620+((((56617+-371675)-(-498810))-(1591304-991493))+1313469)),function()local M={}alert(t((20945+-1011573)-(-1010069)),l[1040982-(592631+448345)]({t(257246+-238314),t(-399085-(-878062-(278215+-737973)))}))M[-450703+450705]=FunctionsHandler[t(1009198-989007)]:Get(t(595251-575401))FunctionsHandler[t(-728412-(-748603))]:Set(t(230946+(903886+(263799+-1378781))),nil)table[t((-933689+(279714-(-814562)))-(767590+-626159))](ScriptStorage[t(-400908+420235)],M[804425+-804423][t((-546586+-5918)+572158)])Remotes[t(-105130+124972)]:InvokeServer(t(275786+-255561),M[(-327993-680516)-(-1008511)][t(-817466-(-837120))])task[t(-606862-((((-455985+-1090802)-(-277835))-(748010-940151))-(-450083)))]()FunctionsHandler[l[-324091-(-324097)]({t(998445-(-94521+1073947)),t(-317699+337818)})][t(-828578-(495010+-1343302))][t(-55208+74792)]:Call(FruitIdToName(M[185657-(516706+-331051)][t(-353065+372719)]))Remotes[t(-128836-(-148678))]:InvokeServer(t(474696-455436),t(93111-73671))Remotes[t(-702525-(-722367))]:InvokeServer(t(-401879+((553860-226430)+93709)),t(-402570+(-305613+(586282+141604))))Remotes[t(592460+-572618)]:InvokeServer(t(-628399+647659),t(79370+-60444))task[t(-176536+196402)](-115030+(235838+-120807))FunctionsHandler[t(-318236+338427)]:Set(t(-179340+199642),true)end)FunctionsHandler[t(710540-690247)]:RegisterMethod(t(-818781-(-839051)),function()if ScriptStorage[t(821057-801594)][t(-227005+246844)]<(454176-(-237867))+-690543 or SeaIndex~=-561007+561009 then return end if nil==FunctionsHandler[t((((976630+(852710+-1487857))-183605)+267706)-((-558987+(-99335+932656))+130957))]:Get(t(213544-(747848+-554262)))then ZQuestProgress=Remotes[t(106807-86965)]:InvokeServer(t((681572+-1470724)-(-809189)),t(285473+-265910))FunctionsHandler[t((-189400-(-583823))-((1213466-582342)+-256994))]:Set(t(-977488+997446),ZQuestProgress==(-1199294-(-899302))+(884376+-584384))end return FunctionsHandler[t(-402311-(-422604))]:Get(t((238184+719847)-938073))end)FunctionsHandler[t(-548292+(-308412+876997))]:RegisterMethod(t(524015-504225),function()local M={}M[796934-796932]=FunctionsHandler[t((-717753-(-1000261))+-262215)]:Get(t((848517+-1760669)+(854087+78023)))if M[-886582-(-1578816-(-692232))]then local M={}SetTask(t(-443143-(-462074)),l[-298897-(-298903)]({t(418055-398303);t(478296+-458265)}))pcall(function()Remotes[t(688621+(325359-994138))]:InvokeServer(t(-998175-(-1018212)),t(-168988-(-188551)))Remotes[t(-480945+(793487+-292700))]:InvokeServer(t(-287239-(-307276)),t(168049-149024))end)if ScriptStorage[t(292806-272608)][t(931857-912383)]or workspace[t(38485-18287)]:FindFirstChild(t((((-912577+1650720)+((-1125364-(-1024334))+-1172854))+((-548371+(1684499-871479))-(-731476)))+-440910))then CombatController[t(-752681-(-314686-457827))](t(43325-23851))else TweenController[t(622757-603721)](CFrame[t(-860212-(-879461))](-1448.9,7.3,-2784.8))task[t(361637-341771)](949970-949969)CombatController[t(-869831-(-889663))](t(-307526-(-327000)))end M[98138-((-1160664-(-1047024))-(-211776))]=Remotes[t(-833985+853827)]:InvokeServer(t(126446+(-314852-(134591+-343034))),t(-895114-((-680232-(-219096))-453541)))if M[(853351+-669555)-183794]==-339902+339903 or M[-761652-(-761654)]==181703+-181704 or M[(21218+-110036)+88820]==(989997-381341)+-608654 then SetTask(t(625918+-606987),l[-636210-(-636216)]({t((-753762+953511)+-179815);t(147292+(360695-488377))}))Remotes[t(-1023565+1043407)]:InvokeServer(t(61141-40988))end end end)FunctionsHandler[t(776046-756252)]:RegisterMethod(t(1044741+-1024471),function()local l={}if SeaIndex~=-897539-(-897542)then return end l[-1010901-((105587-338678)-777812)]=false if ScriptStorage[t(947782-928163)]and ScriptStorage[t(379320+(-189564-(337077+((-1003233+123023)+713270))))][t(447677+(-719118+291235))]then l[(-283052-491864)-(-774918)]=true end if M[385691+-385683][t(123213-103594)]:FindFirstChild(t(342723+-322929))or M[914426+-914418][t(1017431+-998390)]and M[-96217-(-96225)][t(641578-622537)]:FindFirstChild(t(751668-731874))then l[(-123452+-43815)+(-82172+249441)]=true end if l[-717925+717927]then return end if not FunctionsHandler[t(418266+-398472)]:Get(t(735249+-716059))then local M={}M[-733660+733661],M[-102535+(((70168+(548577+-1114275))+896823)+-298756)]=pcall(function()return Remotes[t(-518507-(-538349))]:InvokeServer(t(-788870-(-809048)),t(22215-2496))end)if M[928048-(602294-((((-1040506-(-993945))-(-307119))-418269)-168042))]and type(M[732889-732887])==t(-305244+((-731413+946671)+(34448-(-75740))))then FunctionsHandler[t((551379+-1181292)+649707)]:Set(t(988639+-969449),M[940652+((952550+-893771)+-999429)])end end if(FunctionsHandler[t((((1027603+-104762)+-1086619)-102712)-(-286284))]:Get(t(175828-(-669424+826062)))or 179645+-179645)>=(-189274+-609646)+798950 then return true end end)FunctionsHandler[t(718687+-698893)]:RegisterMethod(t(-969437-(-1629034-(-639807))),function()local M={}SetTask(t(70085+-51154),l[-901376-(-901382)]({t(749645+-730183),t(472849-453385)}))M[513513+-513512]=CFrame[t(23220-(-1025535-(-1029506)))](11868.9-6640,10.3,1073.4)M[((724781+-552730)+(-1165392-(-231132)))+762214]=os[t(337000+-316729)]()while os[t((911866+-1100276)-(836267-1044948))]()-M[-273238+(-719399-(-992642))]<-445316+445331 do TweenController[t(922808-903772)](M[849518+-849517])if CaculateDistance(M[-908659+908660])<-110862+110882 then break end task[t(461026-(-865779+1306939))]()end M[(742507+(-514872-(-369355)))+-596986]=workspace:FindFirstChild(t(275933+-256397))and workspace[t(-139189-(-158725))]:FindFirstChild(t(695960+-676731))M[-315058-(-315060)]=M[18203-18199]and M[(-1246365-(-539751))+706618]:FindFirstChild(t(-82333+(-783076+884975)))or workspace:FindFirstChild(t(104598-85032),true)if M[(-774505+((-338997-(-494441))+160593))+458470]and(M[265076+-265074]:FindFirstChild(t(((694063-(-245590))+-1435770)-(-515289)))and M[-144612+144614][t(81425+-62253)]:FindFirstChild(t(831851+(-1597833-(-785339)))))then for l=277145-277144,582585-582581,(-60634+-902259)-(-962894)do fireclickdetector(M[273801-273799][t((759122+-761140)-(-21190))][t(-243494+262851)])task[t(-443157+463023)](.3)end end end)FunctionsHandler[t(1042565+-1023383)]:RegisterMethod(t(532393-512123),function()local M={}M[-585690-(-585692)]=FunctionsHandler[t((446747-(-676570+1239338))+(436415+-301212))]:Get(t(-40174-(457207+-516530)))return M[549876-549874]and os[t(-163517+183788)]()-M[671626-671624]<120667+(-65251-54916)end)FunctionsHandler[t(-551901+571083)]:RegisterMethod(t((552145+(-820673-(115102+-140877)))+262543),function()local M={}M[-139752-(-139753)]=GetMonAsSortedRange()M[203464-203462]=Vector3[t(((-876591+1277759)-((-349542-(-656326))+506955))+431820)](-5543.5327148438,313.80062866211,-2964.2585449219)if M[441417-(242285-(-199131))][128598-128597]then local l={}l[-541000-(-541003)],l[(673590+-1428500)-(817108+-1572019)]=M[((-1437564-(-411624))-(-411107))-(-614834)][-1046608+1046609]:FindFirstChild(t(-400990+420507)),M[342239+-342238][-28061-(-28062)]:FindFirstChild(t(631145-(485061-(-125762))))if l[(203911+(-278785+1108115))+((-1517240-(-529975))-45975)]and(l[(1404842-(1302222-616378))-(-379674+1098669)]and(l[275634-275631][t((29868+585939)+-596687)]>-2454+2454 and CaculateDistance(l[-342940-(-873168+530227)][t(1023459+-1003226)],M[-19007-(-19009)])<446384-445884))then CombatController[t(680267-660435)](M[-629615-(-629616)][((499497+(-462072-(-606088)))+366124)-1009636][t(((-1171327-(-425368))-(-676620))+88993)])return end end TweenController[t(540587+-521551)](M[(-729770+736822)+-7050])end)function CheckFullMoon(M)local D={}D[(311745+-4270)-307473]=M if Lighting[t(-750075+768988)][t(((-1038589+1859278)-154860)+-645745)]~=l[-790543-(-790549)]({t((899502-272772)+-606506),t(-1037292+1056819),t((974701+-1724708)+769821)})then return elseif D[(-1513767-(-474021))+1039748]then return true end return Lighting[t((-320908+644209)+-303111)]>-473185+473203 or Lighting[t(914851-894661)]<-223826+(415086+(637476-828731))end FunctionsHandler[t(-812090-(-832053))]:RegisterMethod(t(-882731-(-903001)),function()local M={}if not Config[t(-151209+(-680589+851316))][t(391094-371131)]then return end if ScriptStorage[t((824281+-607030)-197632)][t((424269-1027555)+623567)]or not ScriptStorage[t((-717098-((-173672+167441)-92312))+(233889+404285))][t((214837+-911436)-(-716673))]then return end if ScriptStorage[t(-481301-(-500764))][t(-33062+52901)]<-987891-(-990191)then return end M[596448+-596445]=(ScriptStorage[t(-332216+351835)][t(-835213+854598)]or{[t(-82893+101838)]=(1687110-653227)+-1033883})[t(566020+-547075)]M[870233-870231]=(ScriptStorage[t((861489+-1655601)+813731)][t(-56182+(-94397-(89997-260133)))]or{[t((52492-220616)-(-187069))]=-771406+771406})[t(-710105+729050)]if M[-374831-(-374834)]<-130068-(-130318)then return(-924904+((-712221-(-513988))-(-559646)))+(-738845+1302337)end if SeaIndex~=404331-((1105177-808599)-(533402-(-854015+1495167)))then return end SoulGuitarProcess=Remotes[t((51182-5699)-(-439847+((-33967+655519)-156064)))]:InvokeServer(t(-948020-(-967987)),t((-899419+327208)+591774))if not SoulGuitarProcess then Remotes[t(871682-851840)]:InvokeServer(t(451302+-431008),270440+(-650659+(526466-(-812025+958270))))if not CheckFullMoon()then SetTask(t(-541263+(-383120-(-943314))),l[935013+-935007]({t(357986+-338202),t((382823-(-193489))+-556895)}))Hop(t(808660+-788439))end return 345874+-345867 end if not SoulGuitarProcess[t(-130328+150405)]then return 992735+(-1045306-((846587+-1802118)+(-554873+1457831)))elseif not SoulGuitarProcess[t(-582639+602085)]then return 301104+-301101 elseif not SoulGuitarProcess[t(-408206+427802)]then return 344724-344720 elseif not SoulGuitarProcess[t(-266303-(-285982))]then return-706299+706304 elseif not SoulGuitarProcess[t(548262+-528761)]then return(1192234-942270)-249958 elseif M[(-688310+1277413)+-589101]>=212803+(-283852-(-71549))and not ScriptStorage[t(192767+-173148)][t((626973+-866447)-(688605+-948360))]then return 6277-6269 end end)FunctionsHandler[t((738862+110127)+-829026)]:RegisterMethod(t((543373-(-125724))+-649307),function(D)local c={}c[904166+-904165]=D if c[(-1107765-(-155823))-(-951943)]==215561-(-361960+577514)then while CaculateDistance(CFrame[t(524171-504922)](-929555+(-563030+(889928+594003)),470170+-470030,-285936+292103))>192588+-192583 do task[t(348109+-328243)]()TweenController[t((-479172+(113671+((-1176177-(-526422))+950372)))-(-83920))](CFrame[t((-1055385-((1615559-((((1810252-1020945)+195289)-(-175387))-333147))+-1183489))-(-679868))](715821+-724475,(-756397+1701663)-945126,(1790088-((1177910-(-1025205+((454130+50679)+-254355)))-1026478))+-857738))end SoulGuitarProcess=Remotes[t(687798-667956)]:InvokeServer(t((-658672+955042)-276076),-925201+((-485634+917613)+493224),true)elseif c[647468-647467]==375345-375344 then if SeaIndex~=901515-901513 then SetTask(t(-56769-(-75700)),l[-379442+(-775246+1154694)]({t(675732+-655381);t(563789-543782)}))return Remotes[t(1066259-1046417)]:InvokeServer(t(-419074+438782))else SetTask(t(744049+-725118),l[-825034+825040]({t(-382093-(-401619));t(-817773+837006)}))CombatController[t(452531-432699)]({t((592765+((922892-(430996-(778438+-1391281)))+-653124))-(-200569)),t(-870621+890829),t(-551732+(-647157+1218155));t(678778+-659864)})return end elseif c[983737+-983736]==(422226-(-384081))-(761357+44948)then local D={}TTL9=TTL9 or 117809+-117809 if os[t((-762864+1570996)-787861)]()~=LastestTime1 then TTL9=TTL9+(163513-163512)LastestTime1=os[t(193159-172888)]()end if TTL9>(-399028+166153)+(-385886+(1319619-700798))then return Hop(t(-401778-(-421343)))end D[401269-401268]={}for M,l in Services[t(((-241538+310910)-361145)+(652910-341322))][t(-107223+127421)]:GetChildren()do local c={}c[-250215+250218],c[827995-((234376+668519)-74902)]=M,l if c[-894708-(-894710)][t(((377512-(-254881-(-913002)))+(1979678-1036645))+-642101)]==t(-413247-(948770+-1382235))then table[t(-580182-(-343778+-255560))](D[796094+(-495284-300809)],c[-910210-(-910212)])end end if#D[(-514378-129109)+643488]<-587400+587406 then SetTask(t(102348-83417),l[-375446-(-375452)]({t(-91826+111726),t(-307772+((-212609-((30180-345864)-452898))-((162895+-238433)-(-303622))));t((((1174862-(-399306))-531650)+-1509528)+486892)}))TweenController[t(-418916-(-455200-(-17248)))](ScriptStorage[t(308817+-288714)][t(-563002-(-583220))][-463706+463707]+Vector3[t(933268+-914019)](176011-176011,-83301+83331,((620035-(-830069))-802153)-647951))else local c={}c[690511+-690510]=os[t(509487-489216)]()for D,U in D[-505672+505673]do local X={}X[25398-25396],X[((-664373+1087257)-275302)-147579]=D,U while task[t((-177643+-26733)-(-224242))]()and X[496207+(-1467356-(-971152))][t(-540239+(-738906+1298662))][t(765550-746430)]>-918839+925839 do SetTask(t(((125239+-475171)+950398)-581535),l[311330-311324]({t(-344348-(-169980+-194268));t(618738-599054)})..(X[77556-77554]..t(-692983+711941)))FunctionsHandler[l[175133+-175127]({t(639676+-620657),t(934424+-914305)})][t(-701803+721517)][t((-307234+1023962)-697144)]:Call(t((((-56150+((-610136-(-278322))+-214749))+298027)-(-554117))-230015))if os[t(261460+-241189)]()-c[(-1039995-(-54328))-(-985668)]>-848729+848789 then Hop(t(-476687+496705))end TweenController[t(-822524+841560)](X[63589+-63586][t(779583+(-881165+121904))][t(-515378+535611)]+Vector3[t(627567-608318)](-707195-(-707195),(-436954-(-641820))-204816,(-924799-(-844681))+(-591781-(-671899))))M[-991571+(1006178-14565)]:Attack()end end SetTask(t(-220118+239049),l[(273501+(((((-838242-(-989418))+(-1008470+1276337))-(-560063))+-1900878)+468706))-(-179571)]({t(((-1518338-(-815887))+1545860)+-823509),t(668229+-648471)}))while workspace[t(491562-471364)]:FindFirstChild(t(-693261+713479))and task[t((-786817-(-278362))+528321)]()do if os[t(926961-906690)]()-c[341115-341114]>130163+(920307+-1050410)then Hop(t(-407026+427044))end CombatController[t(-340630-(-360462))](t((292081+-808033)-(-536170)))end end elseif c[790650+-790649]==(-246424-(-820531))-574104 then local M={}M[304585-(596075+-291492)]=workspace[t(((691327+(-718261+65432))+877788)+-896750)][t(-983753+1003228)]while CaculateDistance(CFrame[t(421452+-402203)](-707846-(-699046),-315428-(-315606),763222-757189))>496979-496969 do task[t(552078+(-661721+129509))]()SetTask(t(-227841-(((303661+20420)+-108355)-462498)),l[(-693151+1246525)+-553368]({t(-896791-(-916456)),t(353240-332962),t(-507814+527544)}))TweenController[t((17435+((293898+786410)-906220))+-172487)](CFrame[t(-625319+644568)](61994-70794,971487+(-41573+-929736),-969430+975463))end for l,D in{[t(-516869+536324)]=t(334600-314534),[t((-1846497-(-1026572))-(-231815-607247))]=t(-516522-((-901077-(-160063))+(533570-329144)));[t((202849+-88587)-(546237+-451944))]=t(-966836-(-986928));[t(1028919+-1009820)]=t(-942972+963038);[t(-786982+((858482-(275098-66249))-(-156686)))]=t(-662510+682602);[t(-748728+768827)]=t(76727-56635);[t((72213+-574533)+521205)]=t((581504+-517720)+-43692)}do local c={}c[686105-686103],c[(309079+-813077)-(-503999)]=l,D fireclickdetector(M[-544690+544692][c[(-154976+561859)-406881]][c[-598672+598673]][t(-607668-(-627025))])end elseif c[778458-778457]==(-732790+((638014+613687)-533806))-(-14899)then Remotes[t(742189+-722347)]:InvokeServer(t(366697+-346730),t(58649+-39053))elseif c[(1427632-921719)+-505912]==-61145-(-61150)then if CaculateDistance(CFrame[t(-737357+756606)](-9530.0126953125,6.1048536300659,6054.8334960938))>-336947+336977 then TweenController[t(127101-108065)](CFrame[t(347181+-327932)](-9530.0126953125,6.1048536300659,6054.8334960938))else local M={}M[-4307-(-4309)]=workspace[t(-853134-(-872670))][t((-132252+254886)-(579394-476235))][t((439715+-225040)-194417)]for l,D in pairs(BlankTablets)do local c={}c[(((-852007-(-724788))+-686022)+290804)-(-522440)],c[-21643-(-21645)]=l,D c[(714790-192127)-522659]=M[(491215+(((-428616+-1177493)-(-714499))-((-679683+(803056-(-402708)))+-35522)))-(-890956)][c[877923-877921]]if c[72142-72138][t(312542-(969174+-676428))][t(-1030511+1049840)][t((494931+-178035)+(-1008248-(-711271)))]~=881714+-881714 then repeat task[t(183211+-163345)]()fireclickdetector(c[-573396-((1030073+-2448790)-(-845317))][t((715194+-204432)-(1075170-583765))])until c[778735+-778731][t((415435+46624)-442263)][t(233740+-214411)][t(-938241+958160)]==-340518-((-1368639-(-482632))-(-545489))end end for l,D in pairs(Trophy)do local c={}c[(90926-78150)-12773],c[-483964+483969]=l,D c[(-981338+1132497)+(340218+-491376)]=workspace[t(-86785-(-106321))][t(726068+-706593)][t((866914+-927679)-(-80444))][t(1008892+-989627)][c[110207+-110202]][t((374955-13838)-341488)][t(265642-(-505216-(-750625)))]c[735989+-735988]=tostring(c[-307226-(346308+-653535)])c[472963-472962]=(c[-825326+825327]:split(t((1645667-682005)-944635)))[800148-800144]c[-449210+449212]=t(-348964-(-368829))if c[-854795-(-854796)]==t(507220-487780)or c[348940+-348939]==t(740301-(-235191+956502))then c[-508276-((-423035+-741174)-(-655931))]=t(-776692+796641)end if not string[t(((-914249+-65436)+((-979378+3082853)-784048))+-319577)](tostring(M[730125+-730123][c[(896974-(-37211))+-934182]][t((-22380-(-10428))+(662018-630270))][t(1027661+-1008332)][t(-131295-(549373-700587))]),c[652034-652032])then repeat task[t(-886472+(137192+769146))]()fireclickdetector(M[-112947-(-679460+566511)][c[-359340-(-359343)]][t(617745+-598388)])until string[t((-839167+329121)+530211)](tostring(M[-461886+461888][c[-1575+1578]][t((-368614-(-1024206))+-635796)][t(193406+(-1025149-(-851072)))][t(-22462+42381)]),c[-1031717+((628277-(-908440))-504998)])end end end elseif c[((14104-197585)-(-274865))+-91383]==350740-350734 then for M,l in pairs(Pipes)do local D={}D[-320982-(-320984)],D[(113126-(-560549))+-673674]=M,l pcall(function()local M={}M[516868+-516867]=workspace[t((-532370+1323650)+-771744)][t((346210-473561)-(-146826))][t(-343145-((-273176-(-358133-(-718790)))+270456))][t((-893581+1591151)-678431)][t(-368818-(-388480))][D[(1531506-897799)-633705]]if M[-366405-(-366406)][t(467641+-447731)][t(-612592-(-610820+(407854+(691592+(-2135882-(-1015010))))))]~=D[513922+-513921]then repeat task[t((428759+((661734+9954)+(-1279459-((-67824-792871)-(-867006)))))-(-205189))]()fireclickdetector(M[-162042+162043][t(-136381+155738)])until M[780906+-780905][t(940061-920151)][t((-978276+2043824)-1045894)]==D[911917-911916]end end)end Remotes[t(-363156-(-382998))]:InvokeServer(t(-284451+304367))elseif c[-697155+697156]==(-284501+840982)+-556473 then Remotes[t(-643250-(-663092))]:InvokeServer(t(((-1165431-(-741778))+1351954)+-908385))end end)FunctionsHandler[t((852110+-853731)-(-21022))]:RegisterMethod(t(-502095-(519313-1041678)),function()if ScriptStorage[t(473638-454019)][t(634020+-614619)]then return end if ScriptStorage[t(-921154-(-940617))][t(-8452-(-258988-(87651+(-509925+191577))))]<(-427052-(-13350))+(113818+301884)then return end if SeaIndex~=-810218-(-810221)then return end TushitaProgress=TushitaProgress or Remotes[t(470637-450795)]:InvokeServer(t(-839762-(-860011)))if not TushitaProgress[t((654252+244562)+-879914)]then if ScriptStorage[t(-448224+468422)][t(-592750+(77675-(((-499542-163561)+746081)-618200)))]then TushitaProgress=nil return-563727-(-563728)end else if ScriptStorage[t(-823849-(-844047))][t(347515-328202)]then TushitaProgress=nil return-553300-(-553302)end end end)FunctionsHandler[t(-353784+((813509+-1334382)+894058))]:RegisterMethod(t(254586+-234796),function(M)local D={}D[(-645032+1234379)-589345]=M if D[730972+-730970]==103468-(-169458+(964990-(1304726-612661)))then local M={}alert(t((966703-(543202+-67271))+(-450233+-20336)),t(-168502+(740437-551922)))if not ScriptStorage[t(-88377-(-108369))][t(((183419+398016)+(675102+-1694679))+(1026671+(591859+-1160981)))]then FunctionsHandler[l[(-931819+(125322-(-325006)))+481497]({t(267754-248735);t(-848122+(-235700+1103941))})][t(-205164-(-224878))][t(306431+-286847)]:Call(t(-1027145+1046552))TweenController[t((707728-((-446881-824205)-(-922843)))-1036935)](CFrame[t((-46214+(((-277628-719520)+1825822)-306087))+-457124)](1015535+-1009821,math[t(-267381-(-286461))](290202-290183,-366925+366946),-477228+477484))return end M[80926+-80924]=workspace[t(59081-39545)][t(-470806-((59677+(-927036-(-86352)))+((266122-99369)+(442228+(407951+-725653)))))][t((512875+(-211631-(-281253)))+-563233)]for l=-542300+542301,-251995-(-252000),(447137+-769414)-(-322278)do local D={}D[780892+-780891]=l if M[391467+-391465]:FindFirstChild(t(384724-(355496-(77538+-87480)))..D[(-442352-(80803+190386))+(1265711-552169)])then repeat task[t(444883-425017)]()TweenController[t((127168-((-743897+1519694)+-216526))+451139)]((M[-302041-(-302043)]:FindFirstChild(t(1011339+-992053)..D[-937085-(-937086)]))[t((-272941-(-39687))+(220902+32585))])until(M[(331618-((-67010+899311)+-727972))+-227287]:FindFirstChild(t(-53021-(-72307))..D[224855+-224854]))[t(103163+-83191)][t(-946445+965554)][t(-13529-(-33650))]end end elseif D[(-311219+((-643514-500476)-(-1648785-(-696766))))+503192]==677768-677766 then alert(t(-1042348+1062551),t(844868-825856))CombatController[t(-50126-(-69958))](t(-27310-(-617736-(-571113))))end end)FunctionsHandler[t((-70680+952657)+-863009)]:RegisterMethod(t(1056266-1035996),function()local M={}if not Config[t(364718-345200)][t(881314-(-704572+1566918))]then return end M[394659-394652]=ScriptStorage[t((59601+(-1683166-(-1012425)))+630759)]if ScriptStorage[t(-160872-(-180335))][t((659042+-793428)+154225)]<(189890+-595918)+408228 then return end if M[-123519+123526][t(-797242-(1027085+-1843520))]or not M[-1030727-(-1030734)][t(831633-812232)]or M[(-118427-((316535-(1109093-196666))-(-303314)))-174144][t(261154-(690383-448630))][t(1066253-1046628)]<((-190518-(-455192))+-1205132)-(-146390+-794418)or not M[969052+-969045][t(787399+-767605)]or M[-188046-(-188053)][t(671611-651817)][t(211320+(946780+(-46545+-1091930)))]<(-176732+-160577)+337659 then return end if SeaIndex~=-679857+679860 then return end M[-258200+(601888-343687)]=CdkProgess or Remotes[t(((-1432621-(-212683))-(-577992))-(-661788))]:InvokeServer(t(-303908+324276),t((-1418175-(-697890))+740004))or t(513609-494577)if not M[-220384-(695839-916224)]or M[(-387976-((1504564-527121)+(-569742+-1017507)))+-221829]==t(898982-(176185-(-703765)))then return end if workspace[t((19171-87042)-(-87407))][t((-143168+249869)+((214597+202903)-505279))][t(188085-168272)]:FindFirstChild(t((-944932-(-329702))+635375))then alert(t(395547-376354),t((282216-(-121496+(12263-(717857+((-1913679-(-517889-(529567-(858839-(-115226)))))-(-240803))))))+510167))return{t(881020-861772)}end M[128106-128100]={[t((-1635361-(-516428-456292))-(-682927))]=t(-830543+849944);[t(((-697312-(-917857))-579172)+377732)]=t(405276-((499503+-652539)+538518))}if M[398243+-398242][t((11365+(-96079+1113351))-1008351)]==1033768-1033764 and M[-914791+(330540-(-584252))][t(((631133-242291)-542695)+172958)]==688099-688095 then return{t(716498-696168)}end if M[-697050+697051][t(461815-441529)]==-247573+(-786232-(-1033808))or M[827198-827197][t(-44258+63363)]==205156-205153 then return{t(-887933+907564)}end if M[(458847+-439126)-19720][t(((-705443-(-961165-(-415008+(-690231+236770))))-(-830394))+-197562)]then for D,c in M[-969952-(-969953)]do local U={}U[-422250-(-422252)],U[-58186+58187]=D,c if U[597600-(((748341+-272450)+-341077)+462784)]~=t(-780892+800977)and(U[1039671-1039669]~=t(920935+-901843)and U[(-460033-190687)-(-650721)]<601812-601809)then ScriptStorage[t(-951632-(-971867))]={U[(-277726+-591985)+869713],U[((-730147-(((-530406+810704)-(827161-(-14511+235541)))-(-1004504)))-(-608822))+799997]+(263901-263900)}if not ScriptStorage[t(-79985+99977)][M[-901432-(-901438)][U[492566+-492564]]]then Remotes[t(-916555+(357112-(-579285)))]:InvokeServer(t(9057-(-11005)),M[1002394-1002388][U[-951450-(-951452)]])end alert(t((937437+-954128)+35884),t((1804498-821161)-963126)..(tostring(M[503384-503378][U[-413769+413771]])..(t(-578942+(-854379+1452640))..tostring(U[562220-562218]))))Remotes[t(575992+(-1014141+(246908+211083)))]:InvokeServer(t(322067+-301699),t(250732+(((1639295-807903)+((-296634-(460632-(-289659)))+(-576147+1329192)))-767871)),U[-833914-(-1042871+(-801887-(-43423+(-1225722-(-258303)))))])SetTask(t(-59468-(407190+-485589)),l[-973773+973779]({t(69377-(-620384-(-669554)));t((-930112+(-518142+1904444))-(-1034197+1471068))})..(tostring(M[349678-349672][U[709334-709332]])..(t((1657206-(397501-(-322191)))-(968770+(-806324+755749)))..tostring(U[16814-16812]))))return false end end end M[(-1013296+(-627568+1955780))-(851163-536251)]=ScriptStorage[t(-604533-(-624768))]if not M[((-969760-(-1000264))-(-870835))+-901335]then return end M[-810715-(-810718)],M[-898082-(-898084)]=M[-518465+518469][-557829-(-368188-189642)],M[760486-760482][464572+-464570]if M[1002994+-1002991]==t((-1850624-(-956864))+912865)and M[-446405-(-446407)]==687494+-687491 then if not ScriptStorage[t(10413+9785)][t(-595352+614661)]then ForceToRollBone=true return end elseif M[-557842+557845]==t((-838714+65324)-(-793676))then if M[-539213-(-675920-(-136705))]==(263834+-1288004)+1024172 then SetTask(t((632460-(-277465))-890378),l[(819888-1004455)-(-184573)]({t(360658+-341032);t(-314755+(-305358+639534)),t(-302745-(-323043))}))return elseif M[-898117+898119]==-728938+728941 and not ScriptStorage[t(-4560-(-24758))][t(-904124-(963264+(-2708980-(-822383))))]then Hop(t(-176372-(-196088)))SetTask(t(-574327-(-593874)),l[(371459-575963)+204510]({t(-966823-(-986449)),t(-358873+378875),t((-1074043-((-1065854-149620)-(-642360+17368)))+503862)}))return end end return M[-293898+293902]end)FunctionsHandler[t(692305+((-363538+364900)+((630866+(-1308797-345163))+348395)))]:RegisterMethod(t(-277608+297332),function()local l={}l[161314+-161312]={}for M,D in M[-797978+797986][t((294504-301924)-(-27694))]:GetChildren()do local c={}c[-344152-(-344153)],c[-308930+308932]=M,D if c[81837-81835][t((-408872+-126505)-(-554608))]>-304124+304124 then table[t((-725621-91408)-(-292196-(160917+383072)))](l[478749+(-43303-435444)],c[1010324-1010322])end end table[t(714392-((579531+869854)-754198))](l[-82544-(-82546)],function(M,D)local c={}c[839623+-839621],c[661658-(393802+(-395074+(331718-(-1204819-(-873608)))))]=M,D return CaculateDistance(c[840252-840250]:GetAttribute(t(223463-203513)))<CaculateDistance(c[766706-766705]:GetAttribute(t(-118254+138204)))end)return tostring(l[(-4544+(-1494731-(-1463476-(-541856))))+577657][-174028+174029])end)FunctionsHandler[t(-405798+424766)]:RegisterMethod(t(856918+-836611),function(l)local D={}D[(-4497+571192)-566691]=l D[29561-29560]=string[t(637516+-618543)](D[-466548+466552],t((-632398+(224741+341086))-(-85890)),t(-169264-(-188881)))D[-779473+779476]=os[t(-401493-(-421764))]()repeat task[t(-598750-(-618616))]()TweenController[t(952397+(-502598+(((-1343849-(-193638))-(-580478))-(-548244-(-409274)))))](M[-539186+539194][t(876087+-857046)][t(-78785+99107)][t(-903571+(782299-((109347-819218)+568366)))])if os[t(-278161+298432)]()-D[69959-69956]>-526979-(-527039)then return end until os[t(-946555-(-966826))]()-TorchEnabledTime<-947159+947169 repeat local l={}task[t(43481-23615)]()l[410708+-410707]=workspace[t(421823-402287)]:WaitForChild(D[73254+-73253],(-425950-(-664587))+(((1038810-639821)-873720)+236104))if l[-598219-(927542+-1525762)]then for c,U in l[(-1199498-(-183165-192456))-(105987+-929865)]:GetChildren()do local X={}X[-844980+844981],X[-684462+684465]=c,U if X[483108-(94906-(711217+-1099416))]and(string[t(902366-882201)](X[366814+-366811][t(-392421-(-412075))],t(-1026548-(-1045834)))and(X[-336812-(-336815)]:FindFirstChild(t(-659322-(-679563)))and X[((-583741+-101948)-(-987237))-301545][t(961404+-941163)][t(-461877-(-481998))]))then local l={}M[808903+-808895][t((1792554-842468)+-931045)][t(-755618-(-775940))][t(276272+-256039)]=X[-479134-(-479137)][t((-47412+935800)-(320116+548039))]X[416870+-416867][t(-1013553+1033794)][t(-32605-(-51748))]=259616+-259616 task[t(-234309+(-1012093+1266268))](589457-589456)l[814636-814634]=game:GetService(t(443406-423555))l[(8498+-886356)+877860]:SendKeyEvent(true,t(-678040-(-698360)),16982+(578935+-595917),game)l[-281770-(554487+-836259)]:SendKeyEvent(false,t(-347556-(12241+-380117)),-277629-(-277629),game)fireproximityprompt(((workspace[t(-626659-(-646195))]:WaitForChild(D[-797401-(-797402)],-900062+((-982050+(636132+959520))+286470))):FindFirstChild(tostring(X[(1182913-199535)+-983375])))[t(-676492-(-696733))])end for M,l in workspace[t(352007+(-610166+278357))]:GetChildren()do local D={}D[-136275+(-654709+790986)],D[(-307390+(215865-(-705186)))-613657]=M,l D[168410-168405]=D[-984289-(-984293)]:FindFirstChild(t((-928196+1598834)+-650316))D[-238142+238143]=D[(-141882-666538)+808424]:FindFirstChild(t(463416-443899))if D[81147-81142]and(D[162476+-162475]and CaculateDistance(D[(-625305+649808)-24498][t((-68919-(-709737))-620585)])<-656543+657543)then CombatController[t(765880+-746048)](D[-275054-(-275058)][t((526143-62043)+-444446)])end end end ExitDoor=l[-357893+357894]:FindFirstChild(t((736301-162960)-554168))if ExitDoor then PortalBrick=tostring(ExitDoor[t(-977109+997019)])end else end until PortalBrick==t(-723578-(-743529))or PortalBrick==t(590440-(-465888-(-1036187)))while os[t(-984312+1004583)]()-DoneCdkTick>239474+-239459 do TweenController[t(550206+-531170)](ExitDoor[t(312936-292703)]+Vector3[t(416060+-396811)](891051-891051,math[t((-776035+921093)-125978)](-528211+528212,((-108328-274515)+1175361)-(672215-(-120298))),-982941+982941))task[t(-131210+151076)]()end Hop(t((731271+-441724)+(584422+-854906)))end)FunctionsHandler[t(-19457+38425)]:RegisterMethod(t(-572981+(1088157-495386)),function(l)local D={}D[((495098-(-147846))+-152159)-490783]=l D[(886928-1004264)+117339]=workspace[t((-963550+1454809)-471723)][t(-164735-(((-80878+285897)-(-428783))-817459))][t(694572+((-960958-(299148-(-166370)))-(-751717)))]if D[87010+-87008][-369220-(-369221)]==t(921974+-902726)then TweenController[t((950759+(1041569+(-2630774-(346673+-400625))))+603530)](workspace[t(399644-380108)][t(-685807-(-1644678-(-939949)))][t(819258-799445)][t(82898-62753)][t(-173646-(-193879))])Remotes[t((-1604456-(220539-933820))+((-663730-(-977969))-(-596778)))]:InvokeServer(t(-168754+(-404609+593731)),t(413795-393829))Remotes[t(872269-852427)]:InvokeServer(t(107522+-87154),t(724308+-704342),true)workspace[t(-686868+706404)][t(((-1359288-(-356389))+33302)-(-988519))][t(-116265-(-136078))][t(854012+-833867)]:Destroy()CdkProgess=nil return end if D[(-1654431-(-675802))+978631][411156-((-756020-(-755913))-(-514376+103114))]==t(150085+-129755)then if workspace[t(270734+-251198)][t(428282+-409360)][t(-897367-(-917180))][t(-759156-(-779032))][t((-1791497-(886449+-1783150))+915037)][t(-180264+200385)]then fireproximityprompt(workspace[t(-140121-(-159657))][t((44752-148793)-(-122963))][t((-707921-(-606621))-(-121113))][t(230693-((146870+-664174)+728121))][t(-283825-(-304066))])task[t(149352+(-178389+48903))](604465+-604464)pcall(function()M[-566120-(-650578-(-84450))][t((144031+-697376)-(-572386))][t(522435+-502918)][t((445197-(-559662))-985739)]=(770627+113111)+-883738 end)task[t(-413710-(-445724-(-12148)))]((44099-9937)-(363186+(-401215+((((78265-150804)+((968702-810076)-(668070+-275927)))-453133)+831370))))else CDKAttempts=(CDKAttempts or-462717+(-1012327+1475044))+(929562-929561)TweenController[t(-130236-(-149272))](CFrame[t((-721926-254313)+995488)](-116593.66796875-(-104252),603.34558105469,-6550.6064453125))task[t(-592325+612191)](-475430-(775867+-1251302))pcall(function()M[14643-14635][t(909454-(-1000915+1891328))][t(920847+-901330)][t(131951+-112831)]=-180797-(-180797)end)task[t(-129119+(-401322+550307))](702793+-702788)if CDKAttempts>(40320+-318179)+277864 then Hop(t(1059973-1040479))end CdkProgess=nil end elseif D[204169-204167][674909-(-270900+945808)]==t(558077-538446)then for l=(-443123+1454529)+((-881017-(-293951))+-424339),(-684950+1286434)+(592605+(717204+-1911290)),800972+-800971 do local D={}D[-836256-(-470619-365638)]=l D[1558-(706634+-705079)]=workspace[t(118209+-98673)][t(((772483-831659)+(1113444-((741060-(-128834))+-217675)))-383127)][t((378996+304018)+((-1013721+476797)-126277))]:FindFirstChild(t((-1042355+2005339)+-943449)..D[-750563+750564])if(workspace[t(-609670+629206)][t(554265-535343)][t(447414-427601)]:FindFirstChild(t(-185439-(((728943+-2006345)-(-789271))-(-283157)))..D[(37562-(-425254))+-462815]))[t(181129-160888)][t(457546-437425)]then repeat task[t(-990919+1010785)]()TweenController[t(477826-458790)]((workspace[t(-572884+(849406-256986))][t(609749+-590827)][t(-465809-(-485622))]:FindFirstChild(t(843221+-823686)..D[(-663189-(555100-371082))+847208]))[t((1360887-782137)-(1211499-652982))])until CaculateDistance((workspace[t(639873+-620337)][t(-944557+963479)][t(489816-470003)]:FindFirstChild(t(313159+(-612981+319357))..D[-1047560+(822432-(-225129))]))[t(787380+-767147)])<476445-476440 fireproximityprompt((workspace[t((-924874-(-179886))-(-764524))][t((532757+-1014994)+501159)][t(360556+-340743)]:FindFirstChild(t(348548-329013)..D[-46301-(-46302)]))[t(558275+-538034)])task[t(685957-666091)](554265-(247124+307138))pcall(function()M[592232-592224][t(-513866-(-532907))][t(-813260-(-678647+(503700-(427718+230112))))][t((1884455-950914)-914421)]=284250+-284250 end)end CdkProgess=nil end elseif D[-655140-(-655142)][-821686+821687]==t(-58262+77367)then if D[((578710+-640310)-(-490397))-428795][-446205-(-446207)]==-507315-(-507316)then local M={}M[1003984-1003982]=ScriptStorage[t(878274-858076)][t(83925+-63554)]TweenController[t(644512+(-663765+38289))](M[(293149+((736827-103824)-531382))-394768]and M[978527+((668214+-1169816)-476923)][t(316118-(-408264-(-704060)))][t(-67396+87629)]or ScriptStorage[t(354462-334359)][t(563166-542795)][-208672-(-305465-(-818988+722195))])CdkProgess=nil elseif D[805935+-805933][-782280-(-782282)]==881404+(198476+-1079878)then CombatController[t(-743052+(-388027+1150911))](FunctionsHandler[t(137816+-118848)][t(-124967+(922999+-778318))][t(-928906-(-948630))]:Call())CdkProgess=nil elseif D[((828539-(761069-(38073+(817717+-500355))))+-1064339)-(-641436)][1035901-1035899]==515692-515689 then Report(t(-195066-(-215393)))while not(os[t(726612+-706341)]()-TorchEnabledTime<(-651551-(-154188))+497463 or not ScriptStorage[t(346595-326397)][t(-328045-(-347354))])do task[t(619267+-599401)]()if FunctionsHandler[t((-271919-738715)-(-1030026))][t((-287438-462821)-(-769973))][t(-194485-(-28526+-186193))]:Call()then pcall(function()M[642291+(900711+-1542994)][t(-438365+457406)][t(-146845+166362)][t((((-421048+245906)+1077791)+-923607)-(-40078))]=913613+-913613 end)end TweenController[t(-889706-(696130+-1604872))](ScriptStorage[t(729145-708947)][t(405163+((-936629-(-607858))+-57083))]:GetModelCFrame())end if not ScriptStorage[t(577663-557465)][t(-41580-((-282953+-106019)-(-328083)))]then return end FunctionsHandler[t(457789+-438821)][t((365463+-626236)-(-669768-(-389281)))][t(-748761-(-769068))][t((-855796+1379953)+-505158)](t(-687064-(-706684)))CdkProgess=nil end else if D[1004654-((2186951-1048218)-134081)][672045+-672043]==-989757-(-567205+-422553)then for M,l in game[t(579386-559548)][t(419227+-399849)]:GetChildren()do local D={}D[-907991-(-907994)],D[-693737+693739]=M,l if D[397557+-397555][t(-99943+119597)]==t(438816+(317671-736530))then repeat task[t(-938272-((314310+-1992334)-(-719886)))]()if os[t(1010243-989972)]()-DoneCdkTick<((660521+-919723)+332753)+-73536 then return end game[t(-1025386+1045346)][t(-438793-((-1147010-(-684392))-(-4807)))][t(475824+-456783)][t(-858219-(-878541))][t(791490-(-411644+1182901))]=D[453235+-453233]:GetModelCFrame()RealNPC=nil for M,l in workspace[t(1030097+(-1728303-(-717584)))]:GetChildren()do local t={}t[(164169+698817)-(53936+(415883-(-393164)))],t[(-772556-(-593738))+178819]=M,l if CaculateDistance(t[-210957+210958]:GetModelCFrame(),D[676832+-676830]:GetModelCFrame())<286918-286898 then RealNPC=t[-801159-(681844+(848906+-2331910))]break end end until CaculateDistance(D[471398-471396]:GetModelCFrame())<(278261-1043741)+765485 and RealNPC Remotes[t(-211563+231405)]:InvokeServer(t(498937-478569),t((-649778-(-744407))-74417),RealNPC)end end CdkProgess=nil elseif D[718136-718134][-580736+580738]==-861393+861396 then repeat task[t(-921447-(-941313))]()CombatController[t(-51451-(-71283))](t(-873136+892345))until os[t(-471185-(-491456))]()-TorchEnabledTime<-147980-(-147990)or not ScriptStorage[t(503935-(1208710-724973))][t(-328178-((694107+-1325913)-(-284419)))]TweenController[t(-296578-(-315614))](M[1023840-1023832][t(-694870+713911)][t((-923304+1838208)+-894582)][t(-150694+(141698-(-29229)))])Report(t((315228-(-301749))-597768))FunctionsHandler[t(-484318-(-503286))][t(-630634+650348)][t(-824401+844708)][t(452062-433063)](t((192148+-322024)-(-149216)))CdkProgess=nil end end end)M[174621-174576]={[t(((((((-99591+59777)+409869)-243467)-(-494205))+-477889)-(-293667))+-417138)]={}}TorchEnabledTime=-933620+933620 DoneCdkTick=-509239+(-194055-(-703294));(getgenv())[t(879292+-859647)]=function(l)local D={}D[351739-351737]=l for M,l in M[-504821+504866][t(1039820+-1020387)]do local c={}c[601815+(437785+-1039599)],c[(((-15263-(-253348))-(-47736-74717))+-586360)+225824]=M,l if string[t((240492+-224471)-(-4144))](string[t(-155601-(100106+(-881966-(-607297))))](D[(-487208+626483)-(267019-127746)]),string[t(-5755+24717)](c[-449178-(-449179)]))then c[-129739-(589741-719482)](D[725738+-725736])end end end M[-301096+301141][t(274844+-254949)]=function(c,l,D)local U={}U[397801+(-966415+(419865-(-148750)))],U[960094+-960091],U[-15979-(-15983)]=c,l,D M[-769899+769944][t(-1037399+1056832)][U[-816792-(-910421-(-93626))]]=U[-369891-(-223445+-146450)]end M[592929+-592884]:RegisterNotifyListener(t(-293786+312838),function()LastRaidAlert=os[t(-478763-(-499034))]()end)M[(((-106710-759860)-(((36387-989130)+-59173)-(-670629)))-112921)-(-638249)]:RegisterNotifyListener(t((-900527+1003330)+(686825+-770525)),function()LastRaidAlert2=os[t(-680634-(-700905))]()end)M[127495+-127450]:RegisterNotifyListener(l[629733+(-631647+1920)]({t(-555505-(-574930)),t(84551-64863)}),function()FunctionsHandler[t(889594-870412)]:Set(t(-359571+(-800535+1179255)),os[t(-527632+547903)]())end)M[-791741-(-791786)]:RegisterNotifyListener(t((515714+33100)-529768),function()FunctionsHandler[t(995177-975995)]:Set(t(-172537+191686),(1623093-583465)+-1039628)end)M[-789650-(-789695)]:RegisterNotifyListener(t(777775+-758694),function()AddPoint()end)M[225202+(-922806-(-697649))]:RegisterNotifyListener(t(888625-869294),function()TorchEnabledTime=os[t(1023167+-1002896)]()end)M[225165-225120]:RegisterNotifyListener(t(1019273+-999332),function()DoneCdkTick=os[t((((167998+2007548)-452108)-713142)+-990025)]()end)M[(((-33464+887558)-75541)-801884)-(-23376)]:RegisterNotifyListener(t(421255-402155),function()FunctionsHandler[t(-704791-(-1739110-(-1014525)))]:Set(t(-1610-(-20800)),Remotes[t(628208-608366)]:InvokeServer(t((607022+-692922)+106078),t((-997266+((-578205+284694)+943106))-(-367390))))alert(t(-270570-(-290320)),t(-459837+479051)..tostring(FunctionsHandler[t((-319805-(-536704))+-197105)]:Get(t(1028482-1009292))or t(495630-475749)))end)M[-775571+775616]:RegisterNotifyListener(t(-961696+(-289410+1270946)),function()if ScriptStorage[t((((-1037656+1258329)-779503)+(((-104061+1419022)-1035387)+-525437))-(-824156))][t(-578706-(-1120188-(-521643)))]<MaxLevel then return end Remotes[t(338923-(-493669-(-812750)))]:InvokeServer(t((414207+-727604)+333195),t(((-1181569-303670)-(-1657698-(-985717)))+832580))end)M[((-350386-(-310110))+1020151)-(-424017+((1214091-(890452+-594696))+485512))]:RegisterNotifyListener(t(-583962-(-604154)),function()M[302777-302720]:RefreshQuest()task[t(-784131+803997)]()if not M[(83537+-276089)+192609]:GetCurrentClaimQuest()then M[108415-108358]:MarkAsCompleted()end end)M[-538427+538430]=hookfunction((require(game[t((-691807+1639332)-927687)][t(-659812+679594)]))[t(-457355+476604)],function(l,D)local c={}c[215412-(-746304-(-961714))],c[744901+-744898]=l,D v21=tostring(tostring(c[84819-84817]or t(873426+-853809))..tostring(c[-216315-(-216318)]or t(371488-351871)))or t(-334397-(-354014));(getgenv())[t(-511934-(-531579))](v21)return M[-262268-(-262271)](c[1022659+-1022657],c[-97926-(616390+-714319)])end)M[-501454-(-501479)]=false M[-706065-(-706072)]={}M[1006316+(-5742+(-1381559-(-380992)))][game[t(-956066-(-975973))]]=true M[60843+-60783]=function(l)local D={}D[62231+-62227]=l if not D[-591241-(-591245)]or D[491500+-491496]==t(-860530-((102309+-687766)-((542888-(-33415-531218))-812831)))or D[(((737431+-1700715)+(516987+749288))+-342734)+39747]==game[t(728351-708444)]then return false end SetTask(t(((1253455-(-135117+1028180))-(-233882))+-575343),t((-540480+-493706)+1053241)..((tostring(D[572599+-572595])):sub(-510028-(-1029002-(-518973)),(33467-482018)-(-448559))..t((((1259604-865518)+-757428)+328692)-(-54961))))D[810391-810388]=pcall(function()((game:GetService(t(((877701+-1456751)+594720)+4168))):WaitForChild(t(-534601+553644),-705316-(277001+-982322))):InvokeServer(t(-555314+574194),D[(435149+143174)+-578319])end)if D[(-373219-(-994547))+-621325]then task[t((-946239-(-1038181))-72076)](948227+(-328204-(1104369-484348)))end D[-400000+400002]=pcall(function()(game:GetService(t(-637437+656751))):TeleportToPlaceInstance(game[t(-1028912-(10410+((-1810905-24131)-(-776140))))],D[449603-449599],game[t(-669423+689383)][t(-750027-(((-194307-(-123411))-(965324-46623))+220552))])end)return D[-726353+726356]or D[((-172261-875517)+324534)+723246]end function Hop(D,c)local U={}U[969418-969416],U[-659944+((-625117+1317277)+-32213)]=D,c if M[251489+((298452+-69236)-480680)]then return end M[1023739-1023714]=true task[t(692882-673907)](function()local D={}D[-123071+123073]=type(U[(-989560+809372)+(-657925+838115)])==t(-465468-(-485670))and U[-715998+716000]or(-161101-(126314+-1003593))-((628909+-683370)-(-770629))D[(312733+-838024)+525294],D[(-1432987-(-756021))-(-676970)]=pcall(function()local M={}M[908844-908842]=l[458702-458696]({t(836205-(-302210+1119494)),t(-261115+280027)})..(tostring(game[t(41034+-21460)])..l[1048546-1048540]({t(-748746-(-768233)),t(-641234-(-887192-(-225877))),t(-384022+403433),t(-952574+972398)}))M[-64917-(-64918)]=game:HttpGet(M[((965724-(-768039-(-370450+-281658)))-(92380-(-435383)))+-553890])M[711406+-711402]=(game:GetService(t((792191+-79029)-((137856+471453)+83660)))):JSONDecode(M[-485389-((57358-(-945462))+(-1391442-96768))])return M[-295360+295364]and M[-857938-((1286515-939620)+-1204837)][t((-712368+1497444)-765786)]end)if D[-1002973+(645640+357336)]and(type(D[(-485072+1503363)+-1018287])==t(((831529+-608770)+782784)+-985865)and#D[288161-288157]>124545+-124545)then for M=#D[499213-(((1715408-293183)-746487)+-176529)],-168731-(-168733),670703+(-1054500-(-383796))do local l={}l[-547639-(-547642)]=M l[271676-271675]=math[t(130039+-110959)](l[-706158+706161])D[(-748289+1058004)+-309711][l[245562+-245559]],D[-35132+35136][l[-899351-(-899352)]]=D[-518355-(-518359)][l[313999+-313998]],D[-749695+749699][l[-173219-(-173222)]]end for l,c in ipairs(D[716167-716163])do local U={}U[-573356+573359],U[-521063-(-141757+-379308)]=l,c U[814520+-814514]=U[600417+-600415][t(583518+-563575)]U[-12039+12044]=tonumber(U[-333204-((-885853+1381023)+(((-518931+1349994)-((-162858-99142)+911756))-1009683))][t(497979+-477936)])or 590924+-590924 U[818117-818113]=tonumber(U[(473803-(894534+-614905))-194172][t((-445957+523275)+-57552)])or(-1475410-(-968710))+506712 if U[429969+-429963]and(U[-213003-(371129+-584138)]~=game[t(-414449-(-434356))]and(not M[1018145+(-365477-(-145297-(-797958)))][U[(-122761-914419)-(-1037186)]]and(U[-673355-(-673360)]<U[-509401+(221024+288381)]and U[322174-322169]<=D[((222322-(-929007))-(471084+(1159376-979968)))-500835])))then M[(219487+744491)-(955529+8442)][U[-826702-(-826708)]]=true M[214467-214407](U[(-774580+(967445+757746))-950605])task[t(1039985-1020119)](-132973-(-132977))end end end D[((-1022923-(-530939))-(-287642))-(-204343)],D[163040-163034]=pcall(function()local l={}l[(-653205+(-157951-(-133424)))+677734]={}for c=27476-27475,(-677457-(-320026))-(-357441),-782884-(-782885)do local X={}X[-1047033+1047036]=c X[-929652+929653]=((game:GetService(t(-133527+153365))):WaitForChild(t(1006321+(-930422+-56856)),65782-65777)):InvokeServer(X[(1264331-(489402-(-228868)))-546058])if X[575769+-575768]and type(X[-260145-(-1198581-(-938435))])==t(268051-248373)then for c,X in pairs(X[-4477-(-286119-(-281641))])do local v={}v[20200-20197],v[400049-400048]=c,X if v[280162+-280159]~=game[t(9810+10097)]and not M[1017237+((890618+(101760+-2796982))-(-787374))][v[-696358+696361]]then local M={}M[933284+(-497619-435662)]=type(v[-765164+765165])==t(218461-198783)and v[-305819-(-305820)][t(122125+-103180)]or 846773+-846773 M[-695678+(38407-(-657273))]=type(v[178662+-178661])==t((-185930+-439155)-(-463292-(-717419+898890)))and v[29800-29799][t(-1014911+1034262)]or t(282016-(104146+158253))if M[(((1505485-319802)-(513950-(-310412)))-((-80747+771774)+-1344497))+-1014788]<=D[870568-870566]and(not U[1045656-1045653]or M[608031+-608029]==U[208761+(-1136947-(-928189))])then table[t(1060051-1040895)](l[-165560+165562],v[599970+-599967])end end end if#l[1004881+-1004879]>-711884+711884 then return l[276160+(474182+-750340)]end end task[t(-870515-(-890381))](.1)end return l[-596873-(-596875)]end)if D[(1506764-(-461139-(-945374)))+-1022528]and(type(D[-992117-(-992123)])==t(-954782+974460)and#D[-101757+101763]>((598422+-687948)-(-227017))-(-798908+(-639845+1576244)))then for l,D in ipairs(D[41729+(-918138+876415)])do local c={}c[954048-(599939+354107)],c[418069-418066]=l,D M[((-37322+-478358)+(627755-(-454753)))-566821][c[(-759870-(-722681))-(-37192)]]=true M[-212040+(364056-151956)](c[379722+-379719])task[t(-142230-(-335504+173408))](-992254+992258)end end pcall(function()(game:GetService(t((-268253-(-502090))-214523))):Teleport(game[t(947117+-927543)],game[t((807442+-186263)-601219)][t(-367405-(-386423))])end)M[(-869183+130976)-(-738232)]=false end)end function HopServer(M,l,D)local t={}t[-843719-(864037+-1707760)],t[-880323-(-880325)],t[-730112+730115]=M,l,D return Hop(t[-1032520-(-1032522)],t[1023826-(1095004-(-755348-(-826529)))])end LowHop=function(M,l)local D={}D[-450030+450032],D[108992-108989]=M,l return Hop(D[346187-346184]or 202717+-202712)end pcall(function()(game:GetService(t((-507070-(-502298))-(-24086))))[t((-545205-250799)+814910)]:Connect(function(l,D,c)local U={}U[-431765-(-431767)],U[(-83629-48699)-(173142-305474)],U[-928033-(-928036)]=l,D,c warn(t(870537+-850446)..(tostring(U[(-462178+254890)-(-112225+-95066)])..t(-794242-(-814394))))M[(-61863+1013717)-951829]=false task[t(509562+-489696)]((-195582-(-487003))+-291419)Hop(-898406+(-506422+1404838))end)end)pcall(function()local D={}D[-308228+308230]=game:GetService(t((-1296148-(-493942))-(-821149)))D[627414+-627412][t(-504904+525246)]:Connect(function()if D[391603+-391601]:GetErrorType()==Enum[t(523159+-503680)][t(-361653-(541442+-922500))]then warn(l[668728-668722]({t(((((520084+(-934732+(568294-870953)))+702063)+768191)+(1089965-840402))+-983104),t(686069+-666564)}))M[(-163712+((482209+-621365)-(-337753)))-34860]=false Hop(860418-860408)end end)end)Storage={[t(-13986-(-33527))]=(236885-136896)+-99984,[t(-753657-(-772651))]={}}Services={}setmetatable(Services,{[t(46346-26099)]=function(l,D)local c={}c[955099+-955096],c[-783256+783257]=l,D return game:GetService(c[-804677-(-804678)])end})M[32564-32556]=game[t(((806595-109277)-(250515-(-7716)))+-419127)][t(634645-615627)]M[-391067-(-391108)]=t(-758430-(-778528))..tostring(M[-462542-(-462550)])function Decode(M)local l={}l[-693542+(947086+-253543)]=M return Services[t(264088-243895)]:JSONDecode(l[148070+-148069])end function Encode(M)local l={}l[-446621-(-446622)]=M return Services[t((-148179-(-318091))+-149719)]:JSONEncode(l[-589174+589175])end function Storage.Set(M,l,D)local c={}c[-808609+808611],c[-33611-(-33615)],c[957660-957657]=M,l,D c[-807526-(-807528)][t(-991173-(-1010167))][c[-374022+(126296+247730)]]=c[((1046164+-1219925)-(-431063))-257299]end function Storage.Get(M,l)local D={}D[-176804+(-994490+1171297)],D[-482498+482500]=M,l return D[328844-328841][t(-531369-(-550363))][D[-302605+(-807809+1110416)]]end function Storage.Save(l)local D={}D[-552904-(-552905)]=l writefile(M[(-884748+339911)-(-544878)],Encode(D[529357+-529356][t(47919-(-505220-(-534145)))]))end if not isfile(M[241147-(-34332+(-93916+369354))])then writefile(M[234124-234083],t((66502+446860)+-493388))task[t(789292+-769426)](908014-908013)end Storage[t(-873762-(-1422836-(518434-1048514)))]=Decode(readfile(M[586002+-585961])or t(-803360-(-823334)))spawn(function()while task[t(534246+(-558573+44193))](Storage[t(20831+-1290)])do Storage:Save()end end)pcall(function()local D={}D[394346+-394344]=game[t(61413+-41453)][t(-277648+296666)]:WaitForChild(t(437016-416763),(892088-760022)-132063)D[-1025440+1025441]=D[((-622824-(712292-594060))-(-275118+-618645))-152705]and(D[674317+-674315]:FindFirstChild(t(-46281+65390))and(D[845451-845449][t(((1665881-862293)+(1041959+-2052614))-(-226176))]:FindFirstChild(t(409219+-389315))and(D[65835+((454476+-663393)+143084)][t(995834+-976725)][t(-810245+830149)]:FindFirstChild(t(-391997-(-412035)))and(D[306379+-306377][t(290274-271165)][t(-826761+846665)][t(-222607-(-242645))]:FindFirstChild(t(-302991-(-322837)))and D[349226+-349224][t(203733+-184624)][t(-695597-((-1278090-(-290292))+272297))][t(-813260-(-833298))][t(-87307+107153)]:FindFirstChild(t(149466+(51993-(1034048-852441))))))))if D[-156529-(-156530)]and getconnections then for M,l in getconnections(D[(263110-(282219-623280))-604170][t((-178296+-85759)-(-283846))])do local D={}D[865211-865209],D[-278665+278666]=M,l D[512464-512463][t((-343851-601287)+965347)]()end end end)M[(-284914-(-288367-(-159068)))-(330391+-486071)]={}SetTask(t(989655-970724),t(869487+-849501))SetTask(t(377751-358204),l[(((107274+-953081)+823336)+581465)-(-463177+1022165)]({t(-240515-(-260509));t(-475658+494864)}))ParsingTimes=(-135819-(-65526))-(-70393)function RefreshTasksData()if _G[t(-412608+432345)]then return end for M,l in ipairs(TasksOrder)do local D={}D[328549-328548],D[-493403+493407]=M,l D[-433880-(-433882)]=FunctionsHandler[D[((-421575-(-729545))+-1011363)-(-703397)]]if D[(-372083+(-27499-556714))+956298]and D[-783275-(-783277)][t(-489146-(-509454))]then local M={}M[(-681845-(-881959))-200112]=D[594853-594851][t(-599309-(-619023))][t((68350-(-352962))+-401042)]M[203360+-203357]=D[908723-(159011+749710)][t(-644396+664110)][t(403814+-384024)]if M[923868+-923866]and M[(103605-(-914353))-1017955]then local l={}l[810786+-810784],l[923191-(191630+(931047+-199487))]=pcall(function()return M[-525182-(-525184)]:Call(ParsingTimes<((-3389+(491886-(-409169)))-214617)-682949)end)if l[-292307-(-292309)]and l[(-315854-483325)-(-799180)]then local c={}ParsingTimes=ParsingTimes+(-195474+195475)CurrentTask=D[((((-1594254-(-664254))+(8934+1738490))-875094)+-784974)+842648]c[470131+-470130],c[-995179+995181]=pcall(function()M[-535520-(-535523)]:Call(l[-44532-(-44533)])end)if not c[-70687-(-70688)]then warn(t((1495106-794070)+((1108735-891889)-897591))..(tostring(D[551304+-551300])..(t(195530+-175683)..tostring(c[-199792-(-199794)]))))end return end end end end end SetText(t(-641874+((((((725110-713144)-((915755+-1703894)-(-604124)))-224692)-40846)-(-776584))-(3053-(403147-445537)))),l[-1024759+1024765]({t(-732751+752381),t(89818-69479)}))pcall(AddPoint)pcall(function()M[153752+-153695]:RefreshQuest()end)pcall(RefreshInventory)pcall(function()Remotes[t(304741-285185)][t(3798+(238373-222481))]:Connect(function(...)local M={}M[((-945478-(-262891))-(-269343))+413246]={...}if M[-618213-(-618215)]and(M[-203131-(-203133)][823618-823617]and string[t(120322-100157)](tostring(M[-173532-(-173534)][694672-694671]),t(264008-244364)))then pcall(RefreshInventory)end end)end)pcall(RefreshRace)pcall(function()M[159106-159053][t(934703+-915685)][t(-982401+1002338)]:Connect(function()pcall(function()Services[t(1043850-1023746)]:CaptureController()Services[t(-635947+(475975-(-180076)))]:ClickButton2(Vector2[t(-768052-(-750981+-36320))]())end)end)end)SetText(t(561976-542266),t(524294-504870)..(tick()-StartTick..t(529629+-509742)))QueueList={}function NearbyHopHandler()if true then return end if NearbyHopHandlerDebounce and os[t(877824-857553)]()-NearbyHopHandlerDebounce<-945056+945066 then return end NearbyHopHandlerDebounce=os[t(1016401-996130)]()for M,l in M[-996862-(-996915)]:GetPlayers()do local D={}D[-859035+859038],D[-818135+818136]=M,l D[-354900-(983359+-1338261)]=D[175878-((-937688-(-174714))+938851)]and(D[-178997-(-178998)][t(917271-898230)]and(D[221575-221574][t((795642-272616)+-503985)]:FindFirstChild(t(891043-870721))and D[202682-202681][t(((229646+49918)-(-617743))+(-446232+-432034))][t(-557330+577652)][t(876363-856413)]))if D[463805-463803]then local M={}M[180640-180639]=QueueList[D[((-1190537-(-579381))+941796)+-330639][t(-1016230+(1005971-(-29913)))]]if not M[-981213+981214]then QueueList[D[868484-868483][t(-102363+(-369457+491474))]]=os[t(-236492-(-256763))]()else if os[t((1450929-829760)+-600898)]()-M[-668275-(-668276)]>539776+-539746 then if CaculateDistance(D[-928028-(-928030)])<35133-35033 then Hop(t(637393+-617243))task[t(552046-532180)](-466707+(1490417-1023705))else QueueList[D[1019936-1019935][t(802096-782442)]]=nil end end end end end end task[t(-52331+71306)](function()while task[t(-1009955-(-461054-568767))]()do if not _G[t(-38995-(-58732))]then if SeaIndex==327703+-327702 and#game[t((289114-(-307818))-576972)]:GetPlayers()>788337-788328 then while task[t(561713+-541847)]()do Hop(-463768-(-463777))break end end NearbyHopHandler()if M[257776+-257768][t((((218795+-911344)-(-62529))+-220470)+(-525466+1394997))]:FindFirstChild(t(-889856+909373))and M[-795828-(-795836)][t(711986-692945)][t(-251669-(-271186))][t(698382+-678481)]then M[309405-309397][t(531944+-512903)][t(918941+(24441-(-864707+1788572)))]:ChangeState(Enum[t(398486-378128)][t(-783895-(-802997))])end if RefreshDebounce~=os[t(846618+-826347)]()then local M={}pcall(RefreshPlayerData)if not MeleeRefreshDebounce or os[t(535247-514976)]()-MeleeRefreshDebounce>(-626005+1152145)+-526110 then MeleeRefreshDebounce=os[t(-51452-(-71723))]()FunctionsHandler[t(-459199+478790)][t((206489+641191)-827966)][t(-461129-(-480919))]:Call()end M[942063-942062]=os[t(388442+-368171)]()-l[(-751790+(686789-(-55804)))-(-9200)]M[-754756-(-754758)]=M[-543221+543222]+OldSessionTime writefile(t(-153763+173635)..game[t(-727375-(-747335))][t(-299362+318380)][t(392510+-372856)],tostring(M[-203963-(-203965)]))if ScriptStorage[t(-1038340+1058072)]then SetText(t(-494552-(-513623)),t(-809770+829055)..(DispTime(M[(394226+489026)+-883250],true)..(t(-560781+(443010-(-137692)))..DispTime(M[19081+-19080],true))))end RefreshDebounce=os[t((421939-(-110540))+(((15363+(992260+-941470))+(1151721-1023935))-(116094+590053)))]()end end end end)pcall(AddPoint)pcall(function()Remotes[t(392450-372608)]:InvokeServer(t(905760-885893),t(-106508-(-126057)))end)task[t(-496254+515229)](function()while task[t(-915576-(-935442))](Config[t((481941-(785847-(-110037)))-(-433760))][t(167915+-148679)]or-847686-(-851286))do if Config[t((-311979+((188873+1275700)-(189035+175428)))+-768314)][t(-877836+(1088869-(78644+113085)))]and not _G[t(647389+(-1328405-(-700753)))]then SetTask(t(982095+-963164),l[(-393132+(-782124-(-520235)))+655027]({t(-512322-(1040849+-1573004));t(-78465+97481);t(464338-444027)}))Hop(t(316129-296272))end end end)while task[t(-733701+753567)]()do local D={}if Config[t(-145602+165419)][t(-331543-(-351244))]and(LastIdling and os[t(-99632-(-119903))]()-LastIdling>(-1120586-(-470490))+650696)then SetTask(t((-783490+(938628+435944))-572151),l[(-670161-(-751125))-80958]({t(575855+(-325501+-230065));t(275560+-255622)}))task[t(-437228+457094)](-615387-(-615388))for M=-1027869+1027870,994670-994664,-236149-(-236150)do(game:GetService(t(4271-(-15043)))):Teleport(game[t(-312352-(-331926))])task[t(-319084+338950)](-92267+92272)end task[t((1037051+-910073)+-107112)](214920+-214919)end if not AnimationDelay or os[t(((-662751+(-322757+832534))+-193120)-(-366365))]()-AnimationDelay>-416831-(-114097+-302794)then AnimationDelay=os[t(264689+-244418)]()pcall(function()local l={}l[(-287697+-175098)-(-462797)]=M[((724243+24988)+-1689228)+940005][t(-673393+692434)]and M[-219339-(-956749+737402)][t((903932-(383127-(-1027483+775866)))+(159919+-410066))]:FindFirstChild(t((-556046+1335888)-(1199969-((18467+-10548)+(1133624-701899)))))if l[(518115-725303)-(-207190)]and M[(-216372-(-1006806))+-790373]then(l[-118131-(-118133)]:LoadAnimation(M[(-927770+103823)+824008])):Play()end end)end D[((1361297-319697)+-1600550)-(-558953)],D[92291+-92290]=xpcall(RefreshTasksData,debug[t(-96528+((-554300+1121827)+-450959))])if not D[((-457781-(-815355))+(-2080350-(-787709)))+935070]then warn(t(87999-68397)..tostring(D[(-282418+508949)-226530]))end end end l[-235663+235668],l[172168-172167]=xpcall(mmb,debug[t(496644+-476604)])if not l[(-69893+(-599976-(966164+-1889371)))-253333]then print(t(627797-607761)..tostring(l[(125419+428830)+-554248]))end end)(...)
+Config = {
+    Team = "Pirates",
+    FPS = 60,
+    TweenSpeed = 270,
+    Configuration = {
+        HopWhenIdle = true,
+        AutoHop = true,
+        AutoHopDelay = 60 * 60,
+        FpsBoost = false,
+        blackscreen = false,
+        TweenSpeed = 270
+    },
+    Fruit ={
+        Sniper = true,
+        Fruit = {"Kitsune-Kitsune"}
+    },
+    Items = {
+        -- Melees 
+        AutoFullyMelees = true,
+
+        -- Swords 
+        Saber = true,
+        CursedDualKatana = false,
+
+        -- Guns 
+        SoulGuitar = true,
+
+        -- Upgrades 
+
+        RaceV2 = true
+
+    },
+    Settings = {
+        StayInSea2UntilHaveDarkFragments = false
+    }
+}
+function CheckKick(v)
+    if v and v.Name == "ErrorPrompt" then
+        task.wait(2)
+        pcall(function()
+            if v:FindFirstChild("TitleFrame") and v.TitleFrame:FindFirstChild("ErrorTitle") then
+                if v.TitleFrame.ErrorTitle.Text == "Teleport Failed" then
+                    if v:FindFirstChild("MessageArea") and v.MessageArea:FindFirstChild("ErrorFrame") and string.find(v.MessageArea.ErrorFrame.ErrorMessage.Text, "Unable to join game") then
+                        return
+                    end
+                else
+                    game:GetService("TeleportService"):Teleport(game.PlaceId)
+                    v:Destroy()
+                end
+            end
+        end)
+    end
+end
+
+pcall(function()
+    game:GetService('CoreGui').RobloxPromptGui.promptOverlay.ChildAdded:Connect(CheckKick)
+end)
+        
+    local LogService = game:GetService('LogService')
+    local GameName = "Blox Fruit" 
+
+    pcall(function() 
+        GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+    end) 
+
+    local StartTime = os.time()
+
+    local Traces = {} 
+
+
+    function Build(Error) 
+        print("Error\n\n", Error, "\n\n")
+        local Result =  {
+        content = "<@1330431331057799209>",
+        embeds = {
+            {
+            title = GameName,
+            description = game.PlaceId .. " | " .. game.JobId,
+            color = 15642286,
+            fields = {
+                {
+                name = "Error Details",
+                value = Error
+                },
+                {   
+                name = "Player Info",
+                value = "Level: " ..  ScriptStorage.PlayerData.Level
+                },
+                {
+                name = "Script Details",
+                value = GetCurrentDateTime() .. " | ".. DispTime(os.time() - StartTime, true)
+                .." after execution\nMain task: " .. (  ScriptStorage.Task.MainTask or "n/a" )  .. " ( " .. (  ScriptStorage.Task["MainTask-d"] and  DispTime(os.time() -  ScriptStorage.Task["MainTask-d"], true) or "n/a" ) .. " ) \nSub task: " .. (  ScriptStorage.Task.SubTask or "n/a" ) .. " ( " .. (  ScriptStorage.Task["SubTask-d"] and DispTime(os.time() -  ScriptStorage.Task["SubTask-d"], true) or "n/a") .. " )"
+                },
+                {
+                name = "Traceback",
+                value = (function() 
+                    local Result = ""
+                    
+                    for Index , Content in  ScriptStorage.Tracebacks do 
+                        
+                        if # ScriptStorage.Tracebacks > 20 then 
+                            break
+                        end
+                        
+                        Result = Result .. (Content or "null") .. "\n" 
+                    end 
+                    
+                    return Result ~= "" and Result or "... ( empty list ) "
+                    
+                    end)()
+                }
+            },
+            author = {
+                name = tostring(LocalPlayer)
+            }
+            }
+        },
+        attachments = {}
+        }
+        
+        for Index, Value in Result.embeds[1].fields do 
+            Value.value = "```" .. Value.value .. "```"
+        end 
+        return Result
+    end 
+
+    function Report(Message) 
+        if true then 
+            if Traces[Message] then return end 
+            Traces[Message] = true 
+            
+            local Body  = game:GetService("HttpService"):JSONEncode(Build(Message)) 
+            
+            local AffectedIndexes = {0,0,0,0}
+            
+            request({
+                Url = "https://discord.com/api/webhooks/1343574235213467718/uo1MdtlhfKOTQZ8CHIQTKDT4DxCpIMUw3XnDYafeXmUuBvqOgGYI8tmCVdc2XCBpN_yo", 
+                Method = "POST", 
+                Headers = {["Content-Type"] = "application/json"}, 
+                Body = Body 
+            })
+        end 
+    end
+
+    function mmb() 
+        local UIController = {
+            _gui = nil,
+            _elements = {},
+            _visible = true
+        }
+
+        local function FormatNumber(n)
+            local formatted = tostring(math.floor(tonumber(n) or 0))
+            local k
+            while true do
+                formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+                if k == 0 then break end
+            end
+            return formatted
+        end
+
+        local function MakeDraggable(frame, dragHandle)
+            -- UI is static and immovable by design
+        end
+
+        function UIController:Init()
+            pcall(function()
+                local parents = {}
+                if gethui then pcall(function() table.insert(parents, gethui()) end) end
+                pcall(function() if game:GetService("CoreGui") then table.insert(parents, game:GetService("CoreGui")) end end)
+                pcall(function() if game.Players.LocalPlayer and game.Players.LocalPlayer:FindFirstChild("PlayerGui") then table.insert(parents, game.Players.LocalPlayer.PlayerGui) end end)
+                for _, p in ipairs(parents) do
+                    for _, c in ipairs(p:GetChildren()) do
+                        if c.Name == "skidhub_ui" or c.Name == "SkidHubKaitunUI" or c.Name == "3TN" then
+                            pcall(function() c:Destroy() end)
+                        end
+                    end
+                end
+            end)
+            
+            local targetParent = (gethui and gethui()) or (game:GetService("CoreGui"):FindFirstChild("RobloxGui") and game:GetService("CoreGui")) or game.Players.LocalPlayer:WaitForChild("PlayerGui")
+            local gui = Instance.new("ScreenGui")
+            gui.Name = "skidhub_ui"
+            gui.Parent = targetParent
+            gui.Enabled = true
+            gui.ResetOnSpawn = false
+            gui.DisplayOrder = 100
+            self._gui = gui
+            
+            if Config and Config.Configuration and Config.Configuration.blackscreen then
+                pcall(function()
+                    game:GetService("Lighting").ExposureCompensation = -math.huge
+                end)
+            end
+            
+            local mainFrame = Instance.new("Frame")
+            mainFrame.Name = "Frame"
+            mainFrame.AnchorPoint = Vector2.new(0.5, 0)
+            mainFrame.Position = UDim2.new(0.5, 0, 0, 16)
+            mainFrame.Size = UDim2.new(0, 550, 0, 185)
+            mainFrame.BackgroundColor3 = Color3.fromRGB(12, 16, 28)
+            mainFrame.BackgroundTransparency = 0.08
+            mainFrame.BorderSizePixel = 0
+            mainFrame.Active = false
+            mainFrame.Parent = gui
+            self._elements["MainFrame"] = mainFrame
+            
+            local mainCorner = Instance.new("UICorner", mainFrame)
+            mainCorner.CornerRadius = UDim.new(0, 14)
+            
+            local mainStroke = Instance.new("UIStroke", mainFrame)
+            mainStroke.Color = Color3.fromRGB(0, 200, 255)
+            mainStroke.Thickness = 1.6
+            mainStroke.Transparency = 0.25
+            
+            local mainGradient = Instance.new("UIGradient", mainFrame)
+            mainGradient.Color = ColorSequence.new({
+                ColorSequenceKeypoint.new(0, Color3.fromRGB(20, 28, 48)),
+                ColorSequenceKeypoint.new(0.5, Color3.fromRGB(12, 16, 28)),
+                ColorSequenceKeypoint.new(1, Color3.fromRGB(10, 14, 24)),
+            })
+            mainGradient.Rotation = 135
+            
+            local headerFrame = Instance.new("Frame")
+            headerFrame.Name = "Header"
+            headerFrame.Size = UDim2.new(1, -20, 0, 34)
+            headerFrame.Position = UDim2.new(0, 10, 0, 6)
+            headerFrame.BackgroundTransparency = 1
+            headerFrame.Parent = mainFrame
+            
+            local titleLabel = Instance.new("TextLabel", headerFrame)
+            titleLabel.Position = UDim2.new(0, 4, 0, 0)
+            titleLabel.Size = UDim2.new(0, 260, 0, 18)
+            titleLabel.BackgroundTransparency = 1
+            titleLabel.Text = "⚡ SKID HUB KAITUN"
+            titleLabel.TextSize = 15
+            titleLabel.Font = Enum.Font.GothamBold
+            titleLabel.TextColor3 = Color3.fromRGB(0, 230, 255)
+            titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+            
+            local subLabel = Instance.new("TextLabel", headerFrame)
+            subLabel.Position = UDim2.new(0, 4, 0, 18)
+            subLabel.Size = UDim2.new(0, 260, 0, 14)
+            subLabel.BackgroundTransparency = 1
+            subLabel.Text = "REFACTORED MODULAR ENGINE"
+            subLabel.TextSize = 9
+            subLabel.Font = Enum.Font.GothamMedium
+            subLabel.TextColor3 = Color3.fromRGB(100, 160, 230)
+            subLabel.TextXAlignment = Enum.TextXAlignment.Left
+            
+            local badgeContainer = Instance.new("Frame", headerFrame)
+            badgeContainer.Size = UDim2.new(0, 220, 0, 26)
+            badgeContainer.Position = UDim2.new(1, -224, 0, 4)
+            badgeContainer.BackgroundTransparency = 1
+            
+            local badgeLayout = Instance.new("UIListLayout", badgeContainer)
+            badgeLayout.FillDirection = Enum.FillDirection.Horizontal
+            badgeLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+            badgeLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+            badgeLayout.Padding = UDim.new(0, 6)
+            
+            local statusBadge = Instance.new("TextLabel", badgeContainer)
+            statusBadge.Size = UDim2.new(0, 110, 0, 22)
+            statusBadge.BackgroundColor3 = Color3.fromRGB(0, 180, 120)
+            statusBadge.BackgroundTransparency = 0.75
+            statusBadge.Text = "🟢 FARMING ACTIVE"
+            statusBadge.TextColor3 = Color3.fromRGB(0, 255, 170)
+            statusBadge.Font = Enum.Font.GothamBold
+            statusBadge.TextSize = 9
+            Instance.new("UICorner", statusBadge).CornerRadius = UDim.new(0, 6)
+            self._elements["StatusBadge"] = statusBadge
+            
+            local fpsBadge = Instance.new("TextLabel", badgeContainer)
+            fpsBadge.Size = UDim2.new(0, 65, 0, 22)
+            fpsBadge.BackgroundColor3 = Color3.fromRGB(25, 35, 55)
+            fpsBadge.BackgroundTransparency = 0.5
+            fpsBadge.Text = "60 FPS"
+            fpsBadge.TextColor3 = Color3.fromRGB(180, 210, 245)
+            fpsBadge.Font = Enum.Font.GothamMedium
+            fpsBadge.TextSize = 9
+            Instance.new("UICorner", fpsBadge).CornerRadius = UDim.new(0, 6)
+            self._elements["FPS"] = fpsBadge
+            
+            local statsGrid = Instance.new("Frame", mainFrame)
+            statsGrid.Name = "StatsGrid"
+            statsGrid.Size = UDim2.new(1, -20, 0, 28)
+            statsGrid.Position = UDim2.new(0, 10, 0, 44)
+            statsGrid.BackgroundColor3 = Color3.fromRGB(8, 12, 22)
+            statsGrid.BackgroundTransparency = 0.4
+            Instance.new("UICorner", statsGrid).CornerRadius = UDim.new(0, 8)
+            
+            local statsLayout = Instance.new("UIGridLayout", statsGrid)
+            statsLayout.FillDirection = Enum.FillDirection.Horizontal
+            statsLayout.CellSize = UDim2.new(0.25, -6, 1, -4)
+            statsLayout.CellPadding = UDim2.new(0, 6, 0, 0)
+            statsLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+            statsLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+            
+            local function CreateChip(name, color)
+                local chip = Instance.new("Frame", statsGrid)
+                chip.BackgroundTransparency = 1
+                local txt = Instance.new("TextLabel", chip)
+                txt.Size = UDim2.new(1, 0, 1, 0)
+                txt.BackgroundTransparency = 1
+                txt.Font = Enum.Font.GothamBold
+                txt.TextSize = 11
+                txt.TextColor3 = color
+                txt.TextXAlignment = Enum.TextXAlignment.Center
+                return txt
+            end
+            
+            self._elements["ChipLevel"] = CreateChip("Level", Color3.fromRGB(0, 240, 255))
+            self._elements["ChipBeli"] = CreateChip("Beli", Color3.fromRGB(100, 255, 140))
+            self._elements["ChipFrags"] = CreateChip("Frags", Color3.fromRGB(210, 130, 255))
+            self._elements["ChipWeapon"] = CreateChip("Weapon", Color3.fromRGB(255, 210, 100))
+            
+            local features = Instance.new("Frame", mainFrame)
+            features.Name = "Features"
+            features.Position = UDim2.new(0, 10, 0, 78)
+            features.Size = UDim2.new(1, -20, 0, 80)
+            features.BackgroundTransparency = 1
+            
+            local fLayout = Instance.new("UIListLayout", features)
+            fLayout.SortOrder = Enum.SortOrder.LayoutOrder
+            fLayout.Padding = UDim.new(0, 4)
+            
+            local function CreateTaskRow(name, color, order)
+                local row = Instance.new("Frame", features)
+                row.Size = UDim2.new(1, 0, 0, 23)
+                row.BackgroundColor3 = Color3.fromRGB(15, 20, 34)
+                row.BackgroundTransparency = 0.45
+                row.LayoutOrder = order
+                Instance.new("UICorner", row).CornerRadius = UDim.new(0, 6)
+                
+                local txt = Instance.new("TextLabel", row)
+                txt.Size = UDim2.new(1, -12, 1, 0)
+                txt.Position = UDim2.new(0, 8, 0, 0)
+                txt.BackgroundTransparency = 1
+                txt.Font = Enum.Font.GothamMedium
+                txt.TextSize = 11
+                txt.TextColor3 = color
+                txt.TextXAlignment = Enum.TextXAlignment.Left
+                return txt
+            end
+            
+            self._elements["Task1"] = CreateTaskRow("Task1", Color3.fromRGB(0, 230, 255), 1)
+            self._elements["Task2"] = CreateTaskRow("Task2", Color3.fromRGB(160, 220, 255), 2)
+            self._elements["Task3"] = CreateTaskRow("Task3", Color3.fromRGB(0, 255, 170), 3)
+            
+            local footer = Instance.new("TextLabel", mainFrame)
+            footer.Size = UDim2.new(1, -20, 0, 16)
+            footer.Position = UDim2.new(0, 10, 1, -20)
+            footer.BackgroundTransparency = 1
+            footer.Font = Enum.Font.Gotham
+            footer.TextSize = 9
+            footer.TextColor3 = Color3.fromRGB(120, 150, 190)
+            footer.Text = "⚡ Kaitun Engine Active • Sea 1"
+            footer.TextXAlignment = Enum.TextXAlignment.Center
+            self._elements["Footer"] = footer
+
+            MakeDraggable(mainFrame, headerFrame)
+            MakeDraggable(mainFrame, mainFrame)
+
+            local lastFpsTick = os.clock()
+            local frameCount = 0
+            game:GetService("RunService").RenderStepped:Connect(function()
+                frameCount = frameCount + 1
+                local now = os.clock()
+                if now - lastFpsTick >= 0.5 then
+                    local fps = math.floor(frameCount / (now - lastFpsTick))
+                    if self._elements["FPS"] then
+                        self._elements["FPS"].Text = tostring(fps) .. " FPS"
+                    end
+                    frameCount = 0
+                    lastFpsTick = now
+                end
+            end)
+
+            task.spawn(function()
+                while task.wait(0.2) do
+                    pcall(function()
+                        if self._gui and self._gui.Enabled then
+                            self:Update()
+                        end
+                    end)
+                end
+            end)
+        end
+
+        function UIController:Update()
+            if not self._gui then return end
+            pcall(function()
+                local lvl = (ScriptStorage and ScriptStorage.PlayerData and ScriptStorage.PlayerData.Level) or (game.Players.LocalPlayer:FindFirstChild("Data") and game.Players.LocalPlayer.Data:FindFirstChild("Level") and game.Players.LocalPlayer.Data.Level.Value) or 1
+                local beli = (ScriptStorage and ScriptStorage.PlayerData and ScriptStorage.PlayerData.Beli) or (game.Players.LocalPlayer:FindFirstChild("Data") and game.Players.LocalPlayer.Data:FindFirstChild("Beli") and game.Players.LocalPlayer.Data.Beli.Value) or 0
+                local frags = (ScriptStorage and ScriptStorage.PlayerData and ScriptStorage.PlayerData.Fragments) or (game.Players.LocalPlayer:FindFirstChild("Data") and game.Players.LocalPlayer.Data:FindFirstChild("Fragments") and game.Players.LocalPlayer.Data.Fragments.Value) or 0
+                
+                if self._elements["ChipLevel"] then
+                    self._elements["ChipLevel"].Text = "⭐ Lv. " .. FormatNumber(lvl) .. "/2750"
+                end
+                if self._elements["ChipBeli"] then
+                    self._elements["ChipBeli"].Text = "💰 $" .. FormatNumber(beli)
+                end
+                if self._elements["ChipFrags"] then
+                    self._elements["ChipFrags"].Text = "💎 " .. FormatNumber(frags) .. " F"
+                end
+                if self._elements["ChipWeapon"] then
+                    local char = game.Players.LocalPlayer.Character
+                    local tool = char and char:FindFirstChildOfClass("Tool")
+                    if tool then
+                        local m = (tool:FindFirstChild("Level") and tool.Level.Value) or (ScriptStorage and ScriptStorage.Melees and ScriptStorage.Melees[tool.Name]) or 0
+                        self._elements["ChipWeapon"].Text = "⚔️ " .. tool.Name .. " (" .. m .. ")"
+                    elseif ScriptStorage and ScriptStorage.CurrentMeleeData and ScriptStorage.CurrentMeleeData.Name then
+                        local m = (ScriptStorage.Melees and ScriptStorage.Melees[ScriptStorage.CurrentMeleeData.Name]) or 0
+                        self._elements["ChipWeapon"].Text = "⚔️ " .. ScriptStorage.CurrentMeleeData.Name .. " (" .. m .. ")"
+                    else
+                        self._elements["ChipWeapon"].Text = "⚔️ Combat"
+                    end
+                end
+                
+                local mainTask = (ScriptStorage and ScriptStorage.Task and ScriptStorage.Task.MainTask)
+                if not mainTask or mainTask == "n/a" or mainTask == "" then
+                    if ScriptStorage and ScriptStorage.PlayerData and ScriptStorage.PlayerData.Level then
+                        if ScriptStorage.PlayerData.Level >= 2025 and (ScriptStorage.Backpack.Bones or {Count=0}).Count < 500 then
+                            local bCount = (ScriptStorage.Backpack.Bones or {Count=0}).Count
+                            mainTask = "Resource Farming | Bones (" .. bCount .. "/500)"
+                        else
+                            mainTask = "Level Farming | Progression"
+                        end
+                    else
+                        mainTask = "Auto Farming | Progression"
+                    end
+                end
+
+                local subTask = (ScriptStorage and ScriptStorage.Task and ScriptStorage.Task.SubTask)
+                if not subTask or subTask == "n/a" or subTask == "" then
+                    if GetCurrentClaimQuest then
+                        local ok, q = pcall(GetCurrentClaimQuest)
+                        if ok and q and q ~= "" then
+                            subTask = "Quest: " .. tostring(q)
+                        end
+                    end
+                    if not subTask or subTask == "n/a" or subTask == "" then
+                        if ScriptStorage and ScriptStorage.Backpack and ScriptStorage.Backpack.Bones then
+                            local bCount = (ScriptStorage.Backpack.Bones or {Count=0}).Count
+                            subTask = "Haunted Castle • Bones: " .. bCount .. " / 500"
+                        else
+                            subTask = "Auto Quest Active"
+                        end
+                    end
+                end
+
+                local miniTask = (ScriptStorage and ScriptStorage.Task and (ScriptStorage.Task.MiniTask or ScriptStorage.Task.DebugLine or ScriptStorage.Task.MainTextLabel))
+                if not miniTask or miniTask == "LevelFarm" or miniTask == "n/a" or miniTask == "" then
+                    if MonResult and MonResult.Parent and MonResult:FindFirstChild("Humanoid") then
+                        local hpPct = math.floor((MonResult.Humanoid.Health / math.max(1, MonResult.Humanoid.MaxHealth)) * 100)
+                        miniTask = "Attacking " .. tostring(MonResult.Name) .. " [HP: " .. hpPct .. "%]"
+                    elseif CurrentTask and CurrentTask ~= "LevelFarm" then
+                        miniTask = tostring(CurrentTask)
+                    else
+                        miniTask = "Farming Mobs with Fast Attack"
+                    end
+                end
+
+                if self._elements["Task1"] then
+                    self._elements["Task1"].Text = "📌 Mode: " .. tostring(mainTask)
+                end
+                if self._elements["Task2"] then
+                    self._elements["Task2"].Text = "🎯 Quest: " .. tostring(subTask)
+                end
+                if self._elements["Task3"] then
+                    self._elements["Task3"].Text = "⚡ Action: " .. tostring(miniTask)
+                end
+
+                local currentSea = (SeaIndex) or (game.PlaceId == 2753915549 and 1 or game.PlaceId == 4442272183 and 2 or game.PlaceId == 7449423635 and 3 or 1)
+                local elapsed = math.max(0, (StartTime and (os.time() - StartTime)) or 0)
+                local totalElapsed = math.max(0, elapsed + math.max(0, OldSessionTime or 0))
+                local timeStr = ""
+                if DispTime then
+                    timeStr = " • " .. DispTime(totalElapsed, true)
+                end
+
+                if self._elements["Footer"] then
+                    self._elements["Footer"].Text = "⚡ Kaitun Engine Active • Sea " .. tostring(currentSea) .. timeStr
+                end
+            end)
+        end
+
+        UIController:Init()
+
+        local Interface = {
+            Instances = setmetatable({}, {
+                __index = function(self, key)
+                    local fake = {Text = "", TextTransparency = 0, Visible = true}
+                    rawset(self, key, fake)
+                    return fake
+                end
+            }),
+            UIController = UIController
+        }
+
+        function SetText(Name, Text)
+            pcall(function()
+                if not UIController._gui then return end
+                if Name == "Task1" or Name == "MainTask" then
+                    local val = tostring(Text):gsub("^MainTask%s*:%s*", "")
+                    if ScriptStorage and ScriptStorage.Task then
+                        ScriptStorage.Task.MainTask = val
+                    end
+                    if UIController._elements["Task1"] then
+                        UIController._elements["Task1"].Text = "📌 Mode: " .. val
+                    end
+                elseif Name == "Task2" or Name == "SubTask" then
+                    local val = tostring(Text):gsub("^SubTask%s*:%s*", "")
+                    if ScriptStorage and ScriptStorage.Task then
+                        ScriptStorage.Task.SubTask = val
+                    end
+                    if UIController._elements["Task2"] then
+                        UIController._elements["Task2"].Text = "🎯 Quest: " .. val
+                    end
+                elseif Name == "Task3" or Name == "DebugLine" or Name == "MainTextLabel" then
+                    if ScriptStorage and ScriptStorage.Task then
+                        ScriptStorage.Task.MiniTask = tostring(Text)
+                    end
+                    if UIController._elements["Task3"] then
+                        UIController._elements["Task3"].Text = "⚡ Action: " .. tostring(Text)
+                    end
+                elseif Name == "Currencies" or Name == "Melees" then
+                    UIController:Update()
+                elseif Name == "LiveTime" then
+                    if UIController._elements["Footer"] then
+                        local currentSea = (SeaIndex) or (game.PlaceId == 2753915549 and 1 or game.PlaceId == 4442272183 and 2 or game.PlaceId == 7449423635 and 3 or 1)
+                        local elapsed = math.max(0, (StartTime and (os.time() - StartTime)) or 0)
+                        local totalElapsed = math.max(0, elapsed + math.max(0, OldSessionTime or 0))
+                        local timeStr = DispTime(totalElapsed, true)
+                        UIController._elements["Footer"].Text = "⚡ Kaitun Engine Active • Sea " .. tostring(currentSea) .. " • " .. timeStr
+                    end
+                end
+                if Interface.Instances[Name] then
+                    Interface.Instances[Name].Text = tostring(Text)
+                end
+            end)
+        end
+
+        function ToggleUI(State)
+            if State == nil then
+                UIController._visible = not UIController._visible
+            else
+                UIController._visible = State
+            end
+            if UIController._gui then
+                UIController._gui.Enabled = UIController._visible
+            end
+        end
+
+        Interface.SetText = SetText
+        Interface.ToggleUI = ToggleUI
+        Interface.ToggleInterface = ToggleUI
+        getgenv().UIController = UIController
+
+        pcall(function()
+            if not isfile("fluent.lua") then
+                writefile("fluent.lua", game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))
+            end
+            local Fluent = loadstring(readfile("fluent.lua"))()
+            if Fluent then
+                getgenv().alert = function(t1, t2)
+                    pcall(function()
+                        Fluent:Notify({
+                            Title = t1 or "",
+                            Content = t2 or "",
+                            Duration = 5
+                        })
+                    end)
+                end
+            end
+        end)
+
+        if not getgenv().alert then
+            getgenv().alert = function(...) end
+        end
+
+        local Animation = Instance.new('Animation')
+        Animation.AnimationId = 'http://www.roblox.com/asset/?id=1elutruahuabuahd'
+        
+        StartTime = os.time()
+        
+        OldSessionTime = isfile(".tdif-" .. game.Players.LocalPlayer.Name) and
+                            tonumber(readfile(".tdif-" .. game.Players.LocalPlayer.Name)) or 0
+        if not OldSessionTime or OldSessionTime > 100000000 or OldSessionTime < 0 then
+            OldSessionTime = 0
+        end
+        
+        pcall(function()
+            if not game.Players.LocalPlayer.Character then
+                game.ReplicatedStorage.Remotes.CommF_:InvokeServer("SetTeam", Config.Team or "Pirates")
+            end
+        end)
+
+        local Players = game:GetService("Players")
+        local LocalPlayer = Players.LocalPlayer
+        local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+        
+        spawn(function()
+            pcall(function()
+                local Lighting = game:GetService("Lighting")
+                for _, v in ipairs(Lighting:GetChildren()) do
+                    if v:IsA("PostEffect") or v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("DepthOfFieldEffect") then
+                        v.Enabled = false
+                    end
+                end
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v:IsA("ParticleEmitter") or v:IsA("Trail") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
+                        v.Enabled = false
+                    end
+                end
+                workspace.DescendantAdded:Connect(function(v)
+                    pcall(function()
+                        if v:IsA("ParticleEmitter") or v:IsA("Trail") or v:IsA("Smoke") or v:IsA("Fire") or v:IsA("Sparkles") then
+                            v.Enabled = false
+                        end
+                    end)
+                end)
+            end)
+        end)
+ 
+        local Segmants = {"RawConstants", "Utilly", "QuestManager", "SpawnRegionLoader", "TweenController", "AttackController",
+                        "CombatController", "FunctionsHandler", "Hooks", "Debug", "Hop", "Storage"}
+        
+        StartTick = tick()
+        repeat
+            task.wait()
+        until SetText
+        SetText("MainTextLabel", "Initalizing Script...")
+        
+        local FolderPath = "Rua_Hub/Blox_Fruit/Assets/"
+        
+        Storage = {
+            WRITE_DELAY = 5,
+            Data = {},
+            Get = function(Self, Key)
+                return Self.Data and Self.Data[Key]
+            end,
+            Set = function(Self, Key, Value)
+                Self.Data = Self.Data or {}
+                Self.Data[Key] = Value
+            end,
+            Save = function(Self)
+                pcall(function()
+                    local sp = ".storage_u_" .. tostring(game.Players.LocalPlayer)
+                    writefile(sp, game:GetService("HttpService"):JSONEncode(Self.Data or {}))
+                end)
+            end
+        }
+        pcall(function()
+            local sp = ".storage_u_" .. tostring(game.Players.LocalPlayer)
+            if isfile(sp) then
+                Storage.Data = game:GetService("HttpService"):JSONDecode(readfile(sp) or "{}") or {}
+            end
+        end)
+        
+        ScriptStorage = {
+            IsInitalized = false,
+            PlayerData = {},
+            Melees = {},
+            CurrentMeleeData = {},
+            Enemies = {},
+            Tools = {},
+            Backpack = {},
+            IgnoreStoreFruits = {},
+            Connections = {
+                LocalPlayer = {}
+            },
+            Task = {},
+            Tracebacks = {},
+            TaskController = {},
+            TracebackUpdater = {},
+            Interface = Interface,
+            NPCs = {}
+        }
+        
+        Players = game.Players
+        LocalPlayer = Players.LocalPlayer
+        Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+        
+        Humanoid = Character:WaitForChild("Humanoid", 15)
+        HumanoidRootPart = Character:WaitForChild("HumanoidRootPart", 15)
+        
+        LocalPlayer.CharacterAdded:Connect(function(char)
+            Character = char
+            Humanoid = char:WaitForChild("Humanoid", 15)
+            HumanoidRootPart = char:WaitForChild("HumanoidRootPart", 15)
+            -- MOV-02 fix: Reset tween state on respawn to prevent stuck
+            pcall(function() if ActiveTween then ActiveTween:Cancel() end end)
+            ActiveTween = nil
+            TweenTargetPosition = nil
+        end)
+        
+        PlayerGui = LocalPlayer:WaitForChild("PlayerGui", 10)
+        Lighting = game:GetService("Lighting")
+        
+        Services = {}
+        
+        setmetatable(Services, {
+            __index = function(_, Index)
+                return game:GetService(Index)
+            end
+        });
+        
+        setmetatable(ScriptStorage.Enemies, {
+            __index = function(_, Index)
+                return Services.Workspace.Enemies:FindFirstChild(Index) or Services.ReplicatedStorage:FindFirstChild(Index)
+            end
+        })
+        
+        setmetatable(ScriptStorage.Tools, {
+            __index = function(Self, Index)
+                return LocalPlayer.Character:FindFirstChild(Index) or LocalPlayer.Backpack:FindFirstChild(Index)
+            end
+        })
+        
+        setmetatable(ScriptStorage.NPCs, {
+            __index = function(_, Index)
+                return workspace.NPCs:FindFirstChild(Index) or game.ReplicatedStorage.NPCs:FindFirstChild(Index)
+            end
+        })
+        
+        function CreateTraceback(Index, Value) -- i gave up 
+        
+            table.insert(ScriptStorage.Tracebacks,
+                (GetCurrentDateTime() .. " ( " .. DispTime(os.time() - StartTime, true) .. " ) after execution | " .. Index ..
+                    " | " .. Value))
+        end
+        
+        function SetTask(Index, Value)
+            if ScriptStorage.Task[Index] == Value then
+                return
+            end
+            ScriptStorage.Task[Index] = Value
+            ScriptStorage.Task[Index .. "-d"] = os.time()
+
+            local Parser = {
+                MainTask = "Task1",
+                SubTask = "Task2",
+                MiniTask = "Task3"
+            }
+            if Parser[Index] and SetText then
+                SetText(Parser[Index], tostring(Value))
+            end
+
+            if UIController and UIController.Update then
+                UIController:Update()
+            end
+        end
+        
+        Remotes = {}
+        setmetatable(Remotes, {
+            __index = function(_, Key)
+                if Key ~= "CommF_" then
+                     -- silenced print
+                    return Services.ReplicatedStorage.Remotes[Key]
+                end
+                return {
+                     InvokeServer = function(_, ...)
+                        -- silenced print
+                        return Services.ReplicatedStorage.Remotes.CommF_:InvokeServer(...)
+                     end
+                    }
+
+                end
+
+            })
+        
+        Tasks = {}
+        
+        function AwaitUntilPlayerLoaded(Player, Timeout)
+            local start = os.time()
+            local limit = Timeout or 15
+            repeat
+                task.wait(0.2)
+            until Player.Character or (os.time() - start > limit)
+        
+            if Player.Character then
+                Player.Character:WaitForChild("Humanoid", limit)
+                repeat
+                    task.wait(0.2)
+                until not Player.Character or not Player.Character:FindFirstChild("Humanoid") or Player.Character.Humanoid.Health > 0 or (os.time() - start > limit + 10)
+            end
+        end
+        
+        function AddPoint()
+            local PointsValue = {}
+            local Result
+        
+            for _, CInst in LocalPlayer.Data.Stats:GetChildren() do
+                if CInst and CInst:FindFirstChild("Level") then
+                    PointsValue[CInst.Name] = CInst.Level.Value
+                end
+            end
+            if PointsValue.Defense < MaxLevel and
+                (PointsValue.Defense < (ScriptStorage.PlayerData.Level / 80) or MaxLevel - PointsValue.Melee < 100) then
+                Result = "Defense"
+            elseif PointsValue.Melee < MaxLevel then
+                Result = "Melee"
+            else
+                Result = "Sword"
+            end
+        
+            Remotes.CommF_:InvokeServer("AddPoint", Result, 999)
+        end
+        
+        local Colors = {
+            Currencies = {
+                Level = "#00FF40",
+                Beli = "#FF7800",
+                Fragments = "#6600FF"
+            },
+            Races = {}
+        }
+        function RefreshPlayerData()
+            for _, ChildInstance in LocalPlayer.Data:GetChildren() do
+                pcall(function()
+                    ScriptStorage.PlayerData[ChildInstance.Name] = ChildInstance.Value
+                end)
+            end
+        
+            local Currencies = ""
+            for Index, Value in ScriptStorage.PlayerData do
+                local Color = Colors.Currencies[Index]
+                if Color then
+                    Currencies = Currencies .. '<font color="' .. Color .. '">' .. Index .. '</font>: ' .. Value .. ' '
+                end
+            end
+        
+            if UIController and UIController.Update then
+                UIController:Update()
+            end
+            if ScriptStorage.Interface and SetText then
+                SetText("Currencies", Currencies)
+            end
+        end
+        
+        function RefreshRace()
+            local v27, v28 = Remotes.CommF_:InvokeServer("Alchemist", "1"), Remotes.CommF_:InvokeServer("Wenlocktoad", "1")
+            ScriptStorage.PlayerData.RaceLevel = 1
+            if LocalPlayer.Character:FindFirstChild("RaceTransformed") then
+                ScriptStorage.PlayerData.RaceLevel = 4
+            elseif v28 == -2 then
+                ScriptStorage.PlayerData.RaceLevel = 3
+            elseif v27 == -2 then
+                ScriptStorage.PlayerData.RaceLevel = 2
+            end
+        end
+        
+        function RefreshInventory()
+            local ItemReplicationService = require(game:GetService("ReplicatedStorage").ItemReplicationService)
+            local ItemConfig = require(game:GetService("ReplicatedStorage").ItemConfig)
+            local KEYS = require(game:GetService("ReplicatedStorage").ItemReplicationService.KEYS)
+        
+            while ItemReplicationService.IsInitialized ~= true do task.wait() end
+        
+            local masteryMap = {}
+            for _, item in pairs(ItemReplicationService:GetItems(KEYS.MASTERY)) do
+                masteryMap[item.ItemId] = item.Value
+            end
+        
+            ScriptStorage.Backpack2 = {}
+        
+            for _, item in pairs(ItemReplicationService:GetItems(KEYS.QUANTITY)) do
+                local ok, data = pcall(function()
+                    return ItemConfig.match(item.ItemId):unwrap()
+                end)
+                if ok and data and data.Index then
+                    local idType = data.Index.IdType
+                    local name = data.Index.StorageKey
+                    ScriptStorage.Backpack2[name] = {
+                        Name                = name,
+                        Type                = idType == "PhysicalMoveset" and "Blox Fruit" or idType == "Moveset" and "Sword" or idType,
+                        Count               = item.Value,
+                        Value               = data.Quality and data.Quality.MoneyPrice or 0,
+                        Mastery             = masteryMap[item.ItemId] or 0,
+                        MasteryRequirements = data.Moveset and data.Moveset.MasteryRequirements or {},
+                    }
+                end
+            end
+        
+            ScriptStorage.Backpack = ScriptStorage.Backpack2
+
+            for _, item in pairs(ItemReplicationService:GetItems(KEYS.MASTERY)) do
+                local ok, data = pcall(function() return ItemConfig.match(item.ItemId):unwrap() end)
+                if ok and data and data.Index and data.Index.StorageKey then
+                    local sKey = data.Index.StorageKey
+                    for _, mName in ipairs(MeleesTable or {}) do
+                        if sKey == mName or sKey:gsub("%s+", "") == mName:gsub("%s+", "") then
+                            ScriptStorage.Melees[mName] = item.Value
+                        end
+                    end
+                end
+            end
+            RefreshMelees()
+        end
+        
+        function ResearchMoves(Child)
+            if Child and tostring(Child) == "V" then
+                if ScriptStorage.Connections.BurstCheck then
+        
+                    ScriptStorage.Connections.BurstCheck:Disconnect()
+                    task.wait(1)
+                end
+                -- silenced print
+                ScriptStorage.Connections.BurstCheck = Child.Cooldown:GetPropertyChangedSignal("AbsoluteSize"):Connect(
+                    function()
+                        if EnablingBurstDebounce and os.time() - EnablingBurstDebounce < 10 then
+                            return
+                        end
+                        local Value = Child.Cooldown.AbsoluteSize.X
+                        if Value < 3 then
+                            EnablingBurstDebounce = os.time()
+        
+                            task.wait(5)
+                            SendKey("V", 0)
+                        end
+                    end)
+            end
+        end
+        
+        function CheckMeleeBurstMove(Child)
+            if Child.Name == "Black Leg" or Child.Name == "Death Step" then
+                local UI = PlayerGui.Main.Skills:WaitForChild(Child.Name, 9)
+        
+                ResearchMoves(UI:WaitForChild("V"))
+        
+            end
+        end
+        
+        function RefreshMelees(ReturnOrSet)
+            local Result = ""
+        
+            for MeleeName, Level in ScriptStorage.Melees do
+                Result = Result .. MeleeName .. ": " .. Level .. " "
+            end
+            Result = Result == "" and "[0]" or Result
+            if ReturnOrSet then
+                return Result
+            end
+        
+            if UIController and UIController.Update then
+                UIController:Update()
+            end
+            if ScriptStorage.Interface and SetText then
+                SetText("Melees", Result)
+            end
+        end
+        function MeleeCheck(Child)
+    -- silenced print
+
+    if Child and typeof(Child) == "Instance" and Child:IsA("Tool") then
+        if Child.ToolTip == "Melee" then
+            if ScriptStorage.Connections.Melees then
+                ScriptStorage.Connections.Melees:Disconnect()
+            end
+
+            ScriptStorage.CurrentMeleeData.Name = Child.Name
+            pcall(function()
+                ScriptStorage.Connections.Melees:Destroy()
+            end)
+
+            ScriptStorage.Connections.Melees = Child.Level.Changed:Connect(function(Value)
+                ScriptStorage.Melees[Child.Name] = Value
+                RefreshMelees()
+            end)
+            ScriptStorage.Melees[Child.Name] = Child.Level.Value
+            RefreshMelees()
+
+        elseif Child:GetAttribute("OriginalName") then
+            task.spawn(function()
+                local orig = Child:GetAttribute("OriginalName")
+                local cname = Child.Name
+                for _, ign in ipairs(ScriptStorage.IgnoreStoreFruits or {}) do
+                    if ign == orig or ign == cname or string.find(tostring(orig), tostring(ign)) or string.find(tostring(cname), tostring(ign)) then
+                        return
+                    end
+                end
+                Remotes.CommF_:InvokeServer("StoreFruit", Child:GetAttribute("OriginalName"), Child)
+            end)
+        end
+    end
+end
+        SetText("MainTextLabel", "Refreshing Player Data")
+        
+        MeleeCheck(LocalPlayer.Character:FindFirstChildOfClass("Tool"))
+        
+        RefreshPlayerData()
+        
+        function RegisterLocalPlayerEventsConnection()
+        
+            task.spawn(function()
+                task.wait(6)
+                if LocalPlayer.Character:FindFirstChild("HasBuso") then
+                    return
+                end
+                Remotes.CommF_:InvokeServer("Buso")
+            end)
+        
+            for _, Connection in ScriptStorage.Connections.LocalPlayer do
+                pcall(function()
+                    Connection:Disconnect()
+                end)
+            end
+        
+            AwaitUntilPlayerLoaded(LocalPlayer)
+        
+            LocalPlayer:SetAttribute("IsAvailable", true)
+        
+            ScriptStorage.Connections.LocalPlayer["HealthCheck"] = LocalPlayer.Character:WaitForChild("Humanoid")
+                :GetPropertyChangedSignal("Health"):Connect(function()
+        
+                    local Health = LocalPlayer.Character.Humanoid.Health
+        
+                    LocalPlayer:SetAttribute("IsAvailable", Health > 10)
+                    ScriptStorage.LocalPlayerHealth = Health
+                end)
+        
+            ScriptStorage.Connections.LocalPlayer["Melee"] = LocalPlayer.Character.ChildAdded:Connect(MeleeCheck)
+            ScriptStorage.Connections.LocalPlayer["Fruit"] = LocalPlayer.Backpack.ChildAdded:Connect(MeleeCheck)
+        
+            table.foreach(LocalPlayer.Backpack:GetChildren(), function(_, Melee)
+                MeleeCheck(Melee)
+            end)
+        
+            LastIdleCheck = os.time()
+            ScriptStorage.Connections.LocalPlayer.PositionChecker =
+                LocalPlayer.Character.HumanoidRootPart:GetPropertyChangedSignal("CFrame"):Connect(function()
+                    if os.time() == LastIdleCheck then return end 
+                    LastIdleCheck = os.time()
+                    if oldPos then 
+                        if (LocalPlayer.Character.HumanoidRootPart.CFrame.p - oldPos).magnitude < 2 then 
+                            return end 
+                    end 
+                    oldPos = (LocalPlayer.Character.HumanoidRootPart.CFrame.p) 
+                    LastIdling = os.time()
+                    
+                end)
+        
+            local PointsInstance = LocalPlayer.Data:WaitForChild("Points")
+            ScriptStorage.Connections.LocalPlayer.PointConnection = PointsInstance:GetPropertyChangedSignal("Value"):Connect(
+                function()
+        
+                    local CurrentValue = LocalPlayer.Data:WaitForChild("Points")
+                    if OldPointValue == CurrentValue then
+                        return
+                    end
+        
+                    OldPointValue = CurrentValue
+        
+                    AddPoint()
+                end)
+        end
+        
+        RegisterLocalPlayerEventsConnection(LocalPlayer)
+        
+        game.Players.LocalPlayer.CharacterAdded:Connect(function(Character)
+        
+            -- silenced print
+            RegisterLocalPlayerEventsConnection(LocalPlayer)
+        
+        end)
+        
+        task.spawn(function()
+            task.wait(3)
+            if LocalPlayer.Character:FindFirstChild("HasBuso") then
+                return
+            end
+            Remotes.CommF_:InvokeServer("Buso")
+        end)
+        
+    -- silenced print
+    MeleesTable = {
+        "Black Leg",
+        "Electro",
+        "Fishman Karate",
+        "Dragon Claw",
+        "Superhuman",
+        "Death Step",
+        "Electric Claw",
+        "Sharkman Karate",
+        "Dragon Talon",
+        "Godhuman",
+        "SanguineArt"
+    }
+
+    MeleesId =  {
+        "BlackLeg",
+        "Electro",
+        "FishmanKarate",
+        "DragonClaw",
+        "Superhuman",
+        "DeathStep",
+        "ElectricClaw",
+        "SharkmanKarate",
+        "DragonTalon",
+        "Godhuman",
+        "SanguineArt"
+    } 
+
+
+    MeleePrices = {
+        ["Black Leg"] = {
+            Price =
+            {
+                Beli = 150000,
+            }, 
+            Id = 'BlackLeg', 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true 
+            end,
+            Buy = function(Check) 
+                return BuyMelee("BlackLeg", Check)
+            end 
+        }, 
+        ["Electro"] = {
+            Price = 
+            {
+                Beli = 500000
+            },
+            Id = 'Electro', 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true 
+            end, 
+            Buy = function(Check) 
+                return BuyMelee("Electro", Check)
+            end 
+        }, 
+        ["Fishman Karate"] = {
+            Price = { 
+                Beli = 750000 
+            }, 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true 
+            end, 
+            Buy = function(Check) 
+                return BuyMelee("FishmanKarate", Check)
+            end 
+        }, 
+        ["Dragon Claw"] = {
+            Price = { 
+                Fragments = 1500 
+            }, 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true 
+            end, 
+            Buy = function(Check) 
+                if Check then 
+                    return game.ReplicatedStorage.Remotes.CommF_:InvokeServer("BlackbeardReward", "DragonClaw", "1") == 1 
+                end 
+                return Remotes.CommF_:InvokeServer("BlackbeardReward", "DragonClaw", "2")
+            end 
+        }, 
+        ["Superhuman"] = 
+        {
+            Price = 
+            {
+                Beli = 3000000
+            }, 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true 
+            end,
+            Buy = function(Check) 
+                return BuyMelee("Superhuman", Check)
+            end 
+        },
+        ["Death Step"] = 
+        {
+            Price = 
+            {
+                Beli = 2500000, 
+                Fragments = 5000
+            }, 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true
+            end, 
+            Buy = function(Check) 
+                return BuyMelee("DeathStep", Check)
+            end 
+        },
+        ["Electric Claw"] = 
+        {
+            Price = 
+            {
+                Beli = 2500000, 
+                Fragments = 5000
+            }, 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true
+            end, 
+            Buy = function(Check) 
+                return BuyMelee("ElectricClaw", Check)
+            end 
+        },
+        ["Sharkman Karate"] = 
+        {
+            Price = 
+            {
+                Beli = 2500000, 
+                Fragments = 5000
+            }, 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true
+            end, 
+            Buy = function(Check) 
+                return BuyMelee("SharkmanKarate", Check)
+            end 
+        }, 
+        ["Dragon Talon"] = 
+        {
+            Price = 
+            {
+                Beli = 2500000, 
+                Fragments = 5000
+            }, 
+            NextLevelRequirement = 400, 
+            Requirements = function() 
+                return true
+            end, 
+            Buy = function(Check) 
+                return BuyMelee("DragonTalon", Check)
+            end 
+        }, 
+
+        ["Godhuman"] = 
+        {
+            Price = 
+            {
+                Beli = 5000000, 
+                Fragments = 5000
+            }, 
+            NextLevelRequirement = 350, 
+            Requirements = function() 
+                return true
+            end, 
+            Buy = function(Check) 
+                return BuyMelee("Godhuman", Check)
+            end 
+        }
+    }
+
+
+
+    DropItemData = {
+        ["Buddy Sword"] = {
+            Sea = 3, 
+            Level = 1500, 
+            Boss = "Cake Queen"
+        }, 
+        ["Canvander"] = {
+            Sea = 3, 
+            Level = 1500, 
+            Boss = "Beautiful Pirate"
+        }, 
+        ["Twin Hooks"] = {
+            Sea = 3, 
+            Level = 1500, 
+            Boss = "Captain Elephant"
+        }, 
+        ["Venom Bow"] = {
+            Sea = 3, 
+            Level = 1500, 
+            Boss = "Hydra Leader"
+        }
+    }
+            
+    GodhumanMaterials = {
+        ["Fish Tail"] = {
+            20,
+            3,
+            {
+                "Fishman Raider",
+                "Fishman Captain"
+            }, 
+            {
+                "DeepForestIsland3", 
+                1, 
+                1775, 
+                "Turtle Adventure Quest Giver"
+            }
+        },
+        ["Dragon Scale"] = {
+            10,
+            3,
+            {
+                "Dragon Crew Warrior",
+                "Dragon Crew Archer"
+            }, 
+            {
+                "DragonCrewQuest", 
+                1, 
+                1575,
+                "Dragon Crew Quest Giver"
+            }
+        },
+        ["Magma Ore"] = {
+            20,
+            2,
+            {
+                "Magma Ninja"
+            }, 
+            {
+                "FireSideQuest", 
+                1, 
+                1100, 
+                "Fire Quest Giver"
+            }
+        },
+        ["Mystic Droplet"] = {
+            10,
+            2,
+            {
+                "Sea Soldier",
+                "Water Fighter"
+            }, 
+            {
+                "ForgottenQuest", 
+                2, 
+                1425, 
+                "Forgotten Quest Giver"
+            }
+        }
+    }
+
+    SeaIndexes = {"Main", "Dressrosa", "Zou"}
+
+    TasksOrder = 
+    {
+        "SpecialBossesTask",
+        "RaidController",
+        "PirateRaid",
+        "ThirdSeaPuzzle",
+        "SecondSeaPuzzle",
+        "ColosseumPuzzle", 
+        "Trevor",
+        "Wenlocktoad",
+        "EvoRace",
+        "Saber",
+        "SoulGuitar",
+        "Tushita",
+        "Yama",
+        "CursedDualKatana",
+        "UtillyItemsActivitation",
+        "BossesTask", 
+        "MeleesController",
+        "ExpRedeem",
+        "LevelFarm"
+    }
+
+    MaxLevel = 2800
+
+    placeId = game.PlaceId
+    if placeId == 2753915549 or placeId == 85211729168715 then
+        Sea = "Main"
+        SeaIndex = 1
+    elseif placeId == 4442272183 or placeId == 79091703265657 then
+        Sea = "Dressrosa"
+        SeaIndex = 2    
+    elseif placeId == 7449423635 or placeId == 100117331123089 then
+        Sea = "Zou"
+        SeaIndex = 3
+    end
+
+
+    Portals = ({
+        {
+            Vector3.new(-7894.6201171875, 5545.49169921875, -380.246346191406),
+            Vector3.new(-4607.82275390625, 872.5422973632812, -1667.556884765625),
+            Vector3.new(61163.8515625, 11.759522438049316, 1819.7841796875),
+            Vector3.new(3876.280517578125, 35.10614013671875, -1939.3201904296875)
+        },
+        {
+            Vector3.new(-288.46246337890625, 306.130615234375, 597.9988403320312),
+            Vector3.new(2284.912109375, 15.152046203613281, 905.48291015625),
+            Vector3.new(923.21252441406, 126.9760055542, 32852.83203125),
+            Vector3.new(-6508.5581054688, 89.034996032715, -132.83953857422)
+        },
+        {
+            Vector3.new(-5097.93164, 316.447021, -3142.66602),
+            Vector3.new(5748.7587890625, 610.44982910156, -267.81704711914),
+            Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812),
+            Vector3.new(-9515.3720703125, 142.13061523438, 5535.0971679688),
+            Vector3.new(-12471.169921875, 374.94024658203, -7551.677734375),
+            Vector3.new(28310.0234, 14895.1123, 109.456741)
+        }
+    })[SeaIndex]
+
+    BossesOrder = {
+        "Awakened Ice Admiral",
+        "Tide Keeper",
+        "Deandre",
+        "Urban",
+        "Diablo",
+        "Soul Reaper",
+        "Cake Prince"
+    }
+    BossesOrderLevel = {
+        ["Awakened Ice Admiral"] = 700, 
+        ["Tide Keeper"] = 700, 
+        ["Deandre"] = 1500,
+        ["Urban"] = 1500,
+        ["Diablo"] = 1500,
+        ["Cake Prince"] = 1500, 
+        ["Soul Reaper"] = 1500
+    }
+
+    BossesOrderWL = {
+        ["Deandre"] = 1500,
+        ["Urban"] = 1500,
+        ["Diablo"] = 1500,
+        ["Cake Prince"] = 1500, 
+        ["Don Swan"] = 1100,
+        ["Awakened Ice Admiral"] = 700, 
+        ["Tide Keeper"] = 700, 
+    }
+
+
+    SpecialBossesOrder = {
+        ["Core"] = 700, 
+        ["Darkbeard"] = 700, 
+        ["rip_indra True Form"] = 1500, 
+        ["Dough King"] = 1500, 
+    }
+
+    BlankTablets = {
+        "Segment6",
+        "Segment2",
+        "Segment8",
+        "Segment9",
+        "Segment5"
+    }
+
+    Trophy = {
+        ["Segment1"] = "Trophy1",
+        ["Segment3"] = "Trophy2",
+        ["Segment4"] = "Trophy3",
+        ["Segment7"] = "Trophy4",
+        ["Segment10"] = "Trophy5"
+    }
+
+    Pipes = {
+        ["Part1"] = "Really black",
+        ["Part2"] = "Really black",
+        ["Part3"] = "Dusty Rose",
+        ["Part4"] = "Storm blue",
+        ["Part5"] = "Really black",
+        ["Part6"] = "Parsley green",
+        ["Part7"] = "Really black",
+        ["Part8"] = "Dusty Rose",
+        ["Part9"] = "Really black",
+        ["Part10"] = "Storm blue"
+    }
+
+
+
+    function GenerateUUID()
+        local Template = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+        return string.gsub(Template, "[xy]", function(Idc)
+            local V = (Idc == "x") and math.random(0, 0xf) or math.random(8, 0xb)
+            return string.format("%x", V)
+        end)
+    end
+
+    function CheckIsPlayerAlive(Instance) 
+        Instance = Instance or LocalPlayer 
+        
+        return Instance and Instance.Character and Instance.Character.Humanoid and Instance.Character.HumanoidRootPart and Instance.Character.Head and Instance.Character.Humanoid.Health > 0  -- nuh uh
+    end 
+
+    local function toVec3(val)
+        if not val then return nil end
+        if typeof(val) == "Vector3" then return val end
+        if typeof(val) == "CFrame" then return val.Position end
+        if typeof(val) == "Instance" then
+            if val:IsA("BasePart") then return val.Position end
+            if val:IsA("Model") then
+                local prim = val.PrimaryPart or val:FindFirstChild("HumanoidRootPart") or val:FindFirstChildWhichIsA("BasePart")
+                if prim then return prim.Position end
+                local ok, cf = pcall(function() return val:GetPivot() end)
+                if ok and cf then return cf.Position end
+            end
+        end
+        if type(val) == "table" and val.X and val.Y and val.Z then
+            return Vector3.new(tonumber(val.X) or 0, tonumber(val.Y) or 0, tonumber(val.Z) or 0)
+        end
+        return nil
+    end
+
+    function CaculateDistance(Origin, Destination)
+        local oVec = toVec3(Origin)
+        if not oVec then return 999999 end
+
+        local dVec = toVec3(Destination)
+        if not dVec then
+            local lp = game:GetService("Players").LocalPlayer
+            local hrp = lp and lp.Character and lp.Character:FindFirstChild("HumanoidRootPart")
+            if hrp then
+                dVec = hrp.Position
+            else
+                return 999999
+            end
+        end
+
+        return (oVec - dVec).Magnitude
+    end
+
+    function CalculateDistance(Origin, Destination)
+        return CaculateDistance(Origin, Destination)
+    end  
+
+    function DispTime(time, cc)
+        time = math.max(0, math.floor(tonumber(time) or 0))
+        local days = math.floor(time / 86400)
+        local hours = math.floor((time % 86400) / 3600)
+        local minutes = math.floor((time % 3600) / 60)
+        local seconds = math.floor(time % 60)
+        if cc then
+            if days > 0 then
+                return (days .. "d, " .. hours .. "h, " .. minutes .. "m, " .. seconds .. "s")
+            else
+                return (hours .. "h, " .. minutes .. "m, " .. seconds .. "s")
+            end
+        end
+        return (days .. "day, " .. hours .. "hrs.")
+    end
+
+    function GetCurrentDateTime()
+    local now = os.date("*t")  -- Get the current time as a table
+
+    local hour = now.hour
+    local minute = now.min
+    local day = now.day
+    local month = now.month
+    local year = now.year
+    local weekday = now.wday -- Day of the week (1 = Sunday, 7 = Saturday)
+
+    local formattedTime = string.format("%02d:%02d ", hour, minute) -- Format time HH:MM
+
+    local weekdays = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}
+    local formattedWeekday = weekdays[weekday]
+
+    local months = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
+    local formattedMonth = months[month]
+
+    local formattedDate = string.format("%s, %s %d %d", formattedWeekday, formattedMonth, day, year)
+
+    return formattedTime.. formattedDate -- Combine time and date
+    end
+
+    function RandomArguments(...) 
+        local Table = {...} 
+        if #Table == 0 then return nil end
+        return Table[math.random(1, #Table)]
+    end 
+
+        
+    function RoundVector3Down(vec)
+        return Vector3.new(
+            math.floor(vec.X / 10) * 10,
+            math.floor(vec.Y / 10) * 10,
+            math.floor(vec.Z / 10) * 10
+        )
+    end
+
+    local Angle, lastChange = 30, tick()
+    CaculateCircreDirection = function(Position)
+        if Angle > 50000 then Angle = 60 end
+        Angle = Angle + ((tick() - lastChange) > .4 and 80 or 0) 
+
+        
+         if tick() - lastChange > 0.4 then
+            Angle = Angle + 80
+            lastChange = tick()
+        end
+        
+        local sum = Position + Vector3.new(math.cos(math.rad(Angle)) * 40, 0, math.sin(math.rad(Angle)) * 40)
+        return CFrame.new(RoundVector3Down(sum))
+    end
+
+    function GetMonAsSortedRange() 
+        local Result = {}
+        
+        table.foreach(Services.Workspace.Enemies:GetChildren(), function(_, Mon) 
+            if Mon and Mon:FindFirstChild("Humanoid") and Mon:FindFirstChild("HumanoidRootPart") and Mon.Humanoid.Health > 0 then 
+                table.insert(Result, Mon)
+            end 
+        end)
+        
+        table.foreach(game.ReplicatedStorage:GetChildren(), function(_, Mon) 
+            if Mon and Mon:FindFirstChild("Humanoid") and Mon:FindFirstChild("HumanoidRootPart") and Mon.Humanoid.Health > 0 then 
+                table.insert(Result, Mon)
+            end
+        end)
+        
+        table.sort(Result, function(C1, C2) return CaculateDistance(C1.HumanoidRootPart.CFrame) < CaculateDistance(C2.HumanoidRootPart.CFrame) end) 
+        
+        
+        return Result
+    end 
+    -- silenced print
+    function GetMeleeIdByName(MeleeName) 
+        for Index, Melee in MeleesTable do 
+            if Melee == MeleeName then 
+                return MeleesId[Index] 
+            end 
+        end 
+    end 
+
+    function BuyMelee(M1, Check) 
+        if Check then 
+            
+            local Response_ =  Remotes.CommF_:InvokeServer("Buy" .. M1, true) 
+            -- silenced print)
+            
+            return Response_ == 1 
+        end 
+        return Remotes.CommF_:InvokeServer("Buy" .. M1) 
+    end 
+
+    function SendKey(key, hold)
+        (
+            function()
+                game:GetService("VirtualInputManager"):SendKeyEvent(true, key, false, game)
+                task.wait(hold)
+                game:GetService("VirtualInputManager"):SendKeyEvent(false, key, false, game)
+            end
+        )()
+    end
+
+    function FruitIdToName(FruitId)
+        local ParserResult = string.match(FruitId or "", "(((%u)%-?)([^-.]+))$")
+        return ParserResult and (ParserResult .. " Fruit") or "Unknown Fruit"
+    end 
+
+    function Split(inputstr, sep)
+        if sep == nil then
+            sep = "%s"
+        end
+        local t = {}
+        for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+            table.insert(t, str)
+        end
+        return t
+    end
+
+    function FruitNameToId(FruitName) 
+        local Id = Split(FruitName)[1]
+        return Id .. "-" .. Id
+    end 
+
+    local okQ, loadedQuests = pcall(function() return require(game.ReplicatedStorage:WaitForChild("Quests", 5)) end)
+    local QuestManager = {
+        CurrentLevel = 2, 
+        DoubleQuest = true, 
+        Quests = (okQ and type(loadedQuests) == "table" and loadedQuests) or {},
+        CurrentQuests = {},
+        BlacklistedQuestIds = {
+            BartiloQuest = 1, 
+            CitizenQuest = 1, 
+            Trainees = 1, 
+            MarineQuest = 1, 
+            ImpelQuest = 1
+        }
+    } 
+
+    local okNpcList, guideData = pcall(function() return require(game.ReplicatedStorage.GuideModule).Data.NPCList end)
+    local NpcList = (okNpcList and guideData) or {}
+
+    local QuestNpcMap = {
+        -- Sea 1
+        ["BanditQuest1"] = "Bandit Quest Giver",
+        ["JungleQuest"] = "Adventurer",
+        ["BuggyQuest1"] = "Pirate Adventurer",
+        ["DesertQuest"] = "Desert Adventurer",
+        ["SnowQuest"] = "Snow Adventurer",
+        ["MarineQuest2"] = "Marine Quest Giver",
+        ["SkyQuest"] = "Sky Adventurer",
+        ["SkyQuest2"] = "Master Sky Adventurer",
+        ["PrisonerQuest"] = "Jailer",
+        ["ColosseumQuest"] = "Colosseum Quest Giver",
+        ["MagmaQuest"] = "Magma Quest Giver",
+        ["FishmanQuest"] = "Fishman Quest Giver",
+        ["FountainQuest"] = "Fountain Quest Giver",
+        
+        -- Sea 2
+        ["Area1Quest"] = "Quest Giver",
+        ["Area2Quest"] = "Quest Giver",
+        ["MarineQuest"] = "Marine Quest Giver",
+        ["SnowMountainQuest"] = "Snow Adventurer",
+        ["IceSideQuest"] = "Ice Side Quest Giver",
+        ["FireSideQuest"] = "Fire Side Quest Giver",
+        ["ShipQuest1"] = "Ship Quest Giver 1",
+        ["ShipQuest2"] = "Ship Quest Giver 2",
+        ["FrostQuest"] = "Frost Quest Giver",
+        ["ForgottenQuest"] = "Forgotten Quest Giver",
+
+        -- Sea 3
+        ["PiratePortQuest"] = "Pirate Port Quest Giver",
+        ["MarineTreeIsland"] = "Marine Tree Quest Giver",
+        ["DeepForestIsland"] = "Deep Forest Quest Giver",
+        ["DeepForestIsland2"] = "Deep Forest Quest Giver",
+        ["DeepForestIsland3"] = "Deep Forest Quest Giver",
+        ["HydraTownQuest"] = "Hydra Town Quest Giver",
+        ["TurtleAdventureQuest"] = "Turtle Adventure Quest Giver",
+        ["HauntedQuest1"] = "Haunted Castle Quest Giver 1",
+        ["HauntedQuest2"] = "Haunted Castle Quest Giver 2",
+        ["IceCreamIslandQuest"] = "Ice Cream Quest Giver",
+        ["PeanutQuest"] = "Peanut Quest Giver",
+        ["CakeQuest1"] = "Cake Quest Giver 1",
+        ["CakeQuest2"] = "Cake Quest Giver 2",
+        ["CandyCaneQuest"] = "Candy Cane Quest Giver",
+        ["ChocolateQuest1"] = "Chocolate Quest Giver 1",
+        ["ChocolateQuest2"] = "Chocolate Quest Giver 2",
+        ["TikiQuest1"] = "Tiki Quest Giver 1",
+        ["TikiQuest2"] = "Tiki Quest Giver 2",
+        ["TikiQuest3"] = "Tiki Quest Giver 3",
+        ["SubmergedQuest1"] = "Submerged Quest Giver 1",
+        ["SubmergedQuest2"] = "Submerged Quest Giver 2",
+        ["SubmergedQuest3"] = "Submerged Quest Giver 3",
+        ["DragonCrewQuest"] = "Dragon Crew Quest Giver"
+    }
+
+    local StaticQuestNpcPositions = {
+        ["TikiQuest1"] = CFrame.new(-15915, 41, 1421),
+        ["TikiQuest2"] = CFrame.new(-16450, 48, 590),
+        ["TikiQuest3"] = CFrame.new(-16668.03, 105.32, 1568.60),
+        ["SubmergedQuest1"] = CFrame.new(10778.875, -2087.72437, 9265.18359),
+        ["SubmergedQuest2"] = CFrame.new(10880.6855, -2086.20044, 10032.624),
+        ["SubmergedQuest3"] = CFrame.new(9640.08789, -1992.44507, 9613.65234),
+    }
+
+    local function ResolveNpcCFrame(questId, levelReq)
+        if not questId then return nil end
+
+        -- 1. Static known coordinates (Submerged Island & Tiki Outpost)
+        if StaticQuestNpcPositions[questId] then
+            return StaticQuestNpcPositions[questId]
+        end
+
+        -- 2. Check exact map
+        local mappedName = QuestNpcMap[questId]
+        if mappedName then
+            local npc = (workspace:FindFirstChild("NPCs") and workspace.NPCs:FindFirstChild(mappedName)) 
+                or (game.ReplicatedStorage:FindFirstChild("NPCs") and game.ReplicatedStorage.NPCs:FindFirstChild(mappedName))
+            if npc then
+                local ok, cf = pcall(function() return npc:GetModelCFrame() end)
+                if ok and cf then return cf end
+                if npc.PrimaryPart then return npc.PrimaryPart.CFrame end
+            end
+        end
+
+        -- 3. Check workspace.NPCs fuzzy search
+        if workspace:FindFirstChild("NPCs") then
+            local cleanQ = questId:lower():gsub("quest", ""):gsub("island", ""):gsub("%d+", "")
+            for _, npc in ipairs(workspace.NPCs:GetChildren()) do
+                local cleanN = npc.Name:lower():gsub("%s+", "")
+                if cleanN:find(cleanQ) or (cleanQ ~= "" and cleanQ:find(cleanN:gsub("questgiver", ""))) then
+                    local ok, cf = pcall(function() return npc:GetModelCFrame() end)
+                    if ok and cf then return cf end
+                end
+            end
+        end
+
+        -- 4. Check GuideModule.Data.NPCList
+        local okGuide, guide = pcall(function() return require(game.ReplicatedStorage.GuideModule) end)
+        if okGuide and guide and guide.Data and guide.Data.NPCList then
+            for i, v in pairs(guide.Data.NPCList) do
+                if v and v.Levels then
+                    for _, lvl in ipairs(v.Levels) do
+                        if lvl == levelReq then
+                            if typeof(i) == "Instance" and i:IsA("BasePart") then
+                                return i.CFrame
+                            elseif typeof(i) == "CFrame" then
+                                return i
+                            end
+                        end
+                    end
+                end
+            end
+        end
+
+        return nil
+    end
+
+    function QuestManager.RefreshQuest(Self) 
+        local pLevel = (ScriptStorage.PlayerData and ScriptStorage.PlayerData.Level) or (LocalPlayer:FindFirstChild("Data") and LocalPlayer.Data:FindFirstChild("Level") and LocalPlayer.Data.Level.Value) or 1
+        
+        local QuestLevelFlag = 0  
+        local CurrentQuestData = nil
+        local bestQuestId = nil
+        
+        local questsTable = QuestManager.Quests or (pcall(function() return require(game.ReplicatedStorage.Quests) end) and require(game.ReplicatedStorage.Quests)) or {}
+        for QuestID, QuestDatas in pairs(questsTable) do 
+            if not QuestManager.BlacklistedQuestIds[QuestID] and type(QuestDatas) == "table" and QuestDatas[1] then
+                local req = QuestDatas[1].LevelReq or 0
+                if req >= QuestLevelFlag and req <= pLevel then
+                    QuestLevelFlag = req  
+                    CurrentQuestData = QuestDatas
+                    bestQuestId = QuestID
+                    if pLevel >= 1500 and SeaIndex == 2 and QuestID == "ForgottenQuest" then 
+                        break 
+                    end 
+                end
+            end
+        end
+        
+        if not CurrentQuestData then return end
+        Self.CurrentQuestId = bestQuestId
+        
+        local cloneData = {}
+        for idx, item in ipairs(CurrentQuestData) do
+            table.insert(cloneData, item)
+        end
+        
+        local LastQuest = cloneData[#cloneData] 
+        if LastQuest and LastQuest.Task then
+            for _, Count in pairs(LastQuest.Task) do 
+                if Count == 1 and #cloneData > 1 then 
+                    table.remove(cloneData, #cloneData)
+                end 
+            end 
+        end
+        
+        local targetLevelReq = cloneData[#cloneData] and cloneData[#cloneData].LevelReq or QuestLevelFlag
+        Self.CurrentNpc = ResolveNpcCFrame(bestQuestId, targetLevelReq)
+        Self.CurrentQuests = cloneData 
+    end
+
+    function QuestManager.GetCurrentQuest(Self) 
+        if not Self.CurrentQuests or #Self.CurrentQuests == 0 then
+            Self:RefreshQuest()
+        end
+        if not Self.CurrentQuests or #Self.CurrentQuests == 0 then
+            return nil, nil, nil, nil, nil
+        end
+        
+        local pLevel = (ScriptStorage.PlayerData and ScriptStorage.PlayerData.Level) or 1
+        local QuestIndex = Self.CurrentQuests[Self.CurrentLevel] and Self.CurrentQuests[Self.CurrentLevel].LevelReq <= pLevel and Self.CurrentLevel or 1 
+        
+        local qData = Self.CurrentQuests[QuestIndex]
+        if qData and qData.Task then
+            for Name in pairs(qData.Task) do 
+                return Name, Self.CurrentNpc, Self.CurrentQuestId, QuestIndex, qData.Name
+            end 
+        end
+        return nil, Self.CurrentNpc, Self.CurrentQuestId, QuestIndex, "Unknown"
+    end 
+
+    function QuestManager.MarkAsCompleted(Self)
+        Self.CurrentLevel = Self.CurrentLevel == 2 and 1 or 2
+    end  
+
+    function QuestManager.AbandonQuest() 
+        pcall(function()
+            Remotes.CommF_:InvokeServer("AbandonQuest")
+        end)
+    end 
+
+    function QuestManager.GetCurrentClaimQuest(RawResponse) 
+        local main = game.Players.LocalPlayer:FindFirstChild("PlayerGui") and game.Players.LocalPlayer.PlayerGui:FindFirstChild("Main")
+        local questFrame = main and main:FindFirstChild("Quest")
+        if questFrame and questFrame.Visible then
+            local container = questFrame:FindFirstChild("Container")
+            local titleObj = container and container:FindFirstChild("QuestTitle") and container.QuestTitle:FindFirstChild("Title")
+            if not titleObj then
+                for _, lbl in ipairs(questFrame:GetDescendants()) do
+                    if lbl:IsA("TextLabel") and (lbl.Text:lower():find("defeat") or lbl.Text:find("%(%d+/%d+%)")) then
+                        titleObj = lbl
+                        break
+                    end
+                end
+            end
+            if titleObj and titleObj.Text and #titleObj.Text > 0 then
+                local rawText = titleObj.Text
+                local parsed = rawText:gsub("[Dd][Ee][Ff][Ee][Aa][Tt]%s*(%d*)%s*", ""):gsub("%s*%b()", ""):gsub("^%s+", ""):gsub("%s+$", "")
+                parsed = string.gsub(parsed, "Military ", "Mil. ")
+                if RawResponse then
+                    return rawText, parsed
+                end
+                return parsed, rawText
+            end
+        end
+        return nil, nil
+    end 
+
+    function QuestManager.StartQuest(QuestId, QuestLevel) 
+        return Remotes.CommF_:InvokeServer("StartQuest", QuestId, QuestLevel) 
+    end
+
+    ScriptStorage.MobRegions = {
+        -- Submerged Island & Tiki Outpost Mobs
+        ["Reef Bandit"] = { Vector3.new(11019.13, -2146.07, 9342.39) },
+        ["Coral Pirate"] = { Vector3.new(10808.60, -2030.36, 9364.23) },
+        ["Sea Chanter"] = { Vector3.new(10671.27, -2057.59, 10047.26) },
+        ["Ocean Prophet"] = { Vector3.new(11008.52, -2007.73, 10223.08) },
+        ["High Disciple"] = { Vector3.new(9750.42, -1966.94, 9753.36) },
+        ["Grand Devotee"] = { Vector3.new(9611.71, -1993.47, 9882.69) },
+        ["Tyrant of the Skies"] = { Vector3.new(-16709.49, 419.68, 1751.09) },
+        ["Skull Slayer"] = { Vector3.new(-16709.49, 419.68, 1751.09) },
+        ["Isle Champion"] = { Vector3.new(-16450, 48, 590) },
+        ["Sun-kissed Warrior"] = { Vector3.new(-15915, 41, 1421) },
+        ["Isle Outlaw"] = { Vector3.new(-15915, 41, 1421) }
+    } 
+    local okMobs, RawMobRegions = pcall(function()
+        return game:HttpGet("https://raw.githubusercontent.com/ninhcac/luaskid/refs/heads/main/map.lua")
+    end)
+
+    if okMobs and type(RawMobRegions) == "string" and #RawMobRegions > 10 then 
+        local okDecode, decoded = pcall(function() return Services.HttpService:JSONDecode(RawMobRegions) end)
+        if okDecode and type(decoded) == "table" then
+            for Name, Positions in pairs(decoded) do 
+                ScriptStorage.MobRegions[Name] = ScriptStorage.MobRegions[Name] or {} 
+                for _, Position in ipairs(Positions) do 
+                    table.insert(ScriptStorage.MobRegions[Name], Vector3.new(Position[1], Position[2], Position[3])) 
+                end 
+            end
+        end
+    end 
+
+    TweenController = {} 
+
+
+    local LastestTeleportToHomePoint = 0
+    local Entries = {} 
+
+    for _, NPC in game.ReplicatedStorage.NPCs:GetChildren() do 
+        if NPC.Name == "Set Home Point" then 
+            table.insert(Entries, NPC:GetModelCFrame())
+        end 
+    end 
+
+    function TweenController.Update() 
+
+        
+        local Part = game.Players.LocalPlayer.Character.HumanoidRootPart
+        
+        
+        HumanoidRootPart = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") 
+        
+        if CaculateDistance(Part.CFrame) > 250 then
+            pcall(function() 
+                TweenInstance:Cancel()
+            end) 
+            TweenDebounce = true
+            
+            Part.CFrame = HumanoidRootPart.CFrame
+            
+            
+            TweenDebounce = false
+        end
+        
+        HumanoidRootPart.CFrame = Part.CFrame+Vector3.new(0,3,0)
+    end
+
+
+
+    function GetPortal(Position) 
+        if not Portals or #Portals == 0 then return end
+        local targetPos = typeof(Position) == "CFrame" and Position.Position or Position
+        local playerPos = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+        if not playerPos then return end
+
+        local curDist = (playerPos - targetPos).Magnitude
+        local Nearest, Current = 9e9, nil
+        for _, Portal in ipairs(Portals) do
+            local pPos = typeof(Portal) == "CFrame" and Portal.Position or Portal
+            local distPortalToTarget = (pPos - targetPos).Magnitude
+            if distPortalToTarget < (curDist - 400) and distPortalToTarget < Nearest then 
+                Nearest = distPortalToTarget 
+                Current = Portal
+            end 
+        end 
+        
+        if Current then 
+            pcall(function()
+                Remotes.CommF_:InvokeServer("requestEntrance", Current)
+            end)
+            return task.wait(0.2)
+        end 
+    end 
+
+    function GetEntries(Position) 
+        local Nearest, Current = 9e9, nil
+        for _, Entry in Entries do
+            local Dist1 = CaculateDistance(Entry, Position)
+            if Dist1 < ( CaculateDistance(Position) - 700 ) and Dist1 < Nearest then 
+                Nearest = Dist1 
+                Current = Entry
+                
+            end 
+        end 
+        
+        if Current then 
+            if os.time() - LastestTeleportToHomePoint > 30 then 
+                for i=1,10,1 do 
+                    task.wait() 
+                    
+                end 
+            end 
+        end 
+    end 
+
+    function TweenController.Tween2(ePart, Position) 
+        local speed = (Config and (Config.TweenSpeed or (Config.Configuration and Config.Configuration.TweenSpeed))) or 270
+        TweenInstance2 = Services.TweenService:Create(
+                ePart,
+                TweenInfo.new(CaculateDistance(ePart.CFrame, Position) / speed, Enum.EasingStyle.Linear),
+                {CFrame = ConvertTo(CFrame, Position)-Vector3.new(0,0,0)}
+            )
+        TweenInstance2:Play()
+    end
+
+    TweenTargetPosition = nil
+    local ActiveTween = nil
+    local NoclipConn = nil
+
+    local function EnableNoclip()
+        if NoclipConn then return end
+        NoclipConn = game:GetService("RunService").Stepped:Connect(function()
+            pcall(function()
+                if not ActiveTween then return end
+                local char = game.Players.LocalPlayer.Character
+                if char then
+                    for _, part in ipairs(char:GetChildren()) do
+                        if part:IsA("BasePart") then
+                            part.CanCollide = false
+                        end
+                    end
+                    local hrp = char:FindFirstChild("HumanoidRootPart")
+                    if hrp then
+                        hrp.Velocity = Vector3.zero
+                        hrp.RotVelocity = Vector3.zero
+                    end
+                end
+            end)
+        end)
+    end
+
+    function TweenController.Create(Position)
+        if not Position or TweenDebounce then return end 
+        local targetCF = typeof(Position) ~= "CFrame" and ConvertTo(CFrame, Position) or Position
+        local targetPos = targetCF.Position
+
+        local char = game.Players.LocalPlayer.Character
+        local hrp = char and char:FindFirstChild("HumanoidRootPart")
+        if not hrp then return end
+
+        local dist = (hrp.Position - targetPos).Magnitude
+
+        -- Combat hover / close range (< 45 studs): Set CFrame directly for instant zero-stutter response
+        if dist < 45 then
+            if ActiveTween then
+                pcall(function() ActiveTween:Cancel() end)
+                ActiveTween = nil
+                TweenTargetPosition = nil
+            end
+            hrp.CFrame = targetCF
+            return
+        end
+
+        -- Active tween already heading towards this destination: let it keep gliding smoothly!
+        if ActiveTween and TweenTargetPosition and (targetPos - TweenTargetPosition).Magnitude < 40 then
+            return
+        end
+
+        -- Portal gate check for long distances (> 600 studs)
+        if dist > 600 then 
+            GetPortal(targetCF)
+            if not char or not char:FindFirstChild("HumanoidRootPart") then return end
+            dist = (char.HumanoidRootPart.Position - targetPos).Magnitude
+        end
+
+        TweenTargetPosition = targetPos
+
+        if ActiveTween then
+            pcall(function() ActiveTween:Cancel() end)
+            ActiveTween = nil
+        end
+
+        EnableNoclip()
+
+        local speed = (Config and (Config.TweenSpeed or (Config.Configuration and Config.Configuration.TweenSpeed))) or 270
+        local duration = math.max(0.01, dist / speed)
+
+        ActiveTween = Services.TweenService:Create(
+            hrp,
+            TweenInfo.new(duration, Enum.EasingStyle.Linear),
+            {CFrame = targetCF}
+        )
+        TweenInstance = ActiveTween
+
+        ActiveTween:Play()
+        ActiveTween.Completed:Connect(function(state)
+            if state == Enum.PlaybackState.Completed then
+                TweenTargetPosition = nil
+                ActiveTween = nil
+                -- H-04 fix: Disconnect noclip when tween completes
+                if NoclipConn then pcall(function() NoclipConn:Disconnect() end); NoclipConn = nil end
+            end
+        end)
+    end
+
+    local AttackController = {
+        IsAttacking = false,
+        LastAttack = 0,
+        AttackRange = 75,
+        AttackCooldown = 0.03
+    } 
+
+    local Players = game:GetService("Players")
+    local RunService = game:GetService("RunService")
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local Workspace = game:GetService("Workspace")
+    local VirtualInputManager = game:GetService("VirtualInputManager")
+    local Player = Players.LocalPlayer
+    local Modules = ReplicatedStorage:WaitForChild("Modules")
+    local Net = Modules:WaitForChild("Net")
+    local RegisterAttack = Net:FindFirstChild("RE/RegisterAttack") or Net:WaitForChild("RE/RegisterAttack", 3)
+    local RegisterHit = Net:FindFirstChild("RE/RegisterHit") or Net:WaitForChild("RE/RegisterHit", 3)
+    local ShootGunEvent = Net:FindFirstChild("RE/ShootGunEvent") or Net:WaitForChild("RE/ShootGunEvent", 3)
+    local GunValidator = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("Validator2")
+
+    local NetModule = nil
+    pcall(function()
+        NetModule = require(Net)
+    end)
+
+    local function ResolveAttackRemote()
+        if RegisterAttack and RegisterAttack.Parent then return RegisterAttack end
+        if NetModule and NetModule.RemoteEvent then
+            local ok, rem = pcall(function() return NetModule:RemoteEvent("RegisterAttack", true) end)
+            if ok and rem then RegisterAttack = rem return rem end
+        end
+        RegisterAttack = Net:FindFirstChild("RE/RegisterAttack") or Net:WaitForChild("RE/RegisterAttack", 2)
+        return RegisterAttack
+    end
+
+    local function ResolveHitRemote()
+        if RegisterHit and RegisterHit.Parent then return RegisterHit end
+        if NetModule and NetModule.RemoteEvent then
+            local ok, rem = pcall(function() return NetModule:RemoteEvent("RegisterHit", true) end)
+            if ok and rem then RegisterHit = rem return rem end
+        end
+        RegisterHit = Net:FindFirstChild("RE/RegisterHit") or Net:WaitForChild("RE/RegisterHit", 2)
+        return RegisterHit
+    end
+
+    local function GetBladeHitTargets(originPos, range)
+        local bladehits = {}
+        local primaryPart = nil
+        local char = Player.Character
+        local distLimit = range or AttackController.AttackRange or 75
+
+        local function scanFolder(folder)
+            if not folder then return end
+            for _, mob in ipairs(folder:GetChildren()) do
+                if mob ~= char and mob:IsA("Model") then
+                    local hum = mob:FindFirstChildOfClass("Humanoid")
+                    local hrp = mob:FindFirstChild("HumanoidRootPart") or mob:FindFirstChild("Head") or mob.PrimaryPart
+                    if hum and hum.Health > 0 and hrp then
+                        local d = (hrp.Position - originPos).Magnitude
+                        if d <= distLimit then
+                            local part = mob:FindFirstChild("Head") or mob:FindFirstChild("HumanoidRootPart") or mob:FindFirstChild("UpperTorso") or hrp
+                            if not primaryPart then
+                                primaryPart = part
+                            end
+                            table.insert(bladehits, { mob, part })
+                        end
+                    end
+                end
+            end
+        end
+
+        scanFolder(Workspace:FindFirstChild("Enemies"))
+        scanFolder(Workspace:FindFirstChild("Characters"))
+
+        return primaryPart, bladehits
+    end
+
+    function AttackController:PerformAttack()
+        local char = Player.Character
+        if not char then return end
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        if not hum or hum.Health <= 0 then return end
+        local hrp = char:FindFirstChild("HumanoidRootPart") or char.PrimaryPart
+        if not hrp then return end
+
+        local tool = char:FindFirstChildOfClass("Tool")
+        if not tool then
+            pcall(function()
+                if FunctionsHandler and FunctionsHandler.LocalPlayerController and FunctionsHandler.LocalPlayerController.Methods and FunctionsHandler.LocalPlayerController.Methods.EquipTool then
+                    FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call(ScriptStorage.ForceToUseSword and "Sword" or "Melee")
+                end
+            end)
+            tool = char:FindFirstChildOfClass("Tool")
+            if not tool then return end
+        end
+
+        -- Ensure Buso Haki (Aura) is active
+        pcall(function()
+            if not char:FindFirstChild("HasBuso") then
+                if Remotes and Remotes.CommF_ then
+                    Remotes.CommF_:InvokeServer("Buso")
+                end
+            end
+        end)
+
+        local primaryPart, bladehits = GetBladeHitTargets(hrp.Position, AttackController.AttackRange or 75)
+        if not primaryPart or #bladehits == 0 then return end
+
+        local toolTip = tool.ToolTip or ""
+        local atkRemote = ResolveAttackRemote()
+        local hitRemote = ResolveHitRemote()
+        local coroutineId = tostring(Player.UserId):sub(2, 4) .. tostring(coroutine.running()):sub(11, 15)
+
+        if toolTip == "Blox Fruit" and tool:FindFirstChild("LeftClickRemote") then
+            local dir = (primaryPart.Position - hrp.Position).Unit
+            pcall(function()
+                tool.LeftClickRemote:FireServer(dir, 1, true)
+                tool.LeftClickRemote:FireServer(false)
+            end)
+        elseif toolTip == "Gun" and tool:FindFirstChild("Cooldown") then
+            if ShootGunEvent then
+                pcall(function()
+                    ShootGunEvent:FireServer(primaryPart.Position)
+                end)
+            end
+        end
+
+        pcall(function()
+            if atkRemote then
+                atkRemote:FireServer(0)
+            end
+            if hitRemote then
+                hitRemote:FireServer(primaryPart, bladehits, nil, nil, coroutineId)
+            end
+        end)
+    end
+
+    function AttackController.Attack(MonResult)
+        AttackController.IsAttacking = true
+        AttackController.LastAttack = tick()
+        _G.FastAttack = true
+        pcall(function()
+            AttackController:PerformAttack()
+        end)
+    end
+
+    function AttackController:Attack(MonResult)
+        AttackController.IsAttacking = true
+        AttackController.LastAttack = tick()
+        _G.FastAttack = true
+        pcall(function()
+            AttackController:PerformAttack()
+        end)
+    end
+
+    -- High-speed continuous background attack loop
+    task.spawn(function()
+        while task.wait(0.04) do
+            if AttackController.IsAttacking or (tick() - (AttackController.LastAttack or 0)) < 1.5 or _G.FastAttack then
+                pcall(function()
+                    AttackController:PerformAttack()
+                end)
+            end
+        end
+    end) 
+
+    CombatController = {
+        GRAB = true, 
+        GRAB_DISTANCE = SeaIndex == 1 and 250 or 350, 
+        
+        MAX_ATTACK_DURATION = 3, 
+        MAX_ATTACK_DURATION_2 = 60, 
+        LEVITATE_TIME = 1, 
+        
+        CurrentIndex = 1, 
+    }
+
+    LastFound = os.time()
+    -- save center pos vao attribute cua con mob r set de cho do bi move idk
+
+    _G.BringRange = 300
+    _G.MobM = 15
+    _B = true
+
+    local function IsMatchingMob(mobName, target)
+        if not target or target == "" then return true end
+        if type(target) == "table" then
+            for _, n in ipairs(target) do
+                if tostring(mobName) == tostring(n) or string.find(tostring(mobName), tostring(n)) then
+                    return true
+                end
+            end
+            return false
+        elseif type(target) == "string" then
+            return tostring(mobName) == target or string.find(tostring(mobName), target) ~= nil
+        end
+        return false
+    end
+
+    function BringEnemy(PosMon, targetMobName)
+        if not PosMon then return end
+        pcall(function()
+            if sethiddenproperty then
+                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+            end
+        end)
+
+        local enemiesFolder = workspace:FindFirstChild("Enemies") or (Services and Services.Workspace and Services.Workspace:FindFirstChild("Enemies"))
+        if not enemiesFolder then return end
+
+        local count = 0
+
+        for _, mob in ipairs(enemiesFolder:GetChildren()) do
+            if count >= (_G.MobM or 15) then break end
+            local hum = mob:FindFirstChildOfClass("Humanoid")
+            local pp = mob:FindFirstChild("HumanoidRootPart") or mob.PrimaryPart
+            if hum and pp and hum.Health > 0 then
+                local dist = (pp.Position - PosMon).Magnitude
+                if dist <= (_G.BringRange or 300) and IsMatchingMob(mob.Name, targetMobName) then
+                    count = count + 1
+                    for _, p in ipairs(mob:GetChildren()) do
+                        if p:IsA("BasePart") then
+                            p.CanCollide = false
+                        end
+                    end
+                    pcall(function()
+                        pp.AssemblyLinearVelocity = Vector3.zero
+                        pp.AssemblyAngularVelocity = Vector3.zero
+                    end)
+
+                    local offset = Vector3.new(
+                        ((count - 1) % 5 - 2) * 3,
+                        0,
+                        math.floor((count - 1) / 5 - 2) * 3
+                    )
+                    local finalPos = PosMon + offset
+
+                    if dist > 3 then
+                        pp.CFrame = CFrame.new(finalPos)
+                    end
+                    
+                    local bp = pp:FindFirstChild("BringBP")
+                    if not bp then
+                        bp = Instance.new("BodyPosition")
+                        bp.Name = "BringBP"
+                        bp.MaxForce = Vector3.new(1e7, 1e7, 1e7)
+                        bp.P = 500000
+                        bp.D = 5000
+                        bp.Parent = pp
+                    end
+                    bp.Position = finalPos
+
+                    local bg = pp:FindFirstChild("BringBG")
+                    if not bg then
+                        bg = Instance.new("BodyGyro")
+                        bg.Name = "BringBG"
+                        bg.MaxTorque = Vector3.new(1e6, 1e6, 1e6)
+                        bg.P = 10000
+                        bg.D = 1000
+                        bg.Parent = pp
+                    end
+                    bg.CFrame = CFrame.new(finalPos)
+                end
+            end
+        end
+    end
+
+    function CombatController.Grab(MobName) 
+        local targetMob = MonResult or (typeof(MobName) == "Instance" and MobName) or (typeof(MobName) == "string" and workspace.Enemies:FindFirstChild(MobName))
+        local targetPos = targetMob and targetMob:FindFirstChild("HumanoidRootPart") and targetMob.HumanoidRootPart.Position
+        if targetPos then
+            task.spawn(function() pcall(BringEnemy, targetPos, targetMob.Name) end)
+        end
+    end 
+
+    function Sort1(N) 
+        return N and N:FindFirstChild("HumanoidRootPart") and math.floor(CaculateDistance(N.HumanoidRootPart.CFrame))
+    end 
+
+    function CombatController.Search(MobTable) 
+        
+        local Lists = {}
+        local Found = false
+        for _, ChildInstance in GetMonAsSortedRange() do
+            if table.find(MobTable, ChildInstance.Name) and ChildInstance:FindFirstChild("Humanoid") and ChildInstance.Humanoid.Health > 0 then 
+                if (ChildInstance:GetAttribute("FailureCount") or 0) < 3 then 
+                    Found = true
+                    table.insert(Lists, ChildInstance) 
+                end 
+            end
+        end
+        
+        table.sort(Lists, function(a, b) 
+            return Sort1(a) < Sort1(b)
+        end)
+        
+        if Found then 
+            local Mon1 = Lists[1] 
+            return Mon1
+        end
+        
+        for _, ChildName in MobTable do 
+            local MonResult2 = game.ReplicatedStorage:FindFirstChild(ChildName) 
+            if MonResult2 then 
+                return MonResult2
+            end 
+        end 
+    end 
+
+    function CombatController.Attack(MobTable, NearbyHit, Range, Callback)
+        local inCombat = false
+        pcall(function()
+            local gm = getsenv and getsenv(game.ReplicatedStorage.GuideModule)
+            if gm and gm._G and gm._G.InCombat then inCombat = true end
+        end)
+        
+        if ScriptStorage.Tools["Sweet Chalice"] and inCombat then 
+            TweenController.Create(Vector3.new(0,0,0)) 
+            return
+        end
+        
+        pcall(function() sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge) end)
+        MobTable = type(MobTable) == "string" and {MobTable} or ( MobTable or {} ) 
+        
+        for _, Child in (MobTable) do
+            local ChildName = tostring(Child)
+            if ChildName == "Deandre" or ChildName == "Urban" or ChildName == "Diablo" and (os.time() - (LastFire12 or 0)) > 180 then 
+                LastFire12 = os.time()
+                Remotes.CommF_:InvokeServer("EliteHunter")
+            end 
+        end
+        
+        local MonResult = nil
+        if NearbyHit then  
+            local Mon = GetMonAsSortedRange()[1]
+            local MonPosition = Mon and Mon:FindFirstChild("HumanoidRootPart") and Mon.HumanoidRootPart.Position 
+            if MonPosition and CaculateDistance(MonPosition) < Range then 
+                MonResult = Mon
+            end 
+        else 
+            MonResult = CombatController.Search(MobTable)
+        end 
+        
+        if MonResult then
+            LastFound = os.time()
+            local Count, Debounce = 0, os.time()
+            local Count2, Debounce = 0, os.time()
+
+            local InitMobHrp = MonResult:FindFirstChild("HumanoidRootPart")
+            local FixedMobPos = (InitMobHrp and InitMobHrp.Position) or MonResult:GetPivot().Position
+            local FixedFarmCF = CFrame.new(FixedMobPos + Vector3.new(0, 30, 0))
+
+            while task.wait() do
+                if _G.Stop then return end
+                
+                local inCombatLoop = false
+                pcall(function()
+                    local gm = getsenv and getsenv(game.ReplicatedStorage.GuideModule)
+                    if gm and gm._G and gm._G.InCombat then inCombatLoop = true end
+                end)
+                if ScriptStorage.Tools["Sweet Chalice"] and inCombatLoop then 
+                    TweenController.Create(Vector3.new(0,0,0)) 
+                    return
+                end 
+                
+                local MobHumanoid = MonResult:FindFirstChild("Humanoid")
+                local MobHumanoidRootPart = MonResult:FindFirstChild("HumanoidRootPart")
+                
+                if not MobHumanoid or MobHumanoid.Health <= 0 then 
+                    if MonResult.Name == "Don Swan" then 
+                        Storage:Set("SwanDefeated", true)
+                        Hop()
+                    end 
+                    break
+                end 
+                
+                local hpPct = math.floor((MobHumanoid.Health / math.max(1, MobHumanoid.MaxHealth)) * 100)
+                SetTask("MiniTask", "Attacking " .. tostring(MonResult.Name) .. " [HP: " .. hpPct .. "%]")
+
+                local myChar = game.Players.LocalPlayer.Character
+                local myHrp = myChar and myChar:FindFirstChild("HumanoidRootPart")
+
+                if myHrp then
+                    local curDist = (myHrp.Position - FixedFarmCF.Position).Magnitude
+                    if curDist < 45 then
+                        myHrp.CFrame = FixedFarmCF
+                        pcall(function()
+                            myHrp.AssemblyLinearVelocity = Vector3.zero
+                            myHrp.AssemblyAngularVelocity = Vector3.zero
+                        end)
+                        BringEnemy(FixedMobPos, MobTable or MonResult.Name)
+                    else
+                        TweenController.Create(FixedFarmCF)
+                    end
+                end
+                
+                if CaculateDistance(FixedFarmCF.Position) < 150 then
+                    _ = Callback and Callback()
+                    BringEnemy(FixedMobPos, MobTable or MonResult.Name)
+                    if MonResult.Name ~= "Core" then 
+                        if ScriptStorage.PlayerData.Level > 100 and Count2 >= CombatController.MAX_ATTACK_DURATION_2 and MobHumanoid.Health - MobHumanoid.MaxHealth == 0 then 
+                            SetTask("SubTask", "Hop Server - Mob Health Unchanged ( " .. MobHumanoid.Health .. " / " .. MobHumanoid.MaxHealth .. ")")
+                            alert("Stuck", "Mob health unchanged")
+                            _G.Stop = true
+                            Hop("Mob Health Stuck")
+                        end 
+                        
+                        if ( MonResult:GetAttribute("FailureCount") or 0 ) > 5 then 
+                            Hop("Failed to attack")
+                        end 
+                        if Count >= CombatController.MAX_ATTACK_DURATION and MobHumanoid.Health - MobHumanoid.MaxHealth == 0 then 
+                            Count = 0 
+                            
+                            local OldPosition = MonResult:GetAttribute("OldPosition") 
+                            
+                            if OldPosition then
+                                MonResult:SetPrimaryPartCFrame(CFrame.new(OldPosition))
+                                MonResult:SetAttribute("IgnoreGrab", true)
+                                MonResult:SetAttribute("FailureCount", (MonResult:GetAttribute("FailureCount") or 0) + 1)
+                                alert("Failed to attack", "Returning to the old position ( #" .. MonResult:GetAttribute("FailureCount") .. " )")
+                                while CaculateDistance(MonResult.HumanoidRootPart.CFrame,OldPosition) > 6 and task.wait() do 
+                                    MonResult.HumanoidRootPart.CFrame = (CFrame.new(OldPosition)) 
+                                end 
+                                
+                                task.wait()
+                                
+                                return 
+                            end 
+                        end
+                    end
+                    FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call(ScriptStorage.ForceToUseSword and "Sword" or "Melee")
+                    
+                    
+                    AttackController:Attack(MonResult)
+                    if os.time() ~= Debounce then 
+                        Debounce = os.time()
+                        
+                        Count = Count + 1
+                        Count2 = Count2 + 1
+                    end 
+                    if Count > 30 and MonResult.Name ~= "Core" then
+                        alert("Take more than 30s to attack, cancelling")
+                        break
+                    end
+                    
+                else 
+                    
+                    return
+                end  
+            end
+        elseif not NearbyHit then 
+            -- No alive mobs found from MobTable: Pick ONE primary mob to fly to and wait for!
+            local primaryTarget = MobTable[1]
+            local curQuest = QuestManager.GetCurrentClaimQuest and QuestManager.GetCurrentClaimQuest()
+            if curQuest then
+                for _, m in ipairs(MobTable) do
+                    local mStr = tostring(m):lower()
+                    if curQuest:lower():find(mStr) or mStr:find(curQuest:lower()) then
+                        primaryTarget = m
+                        break
+                    end
+                end
+            end
+            
+            local Region = ScriptStorage.MobRegions and ScriptStorage.MobRegions[primaryTarget] 
+            
+            if not Region then 
+                local Inst = Services.Workspace.Enemies:FindFirstChild(primaryTarget) or game.ReplicatedStorage:FindFirstChild(primaryTarget) 
+                if Inst then
+                    local okP, pcf = pcall(function() return Inst:GetPivot().Position end)
+                    if okP and pcf then Region = { pcf } end
+                end
+            end 
+            
+            if not Region or #Region == 0 then 
+                return 
+            end
+            
+            -- Always wait at the primary central spawn position (Region[1])
+            local rawPos = Region[1]
+            local CurrentPosition = (typeof(rawPos) == "Vector3" and rawPos)
+                or (typeof(rawPos) == "CFrame" and rawPos.Position)
+                or (type(rawPos) == "table" and Vector3.new(rawPos[1] or rawPos.X or 0, rawPos[2] or rawPos.Y or 0, rawPos[3] or rawPos.Z or 0))
+            
+            if not CurrentPosition then
+                return
+            end
+            
+            local targetCF = CFrame.new(CurrentPosition + Vector3.new(0, 35, 0))
+            SetTask("MiniTask", "Waiting for " .. tostring(primaryTarget) .. " to spawn...")
+            
+            local myChar = game.Players.LocalPlayer.Character
+            local myHrp = myChar and myChar:FindFirstChild("HumanoidRootPart")
+            if myHrp then
+                local dist = (myHrp.Position - targetCF.Position).Magnitude
+                if dist > 25 then
+                    TweenController.Create(targetCF)
+                else
+                    -- Already at spawn point: stay still and hover
+                    myHrp.CFrame = targetCF
+                    pcall(function()
+                        myHrp.AssemblyLinearVelocity = Vector3.zero
+                        myHrp.AssemblyAngularVelocity = Vector3.zero
+                    end)
+                end
+            end
+            task.wait()
+        end
+    end 
+
+
+    LevelFarmTTL = 0 
+    LastTravel = os.time() 
+
+    FunctionsHandler = {
+        Initalized = false 
+    }; 
+
+    -- silenced print
+    setmetatable(FunctionsHandler, {
+        __index = function(Self, Index) 
+            QueryResult = rawget(Self, Index) 
+            
+            if not QueryResult then 
+                
+                return {
+                    Register = function(Coditional) 
+                        if Coditional == false then return end 
+                        
+                        Result = {
+                            CacheListener = {}, 
+                            RealCache = {},
+                            Methods = {}, 
+                            Constants = {}, 
+                            Events = {}, 
+                            Initalized = true
+                        } 
+                        
+                        function Result.RegisterMethod(Self, Name, Function) 
+                            Self.Methods[Name] =
+                            {
+                                Name = Name, 
+                                Callback = Function,
+                                Call = function(Self, ...) 
+                                    return Self.Callback(...) 
+                                    
+                                end, 
+                                Events = {} 
+                                
+                            }
+                            return true
+                            
+                        end 
+                        
+                        setmetatable(Result.Constants, {
+                            __newindex = function() 
+                                assert(false, "cannot change constant value!") 
+                            end
+                        })
+                    
+                        function Result.SaveConstant(Self, Key, Value) 
+                            if Self.Constants[Key] then  
+                                return assert(false, "constant name was used before!") 
+                            end 
+                            rawset(Self.Constants, Key, Value)
+                        end 
+                        
+                        function Result.Set(Self, Key, Value) 
+                            Self.CacheListener[Key] = Value 
+                            return Value
+                            
+                        end
+                        
+                        function Result.Get(Self, Index) 
+                            return Self.Constants[Index] or Self.RealCache[Index]
+                            
+                        end 
+                        
+                        function Result.AddVariableChangeListener(Self, Index, Callback) 
+                            Self.Events[Index] = Callback
+                            
+                        end
+                        
+                        Result.CacheListener.__parent = Result; 
+                        
+                        setmetatable(Result.CacheListener, {
+                            __newindex = function(Self, Key, Value) 
+                                _ = Self.__parent.Events[Key] and Self.__parent.Events[Key](Key, Value)
+                                
+                                Self.__parent.RealCache[Key] = Value
+                                
+                            end 
+                        })
+                        
+                        
+                        
+                        FunctionsHandler[Index] = Result
+                        
+                    end, 
+                    Initalized = false
+                }
+            end 
+            
+            return QueryResult
+            
+        end 
+    })
+
+    function FunctionsHandler.SynchorizeUntilModuleLoaded(Self, Timeout) 
+        local StartTime = os.time() 
+        
+        while not Self.Initalized do 
+            task.wait() 
+            local Difference = os.time() - StartTime 
+            
+            assert(not ( Timeout and Difference > Timeout ), "timed out")
+        end 
+        
+    end 
+
+
+
+
+
+    function GetCurrentClaimQuest(RawResponse) 
+        return QuestManager.GetCurrentClaimQuest(RawResponse)
+    end 
+
+    -- LP Controller 
+
+    FunctionsHandler.LocalPlayerController.Register()
+    -- Exp Redeem 
+
+    FunctionsHandler.ExpRedeem:Register() 
+
+    -- Level Farm 
+
+    FunctionsHandler.LevelFarm:Register() 
+
+    -- Items / Sword
+
+    FunctionsHandler.Saber:Register()
+    FunctionsHandler.Rengoku:Register()
+    FunctionsHandler.Yama:Register()
+    FunctionsHandler.Tushita:Register()
+    FunctionsHandler.SpikeyTrident:Register()
+    FunctionsHandler.SharkAchor:Register()
+    FunctionsHandler.Pole:Register()
+    FunctionsHandler.FoxLamp:Register()
+    FunctionsHandler.DarkDagger:Register()
+    FunctionsHandler.Canvander:Register()
+    FunctionsHandler.BuddySword:Register()
+    FunctionsHandler.HallowScythe:Register()
+    FunctionsHandler.CursedDualKatana:Register()
+
+    -- Items / Guns 
+
+    FunctionsHandler.AcidumRifle:Register()
+    FunctionsHandler.Kabucha:Register()
+    FunctionsHandler.VenomBow:Register()
+    FunctionsHandler.SoulGuitar:Register()
+    FunctionsHandler.DragonStorm:Register()
+
+    -- Items / Etc
+
+    FunctionsHandler.InsictV2:Register()
+    FunctionsHandler.RainbowSaviour:Register()
+
+    -- Puzzles / First Sea
+
+    FunctionsHandler.DarkBladeV2:Register()
+    FunctionsHandler.SecondSeaPuzzle:Register()
+
+    -- Puzzles / Second Sea
+
+    FunctionsHandler.ColosseumPuzzle:Register()
+    FunctionsHandler.Trevor:Register()
+    FunctionsHandler.EvoRace:Register()
+    FunctionsHandler.Wenlocktoad:Register()
+    FunctionsHandler.DarkBladeV3:Register()
+    FunctionsHandler.ThirdSeaPuzzle:Register()
+
+    -- Puzzles / Third Sea 
+
+    FunctionsHandler.DojoQuest:Register()
+    FunctionsHandler.RaceAwakening:Register()
+    FunctionsHandler.PirateRaid:Register()
+
+    -- Functions / Raid 
+
+    FunctionsHandler.RaidController:Register() 
+
+    -- Functions / Auto Melees 
+
+    FunctionsHandler.MeleesController:Register() 
+
+    FunctionsHandler.Superhuman:Register()
+    FunctionsHandler.DeathStep:Register()
+    FunctionsHandler.SharkmanKarate:Register()
+    FunctionsHandler.ElectricClaw:Register()
+    FunctionsHandler.DragonTalon:Register()
+    FunctionsHandler.Godhuman:Register()
+
+    -- Functions / Boss Task 
+
+    FunctionsHandler.BossesTask:Register() 
+    FunctionsHandler.SpecialBossesTask:Register() 
+    -- Functions / CollectDrops
+    FunctionsHandler.CollectDrops:Register() 
+
+    -- Functions / UtillyItemsActivitation
+
+    FunctionsHandler.UtillyItemsActivitation:Register() 
+
+    -- Exp Redeem 
+
+    FunctionsHandler.ExpRedeem:RegisterMethod("Refresh", function() 
+        return false
+    end)
+
+    FunctionsHandler.ExpRedeem:RegisterMethod("Start", function() 
+        local Code = ({
+                "BANEXPLOIT",
+                "NOMOREHACK",
+                "WildDares",
+                "BossBuild",
+                "GetPranked",
+                "EARN_FRUITS",
+                "Sub2UncleKizaru",
+                "FIGHT4FRUIT",
+                "kittgaming",
+                "TRIPLEABUSE",
+                "Sub2CaptainMaui",
+                "Sub2Fer999",
+                "Enyu_is_Pro",
+                "Magicbus",
+                "JCWK",
+                "Starcodeheo",
+                "Bluxxy",
+                "SUB2GAMERROBOT_EXP1",
+                "Sub2NoobMaster123",
+                "Sub2Daigrock",
+                "Axiore",
+                "TantaiGaming",
+                "StrawHatMaine",
+                "Sub2OfficialNoobie",
+                "TheGreatAce",
+                "SEATROLLING",
+                "24NOADMIN",
+                "ADMIN_TROLL",
+                "NEWTROLL",
+                "SECRET_ADMIN",
+                "staffbattle",
+                "NOEXPLOIT",
+                "NOOB2ADMIN",
+                "CODESLIDE",
+                "fruitconcepts"
+            })
+        
+        for Index, Promo in Code do
+            
+            SetTask("MainTask", "Code Redemption | " .. Promo .. " | Redeeming...")
+            local Response = (Remotes.Redeem:InvokeServer(Promo))
+            task.wait() 
+            SetTask("MainTask", "Code Redemption | " .. Promo .. " | " .. (Response or "Failed"))
+            if getsenv(game.ReplicatedStorage.GuideModule)._G.ServerData.ExpBoost == 0 then 
+                
+                if Response and string.find(Response, "SUCC") then 
+                    return SetTask("MainTask", "Code Redemption | X2 Exp Boost Activated!") and task.wait(1)
+                end 
+                else 
+                    return  
+            end
+        end
+        
+        Storage:Set("IsCodesRanOut", 1)
+        Storage:Save()
+    end)
+
+
+    -- Level Farm 
+
+    FunctionsHandler.LevelFarm:RegisterMethod("Refresh", function() 
+        return 4
+    end)
+
+    FunctionsHandler.LevelFarm:RegisterMethod("Start", function(Level) 
+        if SeaIndex == 3 then 
+            if ( ScriptStorage.Backpack.Bones or {Count = 0}).Count >= 50 and ( ScriptStorage.PlayerData.Level < MaxLevel or ForceToRollBone or ScriptStorage.PlayerData.Level >= MaxLevel ) then 
+                
+                if os.time() > (BonesCooldown or 0) then 
+                    
+                    local _, _, State, Message = Remotes.CommF_:InvokeServer("Bones", "Check") 
+                    -- silenced print
+                    if tonumber(State or 1) == 0 then 
+                        local SplitedNum = Split(Message, ":")
+                        local SecondsLeft = ((tonumber(SplitedNum[1]) * 60) + tonumber(SplitedNum[2])) * 60 
+                        BonesCooldown = os.time() + SecondsLeft
+                        -- silenced print
+                    else 
+                        -- silenced print
+                        Remotes.CommF_:InvokeServer("Bones", "Buy", 1, 1)
+                    end
+                end 
+            end 
+        end
+        local currentClaim = QuestManager.GetCurrentClaimQuest and QuestManager.GetCurrentClaimQuest()
+        if currentClaim then
+            local lowClaim = tostring(currentClaim):lower()
+            for _, eliteName in ipairs({"deandre", "urban", "diablo"}) do
+                if lowClaim:find(eliteName) then
+                    SetTask("MainTask", "Elite Hunter | Defeating " .. currentClaim)
+                    SetTask("SubTask", "Target: " .. currentClaim)
+                    CombatController.Attack(currentClaim)
+                    return
+                end
+            end
+        end
+        
+        local PlayerLevel = ScriptStorage.PlayerData.Level 
+        if GodHumanFlag then 
+        
+            local Material, MaterialData = (function() 
+                getgenv()["     mphm >< <3"] = {}
+                for Material, MaterialData in GodhumanMaterials do 
+                    if ( ScriptStorage.Backpack[Material] or {Count = 0} ).Count < MaterialData[1] then 
+                        getgenv()["     mphm >< <3"] = {Material, MaterialData}
+                    end
+                end
+                
+                return unpack(getgenv()["     mphm >< <3"])
+            end)() 
+            
+            if Material then
+                if SeaIndex ~= MaterialData[2] then 
+                    alert("Material - " .. Material, "Travelling sea " .. MaterialData[2])
+                    SetTask("MainTask", "Sea Travel | Godhuman Materials | Travelling to Sea " .. MaterialData[2])
+                    
+                    Remotes.CommF_:InvokeServer("Travel" .. SeaIndexes[MaterialData[2]]) 
+                    return 
+                end 
+                
+                SetTask("MainTask", "Material Farming | Godhuman | " .. Material .. " | In Progress")
+                
+                if PlayerLevel >= MaterialData[4][3] then 
+                    local QuestAvailable, CurrentClaimQuest = GetCurrentClaimQuest() 
+                    if QuestAvailable then 
+                        if not string.find(CurrentClaimQuest, MaterialData[3][1]) and not string.find(CurrentClaimQuest, MaterialData[3][2]) then
+                            
+                            QuestManager.AbandonQuest() 
+                        else 
+                            CombatController.Attack(MaterialData[3])
+                            return
+                        end
+                    else
+                                
+                        local NpcPosition1 = ScriptStorage.NPCs[MaterialData[4][4]] 
+                        NpcPosition1 = NpcPosition1 and NpcPosition1:GetModelCFrame() 
+                        
+                        if NpcPosition1 then
+                            TweenController.Create(NpcPosition1 + Vector3.new(0,5,3)) 
+                            if CaculateDistance(NpcPosition1) < 10 then 
+                                task.wait(1) 
+                            else 
+                                return 
+                            end
+                        else 
+                            Report("NPC HauntedQuest2 not found")
+                        end 
+                        QuestManager.StartQuest(MaterialData[4][1], MaterialData[4][2])
+                        return
+                    end
+                end
+                
+                CombatController.Attack(MaterialData[3])
+
+            end
+            
+            Remotes.CommF_:InvokeServer("BuyGodhuman", true)
+            Remotes.CommF_:InvokeServer("BuyGodhuman")
+            
+            
+            GodHumanFlag = false
+            return true
+        end
+        
+        if os.time() - LastTravel > 60 then 
+            LastTravel = os.time()
+            if PlayerLevel >= 1500 and SeaIndex == 2 then 
+                if Config.Settings.StayInSea2UntilHaveDarkFragments and not ScriptStorage.Backpack["Dark Fragment"] then 
+                elseif not Services.Workspace.Map.IceCastle.Hall.LibraryDoor:FindFirstChild("PhoeyuDoor") then 
+                    Remotes.CommF_:InvokeServer("TravelZou")
+                    SetTask("MainTask", "Sea Travel | Teleporting to Third Sea")
+                end 
+            elseif PlayerLevel >= 700 and SeaIndex == 1 then 
+                    SetTask("MainTask", "Sea Travel | Teleporting to Second Sea")
+                    Remotes.CommF_:InvokeServer("TravelDressrosa")
+            end
+        end 
+        
+        if ScriptStorage.Tools["God's Chalice"] and not ScriptStorage.Tools["Mirror Fractal"] then 
+            if (ScriptStorage.Backpack["Conjured Cocoa"] or {Count = 0}).Count < 10 then 
+                SetTask("MainTask", "Material Farming | Conjured Cocoa | Need 10x | Farming...")
+                CombatController.Attack({"Cocoa Warrior", "Chocolate Bar Battler"}) 
+                return 
+            end
+            Remotes.CommF_:InvokeServer("SweetChaliceNpc")
+        end 
+            
+        if ScriptStorage.Tools["Sweet Chalice"] or ( PlayerLevel == MaxLevel and ( ScriptStorage.Backpack.Bones or {Count = 0}).Count >= 500 ) then 
+            
+            
+            SetTask("MainTask", "Fragments Farming | Cake Prince | Dough King")
+            
+            
+            if (ScriptStorage.Tools["Sweet Chalice"]) and ( not SpawnReflect or os.time() - SpawnReflect > 10 ) then 
+                task.spawn(function() 
+                    while not ScriptStorage.Enemies["Dough King"] and task.wait() and ScriptStorage.Tools["Sweet Chalice"] do 
+                        SpawnReflect = os.time() 
+                        Remotes.CommF_:InvokeServer("CakePrinceSpawner")
+                    end 
+                end)
+            end 
+            
+            
+            CombatController.Attack({
+                "Head Baker",
+                "Baking Staff",
+                "Cookie Crafter",
+                "Cake Guard"
+            }) 
+        
+            if PlayerLevel >= 2200 then
+                local IsAvailabe, CurrentClaimQuest2 = GetCurrentClaimQuest() 
+                
+                
+                if IsAvailabe then 
+                    if not string.find(CurrentClaimQuest2, "Cookie") then
+                        QuestManager.AbandonQuest() 
+                    else 
+                        
+                        Remotes.CommF_:InvokeServer("CakePrinceSpawner")
+                        return
+                    end 
+                else 
+                    local NpcPosition1 = (ScriptStorage.NPCs["Cake Quest Giver 1"] and ScriptStorage.NPCs["Cake Quest Giver 1"]:GetModelCFrame()) or CFrame.new(-2022.3, 37.8, -12031.0)
+                    TweenController.Create(NpcPosition1 * CFrame.new(0, 5, 3)) 
+                    if CaculateDistance(NpcPosition1) < 25 then 
+                        task.wait(0.5) 
+                        QuestManager.StartQuest("CakeQuest1", 1)
+                    end
+                    return
+                end 
+            end
+            return 
+        end
+        
+        local hasExpBoost = false
+        pcall(function()
+            local gm = getsenv and getsenv(game.ReplicatedStorage.GuideModule)
+            if gm and gm._G and gm._G.ServerData and gm._G.ServerData.ExpBoost and gm._G.ServerData.ExpBoost > 0 then
+                hasExpBoost = true
+            end
+        end)
+        
+        local bonesCount = (ScriptStorage.Backpack and ScriptStorage.Backpack.Bones and ScriptStorage.Backpack.Bones.Count) or 0
+        local shouldFarmBones = (PlayerLevel >= 2025 and SeaIndex == 3 and not hasExpBoost and bonesCount < 500)
+        
+        if shouldFarmBones then
+            SetTask("MainTask", "Resource Farming | Bones (" .. bonesCount .. "/500)")
+            SetTask("SubTask", "Haunted Castle • Bones: " .. bonesCount .. " / 500")
+
+            local CurrentClaimQuest3 = QuestManager.GetCurrentClaimQuest(true) 
+            
+            if CurrentClaimQuest3 then 
+                local cleanClaim = string.lower(tostring(CurrentClaimQuest3))
+                if not cleanClaim:find("demonic") and not cleanClaim:find("haunted") and not cleanClaim:find("posessed") and not cleanClaim:find("mummy") and not cleanClaim:find("reborn") and not cleanClaim:find("living") then
+                    if cleanClaim:find("deandre") or cleanClaim:find("urban") or cleanClaim:find("diablo") then
+                        SetTask("MainTask", "Elite Hunter | Defeating " .. tostring(CurrentClaimQuest3))
+                        CombatController.Attack(tostring(CurrentClaimQuest3))
+                        return
+                    end
+                    SetTask("MiniTask", "Switching to Haunted Castle Quest...")
+                    QuestManager.AbandonQuest() 
+                    task.wait(0.3)
+                    return
+                else 
+                    SetTask("MiniTask", "Defeating Haunted Castle Mobs for Bones")
+                    CombatController.Attack({
+                        "Reborn Skeleton",
+                        "Living Zombie",
+                        "Demonic Soul",
+                        "Posessed Mummy"
+                    })
+                    return 
+                end
+            else
+                if (os.time() - (LastBonesQuestAttempt or 0)) < 2 then
+                    return
+                end
+                
+                SetTask("MiniTask", "Taking Haunted Castle Quest...")
+                local NpcPosition1 = (ScriptStorage.NPCs["Haunted Castle Quest Giver 2"] and ScriptStorage.NPCs["Haunted Castle Quest Giver 2"]:GetModelCFrame()) or CFrame.new(-9517.1, 171.4, 6078.5)
+                
+                TweenController.Create(NpcPosition1 * CFrame.new(0, 5, 3))
+                if CaculateDistance(NpcPosition1) < 25 then 
+                    LastBonesQuestAttempt = os.time()
+                    task.wait(0.3) 
+                    QuestManager.StartQuest("HauntedQuest2", 1) 
+                    task.wait(0.3)
+                end 
+                return
+            end
+        end 
+        
+        if Level == 1 then 
+            SetTask("MainTask", "Level Farming | Floor " .. Level)
+            SetTask("SubTask", "Target: Sky Bandit")
+            SetTask("MiniTask", "Attacking Sky Bandit")
+            CombatController.Attack("Sky Bandit")
+        elseif Level == 2 then 
+            SetTask("MainTask", "Level Farming | Floor " .. Level)
+            SetTask("SubTask", "Target: God's Guard")
+            SetTask("MiniTask", "Attacking God's Guard")
+            CombatController.Attack("God's Guard")
+        elseif Level == 3 then 
+            SetTask("MainTask", "Level Farming | Floor " .. Level)
+            SetTask("SubTask", "Target: Sky Mobs")
+            SetTask("MiniTask", "Attacking Sky Mobs")
+            CombatController.Attack({"God's Guard", "Shanda", "Royal Soldier", "Royal Squad"})
+        elseif Level == 4 then
+            local MonName, NpcPosition, QuestId, QuestIndex, QuestTitle = QuestManager:GetCurrentQuest() 
+            
+            if not MonName then
+                QuestManager:RefreshQuest()
+                MonName, NpcPosition, QuestId, QuestIndex, QuestTitle = QuestManager:GetCurrentQuest()
+            end
+            
+            if not MonName then
+                SetTask("MainTask", "Level Farming | Loading Quest Data...")
+                return
+            end
+            
+            local myChar = game.Players.LocalPlayer.Character
+            local myHrp = myChar and myChar:FindFirstChild("HumanoidRootPart")
+            local isSubmerged = QuestId and tostring(QuestId):find("Submerged") ~= nil
+            
+            if isSubmerged and myHrp then
+                local inSubmergedIsland = myHrp.Position.Y < -1000
+                if not inSubmergedIsland then
+                    -- Player is on surface: Must check Tyrant of the Skies and travel via Submarine Worker at Tiki Outpost Sub Port 01
+                    local tyrant = workspace:FindFirstChild("Enemies") and workspace.Enemies:FindFirstChild("Tyrant of the Skies")
+                    if tyrant and tyrant:FindFirstChild("Humanoid") and tyrant.Humanoid.Health > 0 then
+                        SetTask("MainTask", "Unlocking Submerged Island | Defeating Tyrant of the Skies")
+                        SetTask("SubTask", "Boss: Tyrant of the Skies")
+                        SetTask("MiniTask", "Attacking Tyrant of the Skies...")
+                        CombatController.Attack("Tyrant of the Skies")
+                        return
+                    end
+
+                    local subPortCF = CFrame.new(-16269.7041, 25.2288494, 1373.65955)
+                    local distToPort = (myHrp.Position - subPortCF.Position).Magnitude
+                    if distToPort > 25 then
+                        SetTask("MainTask", "Traveling to Submerged Island")
+                        SetTask("SubTask", "Tiki Outpost - Sub Port 01")
+                        SetTask("MiniTask", "Flying to Submarine Worker...")
+                        TweenController.Create(subPortCF)
+                        return
+                    else
+                        SetTask("MainTask", "Traveling to Submerged Island")
+                        SetTask("SubTask", "Tiki Outpost - Sub Port 01")
+                        SetTask("MiniTask", "Speaking to Submarine Worker...")
+                        pcall(function()
+                            local net = game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net")
+                            local subRemote = net:FindFirstChild("RF/SubmarineWorkerSpeak") or net:FindFirstChild("SubmarineWorkerSpeak")
+                            if subRemote then
+                                subRemote:InvokeServer("TravelToSubmergedIsland")
+                            else
+                                Remotes.CommF_:InvokeServer("SubmarineWorkerSpeak", "TravelToSubmergedIsland")
+                            end
+                        end)
+                        pcall(function()
+                            Remotes.CommF_:InvokeServer("SubmarineWorker", "TravelToSubmergedIsland")
+                        end)
+                        task.wait(1.5)
+                        return
+                    end
+                end
+            end
+
+            local CurrentClaimQuest1 = QuestManager.GetCurrentClaimQuest()
+            local prefixTask = hasExpBoost and "Level Farming (2x EXP) | " or "Level Farming | "
+            
+            if CurrentClaimQuest1 then 
+                local cleanClaim = string.lower(tostring(CurrentClaimQuest1)):gsub("%W", "")
+                local cleanMon = string.lower(tostring(MonName)):gsub("%W", "")
+                local cleanTitle = string.lower(tostring(QuestTitle or "")):gsub("%W", "")
+                
+                local isMatch = (string.find(cleanClaim, cleanMon, 1, true) ~= nil)
+                             or (string.find(cleanMon, cleanClaim, 1, true) ~= nil)
+                             or (string.find(cleanClaim, cleanTitle, 1, true) ~= nil)
+                             or (string.find(cleanTitle, cleanClaim, 1, true) ~= nil)
+                             or (cleanClaim:gsub("s$", "") == cleanMon:gsub("s$", ""))
+                             or (#cleanClaim >= 4 and #cleanMon >= 4 and cleanClaim:sub(1, 4) == cleanMon:sub(1, 4))
+                
+                if not isMatch then
+                    if cleanClaim:find("deandre", 1, true) or cleanClaim:find("urban", 1, true) or cleanClaim:find("diablo", 1, true) then
+                        SetTask("MainTask", "Elite Hunter | Defeating " .. tostring(CurrentClaimQuest1))
+                        CombatController.Attack(tostring(CurrentClaimQuest1))
+                        return
+                    end
+                    SetTask("SubTask", "Quest: " .. tostring(CurrentClaimQuest1))
+                    SetTask("MiniTask", "Abandoning mismatch quest...")
+                    QuestManager.AbandonQuest() 
+                    task.wait(0.3)
+                    return
+                end 
+                SetTask("MainTask", prefixTask .. MonName)
+                SetTask("SubTask", "Quest: " .. tostring(CurrentClaimQuest1) .. " (" .. tostring(MonName) .. ")")
+            else 
+                if (os.time() - (LastLevelQuestAttempt or 0)) < 2 then
+                    return
+                end
+
+                if not NpcPosition then 
+                    QuestManager:RefreshQuest()
+                    _, NpcPosition = QuestManager:GetCurrentQuest()
+                end 
+                if not NpcPosition then
+                    SetTask("MainTask", prefixTask .. MonName)
+                    SetTask("MiniTask", "Finding NPC for " .. MonName .. "...")
+                    return
+                end
+                
+                SetTask("MainTask", prefixTask .. MonName)
+                SetTask("SubTask", "Quest: " .. tostring(QuestTitle or MonName))
+                SetTask("MiniTask", "Flying to Quest NPC: " .. tostring(MonName))
+                local targetCF = (typeof(NpcPosition) == "CFrame" and (NpcPosition * CFrame.new(0, 5, 3))) or CFrame.new(NpcPosition + Vector3.new(0, 5, 3))
+                TweenController.Create(targetCF) 
+                
+                if CaculateDistance(NpcPosition) > 20 then 
+                    return 
+                end 
+                
+                SetTask("MiniTask", "Accepting Quest [" .. tostring(QuestTitle or MonName) .. "]")
+                LastLevelQuestAttempt = os.time()
+                task.wait(0.3)
+                LevelFarmTTL = 0 
+                QuestManager.StartQuest(QuestId, QuestIndex)
+                task.wait(0.3)
+                return
+            end 
+
+            SetTask("MainTask", prefixTask .. MonName)
+            SetTask("MiniTask", "Attacking " .. tostring(MonName))
+            local AttackTime1 = os.time()
+            CombatController.Attack(MonName)
+            LevelFarmTTL = LevelFarmTTL + os.time() - AttackTime1 
+        end
+    end)
+
+    -- LP Controller 
+
+
+
+    FunctionsHandler.LocalPlayerController:RegisterMethod("EquipTool", function(Tool) 
+        local char = LocalPlayer.Character
+        local hum = char and char:FindFirstChildOfClass("Humanoid")
+        if not hum then return end 
+        
+        local toolStr = tostring(Tool)
+        local curTool = char:FindFirstChildOfClass("Tool")
+        if curTool then
+            if curTool.Name == toolStr or curTool.ToolTip == toolStr then
+                return
+            end
+            if (toolStr == "Melee" or toolStr == "Sword") and (curTool.ToolTip == "Melee" or curTool.ToolTip == "Sword") then
+                if not ScriptStorage.ForceToUseSword or curTool.ToolTip == "Sword" then
+                    return
+                end
+            end
+        end
+
+        local bp = LocalPlayer:FindFirstChild("Backpack")
+        if not bp then return end
+
+        for _, Item in ipairs(bp:GetChildren()) do 
+            if Item:IsA("Tool") and Item.Name ~= "Tool" and (Item.Name == toolStr or Item.ToolTip == toolStr) then 
+                hum:EquipTool(Item)
+                return
+            end 
+        end 
+
+        -- Fallback if requested tool not found: equip any Melee, Sword or Fruit
+        if toolStr == "Melee" or toolStr == "Sword" then
+            for _, Item in ipairs(bp:GetChildren()) do
+                if Item:IsA("Tool") and (Item.ToolTip == "Melee" or Item.ToolTip == "Sword") then
+                    hum:EquipTool(Item)
+                    return
+                end
+            end
+            for _, Item in ipairs(bp:GetChildren()) do
+                if Item:IsA("Tool") and Item.ToolTip == "Blox Fruit" then
+                    hum:EquipTool(Item)
+                    return
+                end
+            end
+            for _, Item in ipairs(bp:GetChildren()) do
+                if Item:IsA("Tool") and Item.ToolTip ~= "Gun" then
+                    hum:EquipTool(Item)
+                    return
+                end
+            end
+        end
+    end)
+
+    FunctionsHandler.LocalPlayerController:RegisterMethod("ToggleAbilities", function(Ability, State) 
+        
+        if Ability == "Buso" then 
+            if LocalPlayer:HasTag("Buso") and not State or State then 
+                Remotes.CommF_:InvokeServer("Buso")
+            end 
+            
+        elseif Ability == "Observation" then
+            
+        end 
+    end)
+
+    FunctionsHandler.LocalPlayerController:RegisterMethod("ConfigurationAbilitiesToggle", function() 
+        FunctionsHandler.LocalPlayerController.Methods.ToggleAbilities:Call("Buso", SCRIPT_CONFIG.BUSO)
+        FunctionsHandler.LocalPlayerController.Methods.ToggleAbilities:Call("Observation", SCRIPT_CONFIG.OBSERVATION)
+    end)
+    -- silenced print
+
+
+    -- Items / Saber 
+
+
+
+
+    FunctionsHandler.Saber:RegisterMethod("Refresh", function() 
+        
+        if not Config.Items.Saber then return end 
+        
+        if not Config.Items.Saber then 
+            return 
+        end 
+        
+        local Result 
+        if ScriptStorage.Backpack.Saber then 
+            return 
+        end 
+        
+        if ScriptStorage.PlayerData.Level < 200 then 
+            return
+        end 
+        
+        
+        local Tasks = Remotes.CommF_:InvokeServer("ProQuestProgress") 
+        for _, Value in Tasks.Plates do
+            if Value == false then
+                Result = 1
+                
+            end
+        end
+        
+        if not Result then 
+            if not Tasks.UsedTorch then
+            Result = 2
+                
+            elseif not Tasks.UsedCup then
+                Result = 3
+                
+            elseif not Tasks.TalkedSon then
+                Result = 4
+                
+            elseif not Tasks.KilledMob then
+                Result = 5
+                
+            elseif not Tasks.UsedRelic then
+                Result = 6
+                
+            elseif
+                not Tasks.KilledShanks
+                and ScriptStorage.Enemies["Saber Expert"]
+            then
+                Result = 7
+                
+            end
+        end 
+        
+        FunctionsHandler.Saber:Set("CurrentProgressLevel", Result)
+        FunctionsHandler.Saber:Set("LastestRefreshSenque", os.time()) 
+        
+        return Result
+        
+    end) 
+
+    FunctionsHandler.Saber:RegisterMethod("GetQuestplates", function() 
+        
+        local CachedData = FunctionsHandler.Saber:Get("QuestplatesCache") 
+        
+        if CachedData then
+            return CachedData 
+            
+        end 
+        
+        
+        
+        local Jungle = Services.Workspace.Map.Jungle 
+        local Result = {}
+        
+        table.foreach(Jungle.QuestPlates:GetChildren(), function(_, Inst) 
+            _ = Inst:FindFirstChild("Button") and table.insert(Result, Inst) 
+            
+        end)
+        
+        FunctionsHandler.Saber:Set("QuestplatesCache", Result)
+        
+        return Result 
+        
+    end)
+
+    FunctionsHandler.Saber:RegisterMethod("Start", function() 
+        local 
+        Progress,
+            LastestRefreshSenque = 
+            FunctionsHandler.Saber:Get("CurrentProgressLevel"),
+        FunctionsHandler.Saber:Get("LastestRefreshSenque") 
+        
+        -- silenced print
+        if not Progress then
+            FunctionsHandler.Saber.Methods.Refresh:Call()
+            return FunctionsHandler.Saber.Methods.Start:Call()
+        
+        elseif Progress == 0 then 
+            
+        elseif os.time() - LastestRefreshSenque > 60 then 
+            FunctionsHandler.Saber.Methods.Refresh:Call()
+            
+            return FunctionsHandler.Saber.Methods.Start:Call()
+        
+        else
+            if Progress == 1 then 
+                local Questplates = FunctionsHandler.Saber.Methods.GetQuestplates:Call()
+                
+                for Index, Questplate in Questplates do  
+                    SetTask("MainTask", "Saber Quest | Quest Plates | Touching " .. Index .. "/5")
+                    while CaculateDistance(Questplate.Button.CFrame) > 20 do 
+                        task.wait() 
+                        TweenController.Create(Questplate.Button.CFrame)
+                    end
+                    task.wait(1)
+                end
+            
+            elseif Progress == 2 then 
+                SetTask("MainTask", "Saber Quest | Torch Puzzle | Using Torch")
+                Remotes.CommF_:InvokeServer("ProQuestProgress", "GetTorch")
+                task.wait(1) 
+                Remotes.CommF_:InvokeServer("ProQuestProgress", "DestroyTorch")
+                
+            elseif Progress == 3 then  
+                SetTask("MainTask", "Saber Quest | Sick Man | Helping with Cup")
+                Remotes.CommF_:InvokeServer("ProQuestProgress", "GetCup")
+                
+                if ScriptStorage.Tools.Cup then 
+                    FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call("Cup") 
+                    task.wait(1)
+                    Remotes.CommF_:InvokeServer( "ProQuestProgress", "FillCup", LocalPlayer.Character.Cup)
+                end
+                
+                Remotes.CommF_:InvokeServer("ProQuestProgress", "SickMan")
+                
+            elseif Progress == 4 then 
+                SetTask("MainTask", "Saber Quest | Rich Son | Getting Information")
+                Remotes.CommF_:InvokeServer("ProQuestProgress", "RichSon")
+                
+                
+            elseif Progress == 5 then 
+                SetTask("MainTask", "Saber Quest | Mob Leader | Defeating Boss")
+                CombatController.Attack("Mob Leader")
+                
+            elseif Progress == 6 then 
+                SetTask("MainTask", "Saber Quest | Relic | Placing at Location")
+                Remotes.CommF_:InvokeServer("ProQuestProgress", "RichSon")
+                Remotes.CommF_:InvokeServer("ProQuestProgress", "PlaceRelic")
+            
+            elseif Progress == 7 then 
+                SetTask("MainTask", "Saber Quest | Saber Expert | Final Battle")
+                CombatController.Attack("Saber Expert")
+                
+            end
+        end
+    end)
+
+    Remotes.RefreshQuestPro.OnClientEvent:Connect(FunctionsHandler.Saber.Methods.Refresh.Callback);
+
+
+    -- Auto Melees
+
+    MeleeLastCursor = 1
+    FirstCall = true
+    CanPurchase = {}
+    BuyDebounce = {} 
+
+    FunctionsHandler.MeleesController:RegisterMethod("Start", function()
+        if not Config.Items.AutoFullyMelees then return end
+        for Cursor, Melee in MeleesTable do
+            if Melee ~= 'SanguineArt' then 
+                
+                
+                if not Config.Items.AutoFullyMelees then
+                    break 
+                end 
+                
+                local Data = MeleePrices[Melee]
+                local CanMeleePurchaseable = CanPurchase[Melee] 
+                if not CanMeleePurchaseable then 
+                    CanPurchase[Melee] = Data.Buy(1)
+                    -- silenced print)
+                end 
+                local CanMeleePurchaseable = CanPurchase[Melee] 
+                
+                
+                if not Data then 
+                    -- silenced print
+                    break 
+                end
+                
+                if Melee == "Dragon Talon" then 
+                    IsFireEssenceGave = (function()
+                        if IsFireEssenceGave ~= nil then
+                            return IsFireEssenceGave
+                        end 
+                        
+                        local PurchaseTestResult = Remotes.CommF_:InvokeServer("BuyDragonTalon", true);
+                        alert("Dragon Talon Purchased", tostring(typeof(PurchaseTestResult) ~= "string"))
+                        return typeof(PurchaseTestResult) ~= "string" and true or false
+                    end)()
+                    
+                    -- silenced print
+                    
+                    if not IsFireEssenceGave then
+                        -- silenced print
+                        break 
+                    end 
+                end 
+                if Melee == "Godhuman" and not GodHumanFlag then 
+                    
+                    if (ScriptStorage.Melees["Dragon Talon"] or 0) > 399 then
+                    
+                        if not ScriptStorage.Melees.Godhuman then 
+                            
+                            Remotes.CommF_:InvokeServer("BuyGodhuman", true)
+                            Remotes.CommF_:InvokeServer("BuyGodhuman")
+                            FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call("Melee")
+                            
+                            if not ScriptStorage.Melees.Godhuman then 
+                                
+                                GodHumanFlag = true
+                                return
+                            end 
+                        end 
+                    end 
+                end
+                
+                if not ScriptStorage.Melees[Melee] or ( ScriptStorage .Melees[Melee] or 0) < Data.NextLevelRequirement then 
+                    
+                    local MeleeId = GetMeleeIdByName(Melee)
+                    local PlayerData = ScriptStorage.PlayerData 
+                    local ValuementPassed = true 
+                    
+                    if not MeleeId then 
+                        
+                        return -- silenced print 
+                    end 
+                    
+                    local MSet = false 
+                    if not CanMeleePurchaseable then 
+                        for Index, Value in Data.Price do 
+                            if PlayerData[Index] < Value and not FirstCall then 
+                                ValuementPassed = false 
+                                if not ScriptStorage.Melees[Melee] and (CurrentTask == "MeleesController" or not CurrentTask) then 
+                                    MSet = true
+                                    SetTask("SubTask", "Farming Until Enough " .. Index .. " ( ".. Value .. " ) For " .. Melee)
+                                end
+                                return
+                            end
+                        end 
+                    end 
+                    
+                    
+                    if not MSet and ScriptStorage.Melees[Melee] and ScriptStorage.Melees[Melee] < Data.NextLevelRequirement then 
+                        if CurrentTask == "MeleesController" or not CurrentTask then
+                            SetTask("SubTask", "Farming Until Enough Mastery For " .. Melee .. " ( " .. ScriptStorage.Melees[Melee] .. " / " .. Data.NextLevelRequirement .. " ).") 
+                        end
+                        if not ScriptStorage.Tools[Melee] then 
+                            if not BuyDebounce[Melee] or os.time() - BuyDebounce[Melee] > 30 then
+                                BuyDebounce[Melee] = os.time()
+                                Data.Buy() 
+                            end
+                        end 
+                        return
+                    end 
+                    
+                    
+                    if not FirstCall then
+                        if ValuementPassed and Data.Requirements() and not ScriptStorage.Tools[Melee] then
+                            if Melee == "Dragon Talon" and not IsFireEssenceGave then 
+                                alert("IsFireEssenceGave", tostring(IsFireEssenceGave))
+                                return SetTask("SubTask", "Waiting until have fire essence for dragon talon.")
+                            end 
+                            
+                            if BuyDebounce[Melee] and os.time() - BuyDebounce[Melee] < 30 then return end
+                            BuyDebounce[Melee] = os.time()
+                            Data.Buy() 
+                            
+                            
+                    
+                            FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call("Melee")
+                            if not ScriptStorage.Tools[Melee] then
+                                
+                                
+                                task.wait()
+                                if not ScriptStorage.Tools[Melee] then 
+                                    if ( Melee == "Death Step" or Melee == "Sharkman Karate" ) and SeaIndex == 1 then
+                                    
+                                        alert("Go Back To Second Sea", "Water Key / Library Key")
+                                        Remotes.CommF_:InvokeServer("TravelDressrosa")
+                                    end 
+                                else 
+                                    MeleeLastCursor = Cursor + 1
+                                    
+                                    return
+                                end 
+                            else 
+                                MeleeLastCursor = Cursor + 1
+                                return
+                            end 
+                        end
+                    end
+                    
+                elseif not FirstCall then 
+                    MeleeLastCursor = Cursor + 1
+                end
+            end 
+        end
+        
+        if FirstCall then 
+            FirstCall = false 
+            return 
+        end 
+        
+        FarmingItem = nil
+        
+        for ItemName, Item in ScriptStorage.Backpack do
+            if Item.Type == "Sword" then 
+                
+                if Item.Name == "Yama" or Item.Name == "Tushita" then 
+                    MasteryRequirement = 350 
+                else 
+                    for _, Value in Item.MasteryRequirements do 
+                    
+                        MasteryRequirement = Value
+                    end
+                end 
+                
+                if MasteryRequirement and Item.Mastery < MasteryRequirement then
+                    FarmingItem = { Item.Name, Item.Mastery, MasteryRequirement }
+                    if Item.Name == "Yama" or Item.Name == "Tushita" then break end 
+                end 
+            end 
+        end 
+        if FarmingItem then 
+            SetTask('SubTask', 'Farming mastery for ' .. FarmingItem[1] .. ' ( ' .. FarmingItem[2] .. ' / ' .. FarmingItem[3] .. ' )')
+            if not ScriptStorage.Tools[FarmingItem[1]] then 
+                Remotes.CommF_:InvokeServer("LoadItem", FarmingItem[1])
+            end 
+            ScriptStorage.ForceToUseSword = FarmingItem
+        end
+    end) 
+
+
+    -- Second Sea 
+
+    FunctionsHandler.SecondSeaPuzzle:RegisterMethod("Refresh", function() 
+        if ScriptStorage.PlayerData.Level < 700 or SeaIndex ~= 1 then return end 
+        if FunctionsHandler.SecondSeaPuzzle:Get("IsCompleted") then return end 
+        
+        local Response = Remotes.CommF_:InvokeServer("DressrosaQuestProgress") 
+        -- silenced print
+        if not Response.TalkedDetective then 
+            Result = 1 
+        elseif not Response.KilledIceBoss then 
+            Result = 2 
+        else 
+            FunctionsHandler.SecondSeaPuzzle:Set("IsCompleted", true) 
+        end 
+        
+        FunctionsHandler.SecondSeaPuzzle:Set("CurrentProgressLevel", Result)
+        FunctionsHandler.SecondSeaPuzzle:Set("LastestRefreshSenque", os.time()) 
+        
+        return Result 
+    end)
+
+    FunctionsHandler.SecondSeaPuzzle:RegisterMethod("Start", function() 
+        local Progress, LastestRefreshSenque = FunctionsHandler.SecondSeaPuzzle:Get("CurrentProgressLevel"), FunctionsHandler.SecondSeaPuzzle:Get("LastestRefreshSenque") 
+        
+        FunctionsHandler.SecondSeaPuzzle:Set("CurrentProgressLevel", nil)
+        if not Progress then
+            FunctionsHandler.SecondSeaPuzzle.Methods.Refresh:Call()
+            return FunctionsHandler.SecondSeaPuzzle.Methods.Start:Call()
+        elseif Progress == 1 then 
+            SetTask("MainTask", "Auto Second Sea - Talk To Detective")
+            TweenController.Create(CFrame.new(4848, 5.65, 743))
+            task.wait(0.5)
+            Remotes.CommF_:InvokeServer("DressrosaQuestProgress", "Detective")
+            task.wait(0.5)
+            Remotes.CommF_:InvokeServer("DressrosaQuestProgress", "UseKey")
+        elseif Progress == 2 then 
+            SetTask("MainTask", "Auto Second Sea - Defeating Ice Admiral")
+            TweenController.Create(CFrame.new(1348, 37, -1325))
+            task.wait(0.5)
+            Remotes.CommF_:InvokeServer("DressrosaQuestProgress", "UseKey")
+            task.wait(0.5)
+            CombatController.Attack("Ice Admiral") 
+            task.wait(1)
+            Remotes.CommF_:InvokeServer("DressrosaQuestProgress", "Detective")
+            task.wait(0.5)
+            Remotes.CommF_:InvokeServer("TravelDressrosa")
+        end 
+    end)
+
+
+    -- Bartilo 
+
+
+    FunctionsHandler.ColosseumPuzzle:RegisterMethod("Refresh", function() 
+        if SeaIndex ~= 2 then return end
+        
+        if (ScriptStorage.PlayerData.Level or 0) < 850 or ScriptStorage.Backpack["Warrior Helmet"] then return end  
+        
+        local Response = Remotes.CommF_:InvokeServer("BartiloQuestProgress")
+        local Result = nil
+        if not Response.KilledBandits then 
+            Result = 1 
+        elseif not Response.KilledSpring then 
+            if ScriptStorage.Enemies.Jeremy or workspace.Enemies:FindFirstChild("Jeremy") then 
+                Result = 2 
+            end 
+        elseif not Response.DidPlates then 
+            Result = 3 
+        end
+        
+        FunctionsHandler.ColosseumPuzzle:Set("CurrentProgressLevel", Result)
+        FunctionsHandler.ColosseumPuzzle:Set("LastestRefreshSenque", os.time()) 
+        return Result 
+    end) 
+
+    FunctionsHandler.ColosseumPuzzle:RegisterMethod("Start", function() 
+        local Progress, LastestRefreshSenque = FunctionsHandler.ColosseumPuzzle:Get("CurrentProgressLevel"), FunctionsHandler.ColosseumPuzzle:Get("LastestRefreshSenque") 
+        FunctionsHandler.ColosseumPuzzle:Set("CurrentProgressLevel", nil)
+        if not Progress then
+            FunctionsHandler.ColosseumPuzzle.Methods.Refresh:Call()
+            return FunctionsHandler.ColosseumPuzzle.Methods.Start:Call()
+        elseif Progress == 1 then 
+            SetTask("MainTask", "Auto Bartilo Quest - Defeating 50x Swan Pirate")
+            local CurrentQuest, RawText = QuestManager:GetCurrentClaimQuest() 
+            
+            if CurrentQuest then 
+                if not string.find(RawText or "", "50") and not string.find(CurrentQuest or "", "Swan") then
+                    QuestManager.AbandonQuest()
+                else 
+                    CombatController.Attack("Swan Pirate")
+                end
+            else 
+                TweenController.Create(CFrame.new(-461.53, 72.35, 300.31))
+                task.wait(0.5)
+                Remotes.CommF_:InvokeServer("StartQuest", "BartiloQuest", 1)
+            end 
+            
+            
+        elseif Progress == 2 then 
+            SetTask("MainTask", "Auto Bartilo Quest - Defeating Jeremy")
+            CombatController.Attack("Jeremy")
+        elseif Progress == 3 then 
+            SetTask("MainTask", "Auto Bartilo Quest - Doing Puzzle")
+            if CaculateDistance(CFrame.new(
+            -1837.46155, 44.2921753, 1656.1987, 
+            0.999881566, -1.03885048e-22, -0.0153914848,
+            1.07805858e-22, 1, 2.53909284e-22,
+            0.0153914848, -2.55538502e-22, 0.999881566
+            )) > 10 then
+        alert("tween to")
+            TweenController.Create(
+                CFrame.new(
+                    -1837.46155, 44.2921753, 1656.1987, 
+                    0.999881566, -1.03885048e-22, -0.0153914848,
+                    1.07805858e-22, 1, 2.53909284e-22,
+                    0.0153914848, -2.55538502e-22, 0.999881566
+                )
+            )            
+        else
+            LocalPlayer = game.Players.LocalPlayer
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1836, 11, 1714)
+            alert("1")
+            task.wait(.5)
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1850.49329, 13.1789551, 1750.89685)
+            alert("2")
+            task.wait(1)
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1858.87305, 19.3777466, 1712.01807)
+            alert("3")
+            task.wait(1)
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1803.94324, 16.5789185, 1750.89685)
+            task.wait(1)
+            alert("4")
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1858.55835, 16.8604317, 1724.79541)
+            task.wait(1)
+            alert("5")
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1869.54224, 15.987854, 1681.00659)
+            task.wait(1)
+            alert("6")
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1800.0979, 16.4978027, 1684.52368)
+            task.wait(1)
+            alert("7")
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1819.26343, 14.795166, 1717.90625)
+            task.wait(1)
+            alert("8")
+            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1813.51843, 14.8604736, 1724.79541)
+        end
+        end
+    end) 
+
+
+    -- Race v2 
+
+    FunctionsHandler.EvoRace:RegisterMethod("Refresh", function() 
+        
+        if not Config.Items.RaceV2 then return end 
+        if SeaIndex ~= 2 then return end 
+        if getsenv(game.ReplicatedStorage.GuideModule)._G.ServerData.ExpBoost ~= 0 or ScriptStorage.PlayerData.Level < 900 or ScriptStorage.PlayerData.Beli < 1000000 or ScriptStorage.PlayerData.RaceLevel ~= 1 then return end 
+        return true 
+    end) 
+
+    FunctionsHandler.EvoRace:RegisterMethod("Start", function() 
+        Remotes.CommF_:InvokeServer("Alchemist", "1")
+        Remotes.CommF_:InvokeServer("Alchemist", "2")
+        
+        for i = 1,2,1 do 
+            local Check1 = ScriptStorage.Tools["Flower " .. i]
+            local Check2 = Services.Workspace:FindFirstChild("Flower" .. i) 
+            
+            
+            if not Check1 then
+            
+                if Check2 and Check2.Transparency == 0 then 
+                
+                    SetTask("MainTask", "Auto Race V2 - Collecting Flower " .. i)
+                    while not ScriptStorage.Tools["Flower " .. i] do 
+                        task.wait() 
+                        TweenController.Create(Check2.CFrame + Vector3.new(0, math.random(-1,2), 0)) 
+                    end
+                end
+            end 
+        end 
+        
+        if not ScriptStorage.Tools["Flower 3"] then 
+            SetTask("MainTask", "Auto Race V2 - Collecting Flower " .. 3)
+            CombatController.Attack("Swan Pirate")
+            
+        else 
+            
+            SetTask("MainTask", "Auto Race V2 - Idling")
+            if LocalPlayer.Character.HumanoidRootPart.CFrame.Y < 50000 then 
+                TweenController.Create(LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, 50, 0)) 
+            end 
+            
+            Remotes.CommF_:InvokeServer("Alchemist", "3")
+            RefreshRace()
+        end
+    end) 
+
+    -- Race V3 (Arowe / Wenlocktoad)
+    FunctionsHandler.Wenlocktoad:RegisterMethod("Refresh", function()
+        if SeaIndex ~= 2 then return end
+        if (ScriptStorage.PlayerData.Level or 0) < 1000 then return end
+        if (ScriptStorage.PlayerData.RaceLevel or 1) ~= 2 then return end
+        local isAlreadyV3 = (Remotes.CommF_:InvokeServer("Wenlocktoad", "1") == -2)
+        if isAlreadyV3 then return end
+        return true
+    end)
+
+    FunctionsHandler.Wenlocktoad:RegisterMethod("Start", function()
+        local arowePos = Vector3.new(-1988.88, 124.84, -70.87)
+        local aroweCF = CFrame.new(arowePos)
+        
+        local function GetPhysicalFruit()
+            local function isFruitTool(t)
+                if not t or not t:IsA("Tool") then return false end
+                local tip = t.ToolTip or ""
+                local name = t.Name
+                if tip == "Sword" or tip == "Melee" or tip == "Gun" or name == "Tool" or name == "Energy Core" or name:find("Key") or name:find("Flower") then
+                    return false
+                end
+                return tip == "Blox Fruit" or name:find("-") or name:lower():find("fruit") or t:FindFirstChild("EatRemote") or t:FindFirstChild("Handle")
+            end
+            if LocalPlayer.Backpack then
+                for _, tool in ipairs(LocalPlayer.Backpack:GetChildren()) do
+                    if isFruitTool(tool) then return tool end
+                end
+            end
+            if LocalPlayer.Character then
+                for _, tool in ipairs(LocalPlayer.Character:GetChildren()) do
+                    if isFruitTool(tool) then return tool end
+                end
+            end
+            return nil
+        end
+
+        local fruitTool = GetPhysicalFruit()
+        if not fruitTool then
+            SetTask("MainTask", "Race V3 - Unstoring Fruit from Storage")
+            
+            -- Check stored fruits in backpack inventory first
+            if ScriptStorage.Backpack then
+                for fKey, fData in pairs(ScriptStorage.Backpack) do
+                    if fData and fData.Type == "Blox Fruit" and fData.Count and fData.Count > 0 then
+                        local rawName = fData.Name or fKey
+                        table.insert(ScriptStorage.IgnoreStoreFruits, rawName)
+                        pcall(function() Remotes.CommF_:InvokeServer("LoadFruit", rawName) end)
+                        task.wait(0.2)
+                        fruitTool = GetPhysicalFruit()
+                        if fruitTool then break end
+                    end
+                end
+            end
+
+            -- Fallback: iterate standard low-tier fruits
+            if not fruitTool then
+                local fruitNames = {
+                    "Rocket-Rocket", "Rocket", "Spin-Spin", "Spin", "Blade-Blade", "Blade", "Chop-Chop", "Chop",
+                    "Spring-Spring", "Spring", "Bomb-Bomb", "Bomb", "Smoke-Smoke", "Smoke", "Spike-Spike", "Spike",
+                    "Flame-Flame", "Flame", "Falcon-Falcon", "Falcon", "Ice-Ice", "Ice", "Sand-Sand", "Sand"
+                }
+                for _, fName in ipairs(fruitNames) do
+                    table.insert(ScriptStorage.IgnoreStoreFruits, fName)
+                    pcall(function() Remotes.CommF_:InvokeServer("LoadFruit", fName) end)
+                    task.wait(0.05)
+                    fruitTool = GetPhysicalFruit()
+                    if fruitTool then break end
+                end
+            end
+
+            if not fruitTool and (ScriptStorage.PlayerData.Beli or 0) >= 2400000 then
+                SetTask("MainTask", "Race V3 - Rolling Fruit from Gacha")
+                Remotes.CommF_:InvokeServer("Cousin", "Buy")
+                task.wait(1)
+                fruitTool = GetPhysicalFruit()
+            end
+        end
+
+        if (ScriptStorage.PlayerData.Beli or 0) < 2000000 then
+            SetTask("MainTask", "Race V3 - Farming Beli ($" .. tostring(ScriptStorage.PlayerData.Beli or 0) .. "/$2,000,000)")
+            CombatController.Attack("Swan Pirate")
+            return
+        end
+
+        if not fruitTool then
+            SetTask("MainTask", "Race V3 - Need 1 Fruit (Farming Beli for Gacha)")
+            CombatController.Attack("Swan Pirate")
+            return
+        end
+
+        SetTask("MainTask", "Race V3 - Submitting Fruit to Arowe")
+        if fruitTool and LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+            pcall(function() LocalPlayer.Character.Humanoid:EquipTool(fruitTool) end)
+        end
+
+        TweenController.Create(aroweCF * CFrame.new(0, 0, 4))
+        task.wait(0.5)
+
+        fruitTool = GetPhysicalFruit()
+        if fruitTool and LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and fruitTool.Parent ~= LocalPlayer.Character then
+            pcall(function() LocalPlayer.Character.Humanoid:EquipTool(fruitTool) end)
+        end
+
+        Remotes.CommF_:InvokeServer("Wenlocktoad", "1")
+        task.wait(0.2)
+        Remotes.CommF_:InvokeServer("Wenlocktoad", "2")
+        task.wait(0.2)
+        Remotes.CommF_:InvokeServer("Wenlocktoad", "3")
+        task.wait(0.2)
+        Remotes.CommF_:InvokeServer("Wenlocktoad", "2")
+        task.wait(0.5)
+        RefreshRace()
+    end)
+
+    -- BossesTask 
+
+    FunctionsHandler.BossesTask:RegisterMethod("Refresh", function() 
+        local curClaim = QuestManager.GetCurrentClaimQuest and QuestManager.GetCurrentClaimQuest()
+        if curClaim then
+            for _, eliteName in ipairs({"Deandre", "Urban", "Diablo"}) do
+                if tostring(curClaim):lower():find(eliteName:lower()) then
+                    local Result = ScriptStorage.Enemies[eliteName]
+                    if Result and Result:FindFirstChild("Humanoid") and Result.Humanoid.Health > 0 then 
+                        return Result
+                    end
+                    return eliteName
+                end
+            end
+        end
+
+        local Boss
+        for _, BossName in ipairs(BossesOrder or {}) do
+            local LevelReq = BossesOrderLevel[BossName] or 0
+            if ScriptStorage.PlayerData.Level >= LevelReq then
+                local Result = ScriptStorage.Enemies[BossName] 
+                if Result and Result:FindFirstChild("Humanoid") and Result.Humanoid.Health > 0 then 
+                    Boss = Result 
+                    break
+                end 
+            end 
+        end
+        
+        if Boss then
+            local bName = tostring(typeof(Boss) == "Instance" and Boss.Name or Boss)
+            if BossesOrderWL[bName] or ScriptStorage.PlayerData.Level == MaxLevel then
+                return Boss
+            end
+            local bHrp = typeof(Boss) == "Instance" and Boss:FindFirstChild("HumanoidRootPart")
+            if bHrp and CaculateDistance(bHrp.CFrame) < (SeaIndex == 2 and 3000 or 5000) then
+                return Boss
+            end
+        end
+    end) 
+
+    FunctionsHandler.BossesTask:RegisterMethod("Start", function(Boss) 
+        if Boss then 
+            local bossName = (typeof(Boss) == "Instance" and Boss.Name) or tostring(Boss)
+            SetTask("MainTask", "Elite Hunter | Defeating " .. bossName)
+            SetTask("SubTask", "Target: " .. bossName)
+            CombatController.Attack(bossName, nil, nil, function() SpecialItems = nil end)
+            SpecialItems = nil
+        end 
+    end) 
+
+
+    FunctionsHandler.SpecialBossesTask:RegisterMethod("Refresh", function() 
+    local Boss2
+    
+        for BossName, LevelReq in SpecialBossesOrder do
+            if ScriptStorage.PlayerData.Level >= LevelReq then
+                local Result = ScriptStorage.Enemies[BossName] 
+                if Result and Result:FindFirstChild("Humanoid") and Result.Humanoid.Health > 0 then 
+                
+                    Boss2 = Result 
+                end 
+            end 
+        end 
+        return Boss2
+    end) 
+
+    FunctionsHandler.SpecialBossesTask:RegisterMethod("Start", function(Boss) 
+        
+        if FunctionsHandler.RaidController.Methods.GetCurrentRaidIsland:Call() then 
+            pcall(function() 
+                LocalPlayer.Character.Humanoid.Health = 0
+            end) 
+        end 
+        
+        if Boss then 
+            
+            SetTask("MainTask", "Auto Farm Boss - Defeating " .. Boss.Name)
+            CombatController.Attack(tostring(Boss))
+        end 
+    end) 
+
+    -- RaidController
+
+    FunctionsHandler.RaidController:RegisterMethod("RefreshRaidType", function() 
+        FunctionsHandler.RaidController:Set("CurrentChip", "Flame")
+    end)
+
+    local function IsProtectedFruit(fruitName)
+        if not fruitName or fruitName == "" then return false end
+        local rawLower = string.lower(tostring(fruitName))
+        local cleanLower = rawLower:gsub("fruit", ""):gsub("%s+", ""):gsub("%-.*", "")
+        if cleanLower == "" then return false end
+
+        -- 1. Check current eaten / equipped Devil Fruit
+        local currentEaten = (ScriptStorage and ScriptStorage.PlayerData and ScriptStorage.PlayerData.DevilFruit) 
+            or (LocalPlayer:FindFirstChild("Data") and LocalPlayer.Data:FindFirstChild("DevilFruit") and LocalPlayer.Data.DevilFruit.Value) or ""
+        if currentEaten ~= "" and currentEaten ~= "None" then
+            local cleanEaten = string.lower(tostring(currentEaten)):gsub("fruit", ""):gsub("%s+", ""):gsub("%-.*", "")
+            if cleanEaten ~= "" and cleanEaten ~= "none" then
+                if cleanLower == cleanEaten or string.find(rawLower, cleanEaten, 1, true) or string.find(string.lower(tostring(currentEaten)), cleanLower, 1, true) then
+                    return true
+                end
+            end
+        end
+
+        -- 2. Check Config.Fruit.Fruit protected sniper list
+        if Config and Config.Fruit and Config.Fruit.Fruit then
+            for _, protected in ipairs(Config.Fruit.Fruit) do
+                local cleanProt = string.lower(tostring(protected)):gsub("fruit", ""):gsub("%s+", ""):gsub("%-.*", "")
+                if cleanProt ~= "" then
+                    if cleanLower == cleanProt or string.find(rawLower, cleanProt, 1, true) or string.find(string.lower(tostring(protected)), cleanLower, 1, true) then
+                        return true
+                    end
+                end
+            end
+        end
+
+        return false
+    end
+
+    local function GetPhysicalRaidFruit()
+        local function isPhysicalFruitTool(t)
+            if not t or not t:IsA("Tool") then return false end
+            local tName = t.Name
+            if tName == "Special Microchip" or tName == "Tool" or tName == "Energy Core" or tName:find("Slingshot") or tName:find("Slingshot") then
+                return false
+            end
+            if t.ToolTip == "Sword" or t.ToolTip == "Melee" or t.ToolTip == "Gun" then
+                return false
+            end
+            if IsProtectedFruit(tName) then
+                return false
+            end
+
+            -- Physical fruit tool has EatRemote, or has ToolTip == "Blox Fruit", or has OriginalName attribute, or name ends with "Fruit"
+            local hasEat = t:FindFirstChild("EatRemote") ~= nil
+            local isFruitTip = t.ToolTip == "Blox Fruit"
+            local hasOrig = t:GetAttribute("OriginalName") ~= nil
+            local nameEndsFruit = string.sub(tName, -5) == "Fruit" or tName:find(" Fruit") ~= nil
+
+            if hasEat or isFruitTip or hasOrig or nameEndsFruit then
+                local lower = tName:lower()
+                if lower:find("kitsune") or lower:find("dragon") or lower:find("leopard") or lower:find("dough") or lower:find("trex") or lower:find("t-rex") or lower:find("mammoth") or lower:find("spirit") or lower:find("venom") or lower:find("shadow") or lower:find("control") or lower:find("buddha") or lower:find("portal") or lower:find("sound") or lower:find("rumble") or lower:find("blizzard") or lower:find("pain") or lower:find("phoenix") or lower:find("spider") or lower:find("love") or lower:find("quake") or lower:find("gravity") or lower:find("gas") or lower:find("yeti") or lower:find("creation") then
+                    return false
+                end
+                return true
+            end
+            return false
+        end
+
+        if LocalPlayer.Character then
+            for _, tool in ipairs(LocalPlayer.Character:GetChildren()) do
+                if isPhysicalFruitTool(tool) then return tool end
+            end
+        end
+        if LocalPlayer.Backpack then
+            for _, tool in ipairs(LocalPlayer.Backpack:GetChildren()) do
+                if isPhysicalFruitTool(tool) then return tool end
+            end
+        end
+        return nil
+    end
+
+    local function GetStoredFruitUnder1M()
+        local ok, IRS = pcall(function() return require(game:GetService("ReplicatedStorage").ItemReplicationService) end)
+        local ok2, ItemConfig = pcall(function() return require(game:GetService("ReplicatedStorage").ItemConfig) end)
+        local ok3, KEYS = pcall(function() return require(game:GetService("ReplicatedStorage").ItemReplicationService.KEYS) end)
+
+        if ok and ok2 and ok3 and IRS and ItemConfig and KEYS then
+            local candidates = {}
+            for _, item in pairs(IRS:GetItems(KEYS.QUANTITY)) do
+                local okMatch, data = pcall(function() return ItemConfig.match(item.ItemId):unwrap() end)
+                if okMatch and data and data.Index and data.Index.IdType == "PhysicalMoveset" and item.Value and item.Value > 0 then
+                    local key = data.Index.StorageKey or ""
+                    local price = (data.Quality and data.Quality.MoneyPrice) or 0
+                    local dName = (data.Display and data.Display.Name) or key
+                    if not IsProtectedFruit(key) and not IsProtectedFruit(dName) then
+                        if price > 0 and price < 1000000 then
+                            table.insert(candidates, {
+                                StorageKey = key,
+                                Price = price,
+                                Name = dName
+                            })
+                        end
+                    end
+                end
+            end
+            if #candidates > 0 then
+                table.sort(candidates, function(a, b) return a.Price < b.Price end)
+                return candidates[1]
+            end
+        end
+
+        -- Fallback to ScriptStorage.Backpack
+        if ScriptStorage.Backpack then
+            local candidates = {}
+            for fKey, fData in pairs(ScriptStorage.Backpack) do
+                if fData and (fData.Type == "Blox Fruit" or fKey:find("-")) then
+                    local fName = fData.Name or fKey
+                    local price = fData.Value or 0
+                    if not IsProtectedFruit(fName) and (fData.Count or 1) > 0 and price > 0 and price < 1000000 then
+                        table.insert(candidates, {
+                            StorageKey = fName,
+                            Price = price,
+                            Name = fName
+                        })
+                    end
+                end
+            end
+            if #candidates > 0 then
+                table.sort(candidates, function(a, b) return a.Price < b.Price end)
+                return candidates[1]
+            end
+        end
+
+        return nil
+    end
+
+    FunctionsHandler.RaidController:RegisterMethod("GetRaidableFruit", function()
+        local phys = GetPhysicalRaidFruit()
+        if phys then return { Name = phys.Name, StorageKey = phys.Name, Price = 5000 } end
+        return GetStoredFruitUnder1M()
+    end)
+
+    FunctionsHandler.RaidController:RegisterMethod("GetCurrentRaidIsland", function() 
+        local myRoot = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if not myRoot then return nil end
+        
+        local IslandsList = {{}, {}, {}, {}, {}} 
+        local locs = workspace:FindFirstChild("_WorldOrigin") and workspace._WorldOrigin:FindFirstChild("Locations")
+        if not locs then return nil end
+        
+        for _, Island in ipairs(locs:GetChildren()) do 
+            if string.find(Island.Name, "Island ") and (Island.Position - Vector3.new(0,0,0)).Magnitude > 7000 then 
+                local IslandIndex = tonumber(string.gsub(Island.Name, "Island ", ""))
+                if IslandIndex and IslandsList[IslandIndex] then
+                    table.insert(IslandsList[IslandIndex], Island)
+                end
+            end 
+        end
+        
+        for Index = 5, 1, -1 do 
+            for _, Island in ipairs(IslandsList[Index]) do 
+                if (Island.Position - myRoot.Position).Magnitude < 2000 then 
+                    return Island
+                end 
+            end 
+        end 
+        return nil
+    end)
+
+    function CheckSpecialMicrochip() 
+        if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Special Microchip") then
+            return LocalPlayer.Character["Special Microchip"]
+        end
+        if LocalPlayer.Backpack and LocalPlayer.Backpack:FindFirstChild("Special Microchip") then
+            return LocalPlayer.Backpack["Special Microchip"]
+        end
+        return nil
+    end 
+
+    local function GetRaidPodPos()
+        if SeaIndex == 2 then
+            return CFrame.new(-6520.12, 317.19, -4654.33)
+        elseif SeaIndex == 3 then
+            return CFrame.new(-5045, 314, -3181)
+        end
+        return nil
+    end
+
+    local function PressRaidStartButton()
+        pcall(function()
+            local btn = nil
+            if SeaIndex == 2 then
+                local cIsland = (workspace:FindFirstChild("Map") and workspace.Map:FindFirstChild("CircleIsland")) or workspace:FindFirstChild("CircleIsland")
+                btn = cIsland and cIsland:FindFirstChild("RaidSummon2") and cIsland.RaidSummon2:FindFirstChild("Button") and cIsland.RaidSummon2.Button:FindFirstChild("Main")
+            elseif SeaIndex == 3 then
+                local bCastle = (workspace:FindFirstChild("Map") and workspace.Map:FindFirstChild("Boat Castle")) or workspace:FindFirstChild("Boat Castle")
+                btn = bCastle and bCastle:FindFirstChild("RaidSummon2") and bCastle.RaidSummon2:FindFirstChild("Button") and bCastle.RaidSummon2.Button:FindFirstChild("Main")
+            end
+
+            if not btn then
+                for _, obj in ipairs(workspace:GetDescendants()) do
+                    if obj.Name == "RaidSummon2" or obj.Name == "RaidSummon" then
+                        local b = obj:FindFirstChild("Button") and obj.Button:FindFirstChild("Main")
+                        if b then
+                            btn = b
+                            break
+                        end
+                    end
+                end
+            end
+
+            if btn then
+                if btn:FindFirstChild("ClickDetector") and fireclickdetector then
+                    fireclickdetector(btn.ClickDetector)
+                elseif btn:FindFirstChild("ProximityPrompt") and fireproximityprompt then
+                    fireproximityprompt(btn.ProximityPrompt)
+                end
+            end
+        end)
+    end
+
+    FunctionsHandler.RaidController:RegisterMethod("Refresh", function() 
+        local Level = ScriptStorage.PlayerData.Level or 0
+        if Level < 1100 or SeaIndex == 1 then return false end
+        
+        -- 1. If currently inside a Raid island, ALWAYS run RaidController!
+        local inRaidIsland = FunctionsHandler.RaidController.Methods.GetCurrentRaidIsland:Call()
+        if inRaidIsland then 
+            return { InRaid = true, Island = inRaidIsland }
+        end
+        
+        -- 2. If holding Special Microchip, run RaidController to enter pod!
+        local hasChip = CheckSpecialMicrochip()
+        if hasChip then 
+            return { HasChip = true, Chip = hasChip }
+        end
+        
+        -- 3. Check fragments & AutoRaid setting
+        if Config and Config.Items and Config.Items.AutoRaid == false then return false end
+        
+        local frags = (ScriptStorage.PlayerData and ScriptStorage.PlayerData.Fragments) or 0
+        local targetFrags = (Config and Config.Items and Config.Items.TargetFragments) or 5000
+        if frags >= targetFrags and not (Config and Config.Items and Config.Items.ForceRaid) then
+            return false
+        end
+        
+        -- 4. Check if player has physical fruit or stored fruit < 1M to exchange
+        local hasPhysicalFruit = GetPhysicalRaidFruit()
+        local storedFruit = GetStoredFruitUnder1M()
+        
+        if hasPhysicalFruit or storedFruit then
+            return { NeedBuy = true, Stored = storedFruit, Physical = hasPhysicalFruit }
+        end
+        
+        return false
+    end)
+
+    FunctionsHandler.RaidController:RegisterMethod("Start", function(RaidData)
+        FunctionsHandler.RaidController:Set("CurrentChip", "Flame")
+        local chipName = "Flame"
+        local CurrentIsland = FunctionsHandler.RaidController.Methods.GetCurrentRaidIsland:Call() 
+        local myRoot = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if not myRoot then return end
+
+        -- 1. INSIDE RAID ISLANDS
+        if CurrentIsland then 
+            SetTask("MainTask", "Auto Raid - Island " .. tostring(CurrentIsland.Name) .. " / 5")
+            local raidMobs = {}
+            local enemiesFolder = workspace:FindFirstChild("Enemies")
+            if enemiesFolder then
+                for _, mob in ipairs(enemiesFolder:GetChildren()) do
+                    local mHum = mob:FindFirstChildOfClass("Humanoid")
+                    local mHrp = mob:FindFirstChild("HumanoidRootPart")
+                    if mHum and mHrp and mHum.Health > 0 and (mHrp.Position - CurrentIsland.Position).Magnitude < 1200 then
+                        table.insert(raidMobs, mob)
+                    end
+                end
+            end
+
+            if #raidMobs > 0 then
+                table.sort(raidMobs, function(a, b)
+                    local aHrp = a:FindFirstChild("HumanoidRootPart")
+                    local bHrp = b:FindFirstChild("HumanoidRootPart")
+                    if aHrp and bHrp then
+                        return (aHrp.Position - myRoot.Position).Magnitude < (bHrp.Position - myRoot.Position).Magnitude
+                    end
+                    return false
+                end)
+                SetTask("SubTask", "Defeating " .. tostring(raidMobs[1].Name) .. " (Remaining: " .. #raidMobs .. ")")
+                CombatController.Attack(raidMobs[1].Name)
+            else
+                SetTask("SubTask", "Island Cleared - Flying to Center")
+                TweenController.Create(CurrentIsland.CFrame * CFrame.new(0, 35, 0))
+            end
+            return
+        end
+
+        -- 2. OUTSIDE RAID - CHECK / BUY CHIP
+        local microchip = CheckSpecialMicrochip()
+        if not microchip then
+            local physFruit = GetPhysicalRaidFruit()
+
+            if not physFruit then
+                -- Wait for Character to be alive before un-storing fruit
+                local char = LocalPlayer.Character
+                if not char or not char:FindFirstChild("HumanoidRootPart") or not char:FindFirstChildOfClass("Humanoid") or char.Humanoid.Health <= 0 then
+                    return
+                end
+
+                -- Step A: Unstore best fruit under 1M from ItemReplicationService
+                local bestFruit = GetStoredFruitUnder1M()
+                if bestFruit then
+                    SetTask("MainTask", "Auto Raid - Unstoring " .. tostring(bestFruit.Name) .. " ($" .. tostring(bestFruit.Price) .. ")")
+                    table.insert(ScriptStorage.IgnoreStoreFruits, bestFruit.StorageKey)
+                    table.insert(ScriptStorage.IgnoreStoreFruits, bestFruit.Name)
+                    table.insert(ScriptStorage.IgnoreStoreFruits, bestFruit.Name .. " Fruit")
+                    table.insert(ScriptStorage.IgnoreStoreFruits, bestFruit.StorageKey:gsub("%-.*", ""))
+                    
+                    pcall(function() Remotes.CommF_:InvokeServer("LoadFruit", bestFruit.StorageKey) end)
+                    task.wait(0.4)
+                    physFruit = GetPhysicalRaidFruit()
+                end
+
+                -- Step B: Fallback search if needed
+                if not physFruit then
+                    local cheapKeys = {
+                        "Rocket-Rocket", "Spin-Spin", "Blade-Blade", "Chop-Chop",
+                        "Spring-Spring", "Bomb-Bomb", "Smoke-Smoke", "Spike-Spike",
+                        "Flame-Flame", "Falcon-Falcon", "Ice-Ice", "Sand-Sand",
+                        "Dark-Dark", "Diamond-Diamond", "Light-Light", "Rubber-Rubber",
+                        "Barrier-Barrier", "Ghost-Ghost", "Magma-Magma"
+                    }
+                    for _, sKey in ipairs(cheapKeys) do
+                        if not IsProtectedFruit(sKey) then
+                            table.insert(ScriptStorage.IgnoreStoreFruits, sKey)
+                            table.insert(ScriptStorage.IgnoreStoreFruits, sKey:gsub("%-.*", ""))
+                            table.insert(ScriptStorage.IgnoreStoreFruits, sKey:gsub("%-.*", "") .. " Fruit")
+                            pcall(function() Remotes.CommF_:InvokeServer("LoadFruit", sKey) end)
+                            task.wait(0.15)
+                            physFruit = GetPhysicalRaidFruit()
+                            if physFruit then break end
+                        end
+                    end
+                end
+            end
+
+            -- Step C: Equip fruit to hand so RaidsNpc detects it
+            if physFruit and LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") then
+                pcall(function() LocalPlayer.Character.Humanoid:EquipTool(physFruit) end)
+                task.wait(0.3)
+            end
+
+            -- Step D: Purchase Flame Chip from RaidsNpc
+            SetTask("MainTask", "Auto Raid - Buying Flame Chip")
+            pcall(function()
+                Remotes.CommF_:InvokeServer("RaidsNpc", "Select", "Flame")
+            end)
+            task.wait(0.5)
+            microchip = CheckSpecialMicrochip()
+        end
+
+        -- 3. ENTER RAID POD & START (ONLY IF WE ACTUALLY HAVE MICROCHIP)
+        if microchip then
+            local podCF = GetRaidPodPos()
+            if podCF then
+                if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and microchip.Parent ~= LocalPlayer.Character then
+                    pcall(function() LocalPlayer.Character.Humanoid:EquipTool(microchip) end)
+                end
+
+                local distToPod = (podCF.Position - myRoot.Position).Magnitude
+                if distToPod > 15 then
+                    SetTask("MainTask", "Auto Raid - Entering Raid Pod (" .. math.floor(distToPod) .. "m)")
+                    TweenController.Create(podCF)
+                else
+                    SetTask("MainTask", "Auto Raid - Starting " .. chipName .. " Raid")
+                    if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and microchip.Parent ~= LocalPlayer.Character then
+                        pcall(function() LocalPlayer.Character.Humanoid:EquipTool(microchip) end)
+                    end
+                    PressRaidStartButton()
+                    task.wait(0.5)
+                end
+            end
+        end
+    end)
+
+    -- CollectDrops
+
+    FunctionsHandler.CollectDrops:RegisterMethod('Refresh', function() 
+        
+        local FruitNames = {} 
+        
+        for i in ScriptStorage.Backpack do 
+            FruitNames[FruitIdToName(i)] = i
+        end
+        
+        for _, Fruit in workspace:GetChildren() do 
+            if string.find(Fruit.Name, "Fruit") and not Players:FindFirstChild(Fruit.Name) and Fruit:FindFirstChild("Handle") and not FruitNames[tostring(Fruit)] and not ScriptStorage.Backpack[FruitNameToId(tostring(Fruit))] then 
+                
+                FunctionsHandler.CollectDrops:Set("CurrentProgressLevel", Fruit) 
+                return Fruit
+            end 
+        end
+        
+    end)
+
+    FunctionsHandler.CollectDrops:RegisterMethod('Start', function() 
+        local Fruit = FunctionsHandler.CollectDrops:Get("CurrentProgressLevel")
+        FunctionsHandler.CollectDrops:Set("CurrentProgressLevel", nil) 
+        if Fruit then 
+            SetTask("MainTask", "Auto Collect Drop Items - " .. tostring(Fruit)) 
+            TweenController.Create(Fruit:GetModelCFrame()) 
+        end 
+    end)
+
+    FunctionsHandler.UtillyItemsActivitation:RegisterMethod("Refresh", function()
+        if os.time() - StartTime < 20 then return end 
+        if not SpecialItems then 
+            SpecialItems = {} 
+            local RemoveList = {} 
+            IceAdmiralPassed = true 
+            
+            if not ScriptStorage.Backpack.Rengoku then 
+                table.insert(SpecialItems, "Hidden Key") 
+                IceAdmiralPassed = false
+            end 
+            if SeaIndex == 2 and Services.Workspace.Map.IceCastle.Hall.LibraryDoor:FindFirstChild("PhoeyuDoor") then
+                table.insert(SpecialItems, "Library Key") 
+                IceAdmiralPassed = false 
+            end
+
+            if IceAdmiralPassed then 
+                table.insert(RemoveList, "Awakened Ice Admiral") 
+            end 
+            local Response = not ScriptStorage.Melees["Sharkman Karate"] and Remotes.CommF_:InvokeServer("BuySharkmanKarate", true); 
+            SharkmanPassed = typeof(Response) == "string"
+            if typeof(Response) == "string" then
+                table.insert(SpecialItems, "Water Key") 
+            else 
+                TidePassed = true
+                table.insert(RemoveList, "Tide Keeper")
+            end 
+            if ScriptStorage.Backpack.Yama then 
+                table.insert(RemoveList, "Deandre")
+                table.insert(RemoveList, "Urban")
+                table.insert(RemoveList, "Diablo")
+            end 
+            local function GetResult() 
+                local Result = {} 
+                for _, Value in BossesOrder do
+                    local Passed = true 
+                    for _, Name2 in RemoveList do
+                        if Name2 == Value then 
+                            Passed = false
+                        end 
+                    end 
+                    if Passed then 
+                        table.insert(Result, Value)
+                    end 
+                end
+                
+                local n = #Result
+                for i = 1, n - 1 do
+                    for j = 1, n - i do
+                        local a = tostring(Result[j]):lower()
+                        local b = tostring(Result[j + 1]):lower()
+                        if a > b then
+                            Result[j], Result[j + 1] = Result[j + 1], Result[j]
+                        end
+                    end
+                end
+                return Result
+            end
+            BossesOrder = GetResult()
+            
+            for ItemName, ItemData in DropItemData do 
+                if not ScriptStorage.Backpack[ItemName] and SeaIndex == ItemData.Sea then
+                    if ScriptStorage.PlayerData.Level >= ItemData.Level then 
+                        BossesOrderLevel[ItemData.Boss] =  ItemData.Level
+                        table.insert(BossesOrder, ItemData.Boss)
+                    end 
+                end 
+            end 
+            if FunctionsHandler.Trevor:Get("IsCompleted") and not Storage:Get("SwanDefeated") then
+                BossesOrderLevel["Don Swan"] = 1100 
+                table.insert(BossesOrder, "Don Swan")
+                if SeaIndex == 2 and ScriptStorage.PlayerData.Level > 1500 and not ScriptStorage.Enemies["Don Swan"] then 
+                    Hop("Hop for don swan")
+                end 
+            end 
+        end
+        for Index, Value in SpecialItems do 
+            if ScriptStorage.Tools[Value] then 
+                FunctionsHandler.UtillyItemsActivitation:Set("CurrentProgressLevel", Value)
+                return Value 
+            end 
+        end 
+        if SeaIndex == 3 and ( ScriptStorage.Melees["Death Step"] or 0 ) >= 400 and ( ScriptStorage.Melees["Black Leg"] or 0 ) >= 400 and ScriptStorage.PlayerData.Beli >= 2500000 and ScriptStorage.PlayerData.Fragments >= 5000 and not ScriptStorage.Melees["Electric Claw"] then 
+            FunctionsHandler.UtillyItemsActivitation:Set("CurrentProgressLevel", "Previous Hero")
+            return "Previous Hero"
+        end 
+        if ScriptStorage.Tools["Red Key"] then 
+            FunctionsHandler.UtillyItemsActivitation:Set("CurrentProgressLevel", "Red Key")
+            return "Red Key"
+        end 
+        if ScriptStorage.Tools["Hallow Essence"] then 
+            FunctionsHandler.UtillyItemsActivitation:Set("CurrentProgressLevel", "Soul Reaper Spawner")
+            FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call("Fire Essence")
+            return "Soul Reaper Spawner"
+        end 
+        if ScriptStorage.Tools["Fire Essence"] then 
+            FunctionsHandler.UtillyItemsActivitation:Set("CurrentProgressLevel", "Uzoth")
+            return "Uzoth"
+        end 
+    end)
+
+    FunctionsHandler.UtillyItemsActivitation:RegisterMethod("Start", function() 
+        
+        local Type = FunctionsHandler.UtillyItemsActivitation:Get("CurrentProgressLevel")
+        if Type == "Hidden Key" then 
+            Remotes.CommF_:InvokeServer("OpenRengoku")
+        elseif Type == "Water Key" then 
+            FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call("Water Key")
+            Remotes.CommF_:InvokeServer("BuySharkmanKarate", true)
+            Remotes.CommF_:InvokeServer("BuySharkmanKarate")
+        elseif Type == "Library Key" then 
+            Remotes.CommF_:InvokeServer("OpenLibrary")Services.Workspace.Map.IceCastle.Hall.LibraryDoor:FindFirstChild("PhoeyuDoor"):Destroy()
+        elseif Type == "Red Key" then 
+            alert("Red key", "Sumbitting red key to the scienctist.")
+            Remotes.CommF_:InvokeServer("CakeScientist", "Check")
+            ScriptStorage.Tools["Red Key"]:Destroy()
+        elseif Type == "Previous Hero" then 
+            Remotes.CommF_:InvokeServer("BuyElectricClaw", "Start")
+            task.wait(3)
+            repeat
+                task.wait()
+                TweenController.Create(CFrame.new(-12548, 332.378 + math.random(-2, 2), -7617))
+            until CaculateDistance(CFrame.new(-12548, 332.378, -7617)) < 30
+            
+            Remotes.CommF_:InvokeServer("BuyElectricClaw")
+            FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call("Melee")
+        elseif Type == "Uzoth" then 
+            
+            -- silenced print
+            Remotes.CommF_:InvokeServer("BuyDragonTalon", true)
+            Remotes.CommF_:InvokeServer("BuyDragonTalon")
+            IsFireEssenceGave = true 
+            Report('Fire Essence Used')
+            
+        elseif Type == "Soul Reaper Spawner" then 
+            
+            -- silenced print
+            
+            if CaculateDistance(workspace.Map["Haunted Castle"].Summoner.Detection.CFrame) < 100 then 
+                SpecialItems = nil
+            end 
+            
+            TweenController.Create(workspace.Map["Haunted Castle"].Summoner.Detection.CFrame)
+        
+        end
+        
+    end)
+
+    -- Trevor 
+
+    FunctionsHandler.Trevor:RegisterMethod("GetFruit", function() 
+        for _, Fruit in ScriptStorage.Backpack do
+            if string.find(FruitIdToName(Fruit.Name), " Fruit") then 
+                if Fruit.Value and Fruit.Value > 1000000 then 
+                
+                    return Fruit
+                end 
+            end 
+        end 
+    end) 
+
+    FunctionsHandler.Trevor:RegisterMethod("Refresh", function() 
+        if FunctionsHandler.Trevor:Get("IsCompleted")  or os.time() - StartTime < 1 then return end 
+        
+        if ScriptStorage.PlayerData.Level < 1100 then return end 
+        
+
+        local Fruit = FunctionsHandler.Trevor.Methods.GetFruit:Call()
+        
+        if Fruit then 
+            
+            FunctionsHandler.Trevor:Set("Fruit", Fruit)
+        end
+        
+        TrevorDebounce = os.time() 
+        
+
+        if not FunctionsHandler.Trevor:Get("IsCompleted") then
+            -- silenced print
+            FunctionsHandler.Trevor:Set("IsCompleted", ((Remotes.CommF_:InvokeServer("TalkTrevor", "1") == 0))) 
+            -- silenced print, Remotes.CommF_:InvokeServer("TalkTrevor", "1"), Remotes.CommF_:InvokeServer("TalkTrevor", "1") == 0 )
+        end
+        
+        return not FunctionsHandler.Trevor:Get("IsCompleted") and Fruit
+    end) 
+
+    FunctionsHandler.Trevor:RegisterMethod("Start", function() 
+        
+        alert("[ Cyndral ]", "Pulling fruit for trevor...")
+        local Fruit = FunctionsHandler.Trevor:Get("Fruit") 
+        FunctionsHandler.Trevor:Set("Fruit", nil) 
+        table.insert(ScriptStorage.IgnoreStoreFruits, Fruit.Name) 
+        Remotes.CommF_:InvokeServer("LoadFruit", Fruit.Name)
+        task.wait()
+        FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call(FruitIdToName(Fruit.Name))
+        
+        Remotes.CommF_:InvokeServer("TalkTrevor", "1")
+
+        Remotes.CommF_:InvokeServer("TalkTrevor", "2")
+
+        Remotes.CommF_:InvokeServer("TalkTrevor", "3")
+        
+        task.wait(1)
+        FunctionsHandler.Trevor:Set("IsCompleted", true) 
+    end)
+
+    -- silenced print
+    -- Third Sea Puzzle 
+    FunctionsHandler.ThirdSeaPuzzle:RegisterMethod("Refresh", function() 
+        
+        if ScriptStorage.PlayerData.Level < 1500 or SeaIndex ~= 2 then
+            return 
+        end 
+        
+        
+        
+        if nil == FunctionsHandler.ThirdSeaPuzzle:Get("State") then 
+            
+            ZQuestProgress = Remotes.CommF_:InvokeServer("ZQuestProgress", "Check")
+            -- silenced print
+            FunctionsHandler.ThirdSeaPuzzle:Set("State", ZQuestProgress == 0)
+        end  
+        
+        return FunctionsHandler.ThirdSeaPuzzle:Get("State")
+    end) 
+
+    FunctionsHandler.ThirdSeaPuzzle:RegisterMethod("Start", function() 
+        local State = FunctionsHandler.ThirdSeaPuzzle:Get("State") 
+        if State then 
+            SetTask("MainTask", "Third Sea Puzzle - Defeating rip_indra")
+            pcall(function()
+                Remotes.CommF_:InvokeServer("ZQuestProgress", "Check")
+                Remotes.CommF_:InvokeServer("ZQuestProgress", "Begin")
+            end)
+            
+            if ScriptStorage.Enemies["rip_indra"] or workspace.Enemies:FindFirstChild("rip_indra") then
+                CombatController.Attack("rip_indra")
+            else
+                TweenController.Create(CFrame.new(-1448.9, 7.3, -2784.8))
+                task.wait(1)
+                CombatController.Attack("rip_indra")
+            end
+            
+            local res = Remotes.CommF_:InvokeServer("ZQuestProgress", "Check")
+            if res == 1 or res == -1 or res == 2 then
+                SetTask("MainTask", "Traveling to Third Sea (Zou)...")
+                Remotes.CommF_:InvokeServer("TravelZou")
+            end
+        end 
+    end)
+
+
+    FunctionsHandler.Yama:RegisterMethod("Refresh", function() 
+        if SeaIndex ~= 3 then return end 
+        
+        local hasYama = false
+        if ScriptStorage.Backpack and ScriptStorage.Backpack["Yama"] then hasYama = true end
+        if LocalPlayer.Backpack:FindFirstChild("Yama") or (LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Yama")) then hasYama = true end
+        if hasYama then return end 
+        
+        if not FunctionsHandler.Yama:Get("EliteCount") then 
+            local ok, count = pcall(function() return Remotes.CommF_:InvokeServer("EliteHunter", "Progress") end)
+            if ok and type(count) == "number" then
+                FunctionsHandler.Yama:Set("EliteCount", count)
+            end
+        end 
+        
+        if (FunctionsHandler.Yama:Get("EliteCount") or 0) >= 30 then 
+            return true
+        end 
+    end)
+
+    FunctionsHandler.Yama:RegisterMethod("Start", function() 
+        SetTask("MainTask", "Yama Quest | Pulling Sealed Katana...")
+        local targetCF = CFrame.new(5228.9, 10.3, 1073.4)
+        
+        local start = os.time()
+        while (os.time() - start < 15) do
+            TweenController.Create(targetCF)
+            if CaculateDistance(targetCF) < 20 then
+                break
+            end
+            task.wait()
+        end
+        
+        local waterfall = workspace:FindFirstChild("Map") and workspace.Map:FindFirstChild("Waterfall")
+        local sealed = (waterfall and waterfall:FindFirstChild("SealedKatana")) or workspace:FindFirstChild("SealedKatana", true)
+        if sealed and sealed:FindFirstChild("Hitbox") and sealed.Hitbox:FindFirstChild("ClickDetector") then
+            for i = 1, 4 do
+                fireclickdetector(sealed.Hitbox.ClickDetector)
+                task.wait(0.3)
+            end
+        end
+    end)
+
+    FunctionsHandler.PirateRaid:RegisterMethod("Refresh", function() 
+        local Senque = FunctionsHandler.PirateRaid:Get("Senque") 
+        
+        return Senque and os.time() - Senque < 500
+    end)
+
+    FunctionsHandler.PirateRaid:RegisterMethod("Start", function() 
+        local NearestMon = GetMonAsSortedRange()
+        
+        local SeaCastlePosition = Vector3.new(-5543.5327148438, 313.80062866211, -2964.2585449219) 
+        
+        if NearestMon[1] then 
+            local MonHumanoid, MonHumanoidRootPart = NearestMon[1]:FindFirstChild("Humanoid"), NearestMon[1]:FindFirstChild("HumanoidRootPart")
+            
+            if MonHumanoidRootPart and MonHumanoid and MonHumanoid.Health > 0 and CaculateDistance(MonHumanoidRootPart.CFrame, SeaCastlePosition) < 500 then 
+                CombatController.Attack(NearestMon[1].Name)
+                return 
+            end
+        end 
+        
+        TweenController.Create(SeaCastlePosition)
+    end)
+
+    -- Soul guitar 
+
+    function CheckFullMoon(NightForce)
+
+        if Lighting.Sky.MoonTextureId ~= "http://www.roblox.com/asset/?id=9709149431" then
+
+            return
+        elseif NightForce then
+            return true
+        end
+        return Lighting.ClockTime > 18 or Lighting.ClockTime < 5
+    end
+
+    FunctionsHandler.SoulGuitar:RegisterMethod("Refresh", function() 
+        
+        if not Config.Items.SoulGuitar then return end 
+        
+        if ScriptStorage.Backpack["Skull Guitar"] or not ScriptStorage.Backpack["Dark Fragment"] then 
+            return 
+        end 
+        
+        
+        if ScriptStorage.PlayerData.Level < 2300 then return end 
+        
+        local EctoplasmCount = ( ScriptStorage.Backpack["Ectoplasm"] or { Count = 0 } )["Count"] 
+        local BonesCount = ( ScriptStorage.Backpack["Bones"] or { Count = 0 } )["Count"] 
+        
+        if EctoplasmCount < 250 then 
+            return 1 
+        end 
+        
+        if SeaIndex ~= 3 then 
+            return 
+        end 
+        
+        SoulGuitarProcess = Remotes.CommF_:InvokeServer("GuitarPuzzleProgress", "Check")
+        
+        if not SoulGuitarProcess then  
+        Remotes.CommF_:InvokeServer("gravestoneEvent", 2)
+            if not CheckFullMoon() then 
+                SetTask("MainTask", "Hopping for full moon ( soul guitar )")
+                Hop("Full Moon / SG")
+            end 
+            return 7
+        end 
+        
+        if not SoulGuitarProcess.Swamp then 
+            return 2 
+        elseif not SoulGuitarProcess.Gravestones then 
+            return 3 
+        elseif not SoulGuitarProcess.Ghost then 
+            return 4 
+        elseif not SoulGuitarProcess.Trophies then 
+            return 5 
+        elseif not SoulGuitarProcess.Pipes then 
+            return 6
+        elseif BonesCount >= 500 and not ScriptStorage.Backpack["Skull Guitar"] then 
+            return 8
+        end 
+    end) 
+
+    FunctionsHandler.SoulGuitar:RegisterMethod("Start", function(State) 
+        if State == 7 then 
+            while CaculateDistance(CFrame.new(-8654, 140, 6167)) > 5 do
+
+                task.wait()
+
+                TweenController.Create(CFrame.new(-8654, 140, 6167))
+            end
+            SoulGuitarProcess = Remotes.CommF_:InvokeServer("gravestoneEvent", 2, true)
+        elseif State == 1 then 
+            if SeaIndex ~= 2 then 
+                SetTask("MainTask", "Teleport to second sea to farm ectoplasm")
+                return Remotes.CommF_:InvokeServer("TravelDressrosa")
+            else 
+                SetTask("MainTask", "Farming ectoplasms for soul guitar")
+                CombatController.Attack({"Ship Deckhand","Ship Engineer", "Ship Steward","Ship Officer"})
+                return
+            end 
+        elseif State == 2 then 
+            
+            TTL9 = TTL9 or 0 
+            if os.time() ~= LastestTime1 then
+                TTL9 = TTL9 + 1 
+                LastestTime1 = os.time() 
+            end 
+            
+            if TTL9 > 60 then 
+                return Hop("LOMGGGGGGGG SG 1")
+            end
+            
+            local Objects = {} 
+            
+            for _, Entity in Services.Workspace.Enemies:GetChildren() do 
+                if Entity.name == "Living Zombie" then 
+                    table.insert(Objects, Entity)
+                end 
+            end 
+            
+            if #Objects < 6 then 
+                SetTask('MainTask', "Soul Guitar task 1 / 5: waiting until entity spawn") 
+                TweenController.Create(ScriptStorage.MobRegions["Living Zombie"][1] + Vector3.new(0,30,0))
+                
+            else 
+                
+                local StartTime19 = os.time()
+                for Idx, Object in Objects do 
+                    while task.wait() and Object.Humanoid.Health > 7000 do
+                        SetTask('MainTask', "Soul Guitar task 1 / 5: Hit mob " .. Idx .. " / 6" ) 
+                        FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call("Melee")
+                        if os.time() - StartTime19 > 60 then 
+                            Hop("So long nerds")
+                        end 
+                        
+                        TweenController.Create(Object.HumanoidRootPart.CFrame + Vector3.new(0,50,0)) 
+                        AttackController:Attack() 
+                    end 
+                end
+                SetTask('MainTask', "Soul Guitar task 1 / 5: Attack") 
+                while workspace.Enemies:FindFirstChild("Living Zombie") and task.wait() do 
+                    if os.time() - StartTime19 > 60 then 
+                            Hop("So long nerds")
+                        end 
+                        
+                    CombatController.Attack("Living Zombie")
+                end 
+            end 
+        elseif State == 3 then 
+            local HauntedIsland = workspace.Map["Haunted Castle"] 
+            while CaculateDistance(CFrame.new(-8800, 178, 6033)) > 10 do
+                task.wait()
+                SetTask("MainTask", "Soul Guitar task 2 / 5: completing placards")
+                TweenController.Create(CFrame.new(-8800, 178, 6033))
+            end
+            
+            for Placard, Side in {
+
+                Placard1 = "Right",
+
+                Placard2 = "Right",
+                Placard3 = "Left",
+                Placard4 = "Right",
+                Placard5 = "Left",
+                Placard6 = "Left",
+                Placard7 = "Left"
+            } do
+                fireclickdetector(HauntedIsland[Placard][Side].ClickDetector)
+            end
+        elseif State == 4 then 
+            Remotes.CommF_:InvokeServer( "GuitarPuzzleProgress", "Ghost")
+        elseif State == 5 then 
+            if CaculateDistance(CFrame.new(-9530.0126953125, 6.104853630065918, 6054.83349609375)) > 30 then
+                TweenController.Create(CFrame.new(-9530.0126953125, 6.104853630065918, 6054.83349609375))
+            else
+                local DepTraiv4 = workspace.Map["Haunted Castle"].Tablet
+                for i, v in pairs(BlankTablets) do
+                    local x = DepTraiv4[v]
+                    if x.Line.Rotation.Z ~= 0 then
+                        repeat
+                            task.wait()
+                            fireclickdetector(x.ClickDetector)
+                        until x.Line.Rotation.Z == 0
+                    end
+                end
+                for i, v in pairs(Trophy) do
+                    local x = workspace.Map["Haunted Castle"].Trophies.Quest[v].Handle.CFrame
+                    x = tostring(x)
+                    x = x:split(", ")[4]
+                    local c = "180"
+                    if x == "1" or x == "-1" then
+                        c = "90"
+                    end
+                    if not string.find(tostring(DepTraiv4[i].Line.Rotation.Z), c) then
+                        repeat
+                            task.wait()
+                            fireclickdetector(DepTraiv4[i].ClickDetector)
+                        until string.find(tostring(DepTraiv4[i].Line.Rotation.Z), c)
+                    end
+                end
+            end
+        elseif State == 6 then 
+            for i, v in pairs(Pipes) do
+
+                pcall(
+
+                    function()
+                        local x = workspace.Map["Haunted Castle"]["Lab Puzzle"].ColorFloor.Model[i]
+                        if x.BrickColor.Name ~= v then
+                            repeat
+                                task.wait()
+                                fireclickdetector(x.ClickDetector)
+                            until x.BrickColor.Name == v
+                        end
+                    end
+                )
+            end
+            Remotes.CommF_:InvokeServer("soulGuitarBuy")
+        elseif State == 8 then 
+            Remotes.CommF_:InvokeServer("soulGuitarBuy")
+            
+        end
+    end)
+
+    FunctionsHandler.Tushita:RegisterMethod("Refresh", function() 
+        if ScriptStorage.Backpack.Tushita then return end 
+        
+        
+        if ScriptStorage.PlayerData.Level < 2000 then return end 
+        
+        if SeaIndex ~= 3 then return end 
+        
+        
+        TushitaProgress = TushitaProgress or Remotes.CommF_:InvokeServer("TushitaProgress")
+        
+        if not TushitaProgress.OpenedDoor then 
+            
+            if ScriptStorage.Enemies["rip_indra True Form"] then 
+                TushitaProgress = nil
+                return 1
+            end 
+        else
+            if ScriptStorage.Enemies["Longma"] then 
+                TushitaProgress = nil
+                return 2 
+            end 
+        end
+        
+    end)
+
+    FunctionsHandler.Tushita:RegisterMethod("Start", function(State) 
+        if State == 1 then
+            alert("Auto Tushita", "Placing torches...")
+            if not ScriptStorage.Tools["Holy Torch"] then
+                FunctionsHandler.LocalPlayerController.Methods.EquipTool:Call("Holy Torch")
+                TweenController.Create(CFrame.new(5714, math.random(19,21), 256)) -- Portal position
+                return
+            end 
+            
+            local TurtleMap = workspace.Map.Turtle.QuestTorches
+            
+            for TorchIndex = 1, 5, 1 do
+
+                if TurtleMap:FindFirstChild("Torch" .. TorchIndex) then
+
+                    repeat
+                        task.wait()
+                        TweenController.Create(TurtleMap:FindFirstChild("Torch" .. TorchIndex).CFrame)
+                    until TurtleMap:FindFirstChild("Torch" .. TorchIndex).Particles.Main.Enabled
+                end
+            end
+        
+        elseif State == 2 then 
+            alert("Auto Tushita", "Defeating Longma")
+            CombatController.Attack("Longma")
+        end 
+    end)
+
+
+
+    FunctionsHandler.CursedDualKatana:RegisterMethod("Refresh", function() 
+        
+        
+        if not Config.Items.CursedDualKatana then return end 
+        local Backpack = ScriptStorage.Backpack
+        
+        if ScriptStorage.PlayerData.Level < 2200 then return end
+        if Backpack["Cursed Dual Katana"] 
+        or not Backpack.Tushita 
+        or Backpack.Tushita.Mastery < 350
+        or not Backpack.Yama 
+        or Backpack.Yama.Mastery < 350
+        then
+            return
+        end 
+        
+        
+        if SeaIndex ~= 3 then 
+            return
+        end 
+        
+        
+        local CdkProgess = CdkProgess or Remotes.CommF_:InvokeServer("CDKQuest", "Progress") or "uwu"
+        
+        if not CdkProgess or CdkProgess == "uwu" then return end 
+        
+        if workspace.Map.Turtle.Cursed:FindFirstChild("Breakable") then
+
+            alert("Cursed Dual Katana", "Open Door")
+
+            
+            return { "break" }
+        end
+        
+        local ScrollSides = {
+            Good = "Tushita", 
+            Evil = "Yama"
+        }
+        
+        if CdkProgess.Good == 4 and CdkProgess.Evil == 4 then 
+            -- silenced print
+            return { "burn 2" } 
+        end 
+        
+        if CdkProgess.Good == 3 or CdkProgess.Evil == 3 then 
+            -- silenced print
+            return { "burn" } 
+        end 
+        
+        
+        if CdkProgess.Opened then 
+            for Index, Value in CdkProgess do
+                if Index ~= "Opened" and Index ~= "Finished" and Value < 3 then 
+                    -- silenced print
+                    ScriptStorage.CdkCache = {
+                        Index, 
+                        Value + 1
+                    }
+                    
+                    if not ScriptStorage.Tools[ScrollSides[Index]] then 
+                        Remotes.CommF_:InvokeServer("LoadItem", ScrollSides[Index])
+                    end 
+                    
+                    alert(
+                        "Cursed Dual Katana",
+                        "Start " ..
+                            tostring(ScrollSides[Index]) ..
+                                " " .. tostring(Index)
+                    )
+                    Remotes.CommF_:InvokeServer("CDKQuest", "StartTrial", Index)
+                    SetTask("MainTask", "Cursed Dual Katana - " .. tostring(ScrollSides[Index]) ..
+                                " " .. tostring(Index)
+                    )
+                    return false 
+                end 
+            end
+        end 
+        
+        local CachedValue = ScriptStorage.CdkCache 
+        
+        
+        if not CachedValue then return end 
+        
+        local Name, Level = CachedValue[1], CachedValue[2] 
+        
+        if Name == "Evil" and Level == 3 then 
+            if not ScriptStorage.Enemies["Soul Reaper"] then 
+                ForceToRollBone = true
+                return
+            end 
+        elseif Name == "Good" then 
+            if Level == 2 then 
+                SetTask("SubTask", "CDK Quest / Waiting until pirate raid started")
+                return 
+            elseif Level == 3 and not ScriptStorage.Enemies["Cake Queen"] then 
+                Hop("Cake Queen Find")
+                SetTask("SubTask", "CDK Quest / Waiting until Cake Queen boss spawned") 
+                return 
+            end 
+        end
+        return CachedValue
+    end)
+
+    FunctionsHandler.CursedDualKatana:RegisterMethod("GetHazeMon", function() 
+        
+        local Positions = {} 
+        for _, Inst in LocalPlayer.QuestHaze:GetChildren() do 
+            if Inst.Value > 0 then 
+                table.insert(Positions, Inst) 
+            end 
+        end 
+        table.sort(Positions, function(C1, C2) return CaculateDistance(C1:GetAttribute("Position")) < CaculateDistance(C2:GetAttribute("Position")) end) 
+        return tostring(Positions[1])
+    end)
+
+    FunctionsHandler.CursedDualKatana:RegisterMethod("DoDimension", function(DimensionName)  
+        local DimensionId = string.gsub(DimensionName, " ", "") 
+        
+        local VaiCaNgu1234 = os.time()
+        repeat task.wait()
+            TweenController.Create(LocalPlayer.Character.HumanoidRootPart.CFrame)
+            if os.time() - VaiCaNgu1234 > 60 then 
+                return 
+            end 
+        until os.time() - TorchEnabledTime < 10 
+        
+        repeat task.wait() 
+            local OriginalIsland = workspace.Map:WaitForChild(DimensionId, 10)
+            if OriginalIsland then 
+                
+                for _, Torch in OriginalIsland:GetChildren() do 
+                    if Torch and string.find(Torch.Name, "Torch") and Torch:FindFirstChild("ProximityPrompt") and Torch.ProximityPrompt.Enabled then 
+                        LocalPlayer.Character.HumanoidRootPart.CFrame = Torch.CFrame 
+                        
+                        Torch.ProximityPrompt.HoldDuration = 0
+                        task.wait(1)
+                        local vim = game:GetService("VirtualInputManager")
+                        vim:SendKeyEvent(true, "E", 0, game)    -- e vã lắm r T_T
+                        vim:SendKeyEvent(false, "E", 0, game)    -- e vã lắm r T_T
+                    
+                        
+                        fireproximityprompt(workspace.Map:WaitForChild(DimensionId, 10):FindFirstChild(tostring(Torch)).ProximityPrompt) 
+                    
+                    end 
+                    for _, Mon in workspace.Enemies:GetChildren() do 
+                        local MonHumanoidRootPart = Mon:FindFirstChild("HumanoidRootPart") 
+                        local MonHumanoid = Mon:FindFirstChild("Humanoid") 
+                        
+                        if MonHumanoidRootPart and MonHumanoid and CaculateDistance(MonHumanoidRootPart.CFrame) < 1000 then 
+                            
+                            CombatController.Attack(Mon.Name)
+                        end 
+                    end
+                end 
+                ExitDoor = OriginalIsland:FindFirstChild("Exit") 
+                -- silenced print
+                if ExitDoor then 
+                    PortalBrick = tostring(ExitDoor.BrickColor)
+                    -- silenced print
+                end 
+            else 
+                -- silenced print
+            end
+            -- silenced print
+        until PortalBrick == "Olivine" or PortalBrick == "Cloudy grey" 
+        -- silenced print
+        while os.time() - DoneCdkTick > 15 do 
+            TweenController.Create(ExitDoor.CFrame + Vector3.new(0, math.random(1,5), 0)) 
+            task.wait() 
+        end 
+        
+        Hop("Rejoin")
+    end) 
+
+    FunctionsHandler.CursedDualKatana:RegisterMethod("Start", function(CachedData) 
+        local CursedTemple = workspace.Map.Turtle.Cursed
+        if CachedData[1] == "break" then 
+            TweenController.Create(workspace.Map.Turtle.Cursed.Breakable.CFrame)
+            Remotes.CommF_:InvokeServer("CDKQuest", "OpenDoor")
+            Remotes.CommF_:InvokeServer("CDKQuest", "OpenDoor", true)
+            workspace.Map.Turtle.Cursed.Breakable:Destroy()
+            CdkProgess = nil  
+            return 
+        end 
+        if CachedData[1] == "burn 2" then
+            if workspace.Map.Turtle.Cursed.Pedestal3.ProximityPrompt.Enabled then 
+                fireproximityprompt(workspace.Map.Turtle.Cursed.Pedestal3.ProximityPrompt)
+                task.wait(1) 
+                pcall(function() 
+                    LocalPlayer.Character.Humanoid.Health = 0
+                end)
+                task.wait(10)
+            else
+                CDKAttempts = ( CDKAttempts or 0 ) + 1
+                TweenController.Create(CFrame.new(-12341.66796875, 603.3455810546875, -6550.6064453125)) 
+                task.wait(5) 
+                
+                pcall(function() 
+                    LocalPlayer.Character.Humanoid.Health = 0
+                end)
+                task.wait(5)
+                if CDKAttempts > 5 then 
+                    Hop("CDK Stuck")
+                end
+                
+                CdkProgess = nil  
+            end
+        elseif CachedData[1] == "burn" then 
+            for Index = 1, 3, 1 do
+                local Pedestal = workspace.Map.Turtle.Cursed:FindFirstChild("Pedestal" .. Index) 
+                
+                if workspace.Map.Turtle.Cursed:FindFirstChild("Pedestal" .. Index) .ProximityPrompt.Enabled then 
+                    repeat task.wait() 
+                        TweenController.Create(workspace.Map.Turtle.Cursed:FindFirstChild("Pedestal" .. Index) .CFrame) 
+                    until CaculateDistance(workspace.Map.Turtle.Cursed:FindFirstChild("Pedestal" .. Index) .CFrame) < 5
+                    
+                    fireproximityprompt(workspace.Map.Turtle.Cursed:FindFirstChild("Pedestal" .. Index) .ProximityPrompt) -- địt mẹ delta
+                    task.wait(3) 
+                    pcall(function() 
+                        LocalPlayer.Character.Humanoid.Health = 0
+                    end) 
+                end 
+                CdkProgess = nil  
+            end 
+            
+        elseif CachedData[1] == "Evil" then 
+            if CachedData[2] == 1 then 
+                local Mob = ScriptStorage.Enemies["Forest Pirate"] 
+                
+                TweenController.Create((Mob and Mob.HumanoidRootPart.CFrame) or ScriptStorage.MobRegions["Forest Pirate"][0])
+                CdkProgess = nil  
+            elseif CachedData[2] == 2 then 
+                CombatController.Attack(FunctionsHandler.CursedDualKatana.Methods.GetHazeMon:Call())
+                CdkProgess = nil  
+            elseif CachedData[2] == 3 then 
+                Report("found cdk yama 3")
+                while not ( os.time() - TorchEnabledTime < 100 or not ScriptStorage.Enemies["Soul Reaper"] )  do
+                    -- silenced print
+                    task.wait()
+                                
+                    if FunctionsHandler.RaidController.Methods.GetCurrentRaidIsland:Call() then 
+                        pcall(function() 
+                            LocalPlayer.Character.Humanoid.Health = 0
+                        end) 
+                    end 
+                    
+                    TweenController.Create(ScriptStorage.Enemies["Soul Reaper"]:GetModelCFrame())
+                end  
+                if not ScriptStorage.Enemies["Soul Reaper"] then return end
+                FunctionsHandler.CursedDualKatana.Methods.DoDimension.Callback("Hell Dimension")
+                CdkProgess = nil  
+            end 
+        else
+            if CachedData[2] == 1 then 
+                for _, NPC in game.ReplicatedStorage.NPCs:GetChildren() do 
+                    if NPC.Name == "Luxury Boat Dealer" then 
+                        repeat task.wait() 
+                            if os.time() - DoneCdkTick < 15 then return end
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = (NPC:GetModelCFrame()) 
+                            RealNPC = nil
+                            for _, npc in workspace.NPCs:GetChildren() do 
+                                if CaculateDistance(npc:GetModelCFrame(), NPC:GetModelCFrame()) < 20 then 
+                                    RealNPC = npc 
+                                    break
+                                end 
+                            end 
+                        until CaculateDistance(NPC:GetModelCFrame()) < 5 and RealNPC 
+                        
+                        Remotes.CommF_:InvokeServer("CDKQuest", "BoatQuest", RealNPC) 
+                    end
+                end
+                CdkProgess = nil  
+            elseif CachedData[2] == 3 then 
+                repeat task.wait() 
+                    -- silenced print
+                    CombatController.Attack("Cake Queen")
+                until os.time() - TorchEnabledTime < 10 or not ScriptStorage.Enemies["Cake Queen"]
+                
+                TweenController.Create(LocalPlayer.Character.HumanoidRootPart.CFrame)
+                Report("Cake Queen")
+                FunctionsHandler.CursedDualKatana.Methods.DoDimension.Callback("Heavenly Dimension")
+                CdkProgess = nil  
+            end 
+        end
+    end)
+
+    local Hooks = {
+        Listeners = {}
+    } 
+
+    TorchEnabledTime = 0 
+    DoneCdkTick = 0 
+
+    getgenv().NotificationCallBack = (function(Content)
+        for ListenerContent, Callback in Hooks.Listeners do
+            if string.find(string.lower(Content), string.lower(ListenerContent)) then 
+                Callback(Content)
+            end 
+        end 
+    end) 
+
+    function Hooks:RegisterNotifyListener(Senque, Callback)
+        Hooks.Listeners[Senque] = Callback
+    end 
+        
+    Hooks:RegisterNotifyListener("go!", function() 
+        LastRaidAlert = os.time()
+    end) 
+    Hooks:RegisterNotifyListener("oadi", function() 
+        LastRaidAlert2 = os.time()
+    end) 
+
+    Hooks:RegisterNotifyListener("been spotted approaching", function() 
+        FunctionsHandler.PirateRaid:Set("Senque", os.time())
+    end) 
+
+    Hooks:RegisterNotifyListener("job", function() 
+        FunctionsHandler.PirateRaid:Set("Senque", 0)
+    end) 
+
+    Hooks:RegisterNotifyListener("level", function() 
+        AddPoint() 
+    end) 
+
+    Hooks:RegisterNotifyListener("torch", function() 
+        TorchEnabledTime = os.time()
+    end) 
+
+    Hooks:RegisterNotifyListener("scroll reacts", function() 
+        DoneCdkTick = os.time()
+    end) 
+
+    Hooks:RegisterNotifyListener("elite", function() 
+        FunctionsHandler.Yama:Set("EliteCount", Remotes.CommF_:InvokeServer("EliteHunter", "Progress"))
+        
+        alert("[ Bocchi Hub ] ", "Elite defeated: ".. tostring(FunctionsHandler.Yama:Get("EliteCount") or "n/a"))
+    end) 
+
+    Hooks:RegisterNotifyListener("the raid with", function() 
+        if ScriptStorage.PlayerData.Level < MaxLevel then return end 
+        Remotes.CommF_:InvokeServer("Awakener", "Awaken")
+    end) 
+
+
+    Hooks:RegisterNotifyListener("quest completed", function() 
+        QuestManager:RefreshQuest()
+        task.wait()
+        if not  QuestManager:GetCurrentClaimQuest() then 
+            
+            QuestManager:MarkAsCompleted()
+        end 
+    end) 
+
+        
+    local old;
+
+    old = hookfunction(
+        require(game.ReplicatedStorage.Notification).new,
+        function(a, b)
+            
+            v21 = tostring(tostring(a or "") .. tostring(b or "")) or ""
+            
+            getgenv().NotificationCallBack(v21)
+            
+            return old(a, b)
+        end
+    ) 
+
+
+    --LogService.MessageOut:Connect(onMessageOut)
+
+
+    --[[
+    local fluent = loadstring(game:HttpGet("https://github.com/ActualMasterOogway/Fluent-Renewed/releases/latest/download/Fluent.luau"))()
+
+    Window = fluent:CreateWindow{
+        Title = "Cyndral | Blox Fruit",
+        SubTitle = "Kaitun Version",
+        TabWidth = 160,
+        Size = UDim2.fromOffset(830, 525),
+        Resize = true, 
+        MinSize = Vector2.new(470, 380),
+        Acrylic = false, 
+        Theme = "Dark",
+        MinimizeKey = Enum.KeyCode.RightControl 
+    }
+
+
+    Tabs = {}
+    local RawTabs = {
+        {
+            Title = "Home", 
+            Icon = "building"
+        },
+        {
+            Title = "Debug", 
+            Icon = "concierge-bell"
+        }
+    }
+
+
+    for _, Tab in RawTabs do 
+        -- silenced print
+        Tabs[Tab.Title] = Window:CreateTab(Tab)
+    end 
+
+    Tabs.Home:CreateParagraph("Aligned Paragraph", {
+        Title = "Cyndral | BF Kaitun",
+        ContentAlignment = Enum.TextXAlignment.Center
+    })]]
+
+    local isHopping = false
+    local visitedServers = {}
+    visitedServers[game.JobId] = true
+
+    local function DoTeleport(jobId)
+        if not jobId or jobId == "" or jobId == game.JobId then return false end
+        SetTask("MainTask", "Hopping Server: " .. tostring(jobId):sub(1, 8) .. "...")
+        
+        -- 1. Try __ServerBrowser remote
+        local ok1 = pcall(function()
+            game:GetService("ReplicatedStorage"):WaitForChild("__ServerBrowser", 5):InvokeServer("teleport", jobId)
+        end)
+        if ok1 then task.wait(2) end
+
+        -- 2. Fallback to TeleportService
+        local ok2 = pcall(function()
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, jobId, game.Players.LocalPlayer)
+        end)
+        
+        return ok1 or ok2
+    end
+
+    function Hop(MaxPlayers, ForcedRegion)
+        if isHopping then return end
+        isHopping = true
+
+        task.spawn(function()
+            local targetMax = (type(MaxPlayers) == "number" and MaxPlayers) or 10
+
+            -- Strategy 1: Fetch via Roblox Public Server API
+            local successApi, serverList = pcall(function()
+                local url = "https://games.roblox.com/v1/games/" .. tostring(game.PlaceId) .. "/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true"
+                local raw = game:HttpGet(url)
+                local json = game:GetService("HttpService"):JSONDecode(raw)
+                return json and json.data
+            end)
+
+            if successApi and type(serverList) == "table" and #serverList > 0 then
+                -- Shuffle
+                for i = #serverList, 2, -1 do
+                    local j = math.random(i)
+                    serverList[i], serverList[j] = serverList[j], serverList[i]
+                end
+
+                for _, srv in ipairs(serverList) do
+                    local jId = srv.id
+                    local playing = tonumber(srv.playing) or 0
+                    local maxP = tonumber(srv.maxPlayers) or 12
+                    if jId and jId ~= game.JobId and not visitedServers[jId] and playing < maxP and playing <= targetMax then
+                        visitedServers[jId] = true
+                        DoTeleport(jId)
+                        task.wait(4)
+                    end
+                end
+            end
+
+            -- Strategy 2: Fetch via Blox Fruits __ServerBrowser
+            local successBrowser, browserList = pcall(function()
+                local found = {}
+                for i = 1, 10 do
+                    local data = game:GetService("ReplicatedStorage"):WaitForChild("__ServerBrowser", 5):InvokeServer(i)
+                    if data and type(data) == "table" then
+                        for k, v in pairs(data) do
+                            if k ~= game.JobId and not visitedServers[k] then
+                                local pCount = (type(v) == "table" and v.Count) or 0
+                                local reg = (type(v) == "table" and v.Region) or ""
+                                if pCount <= targetMax and (not ForcedRegion or reg == ForcedRegion) then
+                                    table.insert(found, k)
+                                end
+                            end
+                        end
+                        if #found > 0 then return found end
+                    end
+                    task.wait(0.1)
+                end
+                return found
+            end)
+
+            if successBrowser and type(browserList) == "table" and #browserList > 0 then
+                for _, jId in ipairs(browserList) do
+                    visitedServers[jId] = true
+                    DoTeleport(jId)
+                    task.wait(4)
+                end
+            end
+
+            -- Strategy 3: Standard Teleport fallback
+            pcall(function()
+                game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+            end)
+
+            isHopping = false
+        end)
+    end
+
+    function HopServer(_, p27, p28)
+        return Hop(p27, p28)
+    end
+
+    LowHop = function(Reason, PlayerLimit)
+        return Hop(PlayerLimit or 5)
+    end
+
+    pcall(function()
+        game:GetService("TeleportService").TeleportInitFailed:Connect(function(player, teleportResult, errorMessage)
+            warn("[Teleport Error] " .. tostring(errorMessage) .. " - Retrying Hop...")
+            isHopping = false
+            task.wait(2)
+            Hop(10)
+        end)
+    end)
+
+    pcall(function()
+        local GuiService = game:GetService("GuiService")
+        GuiService.ErrorMessageChanged:Connect(function()
+            if GuiService:GetErrorType() == Enum.ConnectionError.DisconnectErrors then
+                warn("[Disconnected] Auto Reconnecting...")
+                isHopping = false
+                Hop(10)
+            end
+        end)
+    end) 
+
+
+    Storage = {
+        WRITE_DELAY = 5, 
+        Data = {}, 
+    } 
+
+    Services = {}
+
+    setmetatable(Services, {
+        __index = function(_, Index)
+            return game:GetService(Index)
+        end
+    });
+
+    LocalPlayer = game.Players.LocalPlayer
+
+    local StoragePath = ".storage_u_" .. tostring(LocalPlayer) 
+
+    function Decode(Content) 
+        return Services.HttpService:JSONDecode(Content) 
+    end 
+
+    function Encode(Content) 
+        return Services.HttpService:JSONEncode(Content)  
+    end 
+
+    -- silenced print
+    function Storage.Set(Self, Key, Value) 
+        Self.Data[Key] = Value
+    end 
+
+    function Storage.Get(Self, Key) 
+        --Report("Get: " .. tostring(Key or "n/a") .. " Value: " .. tostring(Self.Data[Key] or "n/") )
+        return Self.Data[Key] 
+    end 
+
+    function Storage.Save(Self) 
+        writefile(StoragePath, Encode(Self.Data)) 
+    end 
+
+    if not isfile(StoragePath) then 
+        writefile(StoragePath, "{}")
+        task.wait(1)
+    end 
+
+    --Report(readfile(StoragePath))
+    Storage.Data = Decode(readfile(StoragePath) or "{}")  
+
+    spawn(function() 
+        while task.wait(Storage.WRITE_DELAY) do 
+            Storage:Save() 
+        end 
+    end)
+        pcall(function()
+            local mainGui = game.Players.LocalPlayer:WaitForChild("PlayerGui", 3)
+            local fastBtn = mainGui and mainGui:FindFirstChild("Main") and mainGui.Main:FindFirstChild("HUDButtonBar") and mainGui.Main.HUDButtonBar:FindFirstChild("Settings") and mainGui.Main.HUDButtonBar.Settings:FindFirstChild("Buttons") and mainGui.Main.HUDButtonBar.Settings.Buttons:FindFirstChild("FastModeButton")
+            if fastBtn and getconnections then
+                for _, Connection in getconnections(fastBtn.Activated) do
+                    Connection.Function()
+                end
+            end
+        end)
+        
+        local LogCache = {}
+        SetTask("MainTask", "Starting Tasks...")
+        SetTask("SubTask", "Auto Farm Progression")
+        ParsingTimes = 100
+        function RefreshTasksData()
+            if _G.Stop then
+                return
+            end
+            for _, TaskName in ipairs(TasksOrder) do
+                local Task = FunctionsHandler[TaskName]
+                if Task and Task.Initalized then
+                    local Refresh = Task.Methods.Refresh
+                    local Start = Task.Methods.Start
+        
+                    if Refresh and Start then
+                        local okRef, RefreshValue = pcall(function() return Refresh:Call(ParsingTimes < 100) end)
+                        if okRef and RefreshValue then
+                            ParsingTimes = ParsingTimes + 1
+                            CurrentTask = TaskName
+                            local okStart, startErr = pcall(function()
+                                Start:Call(RefreshValue)
+                            end)
+                            if not okStart then
+                                warn("[Task Error in " .. tostring(TaskName) .. "] " .. tostring(startErr))
+                            end
+                            return
+                        end
+                    end
+                end
+            end
+        end
+        
+        SetText("MainTextLabel", "Refreshing Player Items...")
+        pcall(AddPoint)
+        pcall(function() QuestManager:RefreshQuest() end)
+        pcall(RefreshInventory)
+        pcall(function()
+            Remotes.CommE.OnClientEvent:Connect(function(...)
+                local data = {...}
+                if data and data[1] and string.find(tostring(data[1]), "Item") then
+                    pcall(RefreshInventory)
+                end
+            end)
+        end)
+        pcall(RefreshRace)
+        pcall(function()
+            Players.LocalPlayer.Idled:Connect(function()
+                pcall(function()
+                    Services.VirtualUser:CaptureController()
+                    Services.VirtualUser:ClickButton2(Vector2.new())
+                end)
+            end)
+        end)
+        SetText("MainTextLabel", "Loaded In " .. tick() - StartTick .. "ms!")
+        
+        QueueList = {}
+        
+        function NearbyHopHandler()
+            if true then
+                return
+            end
+            if NearbyHopHandlerDebounce and os.time() - NearbyHopHandlerDebounce < 10 then
+                return
+            end
+        
+            NearbyHopHandlerDebounce = os.time()
+        
+            for _, Player in Players:GetPlayers() do
+                local Position = Player and Player.Character and Player.Character:FindFirstChild("HumanoidRootPart") and
+                                    Player.Character.HumanoidRootPart.Position
+                if Position then
+                    local NearbyRange = QueueList[Player.Name]
+                    if not NearbyRange then
+                        QueueList[Player.Name] = os.time()
+                    else
+                        if os.time() - NearbyRange > 30 then
+                            if CaculateDistance(Position) < 100 then
+                                Hop("Nearby plr");
+                                task.wait(5)
+        
+                            else
+                                QueueList[Player.Name] = nil
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        
+        
+        task.spawn(function()
+            while task.wait() do
+                if not _G.Stop then
+                     if SeaIndex == 1 and #game.Players:GetPlayers() > 9 then 
+                        while task.wait() do 
+                            -- silenced print
+                            Hop(9)
+                            break -- toi bi ngu, toi biet
+                        end 
+                    end
+                    NearbyHopHandler()
+                    if LocalPlayer.Character:FindFirstChild("Humanoid") and LocalPlayer.Character.Humanoid.Sit then
+                        LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+                    end
+        
+                    if RefreshDebounce ~= os.time() then
+                        pcall(RefreshPlayerData)
+
+                        if not MeleeRefreshDebounce or os.time() - MeleeRefreshDebounce > 30 then
+                            MeleeRefreshDebounce = os.time()
+                            FunctionsHandler.MeleesController.Methods.Start:Call()
+                        end
+
+                        local Elapsed = os.time() - StartTime
+                        local TotalElapsed = Elapsed + OldSessionTime
+        
+                        writefile(".tdif-" .. game.Players.LocalPlayer.Name, tostring(TotalElapsed))
+        
+                        if ScriptStorage.Interface then
+                            SetText("LiveTime", "Total Elapsed Time: " .. DispTime(TotalElapsed, true) .. " Elapsed Time: " ..
+                                DispTime(Elapsed, true))
+                        end
+                        RefreshDebounce = os.time()
+                    end
+                end
+            end
+        end)
+        
+        pcall(AddPoint)
+        -- pcall(function() Remotes.CommF_:InvokeServer("Cousin", "Buy") end) -- Disabled auto random fruit
+        
+        task.spawn(function()
+            while task.wait(Config.Configuration.AutoHopDelay or 3600) do
+                if Config.Configuration.AutoHop and not _G.Stop then
+                    SetTask("MainTask", "AutoHop Timer Triggered - Hopping Server...")
+                    Hop("AutoHop Delay")
+                end
+            end
+        end)
+        while task.wait() do
+            --[[
+            if not SendDataDelay or os.time() - SendDataDelay > Config.Authorize.SendDelay then 
+                SendDataDelay = os.time() 
+                pcall(SendData)
+            end ]]
+        
+            if Config.Configuration.HopWhenIdle and LastIdling and os.time() - LastIdling > 600 then
+                SetTask("MainTask", "Rejoining due to idle in 10 min!")
+                task.wait(1)
+                for i=1, 6, 1 do
+                    game:GetService("TeleportService"):Teleport(game.PlaceId)
+                    task.wait(5)
+                end
+                task.wait(1) -- Chờ 1 giây rồi tiếp tục vòng lặp chính
+            end
+        
+            if not AnimationDelay or os.time() - AnimationDelay > 60 then
+                AnimationDelay = os.time()
+                pcall(function()
+                    local hum = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild('Humanoid')
+                    if hum and Animation then
+                        hum:LoadAnimation(Animation):Play()
+                    end
+                end)
+            end
+            local success, response = xpcall(RefreshTasksData, debug.traceback)
+            if not success then
+                warn("[Main Loop Error] " .. tostring(response))
+            end
+        end
+    end 
+
+    local success2, response2 = xpcall(mmb, debug.traceback)
+    if not success2 then
+        print("FULL ERROR: ".. tostring(response2))
+        --Report(response2)
+    end
+--end)()
