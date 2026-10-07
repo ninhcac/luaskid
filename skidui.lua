@@ -111,40 +111,88 @@ if not fetchResult or #fetchResult < 1000 then
 end
 
 uiRaw = fetchResult
-uiRaw = uiRaw:gsub("Color3%.fromRGB%(29,%s*37,%s*54%)", "Color3.fromRGB(18, 14, 28)")
-uiRaw = uiRaw:gsub("Color3%.fromRGB%(43,%s*55,%s*78%)", "Color3.fromRGB(26, 20, 38)")
-uiRaw = uiRaw:gsub("Color3%.fromRGB%(24,%s*31,%s*46%)", "Color3.fromRGB(18, 14, 28)")
+
+local function replaceExact(source, target, replacement)
+    local p1, p2 = string.find(source, target, 1, true)
+    if p1 and p2 then
+        return string.sub(source, 1, p1 - 1) .. replacement .. string.sub(source, p2 + 1)
+    end
+    return source
+end
+
+uiRaw = uiRaw:gsub("Color3%.fromRGB%(29,%s*37,%s*54%)", "Color3.fromRGB(15, 11, 24)")
+uiRaw = uiRaw:gsub("Color3%.fromRGB%(43,%s*55,%s*78%)", "Color3.fromRGB(24, 17, 36)")
+uiRaw = uiRaw:gsub("Color3%.fromRGB%(24,%s*31,%s*46%)", "Color3.fromRGB(15, 11, 24)")
 uiRaw = uiRaw:gsub("Color3%.fromRGB%(156,%s*205,%s*255%)", "Color3.fromRGB(168, 85, 247)")
 uiRaw = uiRaw:gsub("Color3%.fromRGB%(196,%s*204,%s*220%)", "Color3.fromRGB(185, 170, 210)")
 uiRaw = uiRaw:gsub("Color3%.fromRGB%(248,%s*250,%s*255%)", "Color3.fromRGB(255, 255, 255)")
 uiRaw = uiRaw:gsub("Color3%.fromRGB%(255,%s*148,%s*166%)", "Color3.fromRGB(255, 95, 125)")
 
-uiRaw = uiRaw:gsub("main%.BackgroundTransparency%s*=%s*1", "main.BackgroundTransparency = 0.05")
+-- 1. Window Opaque Deep Purple Backdrop (Eliminates Game 3D Text Bleed-Through)
+uiRaw = uiRaw:gsub("main%.BackgroundTransparency%s*=%s*1", "main.BackgroundTransparency = 0\n\tmain.BackgroundColor3 = Color3.fromRGB(15, 11, 24)")
 uiRaw = uiRaw:gsub("Stroke%(main,%s*Color3%.fromRGB%(238,%s*246,%s*255%),%s*1,%s*0%.64%)", "Stroke(main, Color3.fromRGB(168, 85, 247), 1.5, 0.2)")
 
-uiRaw = uiRaw:gsub("glass%.BackgroundColor3%s*=%s*Color3%.fromRGB%(218,%s*233,%s*255%)", "glass.BackgroundColor3 = Color3.fromRGB(26, 20, 42)")
+-- 2. Glass, Sheen & Prism Layers
+uiRaw = uiRaw:gsub("glass%.BackgroundColor3%s*=%s*Color3%.fromRGB%(218,%s*233,%s*255%)", "glass.BackgroundColor3 = Color3.fromRGB(20, 14, 30)")
+uiRaw = uiRaw:gsub("glass%.BackgroundTransparency%s*=%s*transparency%s*or%s*0%.94", "glass.BackgroundTransparency = 0.05")
+uiRaw = uiRaw:gsub("sheen%.BackgroundTransparency%s*=%s*0%.82", "sheen.BackgroundTransparency = 0.95")
 uiRaw = uiRaw:gsub("prism%.BackgroundColor3%s*=%s*Color3%.fromRGB%(190,%s*220,%s*255%)", "prism.BackgroundColor3 = Color3.fromRGB(36, 26, 52)")
 
-uiRaw = uiRaw:gsub("toolbar%.BackgroundColor3%s*=%s*Color3%.fromRGB%(221,%s*235,%s*255%)", "toolbar.BackgroundColor3 = Color3.fromRGB(26, 18, 38)")
-uiRaw = uiRaw:gsub("toolbar%.BackgroundTransparency%s*=%s*0%.68", "toolbar.BackgroundTransparency = 0.25")
+-- 3. TopBar & LiquidToolbar
+uiRaw = uiRaw:gsub("toolbar%.BackgroundColor3%s*=%s*Color3%.fromRGB%(221,%s*235,%s*255%)", "toolbar.BackgroundColor3 = Color3.fromRGB(22, 16, 34)")
+uiRaw = uiRaw:gsub("toolbar%.BackgroundTransparency%s*=%s*0%.68", "toolbar.BackgroundTransparency = 0")
 uiRaw = uiRaw:gsub("Stroke%(toolbar,%s*Color3%.fromRGB%(255,%s*255,%s*255%),%s*1,%s*0%.56%)", "Stroke(toolbar, Color3.fromRGB(168, 85, 247), 1, 0.5)")
+uiRaw = uiRaw:gsub("NumberSequenceKeypoint%.new%(0,%s*0%.34%),%s*NumberSequenceKeypoint%.new%(0%.55,%s*0%.78%),%s*NumberSequenceKeypoint%.new%(1,%s*0%.46%)", "NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.55, 0.05), NumberSequenceKeypoint.new(1, 0)")
 
-uiRaw = uiRaw:gsub("tabBar%.BackgroundColor3%s*=%s*Color3%.fromRGB%(225,%s*238,%s*255%)", "tabBar.BackgroundColor3 = Color3.fromRGB(24, 18, 36)")
-uiRaw = uiRaw:gsub("tabBar%.BackgroundTransparency%s*=%s*0%.8", "tabBar.BackgroundTransparency = 0.25")
+-- 4. TabBar (Sidebar Width 165px to fit full tab names without truncation)
+uiRaw = uiRaw:gsub("tabBar%.BackgroundColor3%s*=%s*Color3%.fromRGB%(225,%s*238,%s*255%)", "tabBar.BackgroundColor3 = Color3.fromRGB(18, 13, 26)")
+uiRaw = uiRaw:gsub("tabBar%.BackgroundTransparency%s*=%s*0%.8", "tabBar.BackgroundTransparency = 0")
 uiRaw = uiRaw:gsub("Stroke%(tabBar,%s*Color3%.fromRGB%(255,%s*255,%s*255%),%s*1,%s*0%.7%)", "Stroke(tabBar, Color3.fromRGB(168, 85, 247), 1, 0.6)")
+uiRaw = uiRaw:gsub("tabBar%.Size%s*=%s*UDim2%.new%(0,%s*130,%s*1,%s*%-%(70%s*%+%s*margin%)%)", "tabBar.Size = UDim2.new(0, 165, 1, -(70 + margin))")
+uiRaw = uiRaw:gsub("divider%.Position%s*=%s*UDim2%.new%(0,%s*margin%s*%+%s*144,%s*0,%s*70%)", "divider.Position = UDim2.new(0, margin + 179, 0, 70)")
+uiRaw = uiRaw:gsub("local%s+contentX%s*=%s*margin%s*%+%s*144%s*%+%s*16", "local contentX = margin + 179 + 16")
+uiRaw = uiRaw:gsub("NumberSequenceKeypoint%.new%(0,%s*0%.45%),%s*NumberSequenceKeypoint%.new%(1,%s*0%.82%)", "NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(1, 0.05)")
+uiRaw = uiRaw:gsub("textLabel%.TextSize%s*=%s*14", "textLabel.TextSize = 13")
 
-uiRaw = uiRaw:gsub("contentSurface%.BackgroundColor3%s*=%s*Color3%.fromRGB%(214,%s*230,%s*255%)", "contentSurface.BackgroundColor3 = Color3.fromRGB(20, 14, 30)")
-uiRaw = uiRaw:gsub("contentSurface%.BackgroundTransparency%s*=%s*0%.92", "contentSurface.BackgroundTransparency = 0.3")
+-- 5. Content Surface (Solid violet dark background)
+uiRaw = uiRaw:gsub("contentSurface%.BackgroundColor3%s*=%s*Color3%.fromRGB%(214,%s*230,%s*255%)", "contentSurface.BackgroundColor3 = Color3.fromRGB(18, 13, 26)")
+uiRaw = uiRaw:gsub("contentSurface%.BackgroundTransparency%s*=%s*0%.92", "contentSurface.BackgroundTransparency = 0")
+uiRaw = uiRaw:gsub("NumberSequenceKeypoint%.new%(0,%s*0%.55%),%s*NumberSequenceKeypoint%.new%(1,%s*0%.9%)", "NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(1, 0.05)")
 
-uiRaw = uiRaw:gsub("card%.BackgroundColor3%s*=%s*Color3%.new%(1,%s*1,%s*1%)", "card.BackgroundColor3 = Color3.fromRGB(26, 20, 38)")
-uiRaw = uiRaw:gsub("card%.BackgroundTransparency%s*=%s*0%.76", "card.BackgroundTransparency = 0.15")
+-- 6. Interactive Control Cards (Opaque so game text doesn't bleed through)
+uiRaw = uiRaw:gsub("card%.BackgroundColor3%s*=%s*Color3%.new%(1,%s*1,%s*1%)", "card.BackgroundColor3 = Color3.fromRGB(26, 19, 38)")
+uiRaw = uiRaw:gsub("card%.BackgroundTransparency%s*=%s*0%.76", "card.BackgroundTransparency = 0.05")
 uiRaw = uiRaw:gsub("Stroke%(card,%s*Color3%.fromRGB%(235,%s*243,%s*255%),%s*1,%s*0%.76%)", "Stroke(card, Color3.fromRGB(75, 52, 105), 1, 0.4)")
+uiRaw = uiRaw:gsub("NumberSequenceKeypoint%.new%(0,%s*0%.42%),%s*NumberSequenceKeypoint%.new%(1,%s*0%.84%)", "NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(1, 0.05)")
+uiRaw = uiRaw:gsub("Tween%(card,%s*%{%s*BackgroundTransparency%s*=%s*0%.93%s*%},%s*0%.15%)", "Tween(card, { BackgroundTransparency = 0.08 }, 0.15)")
+uiRaw = uiRaw:gsub("Tween%(card,%s*%{%s*BackgroundTransparency%s*=%s*0%.96%s*%},%s*0%.15%)", "Tween(card, { BackgroundTransparency = 0.05 }, 0.15)")
 
+-- 7. Toggle Knob, Track & Sliders
 uiRaw = uiRaw:gsub("state and Color3%.fromRGB%(255,%s*255,%s*255%) or Color3%.fromRGB%(46,%s*50,%s*49%)", "state and Color3.fromRGB(168, 85, 247) or Color3.fromRGB(42, 32, 58)")
 uiRaw = uiRaw:gsub("knob%.BackgroundColor3%s*=%s*state and Color3%.fromRGB%(18,%s*18,%s*18%) or Color3%.fromRGB%(226,%s*232,%s*240%)", "knob.BackgroundColor3 = state and Color3.fromRGB(255, 255, 255) or Color3.fromRGB(180, 170, 195)")
 uiRaw = uiRaw:gsub("fill%.BackgroundColor3%s*=%s*Color3%.new%(1,%s*1,%s*1%)", "fill.BackgroundColor3 = Color3.fromRGB(168, 85, 247)")
 uiRaw = uiRaw:gsub("track%.BackgroundColor3%s*=%s*Color3%.new%(1,%s*1,%s*1%)", "track.BackgroundColor3 = Color3.fromRGB(38, 28, 54)")
 uiRaw = uiRaw:gsub("track%.BackgroundTransparency%s*=%s*0%.91", "track.BackgroundTransparency = 0")
+
+-- 8. Dropdown MultiSelect & Value Formatting Fix (No table: 0x... leaks)
+uiRaw = uiRaw:gsub("local%s+isMulti%s*=%s*opts%.MultiSelect%s*==%s*true", "local isMulti = (opts.MultiSelect == true) or (opts.Multi == true)")
+uiRaw = uiRaw:gsub("for%s+_,%s*v%s+in%s+ipairs%(opts%.Default%)%s+do%s+selected%[v%]%s*=%s*true%s+end", [[for k, v in pairs(opts.Default) do
+			if v == true then selected[tostring(k)] = true
+			elseif type(k) == "number" then selected[tostring(v)] = true end
+		end]])
+uiRaw = uiRaw:gsub("selected%s*=%s*opts%.Default%s+or%s+options%[1%]", [[if type(opts.Default) == "table" then
+		selected = opts.Default[1] or options[1]
+	else
+		selected = opts.Default or options[1]
+	end]])
+
+local oldFmt = "\tlocal function formatValue()\n\t\tif isMulti then\n\t\t\tlocal list = getSelectedList()\n\t\t\tif #list == 0 then return \"None\" end\n\t\t\tif #list == 1 then return list[1] end\n\t\t\treturn #list .. \" selected\"\n\t\tend\n\t\treturn tostring(selected or \"None\")\n\tend"
+local newFmt = "\tlocal function formatValue()\n\t\tif isMulti then\n\t\t\tlocal list = getSelectedList()\n\t\t\tif #list == 0 then return \"None\" end\n\t\t\tif #list <= 3 then return table.concat(list, \", \") end\n\t\t\treturn #list .. \" selected\"\n\t\tend\n\t\tif type(selected) == \"table\" then\n\t\t\tlocal list = {}\n\t\t\tfor k, v in pairs(selected) do\n\t\t\t\tif v == true then table.insert(list, tostring(k))\n\t\t\t\telseif type(k) == \"number\" then table.insert(list, tostring(v)) end\n\t\t\tend\n\t\t\tif #list == 0 then return \"None\" end\n\t\t\tif #list <= 3 then return table.concat(list, \", \") end\n\t\t\treturn #list .. \" selected\"\n\t\tend\n\t\treturn tostring(selected or \"None\")\n\tend"
+uiRaw = replaceExact(uiRaw, oldFmt, newFmt)
+
+local oldSet = "\t\tSet = function(_, v, silent)\n\t\t\tif isMulti then\n\t\t\t\tselected = {}\n\t\t\t\tif type(v) == \"table\" then\n\t\t\t\t\tfor _, name in ipairs(v) do selected[name] = true end\n\t\t\t\tend\n\t\t\telse\n\t\t\t\tselected = v\n\t\t\tend\n\t\t\tvalueLabel.Text = formatValue()"
+local newSet = "\t\tSet = function(_, v, silent)\n\t\t\tif isMulti then\n\t\t\t\tselected = {}\n\t\t\t\tif type(v) == \"table\" then\n\t\t\t\t\tfor k, val in pairs(v) do\n\t\t\t\t\t\tif val == true then selected[tostring(k)] = true\n\t\t\t\t\t\telseif type(k) == \"number\" then selected[tostring(val)] = true end\n\t\t\t\t\tend\n\t\t\t\telseif v ~= nil then\n\t\t\t\t\tselected[tostring(v)] = true\n\t\t\t\tend\n\t\t\telse\n\t\t\t\tif type(v) == \"table\" then\n\t\t\t\t\tselected = v[1] or tostring(v)\n\t\t\t\telse\n\t\t\t\t\tselected = v\n\t\t\t\tend\n\t\t\tend\n\t\t\tvalueLabel.Text = formatValue()"
+uiRaw = replaceExact(uiRaw, oldSet, newSet)
 
 local safeLogoStr = tostring(logoAsset)
 uiRaw = uiRaw:gsub('mobileToggle%.Image%s*=%s*"rbxassetid://96220014754961"', function()
@@ -226,8 +274,8 @@ function Library.CreateMain(options)
     local Window = NullUI:CreateWindow({
         Title = winTitle,
         Subtitle = winSub,
-        Size = UDim2.fromOffset(640, 455),
-        MinSize = Vector2.new(500, 360),
+        Size = UDim2.fromOffset(685, 460),
+        MinSize = Vector2.new(520, 370),
         Draggable = true,
         Resizable = true,
         UseBlur = true,
@@ -490,15 +538,49 @@ function Library.CreateMain(options)
 
             local title = cfg.Title or cfg.Text or "Dropdown"
             local rawList = cfg.List or cfg.Options or {}
+
+            -- Special Handler for Slider-Dropdowns (e.g. Hold Skills Set Delay)
+            if cfg.Slider == true and type(rawList) == "table" then
+                local sliderMap = {}
+                for k, v in pairs(rawList) do
+                    if type(v) == "table" then
+                        local keyName = tostring(v.KeyName or v.Title or k)
+                        local sliderTitle = title .. " [" .. keyName .. "]"
+                        local minVal = tonumber(v.Min) or 0
+                        local maxVal = tonumber(v.Max) or 5
+                        local defVal = tonumber(v.Default) or 0.5
+                        local sCtrl = SectionHandler.CreateSlider({
+                            Title = sliderTitle,
+                            Min = minVal,
+                            Max = maxVal,
+                            Default = defVal,
+                            Callback = function(num)
+                                v.Default = num
+                                if cb then
+                                    task.spawn(function()
+                                        pcall(cb, v, v)
+                                    end)
+                                end
+                            end
+                        })
+                        sliderMap[keyName] = sCtrl
+                    end
+                end
+                return {
+                    Instance = nil,
+                    Set = function(_, k, v) if sliderMap[k] and sliderMap[k].Set then sliderMap[k]:Set(v) end end,
+                    Get = function() return nil end,
+                    Refresh = function() end,
+                }
+            end
+
             local optList = {}
             local isMultiDict = false
             local defaultVal = cfg.Default
 
             if type(rawList) == "table" then
-                local isArr = true
                 for k, v in pairs(rawList) do
                     if type(k) ~= "number" then
-                        isArr = false
                         table.insert(optList, tostring(k))
                         if type(v) == "boolean" then isMultiDict = true end
                     else
@@ -508,7 +590,7 @@ function Library.CreateMain(options)
                 table.sort(optList)
             end
 
-            local isMulti = (cfg.Multi == true) or (isMultiDict == true)
+            local isMulti = (cfg.Multi == true) or (cfg.MultiSelect == true) or (cfg.Selected == true) or (isMultiDict == true)
             local currentSelections = {}
             if type(defaultVal) == "table" then
                 for k, v in pairs(defaultVal) do
@@ -516,8 +598,22 @@ function Library.CreateMain(options)
                         currentSelections[tostring(type(k) == "number" and v or k)] = true
                     end
                 end
-            elseif defaultVal ~= nil then
+            elseif defaultVal ~= nil and defaultVal ~= "" then
                 currentSelections[tostring(defaultVal)] = true
+            end
+
+            local initialDefault
+            if isMulti then
+                local t = {}
+                for k, _ in pairs(currentSelections) do table.insert(t, k) end
+                table.sort(t)
+                initialDefault = t
+            else
+                if type(defaultVal) == "table" then
+                    initialDefault = defaultVal[1] or optList[1]
+                else
+                    initialDefault = defaultVal or optList[1]
+                end
             end
 
             local rawCtrl
@@ -525,12 +621,9 @@ function Library.CreateMain(options)
                 rawCtrl = Tab:AddDropdown({
                     Text = title,
                     Options = optList,
+                    MultiSelect = isMulti,
                     Multi = isMulti,
-                    Default = (isMulti and (function()
-                        local t = {}
-                        for k, _ in pairs(currentSelections) do table.insert(t, k) end
-                        return t
-                    end)()) or defaultVal,
+                    Default = initialDefault,
                     Callback = function(newVal)
                         if cb then
                             task.spawn(function()
