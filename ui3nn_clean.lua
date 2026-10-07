@@ -51,7 +51,7 @@ local T1UIColor = {
 }
 getgenv().UIColor = getgenv().UIColor or T1UIColor
 getgenv().AllControls = {}
-getgenv().UIToggled = false
+getgenv().UIToggled = true
 
 
 local currcolor = {}
@@ -100,16 +100,14 @@ end
 Library_Function.Gui = Instance.new('ScreenGui')
 Library_Function.Gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Library_Function.Gui.Name = 'Nousigi Hub GUI'
-Library_Function.Gui.Enabled = false
+Library_Function.Gui.Enabled = true
 
 getgenv().ReadyForGuiLoaded = false
 spawn(function()
 	repeat
 		task.wait()
 	until getgenv().ReadyForGuiLoaded
-	if getgenv().UIToggled then
-		Library_Function.Gui.Enabled = true
-	end
+	Library_Function.Gui.Enabled = (getgenv().UIToggled ~= false)
 end)
 
 
@@ -150,6 +148,11 @@ UICornerBtnHide.Parent = btnHideFrame
 UICornerBtnHide.CornerRadius = UDim.new(1, 0)
 
 Library.ToggleUI = function()
+	if not getgenv().ReadyForGuiLoaded or not (Library_Function.Gui and Library_Function.Gui:FindFirstChild("Main")) then
+		if Library.CreateDefaultWindow then
+			Library:CreateDefaultWindow()
+		end
+	end
 	getgenv().UIToggled = not getgenv().UIToggled
 	local sizeXY = getgenv().UIToggled and (getgenv().T1 and 30 or 40) or (getgenv().T1 and 25 or 30)
 	TweenService:Create(imgHide, TweenInfo.new(DisableAnimation and 0 or .25), {
@@ -158,13 +161,17 @@ Library.ToggleUI = function()
 	TweenService:Create(btnHideFrame, TweenInfo.new(DisableAnimation and 0 or .25), {
 		BackgroundTransparency = getgenv().UIToggled and 0 or .25
 	}):Play()
-	if game.CoreGui:FindFirstChild("Nousigi Hub GUI") then
-		for a, b in ipairs(game.CoreGui:GetChildren()) do
+	if Library_Function.Gui then
+		Library_Function.Gui.Enabled = getgenv().UIToggled
+	end
+	pcall(function()
+		local core = (gethui and gethui()) or (cloneref and cloneref(game:GetService('CoreGui'))) or game:GetService('CoreGui')
+		for a, b in ipairs(core:GetChildren()) do
 			if b.Name == "Nousigi Hub GUI" then
 				b.Enabled = getgenv().UIToggled
 			end
 		end
-	end
+	end)
 end
 
 Library.DestroyUI = function()
@@ -266,9 +273,19 @@ NotiList.VerticalAlignment = Enum.VerticalAlignment.Bottom
 NotiList.Padding = UDim.new(0, 5)
 
 
-Library_Function.Gui.Parent = game:GetService('CoreGui')
-Library_Function.NotiGui.Parent = game:GetService('CoreGui')
-Library_Function.HideGui.Parent = game:GetService('CoreGui')
+local parentTarget = (gethui and gethui())
+	or (cloneref and cloneref(game:GetService('CoreGui')))
+	or (function()
+		local ok, g = pcall(game.GetService, game, 'CoreGui')
+		return ok and g or nil
+	end)()
+	or (game:GetService('Players').LocalPlayer and game:GetService('Players').LocalPlayer:FindFirstChild('PlayerGui'))
+
+pcall(function()
+	Library_Function.Gui.Parent = parentTarget
+	Library_Function.NotiGui.Parent = parentTarget
+	Library_Function.HideGui.Parent = parentTarget
+end)
 
 function Library_Function.Getcolor(color)
 	return {
@@ -456,6 +473,12 @@ function Library:CreateWindow(Setting)
     
 	local djtmemay = false
 	cac = false
+
+	if Library_Function.Gui and Library_Function.Gui:FindFirstChild("Main") then
+		pcall(function()
+			Library_Function.Gui:FindFirstChild("Main"):Destroy()
+		end)
+	end
 
 	local Main = Instance.new("Frame")
 	local maingui = Instance.new("ImageLabel")
@@ -1344,14 +1367,27 @@ function Library:CreateWindow(Setting)
 				end
 			end)
 			local sectionFunction = {}
-			function sectionFunction:AddToggle(idk,Setting)
-				local Title = tostring(Setting.Text or Setting.Title) or ""
+			function sectionFunction:AddToggle(arg1, arg2, arg3)
+				local Setting, Callback
+				if type(arg1) == "table" then
+					Setting = arg1
+					Callback = type(arg2) == "function" and arg2 or (type(arg3) == "function" and arg3 or nil)
+				elseif type(arg2) == "table" then
+					Setting = arg2
+					Callback = type(arg3) == "function" and arg3 or nil
+				elseif type(arg1) == "string" then
+					Setting = { Title = arg1, Default = arg2 }
+					Callback = type(arg3) == "function" and arg3 or nil
+				else
+					Setting = {}
+				end
+				local Title = tostring(Setting.Text or Setting.Title or Setting.Name or "")
 				local Desc = Setting.Desc or Setting.Description
 				local Default = Setting.Default
 				if Default == nil then
 					Default = false
 				end
-				local Callback = Setting.Callback
+				local Callback = Callback or Setting.Callback or Setting.Func or function() end
 				local ToggleFrame = Instance.new("Frame")
 				local TogFrame1 = Instance.new("Frame")
 				local checkbox = Instance.new("ImageLabel")
@@ -1478,6 +1514,8 @@ function Library:CreateWindow(Setting)
 						ButtonClick()
 					end
 				end
+				toggleFunction.SetValue = toggleFunction.SetStage
+				toggleFunction.Set = toggleFunction.SetStage
 				local controlData = {
                     Name = Title,
                     Section = Section,
@@ -1491,9 +1529,11 @@ function Library:CreateWindow(Setting)
 				return toggleFunction
 			end
             function sectionFunction:AddButton(Setting, Callback)
-				local Title = Setting.Title or Setting.Text or ""
+				if type(Setting) == "string" then Setting = { Title = Setting } end
+				Setting = Setting or {}
+				local Title = Setting.Title or Setting.Text or Setting.Name or ""
 				local Desc = Setting.Desc or Setting.Description
-				local Callback = Setting.Callback or Setting.Func or function() end
+				local Callback = Callback or Setting.Callback or Setting.Func or function() end
 				local Button = Instance.new("Frame")
 				local RowBG_1 = Instance.new("Frame")
 				local UICorner_1 = Instance.new("UICorner")
@@ -1689,7 +1729,7 @@ function Library:CreateWindow(Setting)
 			end
         
 			function sectionFunction:AddLabel(text)
-				local Title = text
+				local Title = type(text) == "table" and (text.Text or text.Title or text.Name or text[1] or "") or tostring(text or "")
                 local LabelFrame = Instance.new("Frame")
                 local LabelBG = Instance.new("Frame")
                 local UICorner = Instance.new("UICorner")
@@ -2192,16 +2232,24 @@ function Library:CreateWindow(Setting)
                 return dropdownSectionFunction
             end
             
-			function sectionFunction:AddDropdown(idk, Setting)
-				local Title = tostring(Setting.Text or Setting.Title) or ""
-				local List = Setting.Values
+			function sectionFunction:AddDropdown(idk, Setting, Callback)
+				if type(idk) == "table" and Setting == nil then
+					Setting = idk
+				elseif type(Setting) == "function" and type(idk) == "table" then
+					Callback = Setting
+					Setting = idk
+				end
+				Setting = Setting or {}
+				local Title = tostring(Setting.Text or Setting.Title or Setting.Name or "")
+				local List = Setting.Values or Setting.List or Setting.Options or Setting.Items or {}
 				local Search = Setting.Search or false
 				local Selected = Setting.Selected or Setting.Multi or false
 				local Slider = Setting.Slider or false
 				local SliderRelease = Setting.SliderRelease or false
+				local Callback = Callback or Setting.Callback or Setting.Func or function() end
 				local Default = (function ()
-                    if Setting.Default then
-                        if type(Setting.Default) == "number" then
+                    if Setting.Default ~= nil then
+                        if type(Setting.Default) == "number" and type(List) == "table" then
                             return List[Setting.Default]
                         elseif type(Setting.Default) == "string" then
                             return Setting.Default
@@ -3051,7 +3099,9 @@ function Library:CreateWindow(Setting)
 			end
 
 function sectionFunction:AddKeyBind(Setting, Callback)
-    local TitleText = tostring(Setting.Title or Setting.Text) or ""
+    if type(Setting) == "string" then Setting = { Title = Setting } end
+    Setting = Setting or {}
+    local TitleText = tostring(Setting.Title or Setting.Text or Setting.Name or "")
     local Default = Setting.Default or Setting.Key or "F"
     local Mode = Setting.Mode or "Toggle" 
     local Callback = Setting.Callback or Callback or function() end
@@ -3252,12 +3302,19 @@ function sectionFunction:AddKeyBind(Setting, Callback)
     
     return keybindFunction
 end
-			function sectionFunction:AddInput(idk, Setting)
-				local TitleText = tostring(Setting.Text or Setting.Title) or ""
-				local Placeholder = tostring(Setting.Placeholder) or ""
+			function sectionFunction:AddInput(idk, Setting, Callback)
+				if type(idk) == "table" and Setting == nil then
+					Setting = idk
+				elseif type(Setting) == "function" and type(idk) == "table" then
+					Callback = Setting
+					Setting = idk
+				end
+				Setting = Setting or {}
+				local TitleText = tostring(Setting.Text or Setting.Title or Setting.Name or "")
+				local Placeholder = tostring(Setting.Placeholder or Setting.Desc or "")
 				local Default = Setting.Default or false
 				local Number_Only = Setting.Numeric or false
-				local Callback = Setting.Callback
+				local Callback = Callback or Setting.Callback or Setting.Func or function() end
 				local BoxFrame = Instance.new("Frame")
 				local BoxCorner = Instance.new("UICorner")
 				local BoxBG = Instance.new("Frame")
@@ -3371,13 +3428,15 @@ end
                 
 				return textbox_function
 			end
-			function sectionFunction:AddSlider(Setting)
-				local TitleText = tostring(Setting.Text or Setting.Title) or ""
-				local minValue = tonumber(Setting.Min) or 0
-				local maxValue = tonumber(Setting.Max) or 100
+			function sectionFunction:AddSlider(Setting, Callback)
+				if type(Setting) == "string" then Setting = { Title = Setting } end
+				Setting = Setting or {}
+				local TitleText = tostring(Setting.Text or Setting.Title or Setting.Name or "")
+				local minValue = tonumber(Setting.Min or Setting.Minimum) or 0
+				local maxValue = tonumber(Setting.Max or Setting.Maximum) or 100
 				local Precise = Setting.Precise or false
-				local DefaultValue = tonumber(Setting.Default) or 0
-				local Callback = Setting.Callback
+				local DefaultValue = tonumber(Setting.Default) or minValue
+				local Callback = Callback or Setting.Callback or Setting.Func or function() end
 				local SizeChia = 400
 				local SliderFrame = Instance.new("Frame")
 				local SliderCorner = Instance.new("UICorner")
@@ -3576,7 +3635,7 @@ end
 				if type(setting) == "table" and type(cb) == "function" and not setting.Callback then
 					setting.Callback = cb
 				end
-				return sectionFunction:AddToggle(nil, setting or {})
+				return sectionFunction:AddToggle(nil, setting or {}, cb)
 			end
 			sectionFunction.CreateButton = function(...)
 				local args = { ... }
@@ -3594,7 +3653,7 @@ end
 				if type(setting) == "table" and type(cb) == "function" and not setting.Callback then
 					setting.Callback = cb
 				end
-				return sectionFunction:AddDropdown(nil, setting or {})
+				return sectionFunction:AddDropdown(nil, setting or {}, cb)
 			end
 			sectionFunction.CreateSlider = function(...)
 				local args = { ... }
@@ -3603,7 +3662,7 @@ end
 				if type(setting) == "table" and type(cb) == "function" and not setting.Callback then
 					setting.Callback = cb
 				end
-				return sectionFunction:AddSlider(setting or {})
+				return sectionFunction:AddSlider(setting or {}, cb)
 			end
 			sectionFunction.CreateBox = function(...)
 				local args = { ... }
@@ -3614,6 +3673,8 @@ end
 				end
 				return sectionFunction:AddInput(nil, setting or {})
 			end
+			sectionFunction.CreateInput = sectionFunction.CreateBox
+			sectionFunction.AddBox = sectionFunction.AddInput
 			sectionFunction.CreateLabel = function(...)
 				local args = { ... }
 				if args[1] == sectionFunction then table.remove(args, 1) end
@@ -3626,6 +3687,17 @@ end
 				if args[1] == sectionFunction then table.remove(args, 1) end
 				return sectionFunction:AddKeyBind(args[1], args[2])
 			end
+			sectionFunction.CreateKeyBind = sectionFunction.CreateBind
+			sectionFunction.AddBind = sectionFunction.AddKeyBind
+
+			sectionFunction.Button = sectionFunction.CreateButton
+			sectionFunction.Toggle = sectionFunction.CreateToggle
+			sectionFunction.Dropdown = sectionFunction.CreateDropdown
+			sectionFunction.Slider = sectionFunction.CreateSlider
+			sectionFunction.Label = sectionFunction.CreateLabel
+			sectionFunction.Input = sectionFunction.CreateBox
+			sectionFunction.Box = sectionFunction.CreateBox
+			sectionFunction.Bind = sectionFunction.CreateBind
 
 			return sectionFunction
 		end
@@ -3637,6 +3709,32 @@ end
 			if args[1] == pageFunction then table.remove(args, 1) end
 			return pageFunction:AddSection(args[1], args[2], args[3], args[4])
 		end
+		pageFunction.Section = pageFunction.CreateSection
+
+		local _defaultSec = nil
+		local function _getSec()
+			if not _defaultSec then
+				_defaultSec = pageFunction:AddSection("Main")
+			end
+			return _defaultSec
+		end
+		pageFunction.CreateButton = function(self, ...) return _getSec():CreateButton(...) end
+		pageFunction.AddButton = function(self, ...) return _getSec():AddButton(...) end
+		pageFunction.CreateToggle = function(self, ...) return _getSec():CreateToggle(...) end
+		pageFunction.AddToggle = function(self, ...) return _getSec():AddToggle(...) end
+		pageFunction.CreateDropdown = function(self, ...) return _getSec():CreateDropdown(...) end
+		pageFunction.AddDropdown = function(self, ...) return _getSec():AddDropdown(...) end
+		pageFunction.CreateSlider = function(self, ...) return _getSec():CreateSlider(...) end
+		pageFunction.AddSlider = function(self, ...) return _getSec():AddSlider(...) end
+		pageFunction.CreateBox = function(self, ...) return _getSec():CreateBox(...) end
+		pageFunction.CreateInput = function(self, ...) return _getSec():CreateInput(...) end
+		pageFunction.AddBox = function(self, ...) return _getSec():AddInput(...) end
+		pageFunction.AddInput = function(self, ...) return _getSec():AddInput(...) end
+		pageFunction.CreateLabel = function(self, ...) return _getSec():CreateLabel(...) end
+		pageFunction.AddLabel = function(self, ...) return _getSec():AddLabel(...) end
+		pageFunction.CreateBind = function(self, ...) return _getSec():CreateBind(...) end
+		pageFunction.AddBind = function(self, ...) return _getSec():AddKeyBind(...) end
+
 		return pageFunction
 	end
 
@@ -3645,11 +3743,881 @@ end
 		if args[1] == Main_Function then table.remove(args, 1) end
 		return Main_Function:AddTab(args[1])
 	end
+	Main_Function.AddPage = Main_Function.CreatePage
+	Main_Function.CreateTab = Main_Function.CreatePage
+	Main_Function.Page = Main_Function.CreatePage
+	Main_Function.Tab = Main_Function.CreatePage
 
 	return Main_Function
 end
 
 Library.CreateMain = Library.CreateWindow
+Library.CreateWindow = Library.CreateWindow
+Library.Window = Library.CreateWindow
+Library.Main = Library.CreateWindow
 Library.CreateNoti = libCreateNoti
+Library.Notify = libCreateNoti
+Library.Notification = libCreateNoti
 Library.Options = Library.Options or {}
+
+function Library:CreateDefaultWindow()
+	if Library_Function.Gui and Library_Function.Gui:FindFirstChild("Main") then
+		return Library_Function.Gui:FindFirstChild("Main")
+	end
+
+	local Main = Library:CreateWindow({
+		Title = "Banana Cat Hub",
+		Desc = " - Blox Fruits v15.1 [Full UI]"
+	})
+
+	-- =========================================================================
+	-- 1. PAGE: Shop (Shop)
+	-- =========================================================================
+	local PageShop = Main:CreatePage({ Page_Name = "Shop", Page_Title = "Shop" })
+
+	local SecShopMisc = PageShop:CreateSection("Misc Shop")
+	SecShopMisc:CreateButton({ Title = "Redeem Code" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Redeem Code clicked", Duration = 2 }, true)
+	end)
+	SecShopMisc:CreateButton({ Title = "Teleport Old World" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Teleport Old World", Duration = 2 }, true)
+	end)
+	SecShopMisc:CreateButton({ Title = "Teleport New World" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Teleport New World", Duration = 2 }, true)
+	end)
+	SecShopMisc:CreateButton({ Title = "Teleport Third Sea" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Teleport Third Sea", Duration = 2 }, true)
+	end)
+	SecShopMisc:CreateButton({ Title = "Buy Dual Flintlock" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Buy Dual Flintlock", Duration = 2 }, true)
+	end)
+	SecShopMisc:CreateButton({ Title = "Reroll Race" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Reroll Race", Duration = 2 }, true)
+	end)
+	SecShopMisc:CreateButton({ Title = "Reset Stats" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Reset Stats", Duration = 2 }, true)
+	end)
+	SecShopMisc:CreateButton({ Title = "Buy Race Cyborg" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Buy Race Cyborg", Duration = 2 }, true)
+	end)
+	SecShopMisc:CreateButton({ Title = "Buy Race Ghoul" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Buy Race Ghoul", Duration = 2 }, true)
+	end)
+
+	local SecShopFighting = PageShop:CreateSection("Fighting Shop")
+	local fightStyles = { "Black Leg", "Fishman Karate", "Electro", "Dragon Breath", "SuperHuman", "Death Step", "Sharkman Karate", "Electric Claw", "Dragon Talon", "God Human", "Sanguine Art" }
+	for _, style in ipairs(fightStyles) do
+		SecShopFighting:CreateToggle({ Title = style, Default = false }, function(v)
+			getgenv()["Buy_" .. style] = v
+			print("[Shop] " .. style .. ":", v)
+		end)
+	end
+
+	local SecShopAbilities = PageShop:CreateSection("Abilities Shop")
+	SecShopAbilities:CreateButton({ Title = "Skyjump [ $10,000 Beli ]" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Purchased Skyjump", Duration = 2 }, true)
+	end)
+	SecShopAbilities:CreateButton({ Title = "Buso Haki [ $25,000 Beli ]" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Purchased Buso Haki", Duration = 2 }, true)
+	end)
+	SecShopAbilities:CreateButton({ Title = "Observation haki [ $750,000 Beli ]" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Purchased Observation Haki", Duration = 2 }, true)
+	end)
+	SecShopAbilities:CreateButton({ Title = "Soru [ $100,000 Beli ]" }, function()
+		Library:Notify({ Title = "Shop", Desc = "Purchased Soru", Duration = 2 }, true)
+	end)
+
+	-- =========================================================================
+	-- 2. PAGE: Status And Server (Status And Server)
+	-- =========================================================================
+	local PageStatusAndServer = Main:CreatePage({ Page_Name = "Status And Server", Page_Title = "Status And Server" })
+
+	local SecStatusUI = PageStatusAndServer:CreateSection("BananaCat Status UI")
+	SecStatusUI:CreateToggle({ Title = "Enable Status UI Overlay", Default = true }, function(v)
+		getgenv().StatusUIEnabled = v
+	end)
+
+	local SecStatus = PageStatusAndServer:CreateSection("Status")
+	SecStatus:CreateLabel({ Title = "Timer: 00:00:00" })
+	SecStatus:CreateLabel({ Title = "Timer Server: Active" })
+	SecStatus:CreateLabel({ Title = "Next Time Spawn Fist of Darkness or God's Chalice" })
+	SecStatus:CreateLabel({ Title = "Elite: Not Spawned" })
+	SecStatus:CreateLabel({ Title = "Eyes Summon Tyrant: Ready" })
+	SecStatus:CreateLabel({ Title = "Summon Katakuri: 0 / 500" })
+	SecStatus:CreateLabel({ Title = "Status SPY: Ready" })
+	SecStatus:CreateLabel({ Title = "Mirage Island: Not Found" })
+	SecStatus:CreateLabel({ Title = "Prehistoric Island: Not Found" })
+	SecStatus:CreateLabel({ Title = "Frozen Dimension: Not Found" })
+	SecStatus:CreateLabel({ Title = "Moon: Normal" })
+	SecStatus:CreateLabel({ Title = "Ancient One Status: Idle" })
+
+	local SecServer = PageStatusAndServer:CreateSection("Server")
+	SecServer:CreateButton({ Title = "Open Gui Server Browser (Low Player and Ping)" }, function()
+		Library:Notify({ Title = "Server Browser", Desc = "Opening Server Browser...", Duration = 2 }, true)
+	end)
+	SecServer:CreateToggle({ Title = "Spam Join", Default = false }, function(v)
+		getgenv().SpamJoin = v
+	end)
+	SecServer:CreateInput({ Title = "JobId Input", Placeholder = "Enter JobId..." }, function(v)
+		getgenv().TargetJobId = v
+	end)
+	SecServer:CreateButton({ Title = "Join JobId" }, function()
+		Library:Notify({ Title = "Server", Desc = "Joining JobId...", Duration = 2 }, true)
+	end)
+	SecServer:CreateButton({ Title = "Copy JobId" }, function()
+		pcall(function()
+			if setclipboard then setclipboard(tostring(game.JobId)) end
+		end)
+		Library:Notify({ Title = "Server", Desc = "JobId copied!", Duration = 2 }, true)
+	end)
+	SecServer:CreateButton({ Title = "Hop Server" }, function()
+		Library:Notify({ Title = "Server", Desc = "Finding server to hop...", Duration = 2 }, true)
+	end)
+	SecServer:CreateButton({ Title = "Hop Server Less People" }, function()
+		Library:Notify({ Title = "Server", Desc = "Finding lowest player server...", Duration = 2 }, true)
+	end)
+
+	-- =========================================================================
+	-- 3. PAGE: LocalPlayer (LocalPlayer)
+	-- =========================================================================
+	local LocalPlayerMain = Main:CreatePage({ Page_Name = "LocalPlayer", Page_Title = "LocalPlayer" })
+
+	local SecLocalPlayer = LocalPlayerMain:CreateSection("Local Player")
+	SecLocalPlayer:CreateButton({ Title = "Stop Tween" }, function()
+		getgenv().StopTween = true
+		Library:Notify({ Title = "LocalPlayer", Desc = "Stopped all tweens!", Duration = 2 }, true)
+	end)
+	SecLocalPlayer:CreateButton({ Title = "Fix UI Button Game" }, function()
+		Library:Notify({ Title = "LocalPlayer", Desc = "Fixed UI buttons!", Duration = 2 }, true)
+	end)
+	SecLocalPlayer:CreateButton({ Title = "Load config in Web" }, function()
+		Library:Notify({ Title = "LocalPlayer", Desc = "Loaded config from Web!", Duration = 2 }, true)
+	end)
+	SecLocalPlayer:CreateButton({ Title = "Show Item" }, function()
+		Library:Notify({ Title = "LocalPlayer", Desc = "Items displayed!", Duration = 2 }, true)
+	end)
+	SecLocalPlayer:CreateButton({ Title = "Open Devil Fruit Shop" }, function()
+		Library:Notify({ Title = "LocalPlayer", Desc = "Opened Fruit Shop!", Duration = 2 }, true)
+	end)
+	SecLocalPlayer:CreateButton({ Title = "Open Devil Fruit Shop Mirage" }, function()
+		Library:Notify({ Title = "LocalPlayer", Desc = "Opened Mirage Shop!", Duration = 2 }, true)
+	end)
+	SecLocalPlayer:CreateButton({ Title = "Open Title" }, function()
+		Library:Notify({ Title = "LocalPlayer", Desc = "Opened Title Menu!", Duration = 2 }, true)
+	end)
+	SecLocalPlayer:CreateButton({ Title = "Open Color" }, function()
+		Library:Notify({ Title = "LocalPlayer", Desc = "Opened Color Menu!", Duration = 2 }, true)
+	end)
+	SecLocalPlayer:CreateToggle({ Title = "Noclip", Default = false }, function(v)
+		getgenv().Noclip = v
+	end)
+	SecLocalPlayer:CreateToggle({ Title = "Infinite Jump", Default = false }, function(v)
+		getgenv().InfiniteJump = v
+	end)
+	SecLocalPlayer:CreateToggle({ Title = "Fly", Default = false }, function(v)
+		getgenv().Fly = v
+	end)
+	SecLocalPlayer:CreateSlider({ Title = "Fly Speed", Min = 10, Max = 250, Default = 80 }, function(v)
+		getgenv().FlySpeed = v
+	end)
+	SecLocalPlayer:CreateToggle({ Title = "WalkSpeed Hack", Default = false }, function(v)
+		getgenv().SpeedHack = v
+	end)
+	SecLocalPlayer:CreateSlider({ Title = "WalkSpeed Value", Min = 16, Max = 350, Default = 60 }, function(v)
+		getgenv().CustomSpeed = v
+	end)
+	SecLocalPlayer:CreateToggle({ Title = "Teleport To Npc", Default = false }, function(v)
+		getgenv().TeleportToNpc = v
+	end)
+	SecLocalPlayer:CreateToggle({ Title = "Teleport To Island", Default = false }, function(v)
+		getgenv().TeleportToIsland = v
+	end)
+	SecLocalPlayer:CreateToggle({ Title = "Teleport Mirage", Default = false }, function(v)
+		getgenv().TeleportMirage = v
+	end)
+	SecLocalPlayer:CreateToggle({ Title = "Teleport Prehistoric Island", Default = false }, function(v)
+		getgenv().TeleportPrehistoric = v
+	end)
+
+	-- =========================================================================
+	-- 4. PAGE: Setting Farm (Setting Farm)
+	-- =========================================================================
+	local SettingFarmMain = Main:CreatePage({ Page_Name = "Setting Farm", Page_Title = "Setting Farm" })
+
+	local SecSettingFarm = SettingFarmMain:CreateSection("Setting Farm")
+	SecSettingFarm:CreateDropdown({ Title = "Select Weapon", List = { "Melee", "Sword", "Blox Fruit" }, Default = "Melee" }, function(v)
+		getgenv().SelectWeapon = v
+	end)
+	SecSettingFarm:CreateToggle({ Title = "Attack No Animation", Default = true }, function(v)
+		getgenv().AttackNoAnim = v
+	end)
+	SecSettingFarm:CreateToggle({ Title = "Kill Aura Only Raid And Volcano", Default = false }, function(v)
+		getgenv().KillAuraSpecial = v
+	end)
+	SecSettingFarm:CreateSlider({ Title = "Time Delay Kill", Min = 0, Max = 5, Default = 1 }, function(v)
+		getgenv().TimeDelayKill = v
+	end)
+	SecSettingFarm:CreateToggle({ Title = "Auto Click", Default = false }, function(v)
+		getgenv().AutoClick = v
+	end)
+	SecSettingFarm:CreateToggle({ Title = "Kill Aura With DragonStorm", Default = false }, function(v)
+		getgenv().DSAura = v
+	end)
+	SecSettingFarm:CreateToggle({ Title = "Bring Mob", Default = true }, function(v)
+		getgenv().BringMob = v
+	end)
+	SecSettingFarm:CreateToggle({ Title = "Tween Behind Mob", Default = true }, function(v)
+		getgenv().TweenBehindMob = v
+	end)
+	SecSettingFarm:CreateSlider({ Title = "Farm Distance", Min = 5, Max = 60, Default = 25 }, function(v)
+		getgenv().FarmDistance = v
+	end)
+	SecSettingFarm:CreateSlider({ Title = "Tween Speed", Min = 150, Max = 350, Default = 250 }, function(v)
+		getgenv().TweenSpeed = v
+	end)
+	SecSettingFarm:CreateLabel({ Title = "Recommended: 350. If farming spots close, use higher speed" })
+
+	-- =========================================================================
+	-- 5. PAGE: Hold and Select Skill (Setting Hold and Select Skill)
+	-- =========================================================================
+	local SettingSkillMain = Main:CreatePage({ Page_Name = "Hold and Select Skill", Page_Title = "Setting Hold and Select Skill" })
+
+	local SecSelectSkills = SettingSkillMain:CreateSection("Select Skills")
+	SecSelectSkills:CreateDropdown({ Title = "Select Skills Melee", List = { "Z", "X", "C" }, Default = "Z" }, function(v)
+		getgenv().SkillsMelee = v
+	end)
+	SecSelectSkills:CreateDropdown({ Title = "Select Skills Sword", List = { "Z", "X" }, Default = "Z" }, function(v)
+		getgenv().SkillsSword = v
+	end)
+	SecSelectSkills:CreateDropdown({ Title = "Select Skills Gun", List = { "Z", "X" }, Default = "Z" }, function(v)
+		getgenv().SkillsGun = v
+	end)
+	SecSelectSkills:CreateDropdown({ Title = "Select Skills Blox Fruit", List = { "Z", "X", "C", "V", "F" }, Default = "Z" }, function(v)
+		getgenv().SkillsFruit = v
+	end)
+
+	local SecHoldSkills = SettingSkillMain:CreateSection("Hold Skills")
+	SecHoldSkills:CreateToggle({ Title = "Use skill fast dont hold", Default = false }, function(v)
+		getgenv().FastSkillNoHold = v
+	end)
+	SecHoldSkills:CreateSlider({ Title = "Delay Skill Melee", Min = 0, Max = 5, Default = 0.5 }, function(v)
+		getgenv().DelayMelee = v
+	end)
+	SecHoldSkills:CreateSlider({ Title = "Delay Skill Sword", Min = 0, Max = 5, Default = 0.5 }, function(v)
+		getgenv().DelaySword = v
+	end)
+	SecHoldSkills:CreateSlider({ Title = "Delay Skill Gun", Min = 0, Max = 5, Default = 0.5 }, function(v)
+		getgenv().DelayGun = v
+	end)
+	SecHoldSkills:CreateSlider({ Title = "Delay Skill Fruit", Min = 0, Max = 5, Default = 0.5 }, function(v)
+		getgenv().DelayFruit = v
+	end)
+
+	-- =========================================================================
+	-- 6. PAGE: Farming (Farming)
+	-- =========================================================================
+	local FarmMain = Main:CreatePage({ Page_Name = "Farming", Page_Title = "Farming" })
+
+	local SecSettingAutoFarm = FarmMain:CreateSection("Setting Farm")
+	SecSettingAutoFarm:CreateDropdown({
+		Title = "Select Method Farm",
+		List = { "Level Farm", "Farm Bones", "Farm Katakuri", "Farm Tyrant of the Skies", "Aura Farm" },
+		Default = "Level Farm"
+	}, function(v)
+		getgenv().MethodFarm = v
+	end)
+	SecSettingAutoFarm:CreateSlider({ Title = "Distance Farm Aura", Min = 0, Max = 1000, Default = 300 }, function(v)
+		getgenv().DistanceFarmAura = v
+	end)
+	SecSettingAutoFarm:CreateToggle({ Title = "Ignore Attack Katakuri", Default = false }, function(v)
+		getgenv().IgnoreKatakuri = v
+	end)
+	SecSettingAutoFarm:CreateToggle({ Title = "Hop Find Katakuri", Default = false }, function(v)
+		getgenv().HopKatakuri = v
+	end)
+	SecSettingAutoFarm:CreateToggle({ Title = "Auto Quest [Katakuri/Bone/Tyrant]", Default = false }, function(v)
+		getgenv().AutoQuestSpecial = v
+	end)
+	SecSettingAutoFarm:CreateToggle({ Title = "Start Farm", Default = false }, function(v)
+		getgenv().StartFarm = v
+		print("[Farming] Start Farm:", v)
+	end)
+
+	local SecMasteryFarm = FarmMain:CreateSection("Mastery Farm")
+	SecMasteryFarm:CreateDropdown({ Title = "Select Method Farm Mastery", List = { "Blox Fruit", "Gun", "Sword" }, Default = "Blox Fruit" }, function(v)
+		getgenv().MasteryMethod = v
+	end)
+	SecMasteryFarm:CreateSlider({ Title = "Health %", Min = 0, Max = 100, Default = 40 }, function(v)
+		getgenv().MasteryHP = v
+	end)
+	SecMasteryFarm:CreateToggle({ Title = "Farm Mastery", Default = false }, function(v)
+		getgenv().FarmMastery = v
+	end)
+
+	local SecFarmingMaterial = FarmMain:CreateSection("Farming Material")
+	SecFarmingMaterial:CreateDropdown({
+		Title = "Select Material",
+		List = { "Bones", "Fish Tail", "Magma Ore", "Dragon Scale", "Mystic Droplet", "Vampire Fang", "Mini Fang", "Gunpowder" },
+		Default = "Bones"
+	}, function(v)
+		getgenv().SelectedMaterial = v
+	end)
+	SecFarmingMaterial:CreateToggle({ Title = "Auto Farm Material", Default = false }, function(v)
+		getgenv().AutoMaterial = v
+	end)
+
+	-- =========================================================================
+	-- 7. PAGE: Stack Farming (Stack Farming)
+	-- =========================================================================
+	local stackFarmMain = Main:CreatePage({ Page_Name = "Stack Farming", Page_Title = "Stack Farming" })
+
+	local SecAutoWorld = stackFarmMain:CreateSection("Auto World")
+	SecAutoWorld:CreateToggle({ Title = "Auto New World", Default = false }, function(v)
+		getgenv().AutoNewWorld = v
+	end)
+	SecAutoWorld:CreateToggle({ Title = "Auto Third World", Default = false }, function(v)
+		getgenv().AutoThirdWorld = v
+	end)
+
+	local SecStackDF = stackFarmMain:CreateSection("Devil Fruit")
+	SecStackDF:CreateToggle({ Title = "Auto Buy Random Fruit", Default = false }, function(v)
+		getgenv().AutoBuyRandomFruit = v
+	end)
+	SecStackDF:CreateToggle({ Title = "Auto Store Fruit", Default = true }, function(v)
+		getgenv().AutoStoreFruit = v
+	end)
+
+	local SecEventGame = stackFarmMain:CreateSection("Event Game")
+	SecEventGame:CreateToggle({ Title = "Auto Factory", Default = false }, function(v)
+		getgenv().AutoFactory = v
+	end)
+	SecEventGame:CreateToggle({ Title = "Auto Pirate Raid", Default = false }, function(v)
+		getgenv().AutoPirateRaid = v
+	end)
+
+	local SecBossIndra = stackFarmMain:CreateSection("Boss Rip Indra")
+	SecBossIndra:CreateToggle({ Title = "Auto Spawn Indra", Default = false }, function(v)
+		getgenv().AutoSpawnIndra = v
+	end)
+	SecBossIndra:CreateToggle({ Title = "Auto Kill Indra", Default = false }, function(v)
+		getgenv().AutoKillIndra = v
+	end)
+
+	local SecBossSoulReaper = stackFarmMain:CreateSection("Boss Soul Reaper")
+	SecBossSoulReaper:CreateToggle({ Title = "Auto Spawn Soul Reaper", Default = false }, function(v)
+		getgenv().AutoSpawnReaper = v
+	end)
+	SecBossSoulReaper:CreateToggle({ Title = "Auto Kill Soul Reaper", Default = false }, function(v)
+		getgenv().AutoKillReaper = v
+	end)
+
+	local SecBossDoughKing = stackFarmMain:CreateSection("Boss Dough King")
+	SecBossDoughKing:CreateToggle({ Title = "Auto Spawn Dough King", Default = false }, function(v)
+		getgenv().AutoSpawnDough = v
+	end)
+	SecBossDoughKing:CreateToggle({ Title = "Auto Kill Dough King", Default = false }, function(v)
+		getgenv().AutoKillDough = v
+	end)
+
+	local SecBossDarkbeard = stackFarmMain:CreateSection("Boss Darkbeard")
+	SecBossDarkbeard:CreateToggle({ Title = "Auto Spawn Darkbeard", Default = false }, function(v)
+		getgenv().AutoSpawnDarkbeard = v
+	end)
+	SecBossDarkbeard:CreateToggle({ Title = "Auto Kill Darkbeard", Default = false }, function(v)
+		getgenv().AutoKillDarkbeard = v
+	end)
+
+	-- =========================================================================
+	-- 8. PAGE: Farming Other (Farming Other)
+	-- =========================================================================
+	local FarmotherMain = Main:CreatePage({ Page_Name = "Farming Other", Page_Title = "Farming Other" })
+
+	local SecSecretQuest = FarmotherMain:CreateSection("Secret Quest")
+	SecSecretQuest:CreateLabel({ Title = "Secret Quest : 0/39 Quests" })
+	SecSecretQuest:CreateLabel({ Title = "Title Quest : None" })
+	SecSecretQuest:CreateLabel({ Title = "Doing Quest : None" })
+	SecSecretQuest:CreateLabel({ Title = "Title Awakened Boss : None" })
+	SecSecretQuest:CreateToggle({ Title = "Auto Secret Quest", Default = false }, function(v)
+		getgenv().AutoSecretQuest = v
+	end)
+
+	local SecFishing = FarmotherMain:CreateSection("Fishing")
+	SecFishing:CreateButton({ Title = "Save Position Fishing" }, function()
+		Library:Notify({ Title = "Fishing", Desc = "Saved fishing position!", Duration = 2 }, true)
+	end)
+	SecFishing:CreateLabel({ Title = "Status Fishing : Idle" })
+	SecFishing:CreateToggle({ Title = "Auto Fishing", Default = false }, function(v)
+		getgenv().AutoFishing = v
+	end)
+
+	local SecQuestDragon = FarmotherMain:CreateSection("Quest Dragon")
+	SecQuestDragon:CreateToggle({ Title = "Auto Quest Dragon", Default = false }, function(v)
+		getgenv().AutoQuestDragon = v
+	end)
+
+	local SecAttackAllMobs = FarmotherMain:CreateSection("Attack All Mobs")
+	SecAttackAllMobs:CreateToggle({ Title = "Attack All Mobs Aura", Default = false }, function(v)
+		getgenv().AttackAllMobs = v
+	end)
+
+	local SecBerry = FarmotherMain:CreateSection("Berry")
+	SecBerry:CreateToggle({ Title = "Auto Farm Berry", Default = false }, function(v)
+		getgenv().AutoFarmBerry = v
+	end)
+
+	local SecFarmChest = FarmotherMain:CreateSection("Farm Chest")
+	SecFarmChest:CreateToggle({ Title = "Auto Collect Chest", Default = false }, function(v)
+		getgenv().AutoCollectChest = v
+	end)
+
+	local SecRaidLaw = FarmotherMain:CreateSection("Raid Law")
+	SecRaidLaw:CreateToggle({ Title = "Auto Raid Law", Default = false }, function(v)
+		getgenv().AutoRaidLaw = v
+	end)
+
+	local SecFarmObs = FarmotherMain:CreateSection("Farm Observation")
+	SecFarmObs:CreateToggle({ Title = "Auto Farm Observation V1", Default = false }, function(v)
+		getgenv().AutoFarmObsV1 = v
+	end)
+	SecFarmObs:CreateToggle({ Title = "Auto Farm Observation V2", Default = false }, function(v)
+		getgenv().AutoFarmObsV2 = v
+	end)
+
+	local SecAutoKillMob = FarmotherMain:CreateSection("Auto Kill Mob")
+	SecAutoKillMob:CreateDropdown({ Title = "Select Mob", List = { "Bandit", "Monkey", "Gorilla", "Pirate", "Brute" }, Default = "Bandit" }, function(v)
+		getgenv().SelectedKillMob = v
+	end)
+	SecAutoKillMob:CreateToggle({ Title = "Kill Mob", Default = false }, function(v)
+		getgenv().KillMob = v
+	end)
+
+	local SecAutoBoss = FarmotherMain:CreateSection("Auto Boss")
+	SecAutoBoss:CreateDropdown({
+		Title = "Select Boss",
+		List = { "The Gorilla King", "Bobby", "The Saw", "Yeti", "Mob Leader", "Vice Admiral", "Warden", "Swan", "Magma Admiral", "Fishman Lord", "Wysper", "Thunder God", "Cyborg" },
+		Default = "The Gorilla King"
+	}, function(v)
+		getgenv().SelectedBossOther = v
+	end)
+	SecAutoBoss:CreateButton({ Title = "Refresh Boss" }, function()
+		Library:Notify({ Title = "Boss", Desc = "Refreshed Boss list!", Duration = 2 }, true)
+	end)
+	SecAutoBoss:CreateToggle({ Title = "Auto Kill Selected Boss", Default = false }, function(v)
+		getgenv().AutoKillBossOther = v
+	end)
+
+	-- =========================================================================
+	-- 9. PAGE: Fruit and Raid, Dungeon (Fruit and Raid and Dungeon Tab)
+	-- =========================================================================
+	local DFRaidMain = Main:CreatePage({ Page_Name = "Fruit and Raid, Dungeon", Page_Title = "Fruit and Raid and Dungeon Tab" })
+
+	local SecDF = DFRaidMain:CreateSection("Devil Fruit")
+	SecDF:CreateDropdown({
+		Title = "Select Fruit",
+		List = { "Bomb", "Spike", "Chop", "Spring", "Smoke", "Spin", "Flame", "Ice", "Sand", "Dark", "Light", "Magma", "Quake", "Buddha", "Love", "Spider", "Phoenix", "Portal", "Rumble", "Blizzard", "Gravity", "Mammoth", "Dough", "Shadow", "Venom", "Control", "Spirit", "Dragon", "Leopard", "Kitsune", "T-Rex" },
+		Default = "Flame"
+	}, function(v)
+		getgenv().SelectedFruitAction = v
+	end)
+	SecDF:CreateButton({ Title = "Eat Fruit" }, function()
+		Library:Notify({ Title = "Devil Fruit", Desc = "Eaten fruit!", Duration = 2 }, true)
+	end)
+	SecDF:CreateButton({ Title = "Drop Fruit" }, function()
+		Library:Notify({ Title = "Devil Fruit", Desc = "Dropped fruit!", Duration = 2 }, true)
+	end)
+	SecDF:CreateButton({ Title = "Store Fruit" }, function()
+		Library:Notify({ Title = "Devil Fruit", Desc = "Stored fruit!", Duration = 2 }, true)
+	end)
+
+	local SecRaids = DFRaidMain:CreateSection("Raids")
+	SecRaids:CreateDropdown({
+		Title = "Select Raid Chip",
+		List = { "Flame", "Ice", "Quake", "Light", "Dark", "String", "Rumble", "Magma", "Buddha", "Sand", "Phoenix", "Dough" },
+		Default = "Flame"
+	}, function(v)
+		getgenv().SelectedRaidChip = v
+	end)
+	SecRaids:CreateToggle({ Title = "Auto Buy Chip", Default = false }, function(v)
+		getgenv().AutoBuyRaidChip = v
+	end)
+	SecRaids:CreateToggle({ Title = "Auto Start Raid", Default = false }, function(v)
+		getgenv().AutoStartRaid = v
+	end)
+	SecRaids:CreateToggle({ Title = "Auto Raid", Default = false }, function(v)
+		getgenv().AutoRaid = v
+	end)
+
+	local SecMultiRaid = DFRaidMain:CreateSection("Multi Raid")
+	SecMultiRaid:CreateButton({ Title = "Refresh Player" }, function()
+		Library:Notify({ Title = "Multi Raid", Desc = "Refreshed players!", Duration = 2 }, true)
+	end)
+	SecMultiRaid:CreateToggle({ Title = "Auto Join Multi Raid", Default = false }, function(v)
+		getgenv().AutoMultiRaid = v
+	end)
+
+	local SecJoinDungeon = DFRaidMain:CreateSection("Join Dungeon")
+	SecJoinDungeon:CreateButton({ Title = "Refresh Player" }, function()
+		Library:Notify({ Title = "Dungeon", Desc = "Refreshed dungeon players!", Duration = 2 }, true)
+	end)
+	SecJoinDungeon:CreateToggle({ Title = "Auto Join Dungeon", Default = false }, function(v)
+		getgenv().AutoJoinDungeon = v
+	end)
+
+	local SecDungeon = DFRaidMain:CreateSection("Dungeon")
+	SecDungeon:CreateToggle({ Title = "Auto Farm Dungeon", Default = false }, function(v)
+		getgenv().AutoFarmDungeon = v
+	end)
+
+	-- =========================================================================
+	-- 10. PAGE: Sea Event (Sea Event Tab)
+	-- =========================================================================
+	local SeaEventTab = Main:CreatePage({ Page_Name = "Sea Event", Page_Title = "Sea Event Tab" })
+
+	local SecSeaSetting = SeaEventTab:CreateSection("Setting")
+	SecSeaSetting:CreateDropdown({ Title = "Danger Zone", List = { "Zone 1", "Zone 2", "Zone 3", "Zone 4", "Zone 5", "Zone 6" }, Default = "Zone 6" }, function(v)
+		getgenv().DangerZone = v
+	end)
+	SecSeaSetting:CreateSlider({ Title = "Boat Speed", Min = 50, Max = 350, Default = 200 }, function(v)
+		getgenv().BoatSpeed = v
+	end)
+	SecSeaSetting:CreateToggle({ Title = "Auto Spawn Boat", Default = false }, function(v)
+		getgenv().AutoSpawnBoat = v
+	end)
+
+	local SecSeaFarming = SeaEventTab:CreateSection("Farming")
+	SecSeaFarming:CreateButton({ Title = "Refresh Player" }, function()
+		Library:Notify({ Title = "Sea Event", Desc = "Refreshed players!", Duration = 2 }, true)
+	end)
+	SecSeaFarming:CreateToggle({ Title = "Auto Sea Event", Default = false }, function(v)
+		getgenv().AutoSeaEvent = v
+	end)
+	SecSeaFarming:CreateToggle({ Title = "Auto Terrorshark", Default = false }, function(v)
+		getgenv().AutoTerrorshark = v
+	end)
+	SecSeaFarming:CreateToggle({ Title = "Auto Sea Beast", Default = false }, function(v)
+		getgenv().AutoSeaBeast = v
+	end)
+	SecSeaFarming:CreateToggle({ Title = "Auto Ghost Ship", Default = false }, function(v)
+		getgenv().AutoGhostShip = v
+	end)
+	SecSeaFarming:CreateToggle({ Title = "Auto Piranha", Default = false }, function(v)
+		getgenv().AutoPiranha = v
+	end)
+
+	local SecKitsuneEvent = SeaEventTab:CreateSection("Kitsune Event")
+	SecKitsuneEvent:CreateToggle({ Title = "Auto Find Kitsune Island", Default = false }, function(v)
+		getgenv().AutoFindKitsune = v
+	end)
+	SecKitsuneEvent:CreateToggle({ Title = "Auto Collect Azure Embers", Default = false }, function(v)
+		getgenv().AutoCollectEmbers = v
+	end)
+
+	local SecLeviathanEvent = SeaEventTab:CreateSection("Leviathan Event")
+	SecLeviathanEvent:CreateButton({ Title = "Buy Spy" }, function()
+		Library:Notify({ Title = "Leviathan", Desc = "Purchased Spy!", Duration = 2 }, true)
+	end)
+	SecLeviathanEvent:CreateButton({ Title = "Teleport your boat to current Position" }, function()
+		Library:Notify({ Title = "Leviathan", Desc = "Boat teleported!", Duration = 2 }, true)
+	end)
+	SecLeviathanEvent:CreateButton({ Title = "Refresh Player" }, function()
+		Library:Notify({ Title = "Leviathan", Desc = "Refreshed players!", Duration = 2 }, true)
+	end)
+	SecLeviathanEvent:CreateToggle({ Title = "Auto Find Frozen Dimension", Default = false }, function(v)
+		getgenv().AutoFrozenDimension = v
+	end)
+	SecLeviathanEvent:CreateToggle({ Title = "Auto Kill Leviathan", Default = false }, function(v)
+		getgenv().AutoKillLeviathan = v
+	end)
+	SecLeviathanEvent:CreateToggle({ Title = "Auto Harpoon Heart", Default = false }, function(v)
+		getgenv().AutoHarpoon = v
+	end)
+
+	local SecBoatSetting = SeaEventTab:CreateSection("Boat Setting")
+	SecBoatSetting:CreateToggle({ Title = "Fly Boat", Default = false }, function(v)
+		getgenv().FlyBoat = v
+	end)
+	SecBoatSetting:CreateSlider({ Title = "Fly Boat Speed", Min = 50, Max = 300, Default = 150 }, function(v)
+		getgenv().FlyBoatSpeed = v
+	end)
+
+	-- =========================================================================
+	-- 11. PAGE: Upgrade Race (Upgrade Race Tab)
+	-- =========================================================================
+	local RaceMain = Main:CreatePage({ Page_Name = "Upgrade Race", Page_Title = "Upgrade Race Tab" })
+
+	local SecRaceDraco = RaceMain:CreateSection("Race Draco")
+	SecRaceDraco:CreateLabel({ Title = "Ancient One Draco Status: Idle" })
+	SecRaceDraco:CreateToggle({ Title = "Auto Race Draco", Default = false }, function(v)
+		getgenv().AutoDraco = v
+	end)
+
+	local SecRaceNormal = RaceMain:CreateSection("Race Normal")
+	SecRaceNormal:CreateToggle({ Title = "Auto Race V2 (Flower Quest)", Default = false }, function(v)
+		getgenv().AutoRaceV2 = v
+	end)
+	SecRaceNormal:CreateToggle({ Title = "Auto Race V3 (Arowe Quest)", Default = false }, function(v)
+		getgenv().AutoRaceV3 = v
+	end)
+
+	local SecRaceV4 = RaceMain:CreateSection("Race V4")
+	SecRaceV4:CreateToggle({ Title = "No Frog", Default = false }, function(v)
+		getgenv().NoFrog = v
+	end)
+	SecRaceV4:CreateButton({ Title = "Refresh Player" }, function()
+		Library:Notify({ Title = "Race V4", Desc = "Refreshed players!", Duration = 2 }, true)
+	end)
+	SecRaceV4:CreateToggle({ Title = "Auto Pull Lever", Default = false }, function(v)
+		getgenv().AutoPullLever = v
+	end)
+	SecRaceV4:CreateToggle({ Title = "Auto Mirage Gear", Default = false }, function(v)
+		getgenv().AutoMirageGear = v
+	end)
+	SecRaceV4:CreateToggle({ Title = "Auto Trial", Default = false }, function(v)
+		getgenv().AutoTrial = v
+	end)
+
+	local SecKillTrial = RaceMain:CreateSection("Kill Trial")
+	SecKillTrial:CreateToggle({ Title = "Auto Kill Other Races In Trial", Default = false }, function(v)
+		getgenv().AutoKillTrial = v
+	end)
+
+	-- =========================================================================
+	-- 12. PAGE: Get and Upgrade Items (Get and Upgrade Items Tab)
+	-- =========================================================================
+	local GetItemsMain = Main:CreatePage({ Page_Name = "Get and Upgrade Items", Page_Title = "Get and Upgrade Items Tab" })
+
+	local SecGetItems = GetItemsMain:CreateSection("Get Items")
+	SecGetItems:CreateToggle({ Title = "Auto CDK", Default = false }, function(v)
+		getgenv().AutoCDK = v
+	end)
+	SecGetItems:CreateToggle({ Title = "Auto Yama", Default = false }, function(v)
+		getgenv().AutoYama = v
+	end)
+	SecGetItems:CreateToggle({ Title = "Auto Tushita", Default = false }, function(v)
+		getgenv().AutoTushita = v
+	end)
+	SecGetItems:CreateToggle({ Title = "Auto TTK", Default = false }, function(v)
+		getgenv().AutoTTK = v
+	end)
+	SecGetItems:CreateToggle({ Title = "Auto Soul Guitar", Default = false }, function(v)
+		getgenv().AutoSoulGuitar = v
+	end)
+	SecGetItems:CreateToggle({ Title = "Auto Godhuman", Default = false }, function(v)
+		getgenv().AutoGodhuman = v
+	end)
+
+	local SecMasteryWeapon = GetItemsMain:CreateSection("Mastery Weapon")
+	SecMasteryWeapon:CreateDropdown({
+		Title = "Select Weapon To Master",
+		List = { "Cursed Dual Katana", "True Triple Katana", "Soul Guitar", "Godhuman", "Shark Anchor" },
+		Default = "Cursed Dual Katana"
+	}, function(v)
+		getgenv().MasteryWeaponName = v
+	end)
+	SecMasteryWeapon:CreateSlider({ Title = "Target Mastery", Min = 100, Max = 600, Default = 600 }, function(v)
+		getgenv().TargetMasteryVal = v
+	end)
+	SecMasteryWeapon:CreateToggle({ Title = "Auto Farm Mastery 600", Default = false }, function(v)
+		getgenv().AutoMastery600 = v
+	end)
+
+	local SecUpgradeWeapon = GetItemsMain:CreateSection("Upgrade Weapon")
+	SecUpgradeWeapon:CreateToggle({ Title = "Auto Upgrade All Swords", Default = false }, function(v)
+		getgenv().AutoUpgradeSwords = v
+	end)
+	SecUpgradeWeapon:CreateToggle({ Title = "Auto Upgrade All Guns", Default = false }, function(v)
+		getgenv().AutoUpgradeGuns = v
+	end)
+
+	-- =========================================================================
+	-- 13. PAGE: Volcano Event (Volcano Event Tab)
+	-- =========================================================================
+	local VolcanoTab = Main:CreatePage({ Page_Name = "Volcano Event", Page_Title = "Volcano Event Tab" })
+
+	local SecSettingsVolcano = VolcanoTab:CreateSection("Settings Volcano")
+	SecSettingsVolcano:CreateSlider({ Title = "Distance To Volcano", Min = 10, Max = 200, Default = 50 }, function(v)
+		getgenv().VolcanoDistance = v
+	end)
+	SecSettingsVolcano:CreateToggle({ Title = "Safe Zone Volcano", Default = false }, function(v)
+		getgenv().VolcanoSafeZone = v
+	end)
+
+	local SecFarmingVolcano = VolcanoTab:CreateSection("Farming Volcano")
+	SecFarmingVolcano:CreateToggle({ Title = "Auto Farm Volcano Golem", Default = false }, function(v)
+		getgenv().AutoVolcanoGolem = v
+	end)
+	SecFarmingVolcano:CreateToggle({ Title = "Auto Farm Magma Core", Default = false }, function(v)
+		getgenv().AutoMagmaCore = v
+	end)
+
+	local SecFullyVolcano = VolcanoTab:CreateSection("Fully Volcano")
+	SecFullyVolcano:CreateToggle({ Title = "Auto Complete Full Volcano Event", Default = false }, function(v)
+		getgenv().AutoFullVolcano = v
+	end)
+
+	-- =========================================================================
+	-- 14. PAGE: ESP (ESP Tab)
+	-- =========================================================================
+	local ESPTab = Main:CreatePage({ Page_Name = "ESP", Page_Title = "ESP Tab" })
+
+	local SecESP = ESPTab:CreateSection("ESP")
+	SecESP:CreateToggle({ Title = "ESP Player", Default = false }, function(v)
+		getgenv().ESPPlayer = v
+	end)
+	SecESP:CreateToggle({ Title = "ESP Fruit", Default = false }, function(v)
+		getgenv().ESPFruit = v
+	end)
+	SecESP:CreateToggle({ Title = "ESP Chest", Default = false }, function(v)
+		getgenv().ESPChest = v
+	end)
+	SecESP:CreateToggle({ Title = "ESP Island", Default = false }, function(v)
+		getgenv().ESPIsland = v
+	end)
+	SecESP:CreateToggle({ Title = "ESP Berry", Default = false }, function(v)
+		getgenv().ESPBerry = v
+	end)
+	SecESP:CreateToggle({ Title = "ESP Flower", Default = false }, function(v)
+		getgenv().ESPFlower = v
+	end)
+	SecESP:CreateToggle({ Title = "ESP Mirage Island", Default = false }, function(v)
+		getgenv().ESPMirage = v
+	end)
+	SecESP:CreateToggle({ Title = "ESP Kitsune Island", Default = false }, function(v)
+		getgenv().ESPKitsune = v
+	end)
+	SecESP:CreateToggle({ Title = "ESP Sea Beast", Default = false }, function(v)
+		getgenv().ESPSeaBeast = v
+	end)
+
+	-- =========================================================================
+	-- 15. PAGE: PVP (PVP Tab)
+	-- =========================================================================
+	local PvpTab = Main:CreatePage({ Page_Name = "PVP", Page_Title = "PVP Tab" })
+
+	local SecPVP = PvpTab:CreateSection("PVP")
+	SecPVP:CreateButton({ Title = "Refresh Player" }, function()
+		Library:Notify({ Title = "PVP", Desc = "Refreshed target player list!", Duration = 2 }, true)
+	end)
+	SecPVP:CreateDropdown({ Title = "Select Target Player", List = { "Select Player..." }, Default = "Select Player..." }, function(v)
+		getgenv().PVPSelectedPlayer = v
+	end)
+	SecPVP:CreateToggle({ Title = "Auto Kill Target Player", Default = false }, function(v)
+		getgenv().AutoKillPlayer = v
+	end)
+	SecPVP:CreateToggle({ Title = "Aimlock Player", Default = false }, function(v)
+		getgenv().AimlockPlayer = v
+	end)
+	SecPVP:CreateToggle({ Title = "Safe Mode", Default = false }, function(v)
+		getgenv().PVPSafeMode = v
+	end)
+
+	local SecMiscPVP = PvpTab:CreateSection("MISC PVP")
+	SecMiscPVP:CreateToggle({ Title = "Silent Aim", Default = false }, function(v)
+		getgenv().SilentAim = v
+	end)
+	SecMiscPVP:CreateToggle({ Title = "Hitbox Expander", Default = false }, function(v)
+		getgenv().HitboxExpander = v
+	end)
+	SecMiscPVP:CreateSlider({ Title = "Hitbox Size", Min = 2, Max = 50, Default = 15 }, function(v)
+		getgenv().HitboxSize = v
+	end)
+	SecMiscPVP:CreateToggle({ Title = "Dash No Cooldown", Default = false }, function(v)
+		getgenv().DashNoCD = v
+	end)
+	SecMiscPVP:CreateToggle({ Title = "Infinite Ken / Observation", Default = false }, function(v)
+		getgenv().InfiniteKen = v
+	end)
+
+	-- =========================================================================
+	-- 16. PAGE: Tab Webhook (Tab Webhook)
+	-- =========================================================================
+	local TabWebhook = Main:CreatePage({ Page_Name = "Tab Webhook", Page_Title = "Tab Webhook" })
+
+	local SecWebhook = TabWebhook:CreateSection("Webhook")
+	SecWebhook:CreateInput({ Title = "Webhook URL", Placeholder = "Enter Discord Webhook URL..." }, function(v)
+		getgenv().WebhookURL = v
+	end)
+	SecWebhook:CreateToggle({ Title = "Send Webhook When Find Fruit", Default = false }, function(v)
+		getgenv().WebhookFruit = v
+	end)
+	SecWebhook:CreateToggle({ Title = "Send Webhook When Up Level", Default = false }, function(v)
+		getgenv().WebhookLevel = v
+	end)
+	SecWebhook:CreateToggle({ Title = "Send Webhook When Get Rare Item", Default = false }, function(v)
+		getgenv().WebhookRareItem = v
+	end)
+	SecWebhook:CreateButton({ Title = "Test Webhook" }, function()
+		Library:Notify({ Title = "Webhook", Desc = "Webhook test notification sent!", Duration = 2 }, true)
+	end)
+
+	-- =========================================================================
+	-- 17. PAGE: Setting (Setting Tab)
+	-- =========================================================================
+	local SettingPage = Main:CreatePage({ Page_Name = "Setting", Page_Title = "Setting Tab" })
+
+	local SecSettings = SettingPage:CreateSection("Settings")
+	SecSettings:CreateToggle({ Title = "White Screen", Default = false }, function(v)
+		getgenv().WhiteScreen = v
+	end)
+	SecSettings:CreateToggle({ Title = "Black Screen", Default = false }, function(v)
+		getgenv().BlackScreen = v
+	end)
+	SecSettings:CreateToggle({ Title = "Auto Load Script", Default = false }, function(v)
+		getgenv().AutoLoadScript = v
+	end)
+	SecSettings:CreateToggle({ Title = "Boost Fps", Default = false }, function(v)
+		pcall(function()
+			for _, item in ipairs(workspace:GetDescendants()) do
+				if item:IsA("Decal") or item:IsA("Texture") then
+					item.Transparency = 1
+				elseif item:IsA("ParticleEmitter") or item:IsA("Trail") then
+					item.Enabled = false
+				end
+			end
+			game:GetService("Lighting").GlobalShadows = false
+		end)
+		Library:Notify({ Title = "Settings", Desc = "FPS Boost enabled!", Duration = 2 }, true)
+	end)
+	SecSettings:CreateButton({ Title = "Copy Config" }, function()
+		Library:Notify({ Title = "Settings", Desc = "Config copied to clipboard!", Duration = 2 }, true)
+	end)
+	SecSettings:CreateButton({ Title = "Rejoin Server" }, function()
+		pcall(function()
+			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+		end)
+	end)
+	SecSettings:CreateButton({ Title = "Hop Server" }, function()
+		Library:Notify({ Title = "Settings", Desc = "Finding server to hop...", Duration = 2 }, true)
+	end)
+	SecSettings:CreateKeyBind({ Title = "Toggle UI Keybind", Default = "RightControl" }, function(key)
+		print("[Banana] Toggle keybind set:", key)
+	end)
+	SecSettings:CreateButton({ Title = "Copy Discord Banana Cat Hub" }, function()
+		pcall(function()
+			if setclipboard then setclipboard("https://discord.gg/bananahub") end
+		end)
+		Library:Notify({ Title = "Settings", Desc = "Discord link copied!", Duration = 2 }, true)
+	end)
+	SecSettings:CreateButton({ Title = "Destroy UI" }, function()
+		Library.DestroyUI()
+	end)
+
+	return Main
+end
+
+Library.CreateDemo = Library.CreateDefaultWindow
+
+getgenv().BananaLibrary = Library
+getgenv().NousigiLibrary = Library
+getgenv().UIBanana = Library
+getgenv().bnn_lib = Library
+
+-- Auto-instantiate default Banana Cat Hub window if no external script creates one
+task.spawn(function()
+	task.wait(0.05)
+	if not (Library_Function.Gui and Library_Function.Gui:FindFirstChild("Main")) then
+		Library:CreateDefaultWindow()
+	end
+end)
+
 return Library
